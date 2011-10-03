@@ -1,0 +1,51 @@
+/*
+	Default THEME
+*/
+v\:roundrect {
+     color:#FFF;
+     display:block;
+     background-color:#62A3DD;
+     padding:20px;
+     height:100%;
+     /* Для закругления уголков в остальных браузерах */
+     -moz-border-radius:10px;
+     -webkit-border-radius: 10px;
+     border-radius: 10px;
+     }
+ 
+/* Для ie */
+v\:roundrect  {
+     behavior:url(#default#VML);
+     /background-color:transparent;
+     }
+body
+{
+	background-color : #BBDDFF
+}
+
+.input_submit {
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: bold;
+    padding: 3px 7px;
+    text-decoration: none;
+}
+.input_submit {
+    background-color: #1D3652;
+    border-color: #4F7298 #113051 #113051 #4F7298;
+    color: #FFFFFF;
+}
+.input_submit.alt {
+    text-decoration: none;
+}
+.input_submit.alt {
+    background-color: #EEF3F8;
+    border-color: #FAFBFC #BFCBD8 #BFCBD8 #FAFBFC;
+    color: #1D3652;
+}
+a:link, a:visited {
+  color: blue;
+  text-decoration: underline;
+}

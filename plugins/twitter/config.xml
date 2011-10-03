@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+ <config>
+  <username>FluentCMS</username>
+  <twittsMaxCount>5</twittsMaxCount>
+  <twittWrapper><div><strong>[date]</strong> [status]</div></twittWrapper>
+  <dateFormat>d.m.Y H:i:s</dateFormat>
+ </config>
+

@@ -1,0 +1,21 @@
+#main p{
+padding-bottom:8px;
+}
+.clear{
+clear:both;
+}
+#main{
+width:800px;
+/* Центрируем по середине страницы */
+margin:60px auto;
+}
+
+.err{
+color:red;
+}
+.success{
+color:#00CC00;
+}
+a:hover{
+text-decoration:underline;
+}

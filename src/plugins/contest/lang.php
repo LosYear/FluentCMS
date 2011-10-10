@@ -20,6 +20,12 @@
     $lang['question'] = "Вопрос";
     $lang['answer'] = "Ответ";
     $lang['write_answer'] = "Номер правильного ответа (1,2,3,4)";
+    $lang['point'] = "Баллов за ответ";
     
     $lang['active_tours'] = "Активные туры";
+    $lang['take_part'] = "Начать";
+    $lang['send'] = "Отправить";
+    $lang['you_get'] = "Поздравляем! Вы набрали ";
+    $lang['from'] = "Из";
+    $lang['points'] = "Баллов";
 ?>

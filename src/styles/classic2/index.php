@@ -9,8 +9,10 @@
 <link rel="stylesheet" type="text/css" href="<?php echo $path; ?>css/panel.css">
 <link rel="stylesheet" type="text/css" href="styles/system/css/slide.css">
 
-<script type="text/javascript" src="<?php echo $path; ?>js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="includes/jquery-1.6.4.min.js"></script>
 <script src="styles/system/js/slide.js" type="text/javascript"></script>
+
+<?php $events->fire("fl_head_add_script",""); ?>
 
 <?php echo $script; ?>
 

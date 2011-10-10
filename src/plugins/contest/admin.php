@@ -10,7 +10,7 @@
                     	$html .= "<label for=\"desc\">{$lang['desc']}</label> <input type=\"text\" name=\"desc\"/><br/>";
                     	$html .= "<input type=\"submit\" value=\"{$lang['create']}\"/> ";
 					$html .= "</form>";
-					echo $html;                	
+					require("../admin/styles/templates/empty.php");             	
                 }
                 else if( $_REQUEST['step'] == '2' ){
                     global $db_host, $db_user, $db_pass, $db;
@@ -37,8 +37,9 @@
                         '$id', '1', '{$_REQUEST['name']}', '{$_REQUEST['desc']}', '-1', '-1', NOW(),NOW()
                         );";
 		            mysql_query($sql) or die($lang['something_went_wrong']);
-		            echo $lang['created'];
-		            echo "<br/><a href=\"index.php?mod=apps&plugin=fl_concore\">{$lang['back']}</a>";
+		            $html .= $lang['created'];
+		            $html .= "<br/><a href=\"index.php?mod=apps&plugin=fl_concore\">{$lang['back']}</a>";
+		            require("../admin/styles/templates/empty.php"); 
                 }                
             }
             elseif ($_REQUEST['sub'] == 'add' && $_REQUEST['type'] == '2' ){
@@ -71,7 +72,7 @@
 		                $html .= "<label>{$lang['till']}</label><input type=\"text\" name=\"till\" /><br/>";
 		                $html .= "<input type=\"submit\" value=\"{$lang['create']}\"/> ";
 					$html .= "</form>";
-					echo $html;
+					require("../admin/styles/templates/empty.php"); 
                 }
                 else if( $_REQUEST['step'] == '2'){
                     global $db_host, $db_user, $db_pass, $db;
@@ -101,7 +102,7 @@
 
 		            $html .= $lang['created'];
 		            $html .= "<br/><a href=\"index.php?mod=apps&plugin=fl_concore\">{$lang['back']}</a>";
-		            echo $html;
+		            require("../admin/styles/templates/empty.php"); 
                 }
             }
             elseif ( $_REQUEST['sub'] == 'add' && $_REQUEST['type'] == '3' ){
@@ -123,7 +124,7 @@
 		            }
 		            $html .= "</select><br/><input type=\"submit\"/ value=\"{$lang['next']}\">";
 		            $html .= "</form>";
-		            echo $html;
+		            require("../admin/styles/templates/empty.php"); 
                 }
                 elseif ( $_REQUEST['step'] == '2'){
                     global $db_host, $db_user, $db_pass, $db;
@@ -136,15 +137,16 @@
 	                $res = mysql_fetch_array($res);
 	                
 	                if ($res['subtype'] == '1'){ // quick
-	                    $html .= "<form action=\"index.php?mod=apps&plugin=fl_concore&step=3&sub=add&type=3&p=1\" method='post'>";
+	                    $html .= "<form action=\"index.php?mod=apps&plugin=fl_concore&step=3&sub=add&type=3&p=1&contest={$_REQUEST['contest']}\" method='post'>";
 	                        $html .= "<label for=\"question\">{$lang['question']}</label> <input type=\"text\" name=\"question\" /><br/>";
 	                        $html .= "<label for=\"ans1\">{$lang['answer']}</label> <input type=\"text\" name=\"ans1\" /> <br/>"; 
 	                        $html .= "<label for=\"ans2\">{$lang['answer']}</label> <input type=\"text\" name=\"ans2\" /> <br/>";
 	                        $html .= "<label for=\"ans3\">{$lang['answer']}</label> <input type=\"text\" name=\"ans3\" /> <br/>";
 	                        $html .= "<label for=\"ans4\">{$lang['answer']}</label> <input type=\"text\" name=\"ans4\" /> <br/>";
 	                        $html .= "<label for=\"wr_ans\">{$lang['write_answer']}</label> <input type=\"text\" name=\"wr_ans\" /> <br/>";
+	                        $html .= "<label for=\"point\">{$lang['point']}</label> <input type=\"text\" name=\"point\" /> <br/>";
 	                        $html .= "<input type=\"submit\"/ value=\"{$lang['create']}\">";
-	                        echo $html;
+	                        require("../admin/styles/templates/empty.php"); 
 	                }
 	                else { // full
 	                    
@@ -169,15 +171,18 @@
                                 `ans2` ,
                                 `ans3` ,
                                 `ans4` ,
-                                `write_ans` 
+                                `write_ans` ,
+                                `tour_id` ,
+                                `point`
                                 )
                                 VALUES (
-                                '$id', '{$_REQUEST['question']}', '{$_REQUEST['ans1']}', '{$_REQUEST['ans2']}', '{$_REQUEST['ans3']}', '{$_REQUEST['ans4']}', '{$_REQUEST['wr_ans']}'
+                                '$id', '{$_REQUEST['question']}', '{$_REQUEST['ans1']}', '{$_REQUEST['ans2']}', '{$_REQUEST['ans3']}', '{$_REQUEST['ans4']}', '{$_REQUEST['wr_ans']}',
+                                '{$_REQUEST['contest']}', '{$_REQUEST['point']}'
                                 );";
 		                mysql_query($sql) or die($lang['something_went_wrong']);
 		                $html .= $lang['created'];
 		                $html .= "<br/><a href=\"index.php?mod=apps&plugin=fl_concore\">{$lang['back']}</a>";
-		                echo $html;
+		                require("../admin/styles/templates/empty.php"); 
                     }
                 }
             }
@@ -194,7 +199,7 @@
                 // echo type1
             }
             echoForm();
-            echo $html;
+            require("../admin/styles/templates/empty.php"); 
             
         }
         

@@ -145,11 +145,14 @@
 	                        $html .= "<label for=\"ans4\">{$lang['answer']}</label> <input type=\"text\" name=\"ans4\" /> <br/>";
 	                        $html .= "<label for=\"wr_ans\">{$lang['write_answer']}</label> <input type=\"text\" name=\"wr_ans\" /> <br/>";
 	                        $html .= "<label for=\"point\">{$lang['point']}</label> <input type=\"text\" name=\"point\" /> <br/>";
-	                        $html .= "<input type=\"submit\"/ value=\"{$lang['create']}\">";
+	                        $html .= "<input type=\"submit\"/ value=\"{$lang['create']}\"> </form>";
 	                        require("../admin/styles/templates/empty.php"); 
 	                }
 	                else { // full
-	                    
+	                    $html .= "<form enctype=\"multipart/form-data\" action=\"index.php?mod=apps&plugin=fl_concore&step=3&sub=add&type=3&p=2&contest={$_REQUEST['contest']}\" method='post'>";
+                            $html .= "<label for=\"task\">{$lang['task']}</label><input type=\"file\" name=\"task\"/><br/>";
+	                        $html .= "<input type=\"submit\"/ value=\"{$lang['create']}\"> </form>";
+	                        require("../admin/styles/templates/empty.php"); 
 	                }
                 }
                 elseif ( $_REQUEST['step'] == '3'){
@@ -183,6 +186,65 @@
 		                $html .= $lang['created'];
 		                $html .= "<br/><a href=\"index.php?mod=apps&plugin=fl_concore\">{$lang['back']}</a>";
 		                require("../admin/styles/templates/empty.php"); 
+                    }
+                    else {
+                        global $db_host, $db_user, $db_pass, $db;
+		                 if (!mysql_connect($db_host, $db_user, $db_pass))
+		                  die(mysql_error());
+		                mysql_select_db($db);
+		                
+		                $query = "SELECT MAX(`id`) AS Number FROM `$db`.`questions`";
+			            $res = mysql_query($query);
+			            $row = mysql_fetch_assoc($res);
+			            $id = $row['Number'] + 1;
+			            
+			            require_once '../plugins/contest/classes/class.upload.php';
+			            
+			            $hphoto = new upload_file($_FILES['task']);
+			            $filename = '';
+			            $ext = '';
+		                if ( $hphoto->uploaded ){
+		                    $hphoto->file_new_name_body = "{$_REQUEST['contest']}";
+		                    $hphoto->file_overwrite = true;
+		                    $path = $_SERVER['DOCUMENT_ROOT'] . "/plugins/contest/data/";
+		                    if ($hphoto->file_src_name_ext == 'docx' || $hphoto->file_src_name_ext == 'doc' || $hphoto->file_src_name_ext == 'rtf' ||
+		                        $hphoto->file_src_name_ext == 'txt' || $hphoto->file_src_name_ext == 'odt'){
+    		                    $ext = $hphoto->file_src_name_ext;
+    		                    $filename = $hphoto->file_src_name_body;
+        		                $hphoto->process($path);
+                                if (!$hphoto->processed) {
+                                  echo $lang['something_went_wrong'] . $hphoto->error;
+                                }
+                                $hphoto->clean(); 
+		                    }  
+		                    else{
+		                        die($lang['something_went_wrong']);
+		                    }
+		                }
+		                else {
+		                    die($hphoto->error);
+		                }
+		                $tmp = $_REQUEST['contest'].".".$ext;
+		                $sql = "INSERT INTO `questions` (
+                                `id` ,
+                                `question` ,
+                                `ans1` ,
+                                `ans2` ,
+                                `ans3` ,
+                                `ans4` ,
+                                `write_ans` ,
+                                `tour_id` ,
+                                `point`
+                                )
+                                VALUES (
+                                '$id', '{$tmp}', '--', '--', '--', '--', '-1',
+                                '{$_REQUEST['contest']}', '-1'
+                                );";
+                        mysql_query($sql) or die($lang['something_went_wrong'] . mysql_error());
+		                $html .= $lang['created'];
+		                $html .= "<br/><a href=\"index.php?mod=apps&plugin=fl_concore\">{$lang['back']}</a>";
+		                require("../admin/styles/templates/empty.php"); 
+                        
                     }
                 }
             }

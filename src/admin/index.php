@@ -452,6 +452,75 @@
 			    require_once("styles/templates/apps.php");
 		    }
 		}
+		else if( $_REQUEST['mod'] === 'users' ) { // Users admin
+		    if ($_REQUEST['sub'] == 'edit'){ // Users edit
+		        if ( $_REQUEST['step'] == 'submit'){
+		            // DB connect
+        		    if(! mysql_connect($db_host, $db_user, $db_pass)) die(mysql_error());
+        		    mysql_select_db($db);
+        		    $sql = "UPDATE `users` SET `id` = '{$_REQUEST['id']}',
+                            `login` = '{$_REQUEST['login']}',
+                            `email` = '{$_REQUEST['email']}',
+                            `group` = '{$_REQUEST['group']}' WHERE `id`='{$_REQUEST['id']}' LIMIT 1;";
+        		    mysql_query($sql) or die(mysql_error());
+        		    $html .= "Изменено";
+		            $html .= "<br/><a href=\"index.php?mod=apps&plugin=fl_concore\">Назад</a>";
+		            require("/styles/templates/empty.php"); 
+		        }
+		        else {
+    		        // DB connect
+        		    if(! mysql_connect($db_host, $db_user, $db_pass)) die(mysql_error());
+        		    mysql_select_db($db);
+        		    $sql = "SELECT * FROM `users` WHERE id='{$_REQUEST['id']}' LIMIT 1;";
+        		    $result = mysql_query($sql);
+        		    $user = mysql_fetch_array($result);
+    		        
+    		        require_once 'styles/templates/user_edit.php';
+		        }
+		        
+		    }
+		    else if ( $_REQUEST['sub'] == 'del'){ // Delete user
+		        
+		    }
+		    else {
+    		    // DB connect
+    		    if(! mysql_connect($db_host, $db_user, $db_pass)) die(mysql_error());
+    		    mysql_select_db($db);
+    			$sql = "SELECT * FROM `users`;";
+    			$users = mysql_query($sql);
+    			
+    			$users_list = '';
+    			// Printing users list
+    		    for ($i = 0; $i < mysql_num_rows($users); $i++){   
+                  $r = mysql_fetch_array($users);
+    
+                  // Item printing
+                  $users_list .= '<tr>';
+                  $users_list .= "<td>{$r['login']}</td>";
+                  $users_list .= "<td>{$r['email']}</td>";
+                  
+                  if ($r['group'] == '1'){
+                      $group = 'Администратор';
+                  }
+                  else if ( $r['group'] == '0'){
+                      $group = "Пользователь";
+                  }
+                  else if ( $r['group'] == '2'){
+                      $group = "Модератор";
+                  }
+                  
+                  $action = "<a href=\"index.php?mod=users&sub=edit&id={$r['id']}\"><img src='styles/images/edit.png' /></a> ";
+                  $action .= "<a href=\"index.php?mod=users&sub=del&id={$r['id']}\"><img src='styles/images/del.png' /></a> ";
+                  
+                  $users_list .= "<td>{$group}</td>";
+                  $users_list .= "<td>{$action}</td>";
+                  
+                  mysql_query($sql) or die(mysql_error());
+        	    }	
+    			    
+    		    require_once 'styles/templates/users.php';
+		    }
+		}
 	  else
 		{
 		  

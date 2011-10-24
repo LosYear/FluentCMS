@@ -2,9 +2,25 @@
     require_once("plugins/contest/lang.php");
     session_start();
     
+    // Main
+    
     function atPanelEcho_contest(){
 		echo "<a href=\"index.php?plugin_control=cabinet\"><img title=\"Личный кабинет\" src=\"plugins/contest/imgs/panel.png\"></a><br/>";
+		
+		if( $_SESSION['group'] == '2' || $_SESSION['group'] == '1'){
+		    // User group 1 - admin ; 2 - moder
+		    echo "<a href=\"index.php?plugin_control=moder_panel\"><img title=\"Панель модератора\" src=\"plugins/contest/imgs/moder.png\"></a><br/>";
+		}
 	}
+	
+	function  addScripts(){
+	    if ($_REQUEST['plugin_control'] == 'take_part' && $_REQUEST['type'] == '1'){
+	        echo "<script src=\"plugins/contest/js/main.js\" type=\"text/javascript\"></script>";
+	        echo "<script src=\"plugins/contest/js/jquery.timers.js\" type=\"text/javascript\"></script>";
+	    }
+	}
+	
+	// Cabinet
 	
 	function cabinet(){
 	    global $lang;
@@ -199,12 +215,131 @@
         
 	}
 	
-	function  addScripts(){
-	    if ($_REQUEST['plugin_control'] == 'take_part' && $_REQUEST['type'] == '1'){
-	        echo "<script src=\"plugins/contest/js/main.js\" type=\"text/javascript\"></script>";
+	// Moder panel
+	
+	function moder_main(){ // Moder panel main page
+	    global $lang;
+	    echo "<a href=\"index.php?plugin_control=moder_unchecked\">{$lang['unchecked']}</a>";
+	    
+	}
+	
+	function moder_unchecked(){ // List of unchecked tasks
+	    global $db_host, $db_user, $db_pass, $db, $lang;
+        if (!mysql_connect($db_host, $db_user, $db_pass))
+            die(mysql_error());
+        mysql_select_db($db);
+        
+        $sql = "SELECT * FROM `results` WHERE points='-1';";
+        $list = mysql_query($sql) or die($lang['something_went_wrong']);
+        
+       echo "<table>";
+	        echo "<tr>";
+	            echo "<td>{$lang['user']}</td>";
+	            echo "<td>{$lang['Tour_Root']}</td>";
+	            echo "<td>{$lang['tour']}</td>";
+	            echo "<td>{$lang['actions']}</td>";
+            echo "</tr>";
+            
+        for ($i = 0; $i < mysql_num_rows($list); $i++){   
+            $fList = mysql_fetch_array($list);
+            
+            $uid = $fList['user_id'];
+            
+            // Getting info about USER
+            
+            $sql_tmp = "SELECT * FROM `pages` WHERE id='$uid' LIMIT 1;";
+            $tmp = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+            $tmp = mysql_fetch_array($tmp);
+            
+            // Getting info about TOUR
+            
+            $tid = $fList['tour_id'];
+            $sql_tmp = "SELECT * FROM `contest` WHERE id='$tid' LIMIT 1;";
+            $tmp2 = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+            $tmp2 = mysql_fetch_array($tmp2);
+            
+            // Getting info about CAT
+            $rid = $tmp2['rootcat'];
+            $sql_tmp = "SELECT * FROM `contest` WHERE id='$rid' LIMIT 1;";
+            $tmp3 = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+            $tmp3 = mysql_fetch_array($tmp3);
+            
+             echo "<tr>";
+	            echo "<td>{$tmp['name']}</td>";
+	            echo "<td>{$tmp3['name']}</td>";
+	            echo "<td>{$tmp2['name']}</td>";
+	            echo "<td><a href='/plugins/contest/data/{$fList['adv']}'><img src='/plugins/contest/imgs/download_small.png' /></a> 
+	            <a href='index.php?plugin_control=moder_show&id={$fList['id']}'><img src='/plugins/contest/imgs/check_small.png' /></a></td>";
+	         echo "</tr>";
+            
+            mysql_query($sql) or die(mysql_error());
+        }
+        echo "</table>";
+	}
+    
+	function moder_show (){
+	    global $db_host, $db_user, $db_pass, $db, $lang;
+        if (!mysql_connect($db_host, $db_user, $db_pass))
+            die(mysql_error());
+        mysql_select_db($db);
+        
+	    $id = $_REQUEST['id'];
+	    
+	    $sql = "SELECT * FROM `results` WHERE id='$id';";
+        $list = mysql_query($sql) or die($lang['something_went_wrong']);
+	    
+        $fList = mysql_fetch_array($list);
+        
+	    $uid = $fList['user_id'];
+        
+        // Getting info about USER
+        
+        $sql_tmp = "SELECT * FROM `pages` WHERE id='$uid' LIMIT 1;";
+        $tmp = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+        $tmp = mysql_fetch_array($tmp);
+        
+        // Getting info about TOUR
+        
+        $tid = $fList['tour_id'];
+        $sql_tmp = "SELECT * FROM `contest` WHERE id='$tid' LIMIT 1;";
+        $tmp2 = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+        $tmp2 = mysql_fetch_array($tmp2);
+        
+        // Getting info about CAT
+        $rid = $tmp2['rootcat'];
+        $sql_tmp = "SELECT * FROM `contest` WHERE id='$rid' LIMIT 1;";
+        $tmp3 = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+        $tmp3 = mysql_fetch_array($tmp3);
+        
+        echo "{$tmp['name']}<br />";
+        echo "{$tmp3['name']}<br />";
+        echo "{$tmp2['name']}<br />";
+        echo "<a href='/plugins/contest/data/{$fList['adv']}'><img src='/plugins/contest/imgs/download_big.png' /></a>";
+        echo "<form action='index.php?plugin_control=moder_check&id=$id' method='post'>";
+            echo "<label for='points'></label><input type='text' name='points' value='{$fList['points']}'/>";
+            echo "<input type='submit' value='OK' />";
+        echo "</form>";
+	}
+	
+	function moder_check() {
+	    global $lang;
+	    $id = $_REQUEST['id'];
+	    $points = $_REQUEST['points'];
+	    
+	    if (is_numeric($points)){ // If number
+	        global $db_host, $db_user, $db_pass, $db;
+            if (!mysql_connect($db_host, $db_user, $db_pass))
+                die(mysql_error());
+            mysql_select_db($db);
+            
+            $sql = "UPDATE `results` SET `points` = '$points' WHERE`id` = '$id' LIMIT 1 ;";
+            mysql_query($sql) or die(mysql_error());
+            echo $lang['checked'];
+	    }
+	    else {
+	        echo $lang['not_a_number'];
 	    }
 	}
-
 	$events->register("login_panel_echo","atPanelEcho_contest"); 
     $events->register("cabinet","cabinet");
     $events->register("active_tours","active_tours");
@@ -213,4 +348,8 @@
     $events->register("check","check");
     $events->register("fl_head_add_script","addScripts");
     $events->register("uploadAns","uploadAns");
+    $events->register("moder_panel","moder_main");
+    $events->register("moder_unchecked","moder_unchecked");
+    $events->register("moder_show", "moder_show");
+    $events->register("moder_check", "moder_check");
 ?>

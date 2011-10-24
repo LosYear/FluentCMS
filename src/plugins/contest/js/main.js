@@ -12,6 +12,10 @@ function display_question()
 	number ++;
 	value = $('input[name=ans]:checked').val();
 	$("div.container").load('plugins/contest/changeQue.php',{id:tour_id , question:number, ans:value});
+	
+	$("#ok").everyTime(30000, function() {
+		$("#ok").click();
+	});
 }
 
 function next(){

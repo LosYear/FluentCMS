@@ -18,6 +18,7 @@
     
     if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
         require_once '../../config.php';
+        require_once("../../plugins/contest/lang.php");
         if (!mysql_connect($db_host, $db_user, $db_pass))
             die(mysql_error());
         mysql_select_db($db);
@@ -37,10 +38,19 @@
             echo "<div><input type=\"radio\" value=\"3\" name=\"ans\"/> {$r['ans3']}</div>";
             echo "<div><input type=\"radio\" value=\"4\" name=\"ans\"/> {$r['ans4']}</div><br>";
             
-            echo "<button type=\"button\" style=\"width:50px\" onclick=\"next();\">OK</button>";
+            echo "<button type=\"button\" style=\"width:50px\" onclick=\"next();\" id=\"ok\">OK</button>";
 	    }
         else{
-            echo $_SESSION['points'];
+            global $lang;
+            $query = "SELECT MAX(`id`) AS Number FROM `$db`.`results`";
+            $res = mysql_query($query);
+            $row = mysql_fetch_assoc($res);
+            $id = $row['Number'] + 1;
+            
+            $sql = "INSERT INTO `results` (`id`, `user_id`, `tour_id`, `points`, `state`, `adv`) VALUES ('$id', '{$_SESSION['id']}', '{$pid}',
+             '{$_SESSION['points']}', '0', '--');";
+            mysql_query($sql) or die(mysql_error());
+            echo "{$lang['you_get']} {$_SESSION['points']} {$lang['points']}";
             unset($_SESSION['points']);
         }
     }

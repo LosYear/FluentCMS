@@ -1,5 +1,6 @@
 tour_id = 0;
 number = 0;
+n = 1000;
 
 $(document).ready(function() {
 	tour_id = 2;
@@ -12,8 +13,9 @@ function display_question()
 	number ++;
 	value = $('input[name=ans]:checked').val();
 	$("div.container").load('plugins/contest/changeQue.php',{id:tour_id , question:number, ans:value});
-	
-	$("#ok").everyTime(30000, function() {
+	time = $('input[name=sec]').val();
+	alert(time);
+	$(document).everyTime(time, function() {
 		$("#ok").click();
 	});
 }

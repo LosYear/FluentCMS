@@ -39,6 +39,7 @@
             echo "<div><input type=\"radio\" value=\"4\" name=\"ans\"/> {$r['ans4']}</div><br>";
             
             echo "<button type=\"button\" style=\"width:50px\" onclick=\"next();\" id=\"ok\">OK</button>";
+            echo "<input type='hidden' name='sec' value='2000'/>";
 	    }
         else{
             global $lang;

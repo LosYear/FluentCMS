@@ -5,7 +5,7 @@
     
     function Check_Answer($pid, $qid, $ans)
     {
-        if($ans != 'undefined')
+        if($ans != 'undef')
 	    {
 	        $sql = "SELECT * FROM `questions` WHERE tour_id='{$pid}' LIMIT " . ($qid-2) . ", 1";
 	        $res = mysql_query($sql) or die(mysql_error());
@@ -22,24 +22,23 @@
         if (!mysql_connect($db_host, $db_user, $db_pass))
             die(mysql_error());
         mysql_select_db($db);
-	    $pid = $_POST['id'];
-	    $qid = $_POST['question'];
-	    $ans = $_POST['ans'];
+	    $pid = $_REQUEST['tour_id'];
+	    $qid = $_REQUEST['question'];
+	    $ans = $_REQUEST['ans'];
 	    Check_Answer($pid, $qid, $ans);
 	    $sql = "SELECT * FROM `questions` WHERE tour_id='{$pid}' LIMIT " . ($qid-1) . ", 1";
 	    $res = mysql_query($sql) or die(mysql_error());
 	    $r = mysql_fetch_array($res);
 	    
-	    if ($r != false){
-    	    echo "<label>{$r['question']}</label><br>";
-                   
-            echo "<div><input type=\"radio\" value=\"1\" name=\"ans\"/> {$r['ans1']}</div>";
-            echo "<div><input type=\"radio\" value=\"2\" name=\"ans\"/> {$r['ans2']}</div>";
-            echo "<div><input type=\"radio\" value=\"3\" name=\"ans\"/> {$r['ans3']}</div>";
-            echo "<div><input type=\"radio\" value=\"4\" name=\"ans\"/> {$r['ans4']}</div><br>";
-            
-            echo "<button type=\"button\" style=\"width:50px\" onclick=\"next();\" id=\"ok\">OK</button>";
-            echo "<input type='hidden' name='sec' value='2000'/>";
+		if($r != false){
+    	    $response = 	"{\"mode\":\"quest\",
+							\"que\":\"{$r['question']}\",
+							\"answs\":[
+							{\"ans\":\"{$r['ans1']}\"},
+							{\"ans\":\"{$r['ans2']}\"},
+							{\"ans\":\"{$r['ans3']}\"},
+							{\"ans\":\"{$r['ans4']}\"}]}";
+			echo $response;
 	    }
         else{
             global $lang;
@@ -51,7 +50,9 @@
             $sql = "INSERT INTO `results` (`id`, `user_id`, `tour_id`, `points`, `state`, `adv`) VALUES ('$id', '{$_SESSION['id']}', '{$pid}',
              '{$_SESSION['points']}', '0', '--');";
             mysql_query($sql) or die(mysql_error());
-            echo "{$lang['you_get']} {$_SESSION['points']} {$lang['points']}";
+			$response = 	"{\"mode\":\"result\",
+							\"text\":\"{$lang['you_get']} {$_SESSION['points']} {$lang['points']}\"}";
+			echo $response;
             unset($_SESSION['points']);
         }
     }

@@ -4,8 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
 	</head>
 	<body>
-	<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
-		<v:roundrect arcsize=".04" fillcolor="#000">
+	<div class="block">
 			<center>
 			<div id="page">
 				<form action="index.php?mod=users&sub=edit&step=submit&id=<?php echo $_REQUEST['id'];?>" method="post"> 
@@ -23,6 +22,6 @@
 				</form>
 			</div>
 			</center>
-		</v:roundrect>
+		</div>
 	</body>
 </html>

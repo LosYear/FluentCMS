@@ -34,7 +34,7 @@ function display_question()
 					});
 					$('<br/>').html('').appendTo("div.container");
 					$('<button type=\"button\" style=\"width:50px\" onclick=\"next();\" id=\"ok\"></button>').html('OK').appendTo("div.container");
-					t = setTimeout("next()",10000); // >>> Переменную писать сюда!!! <<<
+					t = setTimeout("next()",obj.time);
 				}
 				else if(obj.mode == "result")
 					$("div.container").html(obj.text);

@@ -4,8 +4,7 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
-<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
-<v:roundrect arcsize=".04" fillcolor="#000">
+<div class="block">
 <center>
 	<table>
 	<tr>
@@ -17,6 +16,6 @@
 		<?php echo $html; ?>
 	</table>
 </center>
-</v:roundrect>
+</div>
 </body>
 </html>

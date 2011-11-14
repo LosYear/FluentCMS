@@ -69,9 +69,7 @@
 <title></title>
 </head>
 <body>
-<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
- 
-<v:roundrect arcsize=".04" fillcolor="#000">
+<div class=\"block\">
 <form method="post" action=' . $action . '>
 <CENTER>&#1053;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077; <INPUT type="input" name="caption" value="' . $r['caption'] . '"></input></CENTER><BR/><center>';
           if ($_SESSION['group'] == 1) {
@@ -98,7 +96,7 @@ name="isPage" ';
 <br>
 <br>
 <br>
-</v:roundrect>
+</div>
 </body>
 </html>';
       }

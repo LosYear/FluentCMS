@@ -4,8 +4,7 @@
     <link rel=Stylesheet type="text/css" href="styles/main.css">
 </head>
 <body>
-<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
-<v:roundrect arcsize=".04" fillcolor="#000">
+<div class="block">
 	<form method="post" action="index.php?mod=siteedit&step=2">
 		<center>
 			<label for="sitename">Имя сайта:</label><br/>
@@ -23,6 +22,6 @@
 			<input type="submit" name="submit" value="Изменить" />
 		</center>
 	</form>
-</v:roundrect>
+</div>
 </body>
 </html>

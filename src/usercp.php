@@ -91,7 +91,7 @@
 		}
 		header("Location: index.php");
 		exit;
-				$script = '';
+		$script = '';
 		if($_SESSION['auth'])
 		{
 			// Скрипт показывает выскальзывающую панель на странице загрузки

@@ -5,18 +5,17 @@
     // Main
     
     function atPanelEcho_contest(){
-		echo "<a href=\"index.php?plugin_control=cabinet\"><img title=\"Личный кабинет\" src=\"plugins/contest/imgs/panel.png\"></a><br/>";
+		echo "<a href=\"index.php?plugin_control=cabinet\"><img title=\"Личный кабинет\" src=\"plugins/contest/imgs/panel.png\"></a> ";
 		
 		if( $_SESSION['group'] == '2' || $_SESSION['group'] == '1'){
 		    // User group 1 - admin ; 2 - moder
-		    echo "<a href=\"index.php?plugin_control=moder_panel\"><img title=\"Панель модератора\" src=\"plugins/contest/imgs/moder.png\"></a><br/>";
+		    echo "<a href=\"index.php?plugin_control=moder_panel\"><img title=\"Панель модератора\" src=\"plugins/contest/imgs/moder.png\"></a> ";
 		}
 	}
 	
 	function  addScripts(){
 	    if ($_REQUEST['plugin_control'] == 'take_part' && $_REQUEST['type'] == '1'){
 	        echo "<script src=\"plugins/contest/js/main.js\" type=\"text/javascript\"></script>";
-	        echo "<script src=\"plugins/contest/js/jquery.timers.js\" type=\"text/javascript\"></script>";
 	    }
 	}
 	
@@ -25,6 +24,7 @@
 	function cabinet(){
 	    global $lang;
 	    echo "<a href=\"index.php?plugin_control=active_tours\">{$lang['active_tours']}</a>";
+		echo "<a href=\"index.php?plugin_control=all_tours\">{$lang['all_tours']}</a>";
 	}
 	
 	function active_tours(){
@@ -45,14 +45,32 @@
     	}	    
 	}
 	
+	function all_tours(){
+         global $db_host, $db_user, $db_pass, $db, $lang;
+         if (!mysql_connect($db_host, $db_user, $db_pass))
+          die(mysql_error());
+        mysql_select_db($db);	
+           
+	    $sql = "SELECT * FROM `contest` WHERE `type` = 2;";
+	    
+	    $result = mysql_query($sql) or die($lang['something_went_wrong']);
+	    echo "<h1>{$lang['all_tours']}</h1>";
+    	for ($i = 0; $i < mysql_num_rows($result); $i++){   
+          $r = mysql_fetch_array($result);
+          echo "<a href=\"index.php?plugin_control=tour_show&id={$r['id']}\">{$r['name']}</a></br> ";
+           
+          mysql_query($sql) or die(mysql_error());
+    	}	    
+	}
 	function tour_show(){
-	    if (isset($_REQUEST['id'])){
+	    if (isset($_GET['id'])){
+			$_REQUEST['id'] = $_GET['id'];
 	        global $db_host, $db_user, $db_pass, $db, $lang;
             if (!mysql_connect($db_host, $db_user, $db_pass))
               die(mysql_error());
             mysql_select_db($db);
             
-            $sql = "SELECT * FROM `contest` WHERE `id`='{$_REQUEST['id']}' LIMIT 1;";
+            $sql = "SELECT * FROM `contest` WHERE `id`='{$_GET['id']}' LIMIT 1;";
             
             $result = mysql_query($sql) or die(mysql_error());
             $result = mysql_fetch_array($result);
@@ -66,7 +84,7 @@
             echo "<p>{$res['name']}</p>";
             echo "<p>{$lang['date']}<br>{$lang['from']} {$result['from']}<br>{$lang['till']} {$result['till']}</p>";
             if ($result['subtype'] == '1'){
-                $sql = "SELECT * FROM `results` WHERE user_id='{$_SESSION['id']}' AND tour_id='{$_REQUEST['id']}' LIMIT 1;";
+                $sql = "SELECT * FROM `results` WHERE user_id='{$_SESSION['id']}' AND tour_id='{$_GET['id']}' LIMIT 1;";
                 $result2 = mysql_query($sql);
                 if (mysql_num_rows($result2) < 1){
                     echo "<br><b><a href=\"index.php?plugin_control=take_part&id={$result['id']}&type={$result['subtype']}\">{$lang['take_part']}</a></b>";
@@ -77,16 +95,16 @@
                 }
             }
             else {
-                 $sql = "SELECT * FROM `results` WHERE user_id='{$_SESSION['id']}' AND tour_id='{$_REQUEST['id']}' LIMIT 1;";
+                 $sql = "SELECT * FROM `results` WHERE user_id='{$_SESSION['id']}' AND tour_id='{$_GET['id']}' LIMIT 1;";
                  $result2 = mysql_query($sql);
                  if (mysql_num_rows($result2) < 1){
-                     $sql = "SELECT * FROM `questions` WHERE tour_id='{$_REQUEST['id']}' LIMIT 1;";
+                     $sql = "SELECT * FROM `questions` WHERE tour_id='{$_GET['id']}' LIMIT 1;";
                      $res = mysql_query($sql) or die($lang['something_went_wrong']);
                      $res = mysql_fetch_array($res);
                      $file = "/plugins/contest/data/".$res['question'];
                      
                      echo "<a href=\"$file\">{$lang['download']}</a>  ";
-                     echo "<a href=\"index.php?plugin_control=take_part&type=2&tour={$_REQUEST['id']}\">{$lang['upload']}</a>";
+                     echo "<a href=\"index.php?plugin_control=take_part&type=2&tour={$_GET['id']}\">{$lang['upload']}</a>";
                  }
                  else{
                    $result2 = mysql_fetch_array($result2);
@@ -206,7 +224,7 @@
         $id = $row['Number'] + 1;
         
         $tmp = $filename . "." . $ext;
-        $sql = "INSERT INTO `results` (`id`, `user_id`, `tour_id`, `points`, `state`, `adv`) VALUES ('$id', '{$_SESSION['id']}', '{$_REQUEST['id']}',
+        $sql = "INSERT INTO `results` (`id`, `user_id`, `tour_id`, `points`, `state`, `adv`) VALUES ('$id', '{$_SESSION['id']}', '{$_GET['id']}',
          '-1', '0', '$tmp');";
         mysql_query($sql) or die(mysql_query);
         
@@ -219,7 +237,8 @@
 	
 	function moder_main(){ // Moder panel main page
 	    global $lang;
-	    echo "<a href=\"index.php?plugin_control=moder_unchecked\">{$lang['unchecked']}</a>";
+	    echo "<a href=\"index.php?plugin_control=moder_unchecked\">{$lang['moder_unchecked']}</a><br/>";
+		echo "<a href=\"index.php?plugin_control=moder_checked\">{$lang['moder_checked']}</a> ";
 	    
 	}
 	
@@ -276,6 +295,60 @@
         }
         echo "</table>";
 	}
+	
+	function moder_checked(){
+		 global $db_host, $db_user, $db_pass, $db, $lang;
+        if (!mysql_connect($db_host, $db_user, $db_pass))
+            die(mysql_error());
+        mysql_select_db($db);
+        
+        $sql = "SELECT * FROM `results` WHERE `adv` != '--' AND `points` != '-1';";
+        $list = mysql_query($sql) or die($lang['something_went_wrong']);
+        
+       echo "<table>";
+	        echo "<tr>";
+	            echo "<td>{$lang['user']}</td>";
+	            echo "<td>{$lang['Tour_Root']}</td>";
+	            echo "<td>{$lang['tour']}</td>";
+	            echo "<td>{$lang['actions']}</td>";
+            echo "</tr>";
+            
+        for ($i = 0; $i < mysql_num_rows($list); $i++){   
+            $fList = mysql_fetch_array($list);
+            
+            $uid = $fList['user_id'];
+            
+            // Getting info about USER
+            
+            $sql_tmp = "SELECT * FROM `pages` WHERE id='$uid' LIMIT 1;";
+            $tmp = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+            $tmp = mysql_fetch_array($tmp);
+            
+            // Getting info about TOUR
+            
+            $tid = $fList['tour_id'];
+            $sql_tmp = "SELECT * FROM `contest` WHERE id='$tid' LIMIT 1;";
+            $tmp2 = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+            $tmp2 = mysql_fetch_array($tmp2);
+            
+            // Getting info about CAT
+            $rid = $tmp2['rootcat'];
+            $sql_tmp = "SELECT * FROM `contest` WHERE id='$rid' LIMIT 1;";
+            $tmp3 = mysql_query($sql_tmp) or die($lang['something_went_wrong']);
+            $tmp3 = mysql_fetch_array($tmp3);
+            
+             echo "<tr>";
+	            echo "<td>{$tmp['name']}</td>";
+	            echo "<td>{$tmp3['name']}</td>";
+	            echo "<td>{$tmp2['name']}</td>";
+	            echo "<td><a href='/plugins/contest/data/{$fList['adv']}'><img src='/plugins/contest/imgs/download_small.png' /></a> 
+	            <a href='index.php?plugin_control=moder_show&id={$fList['id']}'><img src='/plugins/contest/imgs/check_small.png' /></a></td>";
+	         echo "</tr>";
+            
+            mysql_query($sql) or die(mysql_error());
+        }
+        echo "</table>";
+	}
     
 	function moder_show (){
 	    global $db_host, $db_user, $db_pass, $db, $lang;
@@ -283,7 +356,7 @@
             die(mysql_error());
         mysql_select_db($db);
         
-	    $id = $_REQUEST['id'];
+	    $id = $_GET['id'];
 	    
 	    $sql = "SELECT * FROM `results` WHERE id='$id';";
         $list = mysql_query($sql) or die($lang['something_went_wrong']);
@@ -323,8 +396,8 @@
 	
 	function moder_check() {
 	    global $lang;
-	    $id = $_REQUEST['id'];
-	    $points = $_REQUEST['points'];
+	    $id = $_GET['id'];
+	    $points = $_POST['points'];
 	    
 	    if (is_numeric($points)){ // If number
 	        global $db_host, $db_user, $db_pass, $db;
@@ -343,6 +416,7 @@
 	$events->register("login_panel_echo","atPanelEcho_contest"); 
     $events->register("cabinet","cabinet");
     $events->register("active_tours","active_tours");
+	$events->register("all_tours","all_tours");
     $events->register("tour_show","tour_show");
     $events->register("take_part","take_part");
     $events->register("check","check");
@@ -350,6 +424,7 @@
     $events->register("uploadAns","uploadAns");
     $events->register("moder_panel","moder_main");
     $events->register("moder_unchecked","moder_unchecked");
+	$events->register("moder_checked","moder_checked");
     $events->register("moder_show", "moder_show");
     $events->register("moder_check", "moder_check");
 ?>

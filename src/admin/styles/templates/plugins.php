@@ -3,11 +3,12 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles/main.css">
 		<link rel="stylesheet" type="text/css" href="styles/checkBox/jquery.tzCheckbox/jquery.tzCheckbox.css" />
-	</head>
+		</head>
 	<body>
-	<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
-		<v:roundrect arcsize=".04" fillcolor="#000">
-			<center>
+<div class="block">
+P.S: А дизайн сломался ;-)<br>
+Уже работаем<br>
+ 			<center>
 			<div id="page">
 					<div>
 					<a href="index.php?mod=plugins&m=install&step=1">Установить плагин</a>
@@ -34,6 +35,6 @@
 				<script src="styles/checkBox/jquery.tzCheckbox/jquery.tzCheckbox.js"></script>
 				<script src="styles/checkBox/js/script.js"></script>
 			</center>
-		</v:roundrect>
+		</div>
 	</body>
 </html>

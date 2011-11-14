@@ -145,6 +145,7 @@
 	                        $html .= "<label for=\"ans4\">{$lang['answer']}</label> <input type=\"text\" name=\"ans4\" /> <br/>";
 	                        $html .= "<label for=\"wr_ans\">{$lang['write_answer']}</label> <input type=\"text\" name=\"wr_ans\" /> <br/>";
 	                        $html .= "<label for=\"point\">{$lang['point']}</label> <input type=\"text\" name=\"point\" /> <br/>";
+							$html .= "<label for=\"time\">{$lang['time']}</label> <input type=\"text\" name=\"time\" /> <br/>";
 	                        $html .= "<input type=\"submit\"/ value=\"{$lang['create']}\"> </form>";
 	                        require("../admin/styles/templates/empty.php"); 
 	                }
@@ -176,11 +177,12 @@
                                 `ans4` ,
                                 `write_ans` ,
                                 `tour_id` ,
-                                `point`
+                                `point`,
+								`time`
                                 )
                                 VALUES (
                                 '$id', '{$_REQUEST['question']}', '{$_REQUEST['ans1']}', '{$_REQUEST['ans2']}', '{$_REQUEST['ans3']}', '{$_REQUEST['ans4']}', '{$_REQUEST['wr_ans']}',
-                                '{$_REQUEST['contest']}', '{$_REQUEST['point']}'
+                                '{$_REQUEST['contest']}', '{$_REQUEST['point']}', {$_REQUEST['time']}
                                 );";
 		                mysql_query($sql) or die($lang['something_went_wrong']);
 		                $html .= $lang['created'];
@@ -200,7 +202,7 @@
 			            
 			            require_once '../plugins/contest/classes/class.upload.php';
 			            
-			            $hphoto = new upload_file($_FILES['task']);
+			            $hphoto = new upload($_FILES['task']);
 			            $filename = '';
 			            $ext = '';
 		                if ( $hphoto->uploaded ){

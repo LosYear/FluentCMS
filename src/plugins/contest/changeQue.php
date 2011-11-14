@@ -33,6 +33,7 @@
 		if($r != false){
     	    $response = 	"{\"mode\":\"quest\",
 							\"que\":\"{$r['question']}\",
+							\"time\":\"{$r['time']}\",
 							\"answs\":[
 							{\"ans\":\"{$r['ans1']}\"},
 							{\"ans\":\"{$r['ans2']}\"},

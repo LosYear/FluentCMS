@@ -2,7 +2,7 @@
 	include_once("./config.php");
 	require_once("./includes/classes/fEvent.php");
 	session_start();
-	#-------------------Р С›Р СћР вЂќР вЂўР вЂєР В¬Р СњР В«Р вЂў-Р В¤Р Р€Р СњР С™Р В¦Р пїЅР пїЅ--------------------------------
+	#-------------------Р В РЎвЂєР В РЎС›Р В РІР‚СњР В РІР‚СћР В РІР‚С”Р В Р’В¬Р В РЎСљР В Р’В«Р В РІР‚Сћ-Р В Р’В¤Р В Р в‚¬Р В РЎСљР В РЎв„ўР В Р’В¦Р В РїС—Р…Р В РїС—Р…--------------------------------
 	function is_email($email){
 		
 		if (!eregi("^[a-zA-Z0-9\._-]+@[a-zA-Z0-9\._-]+\.[a-zA-Z]{2,4}$",$email)){
@@ -12,7 +12,7 @@
 			return true;
 		}
 	}
-	#------------------Р В¤Р Р€Р СњР С™Р В¦Р пїЅР пїЅ-Р вЂќР вЂєР Р‡-Р вЂ™Р В«Р вЂ™Р С›Р вЂќР С’-Р РЃР С’Р вЂ�Р вЂєР С›Р СњР С’------------------------
+	#------------------Р В Р’В¤Р В Р в‚¬Р В РЎСљР В РЎв„ўР В Р’В¦Р В РїС—Р…Р В РїС—Р…-Р В РІР‚СњР В РІР‚С”Р В Р вЂЎ-Р В РІР‚в„ўР В Р’В«Р В РІР‚в„ўР В РЎвЂєР В РІР‚СњР В РЎвЂ™-Р В Р РѓР В РЎвЂ™Р В РІР‚пїЅР В РІР‚С”Р В РЎвЂєР В РЎСљР В РЎвЂ™------------------------
 	function fl_title(){
 		global $events;
 		$events->fire("title_print_start","");
@@ -69,7 +69,7 @@
 		}
 	}	
 	
-	function fl_texts(){
+	function fl_texts($template){
 		global $events;
 		$events->fire("content_print_start","");
         global $db_host, $db_user, $db_pass, $db;
@@ -89,7 +89,7 @@
 			$id=$r['id'];
 			$id="$id";
             $m="<!-- more -->";
-			if(!strstr($r['text'],$m)){ // Р вЂќР В»РЎРЏ Р СљР С›Р В Р С’
+			if(!strstr($r['text'],$m)){ // Р В РІР‚СњР В Р’В»Р РЋР РЏ Р В РЎС™Р В РЎвЂєР В Р’В Р В РЎвЂ™
 				$t2=$r['text'];
 			}
 			else{
@@ -97,7 +97,17 @@
 				global $next;
 				$t2=$t2."..."." "."<A href=index.php?mod=shownews&p=".$id.">".$next."</A>";
 			}
-			echo "<A href=index.php?mod=shownews&p=".$id.">".$r['caption']."</A><br>".$t2."<br /><hr>";
+			// Replacing variables in template
+			
+			$text = "";
+			$text = str_replace("%id%",$id,$template);
+			$text = str_replace("%title%",$r['caption'],$text);
+			$text = str_replace("%author%",$r['author'],$text);
+			$text = str_replace("%text%",$t2,$text);
+			$text = str_replace("%date%",$r['data'],$text);			
+			
+			//echo "<A href=index.php?mod=shownews&p=".$id.">".$r['caption']."</A><br>".$t2."<br /><hr>";
+			echo $text;
 			mysql_query($query) or die(mysql_error());
 			$events->fire("article_print_end","");
 		}
@@ -128,7 +138,7 @@
 		echo $text;
 		$events->fire("pages_items_print_end","");
 	}	
-	function fl_text($p){
+	function fl_text($p, $template){
 		global $events;
 		$events->fire("farticle_print_start","");
         global $db_host, $db_user, $db_pass, $db;
@@ -137,7 +147,12 @@
 		$query="SELECT * FROM `$db`.`texts` WHERE id=$p";	
 		$result=mysql_query($query);	
 		$r=mysql_fetch_array($result);
-		$text="<b>".$r['caption']."</b><br>".$r['text']."<br>Написал ".$r['author']." ".$r['data'];
+		$text = "";
+		$text = str_replace("%id%",$id,$template);
+		$text = str_replace("%title%",$r['caption'],$text);
+		$text = str_replace("%author%",$r['author'],$text);
+		$text = str_replace("%text%",$r['text'],$text);
+		$text = str_replace("%date%",$r['data'],$text);	
 		echo $text;
 		$events->fire("farticle_print_end","");
 	}
@@ -166,18 +181,20 @@
 		$events->fire("footer_print_end","");
 	}
 	
-	function fl_page_content_think(){
+	function fl_page_content_think($template, $full, $pre_empty, $post_empty){
 		global $events;
 		if($_REQUEST['mod']==='shownews'){
-			fl_text($_REQUEST['p']);
+			fl_text($_REQUEST['p'], $full);
 			echo "<BR/>" ;
 			require_once ('includes/comments_index.php');
 		}
 		else if( isset($_POST['empty'])){
+			echo $pre_empty;
 			$events->fire($_POST['empty'],"");
+			echo $post_empty;
 		}
 		else if($_REQUEST['mod']==''){
-			fl_texts();
+			fl_texts($template);
 		}
 		else{
 			echo "Ooops.";

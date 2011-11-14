@@ -15,8 +15,7 @@
 </head>
 <body>
 <form action="index.php?mod=plugins&m=install&step=2" method="post">
-<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
-<v:roundrect arcsize=".04" fillcolor="#000">
+<div class="block">
 <center>
 	<?php
 		if ( $_REQUEST['step'] === '2' ){
@@ -28,7 +27,7 @@
 	<input type="text" name="plugin_folder"> </input><br/>
 	<input type="submit" name="Установить" value="Установить расширение"></input><br/>
 </center>
-</v:roundrect>
+</div>
 </form>
 </body>
 </html>

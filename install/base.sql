@@ -2,7 +2,7 @@
 -- version 3.3.3
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
+-- Хост: localhost localhost
 -- Время создания: Ноя 14 2011 г., 10:33
 -- Версия сервера: 5.1.50
 -- Версия PHP: 5.3.5

@@ -2,8 +2,8 @@
 -- version 3.3.3
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Ноя 14 2011 г., 10:24
+-- Хост: localhost localhost1
+-- Время создания: Ноя 14 2011 г., 10:33
 -- Версия сервера: 5.1.50
 -- Версия PHP: 5.3.5
 
@@ -18,6 +18,9 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- База данных: `fluentcms`
 --
+DROP DATABASE `fluentcms`;
+CREATE DATABASE `fluentcms` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `fluentcms`;
 
 -- --------------------------------------------------------
 

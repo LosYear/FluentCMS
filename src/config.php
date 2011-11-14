@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	//session_start();
 	//		РљРѕРЅС„РёРіСѓСЂР°С†РёРѕРЅРЅС‹Р№ С„Р°Р№Р»
 	$db_host="localhost";
@@ -21,5 +21,5 @@
 	$language=$f['language']; //
 	$path = "styles/$theme_name/";
 	$cms_vers = "0.2a1";
-	$powered_by = "Powered by Fluent CMS 0.2 alpha1";
+	$powered_by = "Powered by Fluent CMS 0.2 pre-alpha";
 ?>

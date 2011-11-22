@@ -1,9 +1,7 @@
-var tour_id = 0;
 var number = 0;
 var t;
 
 $(document).ready(function() {
-	tour_id = 2;
 	number = 0;
 	display_question();
 });

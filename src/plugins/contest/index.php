@@ -15,6 +15,7 @@
 	
 	function  addScripts(){
 	    if ($_REQUEST['plugin_control'] == 'take_part' && $_REQUEST['type'] == '1'){
+			echo "<script>var tour_id={$_GET['id']};</script>";
 	        echo "<script src=\"plugins/contest/js/main.js\" type=\"text/javascript\"></script>";
 	    }
 	}
@@ -23,7 +24,7 @@
 	
 	function cabinet(){
 	    global $lang;
-	    echo "<a href=\"index.php?plugin_control=active_tours\">{$lang['active_tours']}</a>";
+	    echo "<a href=\"index.php?plugin_control=active_tours\">{$lang['active_tours']}</a> ";
 		echo "<a href=\"index.php?plugin_control=all_tours\">{$lang['all_tours']}</a>";
 	}
 	

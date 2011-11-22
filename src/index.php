@@ -2,7 +2,7 @@
 	session_start();
 	//error_reporting(0);
     require_once 'config.php';
-	require_once 'includes/classes/fEvent.php'; 	 // Ïîäêëþ÷åíèå ñèñòåìû ñîáûòèé
+	require_once 'includes/classes/fEvent.php'; 	 // ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ ÑÐ¸ÑÑ‚ÐµÐ¼Ñ‹ ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ð¹
 	require_once 'includes/plugins.php';
 	require_once 'includes/functions.php';
 	if( isset ($_REQUEST['plugin_control'])){
@@ -11,6 +11,6 @@
 	else{
 		require_once $path."index.php";
 	}
-	//require_once 'includes/classes/fLog.php'; // Âåäåíèå ëîãîâ
+	//require_once 'includes/classes/fLog.php'; // Ð’ÐµÐ´ÐµÐ½Ð¸Ðµ Ð»Ð¾Ð³Ð¾Ð²
 	
 ?>

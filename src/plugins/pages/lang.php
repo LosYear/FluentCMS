@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 	$lang['profiles'] = "Команды";
 	$lang['profile_create'] = "Создание профиля";
 	$lang['profile_create_new'] = "Создай свой профиль!";
 	$lang['team_name'] = "Название команды";
-	$lang['teacher'] = "Учитель";
+	$lang['teacher'] = "Руководитель";
 	$lang['school'] = "Школа";
 	$lang['about_team'] = "О команде ( Например, состав команды )";
 	$lang['photo'] = "Фотография или аватар";

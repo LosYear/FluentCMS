@@ -1,8 +1,10 @@
 <?php
 	session_start();
-        require_once 'config.php';
-        require_once "langs/".$language.".php";
-        require_once 'includes/functions.php';
+	require_once 'config.php';
+	require_once "langs/".$language.".php";
+	require_once 'includes/classes/fEvent.php'; 
+	require_once 'includes/plugins.php';
+	require_once 'includes/functions.php';
 	if($_REQUEST['mod']==='logout'){
 			session_unregister("auth");
 			session_unregister("login");
@@ -84,13 +86,15 @@
 			$pass = md5( $pass );
 			$sql = "INSERT INTO `$db`.`users`(`id`,`login`,`pass`,`email`,`group`) VALUES('$id','$login','$pass','$email','0')" ;
 			$link = mysql_query( $sql );
+			$events->fire("user_registered","");
 		}
 		if(count($err))
 		{
 			$_SESSION['msg']['reg-err'] = implode('<br />',$err);
 		}
+
 		header("Location: index.php");
-		exit;
+		
 		$script = '';
 		if($_SESSION['auth'])
 		{
@@ -103,7 +107,6 @@
 			});
 			</script>';
 		}
-
 	}
 	else if ( $_REQUEST['mod'] === 'passchange' ){
 		$oldpass = md5($_REQUEST['oldpass']); // Получаем данные

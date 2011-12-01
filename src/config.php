@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	//session_start();
 	//		РљРѕРЅС„РёРіСѓСЂР°С†РёРѕРЅРЅС‹Р№ С„Р°Р№Р»
 	$db_host="localhost";

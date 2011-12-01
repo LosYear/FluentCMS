@@ -118,37 +118,42 @@
 	}
 	
 	function take_part(){
-	    if ($_REQUEST['type'] == '1'){
-	        global $db_host, $db_user, $db_pass, $db, $lang;
-            if (!mysql_connect($db_host, $db_user, $db_pass))
-              die(mysql_error());
-            mysql_select_db($db);
-            
-	        /*echo "<form action=\"index.php?plugin_control=check&tour={$_REQUEST['id']}\" method=\"post\">";
-	        $result = mysql_query($sql) or die(mysql_error());
-            for ($i = 0; $i < mysql_num_rows($result); $i++){   
-	          $r = mysql_fetch_array($result);
-               echo "<label>{$r['question']}</label><br>";
-               
-               echo "<div><input type=\"radio\" value=\"1\" name=\"{$r['id']}\"/> {$r['ans1']}</div>";
-               echo "<div><input type=\"radio\" value=\"2\" name=\"{$r['id']}\"/> {$r['ans2']}</div>";
-               echo "<div><input type=\"radio\" value=\"3\" name=\"{$r['id']}\"/> {$r['ans3']}</div>";
-               echo "<div><input type=\"radio\" value=\"4\" name=\"{$r['id']}\"/> {$r['ans4']}</div><br>";
-	          
-              mysql_query($sql) or die(mysql_error());
-            }
-            echo "<input type=\"submit\" value=\"{$lang['send']}\" />";
-            echo "</form>";*/
-	    }
-	    else{
-	         global $db_host, $db_user, $db_pass, $db, $lang;
-             if (!mysql_connect($db_host, $db_user, $db_pass))
-              die(mysql_error());
-             mysql_select_db($db);
-	         echo "<form enctype=\"multipart/form-data\" action=\"index.php?plugin_control=uploadAns&id={$_REQUEST['tour']}\" method='post'>";
-             echo "<label for=\"file\">{$lang['uploadAns']}</label><input type=\"file\" name=\"file\"/><br/>";
-	         echo "<input type=\"submit\"/ value=\"{$lang['send']}\"> </form>";
-	    }
+		if( $_SESSION['auth'] == true ){
+			if ($_REQUEST['type'] == '1'){
+				global $db_host, $db_user, $db_pass, $db, $lang;
+				if (!mysql_connect($db_host, $db_user, $db_pass))
+				  die(mysql_error());
+				mysql_select_db($db);
+				
+				/*echo "<form action=\"index.php?plugin_control=check&tour={$_REQUEST['id']}\" method=\"post\">";
+				$result = mysql_query($sql) or die(mysql_error());
+				for ($i = 0; $i < mysql_num_rows($result); $i++){   
+				  $r = mysql_fetch_array($result);
+				   echo "<label>{$r['question']}</label><br>";
+				   
+				   echo "<div><input type=\"radio\" value=\"1\" name=\"{$r['id']}\"/> {$r['ans1']}</div>";
+				   echo "<div><input type=\"radio\" value=\"2\" name=\"{$r['id']}\"/> {$r['ans2']}</div>";
+				   echo "<div><input type=\"radio\" value=\"3\" name=\"{$r['id']}\"/> {$r['ans3']}</div>";
+				   echo "<div><input type=\"radio\" value=\"4\" name=\"{$r['id']}\"/> {$r['ans4']}</div><br>";
+				  
+				  mysql_query($sql) or die(mysql_error());
+				}
+				echo "<input type=\"submit\" value=\"{$lang['send']}\" />";
+				echo "</form>";*/
+			}
+			else{
+				 global $db_host, $db_user, $db_pass, $db, $lang;
+				 if (!mysql_connect($db_host, $db_user, $db_pass))
+				  die(mysql_error());
+				 mysql_select_db($db);
+				 echo "<form enctype=\"multipart/form-data\" action=\"index.php?plugin_control=uploadAns&id={$_REQUEST['tour']}\" method='post'>";
+				 echo "<label for=\"file\">{$lang['uploadAns']}</label><input type=\"file\" name=\"file\"/><br/>";
+				 echo "<input type=\"submit\"/ value=\"{$lang['send']}\"> </form>";
+			}
+		}
+		else{
+			echo "<h3>Вы должны зайти на сайт, прежде чем принимать участие в туре!</h3>";
+		}
 	}
 	
 	function check(){
@@ -239,7 +244,8 @@
 	function moder_main(){ // Moder panel main page
 	    global $lang;
 	    echo "<a href=\"index.php?plugin_control=moder_unchecked\">{$lang['moder_unchecked']}</a><br/>";
-		echo "<a href=\"index.php?plugin_control=moder_checked\">{$lang['moder_checked']}</a> ";
+		echo "<a href=\"index.php?plugin_control=moder_checked\">{$lang['moder_checked']}</a><br/> ";
+		echo "<a href=\"index.php?plugin_control=results\">Результаты</a>";
 	    
 	}
 	
@@ -414,6 +420,57 @@
 	        echo $lang['not_a_number'];
 	    }
 	}
+	
+	function results(){
+		// Echo tours list
+		global $db_host, $db_user, $db_pass, $db, $lang;
+        if (!mysql_connect($db_host, $db_user, $db_pass))
+            die(mysql_error());
+        mysql_select_db($db);
+		
+		$sql = "SELECT * FROM `contest` WHERE `type` = '2';";
+		$result = mysql_query($sql);
+		
+		for ($i = 0; $i < mysql_num_rows($result); $i++){   
+	        $r = mysql_fetch_array($result);
+			
+			echo "<a href=\"index.php?plugin_control=show_results&id={$r['id']}\">{$r['name']}</a><br>";
+	        
+	        mysql_query($sql) or die(mysql_error());
+        }
+		
+		mysql_close();
+		
+	}
+	
+	function show_results(){
+		echo "<table>
+			  <tr>
+				<td>ID команды</td>
+				<td>Имя команды</td>
+				<td>Результат</td>
+			  </tr>";
+		global $db_host, $db_user, $db_pass, $db, $lang;
+        if (!mysql_connect($db_host, $db_user, $db_pass))
+            die(mysql_error());
+        mysql_select_db($db);
+		
+		$sql = "SELECT * FROM `results` WHERE `tour_id` = '{$_REQUEST['id']}';";
+		$result = mysql_query($sql);
+		
+		for ($i = 0; $i < mysql_num_rows($result); $i++){   
+	        $r = mysql_fetch_array($result);
+			
+			$sql1 = "SELECT * FROM `pages` WHERE `id` = '{$r['user_id']}' LIMIT 1;";
+			$res1 = mysql_query($sql1);
+			$res1 = mysql_fetch_array($res1);
+			
+			echo "<tr><td>{$r['user_id']}</td><td>{$res1['name']}</td><td>{$r['points']}</td></tr>";
+	        
+	        mysql_query($sql) or die(mysql_error());
+        }
+		echo "</table>";
+	}
 	$events->register("login_panel_echo","atPanelEcho_contest"); 
     $events->register("cabinet","cabinet");
     $events->register("active_tours","active_tours");
@@ -428,4 +485,6 @@
 	$events->register("moder_checked","moder_checked");
     $events->register("moder_show", "moder_show");
     $events->register("moder_check", "moder_check");
+	$events->register("results", "results");
+	$events->register("show_results","show_results");
 ?>

@@ -91,13 +91,13 @@
 			
 			if($r != false){
 				$response = 	"{\"mode\":\"quest\",
-								\"que\":\"{$r['question']}\",
+								\"que\":\"".addslashes($r['question'])."\",
 								\"time\":\"{$r['time']}\",
 								\"answs\":[
-								{\"ans\":\"{$r['ans1']}\"},
-								{\"ans\":\"{$r['ans2']}\"},
-								{\"ans\":\"{$r['ans3']}\"},
-								{\"ans\":\"{$r['ans4']}\"}]}";
+								{\"ans\":\"".addslashes($r['ans1'])."\"},
+								{\"ans\":\"".addslashes($r['ans2'])."\"},
+								{\"ans\":\"".addslashes($r['ans3'])."\"},
+								{\"ans\":\"".addslashes($r['ans4'])."\"}]}";
 				echo $response;
 			}
 			else{

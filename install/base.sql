@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.3
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost localhost1
--- Время создания: Ноя 14 2011 г., 10:33
--- Версия сервера: 5.1.50
--- Версия PHP: 5.3.5
+-- Хост: localhost
+-- Время создания: Дек 08 2011 г., 18:43
+-- Версия сервера: 5.1.41
+-- Версия PHP: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT=0;
+START TRANSACTION;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -92,6 +94,9 @@ CREATE TABLE IF NOT EXISTS `messages` (
 -- Дамп данных таблицы `messages`
 --
 
+INSERT INTO `messages` (`id`, `from`, `to`, `title`, `text`, `date`, `state`, `hidden`) VALUES
+(1, 1, 2, 'Тестовое сообщение', 'Текст сообщения', '2011-11-27 19:22:17', 1, 0),
+(2, 1, 1, '1', '1', '2011-12-01 10:26:13', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -122,7 +127,8 @@ INSERT INTO `modules` (`id`, `name`, `author`, `folder`, `title`, `description`,
 (1, 'fl_twitter', 'LosYear aka Losev Yaroslav', 'twitter', 'FLuent CMS Twitter', 'Twitter', '0.1 alpha', '*', '*', 0, 'index.php', 'E-Mail : flexo.o@yandex.ru www : www.losyar.ru'),
 (2, 'fl_profiles', 'LosYear aka Losev Yaroslav', 'pages', 'User Profiles', 'User Profiles for Fluent. Part of Fluent Rush', '0.1 alpha', '*', '*', 1, 'index.php', 'E-Mail : flexo.o@yandex.ru www : www.losyar.ru'),
 (3, 'fl_concore', 'LosYear aka Losev Yaroslav', 'contest', 'Contest core', 'Core for contest', '0.1 alpha', '*', '*', 1, 'index.php', 'E-Mail : flexo.o@yandex.ru www : www.losyar.ru'),
-(4, 'fr_messages', 'LosYear aka Losev Yaroslav', 'messages', 'Fluent CMS private messages', 'Users can write messages to each other', '0.1 alpha', '*', '*', 0, 'index.php', 'E-Mail : flexo.o@yandex.ru www : www.losyar.ru');
+(4, 'fr_messages', 'LosYear aka Losev Yaroslav', 'messages', 'Fluent CMS private messages', 'Users can write messages to each other', '0.1 alpha', '*', '*', 0, 'index.php', 'E-Mail : flexo.o@yandex.ru www : www.losyar.ru'),
+(5, 'send_mail', 'LosYear aka Losev Yaroslav', 'send_mail', 'Send Mail', 'Sending mail on different events', '0.1 alpha', '*', '*', 1, 'index.php', 'E-Mail : flexo.o@yandex.ru www : www.losyar.ru');
 
 -- --------------------------------------------------------
 
@@ -175,9 +181,10 @@ CREATE TABLE IF NOT EXISTS `questions` (
 
 INSERT INTO `questions` (`id`, `question`, `ans1`, `ans2`, `ans3`, `ans4`, `write_ans`, `tour_id`, `point`, `time`) VALUES
 (4, '3.txt', '--', '--', '--', '--', -1, 3, -1, 0),
-(2, '5+5', '10', '20', '30', '40', 1, 2, 10, 10000),
-(1, 'Сколько будет 2+2', '4', '5', '7', '9', 1, 2, 5, 10000),
-(5, 'Работает ли таймер?', 'Хз', 'Да', 'Надеюсь', 'Ес-но будет работать', 4, 2, 10, 60000);
+(2, '5+5', '10', '20', '30', '40', 1, 2, 10, 100000),
+(1, 'Сколько будет "2+2"', '4', '', '"7"', '9', 1, 2, 5, 100000),
+(5, 'Работает ли таймер?', 'Хз', 'Да', 'Ес-но будет работать', '---', 3, 2, 10, 100000),
+(3, 'tmp', '1', '2', '3', '4', 1, 2, 10, 100000);
 
 -- --------------------------------------------------------
 
@@ -198,9 +205,6 @@ CREATE TABLE IF NOT EXISTS `results` (
 -- Дамп данных таблицы `results`
 --
 
-INSERT INTO `results` (`id`, `user_id`, `tour_id`, `points`, `state`, `adv`) VALUES
-(4, 1, 3, 99, 0, '1_1.txt'),
-(5, 1, 2, 15, 0, '--');
 
 -- --------------------------------------------------------
 
@@ -258,6 +262,24 @@ INSERT INTO `texts` (`id`, `caption`, `text`, `data`, `author`, `isPage`, `isHid
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `tmp_result`
+--
+
+CREATE TABLE IF NOT EXISTS `tmp_result` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `tour_id` int(11) NOT NULL,
+  `data` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `tmp_result`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `users`
 --
 
@@ -275,9 +297,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `login`, `pass`, `email`, `group`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@localhost.ru', 1),
-(2, 'com1', 'c4ca4238a0b923820dcc509a6f75849b', 'com1@yandex.ru', 0),
-(3, 'com2', 'c4ca4238a0b923820dcc509a6f75849b', 'com2@ya.ru', 0),
-(4, 'com3', 'c4ca4238a0b923820dcc509a6f75849b', 'com3@yandex.ruu', 0),
-(5, 'User', 'c4ca4238a0b923820dcc509a6f75849b', 'ys@yandex.ru', 0),
-(6, 'moder', '9ab97e0958c6c98c44319b8d06b29c94', 'moder@yandex.ru', 2),
-(7, 'LosYear', 'f41f619a4529c74e406c55ac4d7870a3', 'losevyaroslav@gmail.com', 0);
+(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user@user.ru', 0);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

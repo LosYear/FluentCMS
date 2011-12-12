@@ -29,7 +29,7 @@ function display_question()
 					$('<br/>').html('').appendTo("div.container");
 					$(obj.answs).each(function(index)
 					{
-						if(obj.answs[index].ans != '---'){
+						if((obj.answs[index].ans != '---')&&(obj.answs[index].ans != '')){
 							$('<input type="radio" value="' + (index + 1) + '" name="ans"/>').html('').appendTo("div.container");
 							$('<span></span>').html('   ' + obj.answs[index].ans).appendTo("div.container");
 							$('<br/>').html('').appendTo("div.container");

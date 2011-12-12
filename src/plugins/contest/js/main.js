@@ -16,6 +16,9 @@ function display_question()
 	$.ajax({url:"plugins/contest/changeQue.php",
 			type:"POST",
 			data:{tour_id:tour_id,question:number,ans:value},
+			beforeSend : function () {
+				$("div.container").html('<img src=\'/plugins/contest/imgs/loader.gif\' title=\'Р—Р°РіСЂСѓР·РєР°\' />');
+			},
 			success:function(result,status,xhr){
 				clearTimeout(t);
 				obj = eval ("(" + result + ")");
@@ -26,9 +29,11 @@ function display_question()
 					$('<br/>').html('').appendTo("div.container");
 					$(obj.answs).each(function(index)
 					{
-						$('<input type="radio" value="' + (index + 1) + '" name="ans"/>').html('').appendTo("div.container");
-						$('<span></span>').html('   ' + obj.answs[index].ans).appendTo("div.container");
-						$('<br/>').html('').appendTo("div.container");
+						if(obj.answs[index].ans != '---'){
+							$('<input type="radio" value="' + (index + 1) + '" name="ans"/>').html('').appendTo("div.container");
+							$('<span></span>').html('   ' + obj.answs[index].ans).appendTo("div.container");
+							$('<br/>').html('').appendTo("div.container");
+						}
 					});
 					$('<br/>').html('').appendTo("div.container");
 					$('<button type=\"button\" style=\"width:50px\" onclick=\"next();\" id=\"ok\"></button>').html('OK').appendTo("div.container");
@@ -39,7 +44,7 @@ function display_question()
 			},
 			error:function(xhr){
 				clearTimeout(t);
-				$("div.container").html("Произошла ошибка: <br/>" + xhr.status + " " + xhr.statusText + "<br/>Попробуйте перезагрузить страницу");
+				$("div.container").html("РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР°: <br/>" + xhr.status + " " + xhr.statusText + "<br/>РџРѕРїСЂРѕР±СѓР№С‚Рµ РїРµСЂРµР·Р°РіСЂСѓР·РёС‚СЊ СЃС‚СЂР°РЅРёС†Сѓ");
 			}
 	});
 }

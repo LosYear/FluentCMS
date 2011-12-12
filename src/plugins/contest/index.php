@@ -124,22 +124,6 @@
 				if (!mysql_connect($db_host, $db_user, $db_pass))
 				  die(mysql_error());
 				mysql_select_db($db);
-				
-				/*echo "<form action=\"index.php?plugin_control=check&tour={$_REQUEST['id']}\" method=\"post\">";
-				$result = mysql_query($sql) or die(mysql_error());
-				for ($i = 0; $i < mysql_num_rows($result); $i++){   
-				  $r = mysql_fetch_array($result);
-				   echo "<label>{$r['question']}</label><br>";
-				   
-				   echo "<div><input type=\"radio\" value=\"1\" name=\"{$r['id']}\"/> {$r['ans1']}</div>";
-				   echo "<div><input type=\"radio\" value=\"2\" name=\"{$r['id']}\"/> {$r['ans2']}</div>";
-				   echo "<div><input type=\"radio\" value=\"3\" name=\"{$r['id']}\"/> {$r['ans3']}</div>";
-				   echo "<div><input type=\"radio\" value=\"4\" name=\"{$r['id']}\"/> {$r['ans4']}</div><br>";
-				  
-				  mysql_query($sql) or die(mysql_error());
-				}
-				echo "<input type=\"submit\" value=\"{$lang['send']}\" />";
-				echo "</form>";*/
 			}
 			else{
 				 global $db_host, $db_user, $db_pass, $db, $lang;

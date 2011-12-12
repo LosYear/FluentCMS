@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	class msg {
 		function __contruct(){ // Конструктор класса
 		

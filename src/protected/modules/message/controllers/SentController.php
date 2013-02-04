@@ -1,0 +1,18 @@
+<?php
+
+class SentController extends Controller
+{
+	public $defaultAction = 'sent';
+         public $layout='//layouts/main';
+
+	public function actionSent() {
+		$messagesAdapter = Message::getAdapterForSent(Yii::app()->user->getId());
+		$pager = new CPagination($messagesAdapter->totalItemCount);
+		$pager->pageSize = 10;
+		$messagesAdapter->setPagination($pager);
+
+		$this->render(Yii::app()->getModule('message')->viewPath . '/sent', array(
+			'messagesAdapter' => $messagesAdapter
+		));
+	}
+}

@@ -141,7 +141,6 @@
  * the <code>performAjaxValidation</code> method and its invocation.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
- * @version $Id$
  * @package system.web.widgets
  * @since 1.1.1
  */
@@ -319,6 +318,9 @@ class CActiveForm extends CWidget
 	{
 		if(!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id']=$this->id;
+		else
+			$this->id=$this->htmlOptions['id'];
+
 		if($this->stateful)
 			echo CHtml::statefulForm($this->action, $this->method, $this->htmlOptions);
 		else
@@ -343,7 +345,7 @@ class CActiveForm extends CWidget
 				$cs->registerCoreScript('jquery');
 				$cs->registerScript('CActiveForm#focus',"
 					if(!window.location.hash)
-						$('".$this->focus."').focus();
+						jQuery('".$this->focus."').focus();
 				");
 			}
 			return;
@@ -364,7 +366,7 @@ class CActiveForm extends CWidget
 		$options=CJavaScript::encode($options);
 		$cs->registerCoreScript('yiiactiveform');
 		$id=$this->id;
-		$cs->registerScript(__CLASS__.'#'.$id,"\$('#$id').yiiactiveform($options);");
+		$cs->registerScript(__CLASS__.'#'.$id,"jQuery('#$id').yiiactiveform($options);");
 	}
 
 	/**
@@ -593,7 +595,7 @@ class CActiveForm extends CWidget
 	}
 
 	/**
-	 * Renders an number field for a model attribute.
+	 * Renders a number field for a model attribute.
 	 * This method is a wrapper of {@link CHtml::activeNumberField}.
 	 * Please check {@link CHtml::activeNumberField} for detailed information
 	 * about the parameters for this method.
@@ -609,7 +611,7 @@ class CActiveForm extends CWidget
 	}
 
 	/**
-	 * Renders an number field for a model attribute.
+	 * Generates a range field for a model attribute.
 	 * This method is a wrapper of {@link CHtml::activeRangeField}.
 	 * Please check {@link CHtml::activeRangeField} for detailed information
 	 * about the parameters for this method.
@@ -625,7 +627,7 @@ class CActiveForm extends CWidget
 	}
 
 	/**
-	 * Renders an number field for a model attribute.
+	 * Renders a date field for a model attribute.
 	 * This method is a wrapper of {@link CHtml::activeDateField}.
 	 * Please check {@link CHtml::activeDateField} for detailed information
 	 * about the parameters for this method.

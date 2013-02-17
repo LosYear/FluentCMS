@@ -17,6 +17,9 @@
  */
 class MenuItem extends CActiveRecord
 {
+    
+        private $_items;
+        private $_result;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -43,7 +46,7 @@ class MenuItem extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('parent_id, menu_id, title, href, type, condition_name, condition_denial, order, status', 'required'),
+			array('parent_id, menu_id, title, href, type, status', 'required'),
 			array('parent_id, menu_id, condition_denial, order, status', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -69,15 +72,15 @@ class MenuItem extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'parent_id' => 'Parent',
+			'parent_id' => Yii::t('admin', 'Parent'),
 			'menu_id' => 'Menu',
-			'title' => 'Title',
-			'href' => 'Href',
-			'type' => 'Type',
-			'condition_name' => 'Condition Name',
-			'condition_denial' => 'Condition Denial',
-			'order' => 'Order',
-			'status' => 'Status',
+			'title' => Yii::t('admin', 'Title'),
+			'href' => Yii::t('admin', 'Link'),
+			'type' => Yii::t('admin', 'Type'),
+			'condition_name' => Yii::t('admin', 'Condition'),
+			'condition_denial' => Yii::t('admin', 'Condition Denial'),
+			'order' => Yii::t('admin', 'Order'),
+			'status' => Yii::t('admin', 'Status'),
 		);
 	}
 
@@ -107,4 +110,55 @@ class MenuItem extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        /*  
+         * Forming tree of elements.
+         */
+        
+        private function formTree($parent_id, $level) { 
+            if (isset($this->_items[$parent_id])) { 
+                foreach ($this->_items[$parent_id] as $value) {
+                    $level++;
+                    
+                    $title = '';
+                    for ( $i = 0; $i<$level; $i++){
+                        $title .= '-';
+                    }
+                    $title .= ' '.$value->title;
+                    
+                    
+                    $this->_result[$value->id] = $title;
+                    
+                    $this->formTree($value->id, $level); 
+                    $level--;
+                } 
+            } 
+        } 
+        
+        /* 
+         * Returns array of elements for combobox
+         * [id] = [title]
+         */
+        
+        public function itemsCombo(){
+            
+            $criteria=new CDbCriteria;
+            $criteria->condition='menu_id=:id';
+            $criteria->params=array(':id'=>$this->menu_id);
+            $criteria->order = '`order`';
+            $elements=$this->findAll($criteria); 
+            
+            $sorted = array();
+            
+            foreach ($elements as $el) {
+                $sorted[$el['parent_id']][] = $el; 
+            }
+            
+            $this->_items = $sorted;
+            $this->_result = array();
+            $this->_result[] = Yii::t('admin', 'None');
+            
+            $this->formTree(0, 0);
+            return $this->_result;
+        }
 }

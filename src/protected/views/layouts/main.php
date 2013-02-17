@@ -70,7 +70,6 @@
 		<?php echo Yii::powered(); ?>
                 <?php $this->widget('application.widgets.BlockWidget', array('name' => 'test')); ?>
 	</div><!-- footer -->
-
 </div><!-- page -->
 
 </body>

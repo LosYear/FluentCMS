@@ -15,7 +15,7 @@ return array(
     'id' => 'fluentCMS',
     
     'language' => 'ru',
-    //'theme' => 'classic',
+    'theme' => 'swsys',
     
     // preloading 'log' component
     'preload' => array(
@@ -78,6 +78,7 @@ return array(
             'getNameMethod' => 'getUsername',
             'getSuggestMethod' => 'getSuggest',
         ),
+        'rush',
     ),
     
     // application components

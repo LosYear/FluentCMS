@@ -74,6 +74,7 @@ return array(
             'getNameMethod' => 'getUsername',
             'getSuggestMethod' => 'getSuggest',
         ),
+        'rush',
     ),
     // application components
     'components' => array(

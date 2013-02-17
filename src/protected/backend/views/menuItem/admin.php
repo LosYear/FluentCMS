@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>Yii::t('admin', 'Manage menu items'), 'url'=>array('admin', 'id'=>$model->menu_id), 'icon'=>'list black',),
-	array('label'=>Yii::t('admin', 'Create menu item'), 'url'=>array('create'), 'icon'=>'file black'),
+	array('label'=>Yii::t('admin', 'Create menu item'), 'url'=>array('create', 'id'=>$model->menu_id), 'icon'=>'file black'),
 );
 
 Yii::app()->clientScript->registerScript('search', "

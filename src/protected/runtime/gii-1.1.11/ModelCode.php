@@ -3,7 +3,7 @@ return array (
   'template' => 'default',
   'connectionId' => 'db',
   'tablePrefix' => '',
-  'modelPath' => 'application.modules.author.models',
+  'modelPath' => 'application.modules.rush.models',
   'baseClass' => 'CActiveRecord',
   'buildRelations' => '0',
 );

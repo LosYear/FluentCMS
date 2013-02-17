@@ -61,9 +61,10 @@ class MenuItemController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model=new MenuItem;
+                $model->menu_id = $id;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -72,7 +73,7 @@ class MenuItemController extends Controller
 		{
 			$model->attributes=$_POST['MenuItem'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin','id'=>$model->menu_id));
 		}
 
 		$this->render('create',array(
@@ -96,7 +97,7 @@ class MenuItemController extends Controller
 		{
 			$model->attributes=$_POST['MenuItem'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin','id'=>$model->menu_id));
 		}
 
 		$this->render('update',array(

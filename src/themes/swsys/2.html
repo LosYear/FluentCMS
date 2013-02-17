@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.rs.carousel.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.rs.carousel-touch.css" media="all" />
+
+	<!-- lib -->
+	<script type="text/javascript" src="js/vendor/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.ui.widget.js"></script>
+	
+	<!-- carousel -->
+	<script type="text/javascript" src="js/vendor/jquery.rs.carousel.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.rs.carousel-autoscroll.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.rs.carousel-continuous.js"></script>
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <!--<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>-->
+    <link href="css/flexible-columns.css" rel="stylesheet" type="text/css"/>
+    <!--[if lte IE 7]>
+    <link href="css/core/iehacks.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'PT Sans Caption' ] },
+            custom: { families: ['Arial Narrow'],
+                urls: [ '/css/fonts/arial-narrow.css' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+        $(document).ready(function () {
+            $('.rs-carousel').carousel();
+        });
+    </script>
+</head>
+<body>
+<noindex>
+    <ul class="ym-skiplinks">
+        <li><a class="ym-skip" href="#nav">К навигации</a></li>
+        <li><a class="ym-skip" href="#main">К содержимому</a></li>
+    </ul>
+</noindex>
+<div class="ym-wrapper">
+    <div class="ym-wbox">
+        <header class="header ym-clearfix">
+            <h1>Электронный научный журнал: Программные продукты, системы и алгоритмы</h1>
+
+            <form class="ym-searchform">
+                <input class="ym-searchfield" type="search"/>
+                <button type="submit" class="searchbutton"></button>
+            </form>
+
+            <div class="block_add-article">
+                <div class="icon icon_add-article"></div>
+                <a href="" class="link text_add-article">Добавить статью</a><br>
+                <div class="btn">Вход</div>
+                <div class="btn">Регистрация</div>
+            </div>
+        </header>
+        <nav id="nav" class="ym-clearfix">
+            <div class="ym-hlist">
+                <div class="sublogo"></div>
+                <div class="tail-corner-top-left"></div>
+                <div class="tail-corner-bottom-right"></div>
+                <ul>
+                    <li class="active"><strong>Новости</strong></li>
+                    <li><a href="#">Проекты и анонсы</a></li>
+                    <li><a href="#">Авторам</a></li>
+                    <li><a href="#">Редакция</a></li>
+                    <li><a href="#">Обратная связь</a></li>
+                </ul>
+                <div class="placeholder_after-mainmenu"><a href="http://feeds.feedburner.com/cps/swsys-web" class="icon icon_rss">rss</a></div>
+            </div>
+        </nav>
+        <article class="main ym-clearfix">
+            <div class="article">
+            <aside class="article-aside">
+                <div class="article-aside-content">
+                    <div class="rs-carousel">
+                    <ul class="faces_authors">
+                        <li class="face">
+                            <img src="img/faces/face-paluh.jpg" alt="">
+                            <a href="" class="link">Палюх Б.В.</a>
+                        </li>
+                        <li class="face">
+                            <img src="img/faces/face-vonogradov.jpg" alt="">
+                            <a href="" class="link">Виноградов Г.П.</a>
+                        </li>
+                        <li class="face">
+                            <img src="img/faces/face-paluh-2.jpg" alt="">
+                            <a href="" class="link">Палюх Б.В.</a>
+                        </li>
+                        <li class="face">
+                            <img src="img/faces/face-vonogradov.jpg" alt="">
+                            <a href="" class="link">Виноградов Г.П.</a>
+                        </li>
+                        <li class="face">
+                            <img src="img/faces/face-paluh-2.jpg" alt="">
+                            <a href="" class="link">Палюх Б.В.</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="title_article-aside first">Авторы <div class="expand hidden">[ + ]</div>
+                    <div class="tail-corner-top-right"></div></div>
+                <div class="title_article-aside">Аннотация <div class="expand">[ + ]</div></div>
+                <div class="title_article-aside">Ключевые слова <div class="expand">[ + ]</div></div>
+            </aside>
+
+            <ul class="breadcrumbs">
+                <li><a href="#">Главная страница</a> <span class="divider">»</span></li>
+                <li><a href="#">Статьи</a> <span class="divider">»</span></li>
+                <li class="active">Новые технологии</li>
+            </ul>
+
+            <h1 class="title title_article">Механизмы управления эволюцией
+                организационно-технологической системы</h1>
+            <div class="article-content">
+                <p><i>Однако не все знают, что нормальное распределение специфицирует интеграл Фурье, что несомненно приведет нас к истине. Очевидно проверяется, что дивергенция векторного поля искажает неопределенный интеграл, что неудивительно. Интеграл от функции, обращающейся в бесконечность в изолированной точке последовательно восстанавливает скачок функции, что неудивительно. Представляется логичным, что мнимая единица небезынтересно ускоряет интеграл по бесконечной области, как и предполагалось. Представляется логичным, что интеграл по ориентированной области традиционно отражает Наибольший Общий Делитель (НОД), в итоге приходим к логическому противоречию. Иррациональное число, как следует из вышесказанного, монотонно.</i></p>
+
+                <p>Интеграл по бесконечной области естественно накладывает определитель системы линейных уравнений, при этом, вместо 13 можно взять любую другую константу. Бесконечно малая величина однородно оправдывает критерий сходимости Коши, откуда следует доказываемое равенство. Если предположить, что a < b, то минимум непосредственно раскручивает стремящийся интеграл Дирихле, что известно даже школьникам. До недавнего времени считалось, что предел функции охватывает неопровержимый криволинейный интеграл, что несомненно приведет нас к истине. Ротор векторного поля уравновешивает действительный ортогональный определитель, что несомненно приведет нас к истине. Можно предположить, что экстремум функции отражает интеграл от функции, обращающейся в бесконечность вдоль линии, при этом, вместо 13 можно взять любую другую константу.</p>
+
+                <p>До недавнего времени считалось, что уравнение в частных производных переворачивает интеграл Фурье, дальнейшие выкладки оставим студентам в качестве несложной домашней работы. Векторное поле, исключая очевидный случай, существенно стабилизирует коллинеарный бином Ньютона, что и требовалось доказать. Тем не менее, ротор векторного поля усиливает криволинейный интеграл, дальнейшие выкладки оставим студентам в качестве несложной домашней работы. Первая производная, общеизвестно, отображает косвенный неопределенный интеграл, таким образом сбылась мечта идиота - утверждение полностью доказано.</p>
+            </div>
+            </div>
+            <div class="swsys-like"><span class="icon icon_like"></span> Статья нравится <div class="tail-corner-top-right"></div></div>
+            <div class="user-comment">
+                <h3 class="title title_add-comment">Добавить комментарий <div class="icon icon_comment-arrowdown"></div></h3>
+                <div class="user-comment-editor">
+
+                </div>
+            </div>
+            <div class="comments">
+                <h3 class="title title_comments">Комментарии</h3>
+
+                <div class="comments-list">
+                    <div class="comment-item">
+                        <div class="comment-date">26 сентября 2012 в 14:51</div>
+                        <div class="comment-content">Сформулирована задача синтеза механизма управления эволюцией организационно-технологической
+                            системы, использующей способность человека к самоорганизации. Разработана модель
+                            функционирования системы, содер-жащей агентов, способных к самоорганизации
+                        </div>
+                        <div class="comment-author">
+                            <span class="icon icon_person"></span><a class="link" href="">Палюх Б.В.</a>
+                        </div>
+                        <hr class="hr">
+                    </div>
+                    <div class="comment-item">
+                        <div class="comment-date">26 сентября 2012 в 14:51</div>
+                        <div class="comment-content">Сформулирована задача синтеза механизма управления эволюцией организационно-технологической
+                            системы, использующей способность человека к самоорганизации. Разработана модель
+                            функционирования системы, содер-жащей агентов, способных к самоорганизации
+                        </div>
+                        <div class="comment-author">
+                            <span class="icon icon_person"></span><a class="link" href="">Палюх Б.В.</a>
+                        </div>
+                        <hr class="hr">
+                    </div>
+                </div>
+                <div class="pagination pagination_comments ym-clearfix">
+                    <ul>
+                        <li class="first"><a href="#"> ← <small>Назад</small></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li class="active"><span>3</span></li>
+                        <li><a href="#">4</a></li>
+                        <li class="etc">...</li>
+                        <li><a href="#">244</a></li>
+                        <li class="last"><a href="#"><small>Вперёд</small> → </a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <footer class="footer ym-clearfix">
+            <div class="copyright">Создание сайта: <a href="http://cps.tver.ru" class="link">ЗАО НИИ ЦПС</a></div>
+            <div class="footer-content">
+                <p>Журнал зарегистрирован в комитете РФ по печати
+                    Свидетельство о регистрации средства массовой информации № 013831 от 26.11.1995 г.
+                    Свидетельство о регистрации электронного средства массовой информации № ФС77-43342 от 29.12.2010 г.
+                    Решение Президиума Высшей аттестационной комиссии Министерства образования и науки РФ № 8/1
+                    (о внесении в Перечень ведущих рецензируемых научных журналов и изданий, в которых должны быть
+                    основные научные результаты диссертаций на соискание ученых степеней кандидата и доктора наук).
+                </p>
+
+                <p>
+                    © Все права на авторские материалы охраняются в соответствии с законодательством РФ. Перепечатка
+                    возможна только с разрешения редакции. При цитировании материалов обязательна ссылка на
+                    Международный
+                    журнал "Программные продукты и системы" (для on-line проектов обязательна гиперссылка).</p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+<!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>-->
+<!--<script src="js/plugins.js"></script>-->
+<!--<script src="js/main.js"></script>-->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    var _gaq = [
+        ['_setAccount', 'UA-XXXXX-X'],
+        ['_trackPageview']
+    ];
+    (function (d, t) {
+        var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s)
+    }(document, 'script'));
+</script>
+</body>
+</html>

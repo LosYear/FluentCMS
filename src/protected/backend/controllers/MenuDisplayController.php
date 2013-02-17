@@ -42,9 +42,16 @@ class MenuDisplayController extends Controller
         
         // !- PLUGIN -! //
             
-        $result[] = array(
+        /*$result[] = array(
           'label' => Yii::t('author', 'Journal'),
           'icon' => 'briefcase white',
+          'items' => MenuDisplayController::getJournalItems(),
+            
+        );*/
+        
+        $result[] = array(
+          'label' => Yii::t('rush', 'Olympiad'),
+          'icon' => 'fire white',
           'items' => MenuDisplayController::getJournalItems(),
             
         );

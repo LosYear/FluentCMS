@@ -3,16 +3,15 @@
 /* @var $model Category */
 
 $this->breadcrumbs=array(
-	'Categories'=>array('index'),
-	'Create',
+	Yii::t('RushModule.admin', 'Categories')=>array('admin'),
+	Yii::t('RushModule.admin', 'Create'),
 );
 
 $this->menu=array(
-	array('label'=>'List Category', 'url'=>array('index')),
-	array('label'=>'Manage Category', 'url'=>array('admin')),
+	array('label'=>Yii::t('RushModule.admin','Manage categories'), 'icon'=>'list black', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Category</h1>
+<h1><?php echo Yii::t('RushModule.admin', 'Create category') ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

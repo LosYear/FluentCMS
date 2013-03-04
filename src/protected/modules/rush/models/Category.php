@@ -59,8 +59,8 @@ class Category extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
+			'id' => '#',
+			'name' => Yii::t('RushModule.admin', 'Name'),
 		);
 	}
 
@@ -82,4 +82,26 @@ class Category extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        /**
+         * Return a list of category [id] => value
+         * Use for creating drop down lists
+         */
+        
+        public static function dropDown(){
+            $result = array();
+            
+            $model = Category::model();
+            
+            $criteria = new CDbCriteria();
+            $criteria->order = '`name`';
+            
+            $all = $model->findAll($criteria);
+            
+            foreach ($all as $el) {
+                $result[$el->id] = $el->name;
+            }
+            
+            return $result;
+        }
 }

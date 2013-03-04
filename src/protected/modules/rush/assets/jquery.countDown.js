@@ -1,0 +1,71 @@
+/*
+	Class:    	countDown
+	Author:   	David Walsh
+	Website:    http://davidwalsh.name
+	Version:  	1.0.0
+	Date:     	11/30/2008
+	Built For:  jQuery 1.2.6
+*/
+
+jQuery.fn.countDown = function(settings,to) {
+	settings = jQuery.extend({
+		startFontSize: '36px',
+		endFontSize: '12px',
+		duration: 1000,
+		startNumber: 10,
+		endNumber: 0,
+		callBack: function() { }
+	}, settings);
+	return this.each(function() {
+		
+		//where do we start?
+		if(!to && to != settings.endNumber) { to = settings.startNumber; }
+		
+		//set the countdown to the starting number
+		minutes = parseInt(to/60);
+		seconds = to%60;
+		
+		tmp = minutes.toString();
+		if ( tmp.length == 1 ){
+			minutes = '0'+tmp;
+		}
+		
+		tmp = seconds.toString();
+		if ( tmp.length == 1 ){
+			seconds = '0'+tmp;
+		}
+		
+		$(this).text(minutes+':'+seconds);
+		
+		//loopage
+		$(this).animate({
+			'fontSize': settings.endFontSize
+		},settings.duration,'',function() {
+			if(to > settings.endNumber + 1) {
+				$(this).text(minutes+':'+seconds).countDown(settings,to - 1);
+			}
+			else
+			{
+				settings.callBack(this);
+			}
+		});
+				
+	});
+};
+
+jQuery.fn.countDownStop = function() {
+    return this.each(function(){
+       $(this).stop(true);
+    });
+};
+
+/* sample usage 
+
+$('#countdown').countDown({
+	startNumber: 10,
+	callBack: function(me) {
+		$(me).text('All done! This is where you give the reward!').css('color','#090');
+	}
+});
+
+*/

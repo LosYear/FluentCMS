@@ -79,7 +79,9 @@ class ArticleController extends Controller
                         
                         $advModel->attributes=$_POST['ArticleAdv'];
                         $advModel->node_id = 0;
-                        $advModel->issue_id = 0;
+                        echo $advModel->issue_id;
+                       // $advModel->issue_id = 0;
+                       
 			if($model->validate() && $advModel->validate())
                                 $model->save();
                                 $advModel->node_id = $model->id;
@@ -114,7 +116,7 @@ class ArticleController extends Controller
                         
                         $advModel->attributes=$_POST['ArticleAdv'];
                         $advModel->node_id = 0;
-                        $advModel->issue_id = 0;
+                       // $advModel->issue_id = 0;
                         
 			if($model->validate() && $advModel->validate())
                                 $model->save();

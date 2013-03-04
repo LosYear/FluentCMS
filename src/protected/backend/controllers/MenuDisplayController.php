@@ -42,17 +42,17 @@ class MenuDisplayController extends Controller
         
         // !- PLUGIN -! //
             
-        /*$result[] = array(
+        $result[] = array(
           'label' => Yii::t('author', 'Journal'),
           'icon' => 'briefcase white',
           'items' => MenuDisplayController::getJournalItems(),
             
-        );*/
+        );
         
         $result[] = array(
           'label' => Yii::t('rush', 'Olympiad'),
           'icon' => 'fire white',
-          'items' => MenuDisplayController::getJournalItems(),
+          'items' => MenuDisplayController::getRushItems(),
             
         );
         
@@ -178,6 +178,34 @@ class MenuDisplayController extends Controller
             'label' => Yii::t('admin', 'Actions'),  
             'icon' => 'plus-sign',
             'url' => Yii::app()->createUrl('role/action/admin'),
+        );
+        
+        return $result;
+    }
+    
+    /**
+     * Return array for rush module's menu
+     */
+    
+    public static function getRushItems(){
+        $result = array();
+        
+        $result[] = array(
+            'label' => Yii::t('admin', 'Categories'),  
+            'icon' => 'list-alt',
+            'url' => Yii::app()->createUrl('rush/category'),
+        );
+        
+        $result[] = array(
+            'label' => Yii::t('admin', 'Tours'),  
+            'icon' => 'road',
+            'url' => Yii::app()->createUrl('rush/tour'),
+        );
+        
+        $result[] = array(
+            'label' => Yii::t('admin', 'Tasks'),  
+            'icon' => 'screenshot',
+            'url' => Yii::app()->createUrl('rush/task'),
         );
         
         return $result;

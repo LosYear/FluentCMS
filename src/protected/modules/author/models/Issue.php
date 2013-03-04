@@ -8,6 +8,8 @@
  * @property string $number
  * @property integer $year
  * @property string $cover
+ * @property integer $isOpened
+ * @property string $created
  */
 class Issue extends CActiveRecord
 {
@@ -20,7 +22,7 @@ class Issue extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -37,12 +39,12 @@ class Issue extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('number, year, isOpened', 'required'),
-			array('id, year, isOpened', 'numerical', 'integerOnly'=>true),
+			array('number, year, isOpened, created', 'required'),
+			array('isOpened, number', 'numerical', 'integerOnly'=>true),
 			array('cover', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, number, year, cover, isOpened', 'safe', 'on'=>'search'),
+			array('id, number, year, cover, isOpened, created', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +70,7 @@ class Issue extends CActiveRecord
 			'year' => Yii::t('author', 'Year'),
 			'cover' => Yii::t('author', 'Cover'),
                         'isOpened' =>  Yii::t('author', 'Publication status'),
+                        'created' => 'Created',
 		);
 	}
 
@@ -86,8 +89,8 @@ class Issue extends CActiveRecord
 		$criteria->compare('number',$this->number,true);
 		$criteria->compare('year',$this->year);
 		$criteria->compare('cover',$this->cover,true);
-                $criteria->compare('isOpened',$this->isOpened,true);
-                
+		$criteria->compare('isOpened',$this->isOpened);
+		$criteria->compare('created',$this->created,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -5,26 +5,26 @@
 ?>
 
 <div class="form">
+    <fieldset class="edit-form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'category-form',
-	'enableAjaxValidation'=>false,
-)); ?>
+        <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+                'id'=>'category-form',
+                'enableAjaxValidation'=>false,
+        )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+                <?php echo $form->errorSummary($model); ?>
 
-	<?php echo $form->errorSummary($model); ?>
+            <div class="row">
+                <div>
+                    <div class="column span-4"><?php echo $form->labelEx($model,'name'); ?></div>
+                    <div class="column span-12"><?php echo $form->textField($model, 'name', array('class'=>'span12')); ?></div>
+                </div>
+            </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textArea($model,'name',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
+                <div class="row"><div class="column span-1"><?php $this->widget('bootstrap.widgets.TbButton', 
+            array('type'=>'primary','buttonType'=>'submit', 'label'=>Yii::t('admin','Submit'))); ?></div></div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
+        <?php $this->endWidget(); ?>
+    </fieldset>
 
 </div><!-- form -->

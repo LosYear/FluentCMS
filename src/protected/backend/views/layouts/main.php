@@ -18,7 +18,7 @@
                 //'class' => 'inverse',
                 /*'htmlOptions' => array(
                   //'class' => 'navbar-static-top navbar-inverse',  
-                    'style' => '.container{width:}',
+                    'style' => '.container{width:1000px}',
                 ),*/
                 'brand' => CHtml::encode(Yii::app()->name),
                 'brandUrl' => Yii::app()->homeUrl,
@@ -27,11 +27,11 @@
                         'class' => 'bootstrap.widgets.TbMenu',
                         'items' => MenuDisplayController::getMenuItems(),
                     ),
-                    array(
+                   /* array(
                         'class' => 'bootstrap.widgets.TbMenu',
                         'htmlOptions' => array('class' => 'pull-right'),
                         'items' => MenuDisplayController::getRightItems(),
-                    ),
+                    ),*/
                 )));?> 
             </div>
             <div class="breadcrumbs">

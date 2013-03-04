@@ -71,6 +71,7 @@ class IssueController extends Controller
 		if(isset($_POST['Issue']))
 		{
 			$model->attributes=$_POST['Issue'];
+                        $model->created = new CDbExpression('NOW()');
 			if($model->save())
 				$this->redirect(array('admin'));
 		}

@@ -65,5 +65,9 @@
         'Permissions' => 'Права',
         'Actions' => 'Действия',
         'Principal' => '1',
+        
+        'Categories' => 'Категории',
+        'Tours' => 'Туры',
+        'Tasks' => 'Задания',
     );
 ?>

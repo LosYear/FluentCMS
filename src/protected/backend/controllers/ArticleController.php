@@ -79,12 +79,12 @@ class ArticleController extends Controller
                         
                         $advModel->attributes=$_POST['ArticleAdv'];
                         $advModel->node_id = 0;
-                        $advModel->issue_id = 0;
+                       // $advModel->issue_id = 0;
 			if($model->validate() && $advModel->validate())
                                 $model->save();
                                 $advModel->node_id = $model->id;
                                 $advModel->save();
-				$this->redirect(array('default/index'));
+				$this->redirect(array('article/admin'));
 		}
 
 		$this->render('create',array(
@@ -114,13 +114,13 @@ class ArticleController extends Controller
                         
                         $advModel->attributes=$_POST['ArticleAdv'];
                         $advModel->node_id = 0;
-                        $advModel->issue_id = 0;
+                        //$advModel->issue_id = 0;
                         
 			if($model->validate() && $advModel->validate())
                                 $model->save();
                                 $advModel->node_id = $model->id;
                                 $advModel->save();
-				$this->redirect(array('default/index'));
+				$this->redirect(array('article/admin'));
 		}
 
 		$this->render('update',array(

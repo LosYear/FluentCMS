@@ -84,6 +84,7 @@ return array(
     // application components
     'components' => array(
         'session' => array(
+            'autoStart' => true,
             'cookieMode' => 'allow',
             'cookieParams' => array(
                  'domain' => 'new.cms',
@@ -112,7 +113,11 @@ return array(
             'showScriptName' => false,
             'urlSuffix' => '.html',
             'rules' => array(
-                '/' => 'news/index',
+                '/' => 'author/issue/index',
+                'cabinet' => 'rush/cabinet',
+              //  'cabinet/view/<id:\d+>' => 'rush/cabinet/view',
+                'cabinet/<action:\w+>/<id:\d+>' => 'rush/cabinet/<action>',
+                'cabinet/<action:\w+>' => 'rush/cabinet/<action>',
                 'gii' => 'gii',
                 'user/login' => 'user/user/login',
                 'user/logout' => 'user/user/logout',
@@ -150,10 +155,15 @@ return array(
                 ),
                 // uncomment the following to show log messages on web pages
                 */
-                
-                array(
+                    array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'trace,log',
+                    'categories' => 'system.db.CDbCommand',
+                    'logFile' => 'db.log',
+                  ), 
+               /* array(
                     'class' => 'CWebLogRoute'
-                )
+                )*/
             )
         )
     ),

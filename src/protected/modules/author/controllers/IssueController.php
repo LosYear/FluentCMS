@@ -6,7 +6,7 @@ class IssueController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -116,15 +116,144 @@ class IssueController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
+        
+        private function getDataForTemplate($id)
+        {
+                $new_issue = array();
+                $model = Issue::model();
+                $criteria=new CDbCriteria;
+                $criteria->condition = 'id=:id';
+                $criteria->params = array(':id' => $id);
+                $res = $model->find($criteria);
+            
+            
+                $date = DateTime::createFromFormat("Y-m-d", $res->year);
+                
+                $new_issue['year'] = $date->format("Y");
+                $new_issue['month'] = Yii::t('date', $date->format("F"));
+                $new_issue['number'] = $res->number;
+                $new_issue['date'] = $date->format("d.m.Y");
+                
+                $model = ArticleAdv::model();
+                $criteria = new CDbCriteria;
+                $criteria->condition = 'issue_id=:id';
+                $criteria->params = array(':id' => $res->id);
+                $new_issue['articles'] = $model->count($criteria);
+                
+                $issue_id = $res->id;
+                
+                $model = ArticleAdv::model();
+                $criteria = new CDbCriteria;
+                $criteria->condition = 'issue_id=:id';
+                $criteria->params = array(':id' => $res->id);
+                $articles = $model->findAll($criteria);
+                
+                $new_issue['content'] = array();
+                
+                foreach ($articles as $element) {
+                    $model = Article::model();
+                    
+                    $criteria = new CDbCriteria;
+                    $criteria->condition = 'id = :id';
+                    $criteria->params = array(':id' => $element['node_id']);
+                    $result = $model->find($criteria);
+                    
+                    $new_issue['content'][] = array(
+                        'id' => $result['id'],
+                        'title' => $result['title'],
+                        'annotation' => $element->annotation_rus,
+                        'href' => $result['url'],
+                    );
+                }
+                
+                $model = Issue::model();
+                $criteria = new CDbCriteria;
+                $criteria->condition = "`year` > DATE(:year)";
+                $criteria->order = '`year`';
+                $criteria->params = array(':year' => $res->year);
+                
+                if ($model->count($criteria) > 0){
+                    $t = $model->find($criteria);
+                    $new_issue['next_issue'] = $t->id;
+                }
+                else{
+                    $new_issue['next_issue'] = -1;
+                }
+                
+                $criteria = new CDbCriteria;
+                $criteria->condition = '`year` < DATE(:year)';
+                $criteria->params = array(':year' => $res->year);
+                $criteria->order = '`year` DESC';
+                
+                if ($model->count($criteria) > 0){
+                    $t = $model->find($criteria);
+                    $new_issue['previous_issue'] = $t->id;
+                }
+                else{
+                    $new_issue['previous_issue'] = -1;
+                }
+                
+                // Archive
+                $criteria = new CDbCriteria;
+                $criteria->condition = 'YEAR(`year`) >= YEAR(NOW())-1 ';
+                $criteria->order = '`year` DESC';
+                $model = Issue::model();
+                $result = $model->findAll($criteria);
+                $new_issue['archive'] = array();
+                
+                foreach($result as $element){
+                    $criteria->condition = 'YEAR(`year`) = YEAR(:year)';
+                    $criteria->params = array(':year' => $element->year);
+                    $criteria->order = '`year`';
+                    $array = $model->findAll($criteria);
+                    
+                    foreach ($array as $el){
+                        $date = DateTime::createFromFormat("Y-m-d", $el->year);
+                        $new_issue['archive'][$date->format("Y")][Yii::t('date', $date->format("F"))][$el->number] = $el;
+                    }
+                }
+                
+                // Themes
+                /*$criteria = new CDbCriteria;
+                $criteria->join = "LEFT JOIN `node` ON `node`.`id` = `t`.`node_id` AND `t`.`issue_id` = :id";
+              //  $criteria->condition = '';
+                $criteria->params = array(":id" => $id);
+                $criteria->limit = 5;
+                $criteria->select = "*";
+                $criteria->order = '`node`.`created` DESC';
+                
+                $model = ArticleAdv::model();
+                $result = $model->findAll($criteria);
+                $new_issue['topics'] = $result;*/
+                $sql = "SELECT * FROM `article`, `node` WHERE `article`.`node_id` = `node`.`id` AND `article`.`issue_id` = $id
+ORDER BY `node`.`created` DESC";
+                $result = Yii::app()->db->createCommand($sql)->queryAll();
+                $new_issue['topics'] = $result;
+                
+                return $new_issue;
+        }
 
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($id = '')
 	{
 		$dataProvider=new CActiveDataProvider('Issue');
+
+                if ($id == ''){
+                    $model = Issue::model();
+                    $criteria=new CDbCriteria;
+                    $criteria->order = '`created` DESC';
+                    $res = $model->find($criteria);
+                    $id = $res->id;
+                }
+                
+                $new_issue = $this->getDataForTemplate($id);
+                
+                
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+                        'new_issue' => $new_issue,
 		));
 	}
 

@@ -16,13 +16,13 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/normalize.css">
+    <link rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jquery.rs.carousel.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jquery.rs.carousel-touch.css" media="all" />
 
 	<!-- lib -->
-	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/vendor/jquery-1.8.2.min.js"></script>
+<!--	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/vendor/jquery-1.8.2.min.js"></script>-->
 	<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/js/vendor/jquery.ui.widget.js"></script>
 	
 	<!-- carousel -->
@@ -81,8 +81,12 @@
             <div class="block_add-article">
                 <div class="icon icon_add-article"></div>
                 <a href="" class="link text_add-article">Добавить статью</a><br>
-                <div class="btn">Вход</div>
-                <div class="btn">Регистрация</div>
+                <?php if (Yii::app()->user->isGuest): ?>
+                    <div class="btn">Вход</div>
+                    <div class="btn">Регистрация</div>
+                <?php elseif(Yii::app()->user->isAdmin()):  ?>
+                    <a href="<?php echo Yii::app()->baseUrl.'backend.php'; ?>">Админка</a>
+                <?php endif; ?>
             </div>
         </header>
         <nav id="nav" class="ym-clearfix">

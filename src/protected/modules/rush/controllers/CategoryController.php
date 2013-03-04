@@ -6,9 +6,9 @@ class CategoryController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
-
-	/**
+        public $layout='//layouts/main';
+        public $defaultAction = 'admin';
+	/*
 	 * @return array action filters
 	 */
 	public function filters()
@@ -71,7 +71,7 @@ class CategoryController extends Controller
 		{
 			$model->attributes=$_POST['Category'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class CategoryController extends Controller
 		{
 			$model->attributes=$_POST['Category'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

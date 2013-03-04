@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Фев 04 2013 г., 20:26
+-- Время создания: Мар 04 2013 г., 22:03
 -- Версия сервера: 5.5.28
 -- Версия PHP: 5.4.5
 
@@ -70,7 +70,9 @@ CREATE TABLE IF NOT EXISTS `article` (
 --
 
 INSERT INTO `article` (`node_id`, `title_eng`, `issue_id`, `tags_rus`, `tags_eng`, `aditional_authors`, `annotation_rus`, `annotation_eng`) VALUES
-(19, 'SuperTest123', 0, 'SuperTest123', 'SuperTest123', 'SuperTest123', 'SuperTest123', 'SuperTest123');
+(20, 'Article 1', 4, 'tag, tag, tag', 'tag, tag, tag', 'Вася, Петя', 'Описание', 'Annotation'),
+(21, 'KDE Plasma Active запустили на Nexus 7', 4, 'tag', 'tag', 'habra, frol', 'KDE Plasma Active запустили на Nexus 7', 'KDE Plasma Active запустили на Nexus 7'),
+(25, 'Office 2013 привязывается к одному компьютеру навсегда', 4, 'rat', 'er', 'ge', 'Office 2013 привязывается к одному компьютеру навсегда', 'Office 2013 привязывается к одному компьютеру навсегда');
 
 -- --------------------------------------------------------
 
@@ -124,25 +126,47 @@ INSERT INTO `block` (`id`, `type`, `title`, `content`, `name`, `author`, `create
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(2, 'Физ.тех направление'),
+(3, 'Гуманитарное направление');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `issue`
 --
 
 CREATE TABLE IF NOT EXISTS `issue` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `number` text NOT NULL,
-  `year` int(11) NOT NULL,
+  `number` int(11) NOT NULL,
+  `year` date NOT NULL,
   `cover` text,
   `isOpened` int(11) NOT NULL,
+  `created` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `issue`
 --
 
-INSERT INTO `issue` (`id`, `number`, `year`, `cover`, `isOpened`) VALUES
-(1, '2', 2012, '', 0),
-(2, 'Доступен для публикации', 2012, '', 1);
+INSERT INTO `issue` (`id`, `number`, `year`, `cover`, `isOpened`, `created`) VALUES
+(4, 1, '2012-01-01', '', 1, '2013-02-17'),
+(5, 2, '2013-02-01', '', 1, '2013-02-21'),
+(6, 3, '2013-03-01', '', 1, '2013-02-22');
 
 -- --------------------------------------------------------
 
@@ -180,21 +204,24 @@ CREATE TABLE IF NOT EXISTS `menu_item` (
   `title` text NOT NULL,
   `href` text NOT NULL,
   `type` text NOT NULL,
-  `condition_name` text NOT NULL,
-  `condition_denial` int(11) NOT NULL,
+  `condition_name` text,
+  `condition_denial` int(11) DEFAULT NULL,
   `order` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `menu_item`
 --
 
 INSERT INTO `menu_item` (`id`, `parent_id`, `menu_id`, `title`, `href`, `type`, `condition_name`, `condition_denial`, `order`, `status`) VALUES
-(1, 0, 1, 'Item', 'item', 'internal', 'none', 0, 1, 1),
 (2, 0, 2, 'Itemdgf', 'itemrer', 'internalgew', 'nonegr', 0, 1, 1),
-(3, 0, 1, 'Itemfderbnwbwetwe', 'itembvebw', 'internalewbre', 'noneer', 0, 0, 1);
+(8, 0, 1, 'Новости', '#', 'internal', NULL, NULL, 0, 1),
+(9, 0, 1, 'Проекты и анонсы', '#', 'internal', NULL, NULL, 0, 1),
+(10, 0, 1, 'Авторам', '#', 'internal', NULL, NULL, 0, 1),
+(11, 0, 1, 'Редакция', '#', 'internal', NULL, NULL, 0, 1),
+(12, 0, 1, 'Обратная связь', '#', 'internal', NULL, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -243,14 +270,17 @@ CREATE TABLE IF NOT EXISTS `node` (
   `url` text NOT NULL,
   `status` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Дамп данных таблицы `node`
 --
 
 INSERT INTO `node` (`id`, `type`, `title`, `content`, `author`, `created`, `updated`, `updater`, `url`, `status`) VALUES
-(19, 'article', 'SuperTest123', '<p>\r\n	SuperTest123цау</p>\r\n', 1, '2012-10-30 13:17:23', '2012-10-30 10:15:47', 1, 'SuperTest123', '0');
+(19, 'author/article', 'SuperTest123', '<p>\r\n	SuperTest123цау</p>\r\n', 1, '2012-10-30 13:17:23', '2012-10-30 10:15:47', 1, 'SuperTest123', '0'),
+(20, 'author/article', 'Статья 1', '<p>\r\n	La la la</p>\r\n', 1, '2013-02-17 16:59:19', '2013-02-17 12:59:19', NULL, 'test1', '1'),
+(21, 'author/article', 'KDE Plasma Active запустили на Nexus 7', '<p>\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Если вам интересна тема Ubuntu Phone, то вы просто обязаны знать о всех возможностях Linux-сообщества!</span><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Ruediger Gad &mdash; Linux разработчик &mdash; опубликовал видео (под катом), на котором демонстрирует работу KDE Plasma Active на Nexus 7. Сейчас вы наверно подумали, очередной линукс, в очередной раз запустили, а тормозит ужасно и ничего не работает&hellip; А вот и нет! Демонстрируется поддержка 3D ускорителя в тесте попугаев glmark2-es2, аппаратное ускорение видео на примере 1080p ролика, играбельность в марио в эмуляторе, поддержку Bluetooth, QZeeControl в качестве беспроводного манипулятора.</span><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<a name="habracut" style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; outline: 0px; color: rgb(109, 163, 189); font-family: Verdana, sans-serif; line-height: 20px; background-color: rgb(255, 255, 255);"></a><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Plasma Active &mdash; это проект KDE, предоставляющий модульную UX платформу для устройств различных форм-факторов (планшеты, смартфоны, трансформеры и т.д.).</span><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Для тех, кто успел забыть что находится внутри&nbsp;</span><a href="https://www.google.com/nexus/7/specs/" style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; outline: 0px; color: rgb(153, 0, 153); font-family: Verdana, sans-serif; line-height: 20px;">Google Nexus 7</a><span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">:</span></p>\r\n<p>\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<ul style="margin: 0px 0px 0px 20px; padding-right: 0px; padding-left: 0px; border: 0px; font-size: 13px; vertical-align: baseline; outline: 0px; list-style-position: outside; list-style-image: initial; color: rgb(0, 0, 0); font-family: Verdana, sans-serif; line-height: 20px;">\r\n		<li style="margin: 0px 0px 0px 20px; padding: 0px; border: 0px; vertical-align: baseline; outline: 0px; list-style: disc outside;">\r\n			7&rdquo; 1280x800 (216ppi)</li>\r\n		<li style="margin: 0px 0px 0px 20px; padding: 0px; border: 0px; vertical-align: baseline; outline: 0px; list-style: disc outside;">\r\n			NVIDIA Tegra 3, quad-core ARM Cortex-A9</li>\r\n		<li style="margin: 0px 0px 0px 20px; padding: 0px; border: 0px; vertical-align: baseline; outline: 0px; list-style: disc outside;">\r\n			1GB RAM</li>\r\n		<li style="margin: 0px 0px 0px 20px; padding: 0px; border: 0px; vertical-align: baseline; outline: 0px; list-style: disc outside;">\r\n			16GB или 32GB ROM</li>\r\n		<li>\r\n			&nbsp;</li>\r\n	</ul>\r\n</p>\r\n', 1, '2013-02-17 17:03:55', '2013-02-17 13:03:55', NULL, 'kde-plasma', '1'),
+(25, 'author/article', 'Office 2013 привязывается к одному компьютеру навсегда', '<p>\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Несмотря на то, что для большинства программ мы можем пролистывать пользовательские соглашения без особых последствий, есть смысл прочитать условия, которые ставит Microsoft для розничных копий Office 2013, перед тем, как потратить на него от 100 до 500 долларов, т.к. по сравнению с предыдущими версиями в них изменились две ключевых части.</span><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Если вы приобрели розничную редакцию Office 2010, EULA (end-user license agreement, лицензионное соглашение конечного пользователя) разрешает вам устанавливать его одновременно на два компьютера (настольный и ноутбук). При этом, если вы заменяете один из них, то лицензия переносится на новый.</span><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<a name="habracut" style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; outline: 0px; color: rgb(109, 163, 189); font-family: Verdana, sans-serif; line-height: 20px; background-color: rgb(255, 255, 255);"></a><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Для Office 2013 не разрешено ни то, ни другое: изменённая версия EULA фирмы Microsoft разрешает вам устанавливать коробочные версии на один компьютер, и только на именно этот компьютер &mdash; навсегда. Если я правильно понял условия (по-моему, они предельно ясны), вам не разрешается переносить свою лицензию:</span></p>\r\n<p>\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<blockquote style="margin: 0.83em 0px; padding: 0px 0px 0px 15px; border-width: 0px 0px 0px 2px; border-left-style: solid; border-left-color: rgb(187, 187, 187); font-size: 13px; vertical-align: baseline; outline: 0px; quotes: none; clear: both; color: rgb(0, 0, 0); font-family: Verdana, sans-serif; line-height: 20px;">\r\n		<i style="margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; outline: 0px;">Can I transfer the software to another computer or user?</i>&nbsp;You may not transfer the software to another computer or user. You may transfer the software directly to a third party only as installed on the licensed computer, with the Certificate of Authenticity label and this agreement. Before the transfer, that party must agree that this agreement applies to the transfer and use of the software. You may not retain any copies.</blockquote>\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Не уверен, насколько новая эта новость, но она явно не получила того внимания, которого заслуживает. Ведь изменённая версия EULA фактически понижает статус розничных версий до статуса OEM, т.к. она до смешного урезана, принимая во внимание цену Office &mdash; особенно профессиональной редакции. Вы ведь не собираетесь потратить ещё 500 баксов на новую копию, если, скажем, компьютер сломается?</span><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<img align="left" src="http://habrastorage.org/storage2/753/939/bae/753939baebbe96da0478c2fca56fbf7e.jpg" style="margin: 5px 30px 5px 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: middle; outline: 0px; max-width: 100%; color: rgb(0, 0, 0); font-family: Verdana, sans-serif; line-height: 20px;" /><span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Процитрованный выше текст EULA предполагает именно это, но&nbsp;</span><a href="http://www.theage.com.au/technology/technology-news/does-your-copy-of-office-2013-die-with-your-computer-20130208-2e3a1.html" style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; vertical-align: baseline; outline: 0px; color: rgb(153, 0, 153); font-family: Verdana, sans-serif; line-height: 20px;">Adam Turner из The Age</a><span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">&nbsp;намеревается получить конкретное разъяснение прямо от Microsoft. После нескольких разочаровывающих разговоров с PR-отделом и техподдержкой компании (последняя оказалась полностью не в курсе новых условий), Turner получил честный ответ: &laquo;Нет, пользователь не может переносить свою лицензию с одного компьютера на другой&raquo;.</span><br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<br style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" />\r\n	<span style="color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;">Это оставляет неясным, как эта политика может быть претворена в жизнь, но Turner предполагает, что это может быть сделано через ваш облачный аккаунт Microsoft. Также неясно, как Office 2013 определяет, что считать новым компьютером. Накроется ли ваша лицензия после апгрейда памяти? Turner говорит, что он всё ещё ждёт ответов на эти вопросы, но даже получение комментария, приведенного выше, заняло несколько дней общения с Microsoft.</span></p>\r\n', 1, '2013-02-17 17:15:10', '2013-02-17 13:15:10', NULL, 'office', '1');
 
 -- --------------------------------------------------------
 
@@ -419,6 +449,32 @@ CREATE TABLE IF NOT EXISTS `profile_visit` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `results`
+--
+
+CREATE TABLE IF NOT EXISTS `results` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `tour_id` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  `json` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `results`
+--
+
+INSERT INTO `results` (`id`, `user_id`, `tour_id`, `points`, `json`) VALUES
+(1, 1, 1, 0, '{"points":0,"requests":6,"current":7,"answers":{"1":{"answer":"4","status":"-"},"2":{"answer":"undef","status":"-"},"3":{"answer":"undef","status":"-"},"4":{"answer":"undef","status":"-"},"5":{"answer":"undef","status":"-"},"6":{"answer":"undef","status":"-"}}}'),
+(2, 2, 2, 2, ''),
+(3, 1, 2, -1, ''),
+(4, 1, 2, -1, ''),
+(5, 1, 3, -1, '{"file":"answer3_1.txt"}');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `role`
 --
 
@@ -453,6 +509,84 @@ CREATE TABLE IF NOT EXISTS `setting` (
   `key` text NOT NULL,
   `value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `task`
+--
+
+CREATE TABLE IF NOT EXISTS `task` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tour_id` int(11) NOT NULL,
+  `type` text NOT NULL,
+  `task` text NOT NULL,
+  `advanced` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+
+--
+-- Дамп данных таблицы `task`
+--
+
+INSERT INTO `task` (`id`, `tour_id`, `type`, `task`, `advanced`) VALUES
+(8, 1, 'question', '<p>\r\n	1+1</p>\r\n', '{"answers":["2","3","4","5"],"points":"1","time":"20","right_answer":"1"}'),
+(9, 1, 'question', '<p>\r\n	2+2</p>\r\n', '{"answers":["1","4","3","2"],"points":"1","time":"20","right_answer":"2"}'),
+(10, 1, 'question', '<p>\r\n	3+3</p>\r\n', '{"answers":["%u0428%u0435%u0441%u0442%u044C","%u0421%u0435%u043C%u044C","%u0412%u043E%u0441%u0435%u043C%u044C","%u041D%u043E%u043B%u044C"],"points":"1","time":"20","right_answer":"1"}'),
+(11, 1, 'question', '<p>\r\n	4+4</p>\r\n', '{"answers":["Ноль","Восемь","Девять","Сто"],"points":"1","time":"20","right_answer":"2"}'),
+(12, 1, 'question', '<p>\r\n	5+5</p>\r\n', '{"answers":["Ноль","Девять","Десять"],"points":"1","time":"30","right_answer":"3"}'),
+(13, 1, 'question', '<p>\r\n	Ты сможешь сломать мой движок? &#39; &quot; &quot; &#39;&#39;&#39;&#39;&quot;&quot;&quot; \\ / &lt; &gt; &quot;&quot;</p>\r\n', '{"answers":["%27","%22","%3C","%3E","%5C/%20%27%27%27%20%22%22%22%20%3C%3C%3C%3E%3E"],"points":"1","time":"70","right_answer":"1"}'),
+(19, 3, 'file', 'task_3_18446.txt', '-'),
+(20, 3, 'file', 'task_3_20188.txt', '-'),
+(21, 3, 'file', 'task_3_19429.txt', '-'),
+(22, 3, 'file', 'task_3_29730.txt', '{"title":"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u0447\\u0435\\u043a"}');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tmp_results`
+--
+
+CREATE TABLE IF NOT EXISTS `tmp_results` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `tour_id` int(11) NOT NULL,
+  `json` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `tmp_results`
+--
+
+INSERT INTO `tmp_results` (`id`, `user_id`, `tour_id`, `json`) VALUES
+(1, 1, 1, '{"points":0,"requests":6,"current":7,"answers":{"1":{"answer":"4","status":"-"},"2":{"answer":"undef","status":"-"},"3":{"answer":"undef","status":"-"},"4":{"answer":"undef","status":"-"},"5":{"answer":"undef","status":"-"},"6":{"answer":"undef","status":"-"}}}');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tour`
+--
+
+CREATE TABLE IF NOT EXISTS `tour` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `type` text NOT NULL,
+  `from` datetime NOT NULL,
+  `till` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `tour`
+--
+
+INSERT INTO `tour` (`id`, `name`, `description`, `category_id`, `type`, `from`, `till`) VALUES
+(1, 'Test tour', 'Тестируем систему', 3, 'test', '2013-02-26 12:50:00', '2014-02-28 11:50:00'),
+(2, 'Tes2', 'Test Description', 3, 'full', '2013-02-26 12:29:00', '2013-02-26 18:41:00'),
+(3, 'Полный тур', 'Длительность год. ', 2, 'full', '2013-03-04 18:15:00', '2014-03-04 18:15:00');
 
 -- --------------------------------------------------------
 
@@ -611,7 +745,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `activationKey`, `createtime`, `lastvisit`, `lastaction`, `lastpasswordchange`, `superuser`, `status`, `avatar`, `notifyType`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1344845293, 1357763948, 1359994440, 0, 1, 1, NULL, 'Instant'),
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1344845293, 1361723530, 1361430060, 0, 1, 1, NULL, 'Instant'),
 (2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', '', 1344845293, 1345192361, 0, 0, 0, 1, NULL, 'Instant'),
 (3, 'SuperUser', 'a1866808738b5888e1546977e231f999', 'f7f7cbfb674cd0b45603c696ce5ea33b', 1345492151, 0, 0, 0, 0, 0, NULL, 'Instant'),
 (4, 'SUser1', '6803f360e320f378aa82365f8c79673d', '8de9c5d0212e8cb3288c9be3137ff170', 1345492205, 0, 0, 0, 0, 0, NULL, 'Instant'),

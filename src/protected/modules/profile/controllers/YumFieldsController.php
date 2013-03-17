@@ -54,7 +54,7 @@ class YumFieldsController extends YumController
 
 				$model->dbConnection->createCommand($sql)->execute();
 				$model->save();
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 			}
 		}
 
@@ -75,7 +75,7 @@ class YumFieldsController extends YumController
 			// ALTER TABLE `test` CHANGE `profiles` `field` INT( 10 ) NOT NULL 
 			// ALTER TABLE `test` CHANGE `profiles` `description` INT( 1 ) NOT NULL DEFAULT '0'
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

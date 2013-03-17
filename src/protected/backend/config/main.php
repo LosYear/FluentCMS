@@ -2,6 +2,7 @@
 $backend  = dirname(dirname(__FILE__));
 $frontend = dirname($backend);
 Yii::setPathOfAlias('backend', $backend);
+define('BACKEND', TRUE);
 
 return array(
     'basePath' => $frontend,
@@ -69,11 +70,13 @@ return array(
             'actionTable' => 'action',
             'permissionTable' => 'permission'
         ),
-        'message' => array(
+        'avatar',
+       /* 'message' => array(
             'userModel' => 'YumUser',
             'getNameMethod' => 'getUsername',
-            'getSuggestMethod' => 'getSuggest',
-        ),
+            'getSuggestMethod' => 'getSuggest',*/
+       // 'message',
+       
         'rush',
     ),
     // application components
@@ -97,7 +100,8 @@ return array(
         ),
         
         'bootstrap' => array(
-            'class' => 'ext.bootstrap.components.Bootstrap' // assuming you extracted bootstrap under extensions
+            'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+          //  'responsiveCss' => true,
         ),
         // uncomment the following to enable URLs in path-format
         
@@ -108,7 +112,7 @@ return array(
             'urlSuffix' => '.html',
             'rules' => array(
                 '/' => 'main/index',
-                'menuitem/<id:\d+>' => 'menuitem/admin',
+                'menuitem/<id:\d+>' => 'menuItem/admin',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>'
@@ -132,14 +136,24 @@ return array(
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
+                array(
+                    'class' => 'CFileLogRoute',
+                    'levels' => 'error, warning, trace',
+                    'logFile' => 'trace.log'
+                ),
                 /*array(
-                'class' => 'CFileLogRoute',
-                'levels' => 'error, warning'
+                    'class' => 'CFileLogRoute',
+                    'levels' => 'error, warning'
                 ),
                 // uncomment the following to show log messages on web pages
                 */
-                
-             /*   array(
+                    array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'trace,log',
+                    'categories' => 'system.db.CDbCommand',
+                    'logFile' => 'db.log',
+                  ), 
+               /* array(
                     'class' => 'CWebLogRoute'
                 )*/
             )

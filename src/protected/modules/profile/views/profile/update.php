@@ -3,13 +3,16 @@ $this->pageTitle = Yii::app()->name . ' - '.Yum::t( "Profile");
 $this->breadcrumbs=array(
 		Yum::t('Edit profile'));
 $this->title = Yum::t('Edit profile');
+
+$this->menu=array(
+	array('label'=>Yii::t('yum', 'Manage profiles'), 'url'=>array('admin'), 'icon'=>'list black',),
+);
 ?>
 
 <div class="form">
+    <fieldset class="edit-form">
 
 <?php echo CHtml::beginForm(); ?>
-
-<?php echo Yum::requiredFieldNote(); ?>
 
 <?php echo CHtml::errorSummary(array($user, $profile)); ?>
 
@@ -18,7 +21,6 @@ $this->title = Yum::t('Edit profile');
 <?php echo CHtml::activeLabelEx($user,'username'); ?>
 <?php echo CHtml::activeTextField($user,'username',array(
 			'size'=>20,'maxlength'=>20)); ?>
-<?php echo CHtml::error($user,'username'); ?>
 </div>
 <?php } ?> 
 
@@ -26,22 +28,18 @@ $this->title = Yum::t('Edit profile');
 	$this->renderPartial('/profile/_form', array('profile' => $profile)); ?>
 
 	<div class="row buttons">
-	<?php
+            <div class="row">
+                <div class="column span-1">
+                        <?php $this->widget('bootstrap.widgets.TbButton', 
+                array('type'=>'primary','buttonType'=>'submit', 'label'=>Yii::t('admin','Submit'))); ?>
 
-	if(Yum::module('profile')->enablePrivacySetting)
-		echo CHtml::button(Yum::t('Privacy settings'), array(
-					'submit' => array('/profile/privacy/update'))); ?>
-
-	<?php 
-		if(Yum::hasModule('avatar'))
-			echo CHtml::button(Yum::t('Upload avatar Image'), array(
-				'submit' => array('/avatar/avatar/editAvatar'))); ?>
-
-	<?php echo CHtml::submitButton($user->isNewRecord 
-			? Yum::t('Create my profile') 
-			: Yum::t('Save profile changes')); ?>
+                    <?php if(Yum::hasModule('avatar') && $user->id == Yii::app()->user->id): ?>
+                    <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('avatar/avatar/editAvatar')?>"><?php echo Yii::t('admin', 'Avatar'); ?></a>
+                    <?php endif; ?>
+                </div>
+            </div>
 	</div>
 
 	<?php echo CHtml::endForm(); ?>
-
+    </fieldset>
 	</div><!-- form -->

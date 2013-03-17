@@ -180,6 +180,22 @@ class MenuDisplayController extends Controller
             'url' => Yii::app()->createUrl('role/action/admin'),
         );
         
+        $result[] = array(
+            'label' => Yii::t('admin', 'PROFILES'),
+        );
+        
+        $result[] = array(
+            'label' => Yii::t('admin', 'Profiles'),
+            'url' => Yii::app()->createUrl('profile/profile/admin'),
+            'icon' => 'th'
+        );
+        
+        $result[] = array(
+            'label' => Yii::t('admin', 'Profile fields'),
+            'url' => Yii::app()->createUrl('profile/fields/admin'),
+            'icon' => 'align-justify',
+        );
+        
         return $result;
     }
     

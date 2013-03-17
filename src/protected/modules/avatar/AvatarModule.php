@@ -5,9 +5,9 @@ class AvatarModule extends CWebModule {
 	public $defaultController = 'avatar';
 
 	// override this with your custom layout, if available
-	public $layout = 'application.modules.user.views.layouts.yum';
+	public $layout = 'application.modules.profile.views.layouts.user';
 
-	public $avatarPath = 'images';
+	public $avatarPath = 'data/avatar';
 
 	// Set avatarMaxWidth to a value other than 0 to enable image size check
 	public $avatarMaxWidth = 0;
@@ -22,6 +22,10 @@ class AvatarModule extends CWebModule {
 	);
 
 	public function init() {
+                if(defined('BACKEND'))
+                    $this->layout = 'application.modules.profile.views.layouts.admin';
+                Yum::module('rush');
+            //   $this->avatarPath = Yii::getPathOfAlias('application.modules.avatar.data');
 		$this->setImport(array(
 					'application.modules.user.controllers.*',
 					'application.modules.user.models.*',

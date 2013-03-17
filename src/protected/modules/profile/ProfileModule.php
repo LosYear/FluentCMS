@@ -2,14 +2,14 @@
 Yii::setPathOfAlias('ProfileModule' , dirname(__FILE__));
 
 class ProfileModule extends CWebModule {
-	public $layout = 'yumprofile';
+	public $layout = 'user';
 
 	// set this to true to allow all users to access user profiles
 	public $profilesViewableByGuests = false;
 
 	public $enableProfileVisitLogging = true;
-	public $enablePrivacySetting = true;
-	public $enableProfileComments = true;
+	public $enablePrivacySetting = false;
+	public $enableProfileComments = false;
 
 	public $profileTable = '{{profile}}';
 	public $privacySettingTable = '{{privacysetting}}';
@@ -47,6 +47,8 @@ class ProfileModule extends CWebModule {
 			);
 
 	public function init() {
+                if(defined('BACKEND'))
+                    $this->layout = 'admin';
 		$this->setImport(array(
 			'application.modules.user.controllers.*',
 			'application.modules.user.models.*',

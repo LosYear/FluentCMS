@@ -763,4 +763,18 @@ class YumUser extends YumActiveRecord
 			return $return;
 		}
 	}
+        
+        /**
+         * Get user name by id
+         */
+        
+        public static function getUsernameById($id){
+            $criteria = new CDbCriteria();
+            $criteria->condition = 'id = :id';
+            $criteria->params = array(':id' => $id);
+            
+            $result = YumUser::model()->find($criteria);
+            
+            return $result->username;
+        }
 }

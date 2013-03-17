@@ -1,23 +1,30 @@
 <?php
-$this->title = Yii::t("UserModule.user", 'Manage profile fields'); 
+$this->title = Yii::t("yum", 'Manage profile fields'); 
 
 $this->breadcrumbs=array(
-	Yii::t("UserModule.user", 'Profile fields')=>array('admin'),
-	Yii::t("UserModule.user", 'Manage'));
+	Yii::t("yum", 'Profile fields')=>array('admin'),
+	Yii::t("yum", 'Manage'));
+
+$this->menu=array(
+	array('label'=>Yii::t('yum', 'Manage fields'), 'url'=>array('admin'), 'icon'=>'list black',),
+	array('label'=>Yii::t('yum', 'Create field'), 'url'=>array('create'), 'icon'=>'file black'),
+);
 
 ?>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'dataProvider'=>$dataProvider,
+        'type'=>'striped bordered condensed',
+        'template'=>"{items}",
 	'columns'=>array(
-		'position',
+		//'position',
 		'varname',
 		array(
 			'name'=>'title',
 			'value'=>'Yii::t("UserModule.user", $data->title)',
 		),
 		'field_type',
-		'field_size',
+		//'field_size',
 		//'field_size_min',
 		array(
 			'name'=>'required',
@@ -26,16 +33,18 @@ $this->breadcrumbs=array(
 		//'match',
 		//'range',
 		//'error_message',
-		'other_validator',
+		//'other_validator',
 		//'default',
-		'position',
-		array(
+		//'position',
+		/*array(
 			'name'=>'visible',
 			'value'=>'YumProfileField::itemAlias("visible",$data->visible)',
-		),
+		),*/
 		//*/
 		array(
-			'class'=>'CButtonColumn',
+                    'class'=>'bootstrap.widgets.TbButtonColumn',
+                    'htmlOptions'=>array('style'=>'width: 40px'),
+                    'template'=>'{update}{delete}',
 		),
 	),
 )); ?>

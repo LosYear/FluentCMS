@@ -69,5 +69,8 @@
         'Categories' => 'Категории',
         'Tours' => 'Туры',
         'Tasks' => 'Задания',
+        'PROFILES' => 'Профили',
+        'Profiles' => 'Профили',
+        'Profile fields' => 'Поля профиля',
     );
 ?>

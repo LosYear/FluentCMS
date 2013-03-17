@@ -1,0 +1,686 @@
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:31 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:31 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:31 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:31 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:32 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:32 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:33 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:33 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:33 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:33 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:34 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:34 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:34 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:34 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:34 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:34 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:34 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:34 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:47 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:47 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:47 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:48 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:48 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:36:49 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:36:49 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:37:00 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:37:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:37:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/losyear/htdocs/new.cms/www/protected/models/News.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+2013/03/16 23:37:00 [trace] [system.db.ar.CActiveRecord] News.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE `t`.`id`=26 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (64)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (77)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (6)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/_form.php (15)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/news/update.php (20)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:37:00 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/NewsController.php (91)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "log" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "clientScript" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "assetManager" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "request" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "urlManager" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "cache" application component
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "user" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (24)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "session" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (24)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.base.CModule] Loading "user" module
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/Yum.php (116)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (237)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "db" application component
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (244)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+2013/03/16 23:37:05 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (244)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+2013/03/16 23:37:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+2013/03/16 23:37:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+2013/03/16 23:37:05 [trace] [system.base.CModule] Loading "role" module
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/Yum.php (116)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (388)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+2013/03/16 23:37:05 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (33)
+2013/03/16 23:37:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (33)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "messages" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MenuDisplayController.php (19)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (28)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (34)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (35)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (34)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/16 23:37:05 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/backend/views/layouts/main.php (41)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (34)

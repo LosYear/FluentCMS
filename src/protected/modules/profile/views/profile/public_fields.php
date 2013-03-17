@@ -1,14 +1,5 @@
-<?php if($profile && !$profile->isNewRecord && $profile->getPublicFields()) { ?>
-<table class="table_profile_fields">
-<?php foreach($profile->getPublicFields() as $field) { ?>
-
-	<tr>
-	<th class="label"> <?php echo Yum::t($field->title); ?> </th> 
-	<td> <?php echo $profile->{$field->varname}; ?> </td>
-	</tr>
-
-<?php } ?>
-</table>
-<?php } ?>
-
+<h2><?php echo $profile->name; ?></h2>
+<a style='text-align: right; float:right;'><?php echo $profile->city; ?>, <?php echo $profile->school; ?></a>
+<p><?php echo Yii::t('yum', 'Teacher').": ".$profile->teacher; ?></p>
+<p><?php echo $profile->about; ?></p>
 <div class="clear"></div>

@@ -12,7 +12,7 @@ $this->beginContent($module->baseLayout); ?>
 <?php $this->renderMenu(); ?>
 </div>-->
 
-<div id="usercontent">
+<div>
 <?php
 if (Yum::module()->debug) {
 	echo CHtml::openTag('div', array(

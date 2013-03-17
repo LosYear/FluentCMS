@@ -24,21 +24,19 @@ if(Yum::module('avatar')->avatarMaxWidth != 0)
 	echo CHtml::beginForm(array(
 				'//avatar/avatar/editAvatar'), 'POST', array(
 	'enctype' => 'multipart/form-data'));
-	echo '<div class="row">';
-	echo CHtml::activeLabelEx($model, 'avatar');
-	echo CHtml::activeFileField($model, 'avatar');
+	echo '<fieldset class="edit-form"><div>';
+        echo CHtml::activeFileField($model, 'avatar');
 	echo CHtml::error($model, 'avatar');
 	echo '</div>';
-	if(Yum::module('avatar')->enableGravatar) 
-	echo CHtml::Button(Yum::t('Use my Gravatar'), array(
-				'submit' => array(
-					'avatar/enableGravatar')));
 
-	echo CHtml::Button(Yum::t('Remove Avatar'), array(
-				'submit' => array(
-					'avatar/removeAvatar')));
-	echo CHtml::submitButton(Yum::t('Upload Avatar'));
+	?>
+        <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('avatar/avatar/enableGravatar')?>"><?php echo Yii::t('yum', 'Enable Gravatar'); ?></a>
+        <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('avatar/avatar/removeAvatar')?>"><?php echo Yii::t('yum', 'Remove avatar'); ?></a> <?php
+                  
+	$this->widget('bootstrap.widgets.TbButton', 
+                array('type'=>'primary','buttonType'=>'submit', 'label'=>Yii::t('yum','Upload')));
 	echo CHtml::endForm();
 
 ?>
+</fieldset>
 </div>

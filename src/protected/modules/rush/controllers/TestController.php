@@ -68,7 +68,7 @@ class TestController extends Controller
 	public function actionIndex()
 	{
             
-           $hn =  fopen("output.txt","w");
+          // $hn =  fopen("output.txt","w");
             // Checking, if this tour is done, when return results
             
             $criteria = new CDbCriteria;

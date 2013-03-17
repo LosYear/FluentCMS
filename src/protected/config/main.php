@@ -15,7 +15,7 @@ return array(
     'id' => 'fluentCMS',
     
     'language' => 'ru',
-    'theme' => 'swsys',
+    'theme' => 'mudrenok',
     
     // preloading 'log' component
     'preload' => array(
@@ -73,12 +73,20 @@ return array(
         'registration' => array(
             'registrationView' => 'application.views.registration.regestration',
         ),
-        'message' => array(
+        'avatar',
+       /*'message' => array(
             'userModel' => 'YumUser',
             'getNameMethod' => 'getUsername',
             'getSuggestMethod' => 'getSuggest',
         ),
+      //  'message',*/
         'rush',
+        'mailbox' => array(
+            'userClass' => 'YumUser',
+            'juiThemes' => 'none',
+            'juiButtons' => false,
+            'juiIcons' => false,
+        ),
     ),
     
     // application components
@@ -103,7 +111,8 @@ return array(
         ),
         
         'bootstrap' => array(
-            'class' => 'ext.bootstrap.components.Bootstrap' // assuming you extracted bootstrap under extensions
+            'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
+            'responsiveCss' => true,
         ),
         // uncomment the following to enable URLs in path-format
         
@@ -113,8 +122,15 @@ return array(
             'showScriptName' => false,
             'urlSuffix' => '.html',
             'rules' => array(
-                '/' => 'author/issue/index',
+             //   '/' => 'author/issue/index',
+                '/' => 'news/index',
                 'cabinet' => 'rush/cabinet',
+                'cabinet/profile' => 'profile/profile/update',
+                'cabinet/profile/avatar/<action:\w+>/' => 'avatar/avatar/<action>',
+                'cabinet/mailbox' => 'mailbox/message',
+                'cabinet/mailbox/<action:\w+>' => 'mailbox/message/<action>',
+                'profiles' => 'profile/profile/index',
+                'profile/<id:\d+>' => 'profile/profile/view',
               //  'cabinet/view/<id:\d+>' => 'rush/cabinet/view',
                 'cabinet/<action:\w+>/<id:\d+>' => 'rush/cabinet/<action>',
                 'cabinet/<action:\w+>' => 'rush/cabinet/<action>',
@@ -149,15 +165,16 @@ return array(
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
-                /*array(
+              /*  array(
                     'class' => 'CFileLogRoute',
-                    'levels' => 'error, warning'
-                ),
+                    'levels' => 'error, warning',
+                    'logFile' => 'trace.log'
+                ),*/
                 // uncomment the following to show log messages on web pages
-                */
+                
                     array(
                     'class'=>'CFileLogRoute',
-                    'levels'=>'trace,log',
+                    'levels'=>'trace,log, error',
                     'categories' => 'system.db.CDbCommand',
                     'logFile' => 'db.log',
                   ), 

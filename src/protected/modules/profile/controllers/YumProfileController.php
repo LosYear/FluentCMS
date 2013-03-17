@@ -37,15 +37,19 @@ class YumProfileController extends YumController {
 			$profile->attributes = @$_POST['YumProfile'];
 			$profile->user_id = $user->id;
 
-
-			$profile->validate();
-			$user->validate();
+                     
+                        
+                        
+			$b1 = $profile->validate();
+			$b2 = $user->validate();
 
 			if(!$user->hasErrors() && !$profile->hasErrors()) {
+
 				if($user->save() && $profile->save()) {
 					Yum::setFlash('Your changes have been saved');
 					$this->redirect(array('//profile/profile/view', 'id'=>$user->id));
 				}
+                               // print_r($profile->attributes); die;
 			}
 		}
 
@@ -72,7 +76,7 @@ class YumProfileController extends YumController {
 
 	public function beforeAction($action) {
 		if(!isset($this->layout))
-			$this->layout = Yum::module('profile')->layout;
+                    $this->layout = Yum::module('rush')->layout;
 		return parent::beforeAction($action);
 	}
 
@@ -87,6 +91,7 @@ class YumProfileController extends YumController {
 	}
 
 	public function actionView($id = null) {
+
 		if(!Yum::module('profile')->profilesViewableByGuests 
 				&& Yii::app()->user->isGuest)
 			throw new CHttpException(403);
@@ -94,6 +99,10 @@ class YumProfileController extends YumController {
 		// If no profile id is provided, take myself
 		if(!$id)
 			$id = Yii::app()->user->id;
+                
+                
+                if ($id != null && $id != Yii::app()->user->id)
+                    $this->layout = 'one-column';
 
 		$view = Yum::module('profile')->profileView;
 
@@ -139,10 +148,16 @@ class YumProfileController extends YumController {
 
 	public function actionIndex()
 	{
-		if(Yii::app()->user->isAdmin())
-			$this->actionAdmin();
-		else
-			$this->redirect('view');
+                $this->layout = 'one-column';
+                
+		$criteria = new CDbCriteria;
+                $criteria->condition = "`name` != '' AND `city` != '' AND `school` != ''";
+                $result = YumProfile::model()->findAll($criteria);
+                        
+            
+                $this->render('all',array(
+			'data'=>$result,
+                        'model' => new YumUser));
 	}
 
 	public function actionAdmin()

@@ -54,13 +54,13 @@ function displayQuestion(){
             // Displaying possible answers
             $(question.answers).each(function(index){
                 $('<div class="answer"></div>').html(
-                    '<input type="radio" value="'+ (index+1) +'" name="ans" class="variant" /><label class="answer">'+unescape(question.answers[index])+'</label>'
+                    '<input type="radio" value="'+ (index+1) +'" name="ans" class="variant" /><label for="name" class="answer">'+unescape(question.answers[index])+'</label>'
                 ).appendTo('.answers');
             });
             
             // Appending 'next' button
-            $('<button id="next-question" class="btn btn-primary center" onclick="next()"/>').html(buttonCaption).appendTo('.test-content');
-            $('body').append('<div class="well countdown-popup" id="countdown"></div>');
+            $('<button style="margin-top:10px" id="next-question" class="btn btn-primary center" onclick="next()"/>').html(buttonCaption).appendTo('.test-content');
+            $('body').append('<div style="padding-top:10px;" class="well well-small countdown-popup" id="countdown"></div>');
             $('#countdown').countDown({
                  startNumber: data.timeout,
                  callBack: function() {

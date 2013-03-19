@@ -12,10 +12,6 @@ $this->breadcrumbs=array(Yii::t('yum', 'Login'));
 Yum::renderFlash();
 ?>
 
-<p>
-<?php 
-	echo Yii::t('yum', 'Please fill out the following form with your login credentials:'); ?>
-</p>
 
 <div class="form">
 <?php /** @var BootActiveForm $form */

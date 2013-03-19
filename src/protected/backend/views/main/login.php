@@ -15,18 +15,7 @@
     <div class="login-wrapper">
         <div class="login-frame">
             <div class="login-form">
-                <?php /** @var BootActiveForm $form */
-                    $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-                        'id'=>'verticalForm',
-                        'htmlOptions'=>array('class'=>'well'),
-                    )); ?>
-
-                    <div class="row-form"><?php echo $form->textFieldRow($model, 'username', array('class'=>'span3')); ?></div>
-                    <div class="row-form"><?php echo $form->passwordFieldRow($model, 'password', array('class'=>'span3')); ?></div>
-                    <div class="row-form submit scenter"><?php $this->widget('bootstrap.widgets.TbButton', array('type'=>'primary', 'buttonType'=>'submit', 
-                                                                                'label'=>Yii::t('yum', 'Login'))); ?></div>
-
-                    <?php $this->endWidget(); ?>
+                    <?php echo $content ?>
             </div>
         </div>
     </div>

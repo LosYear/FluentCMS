@@ -11,13 +11,18 @@ class YumProfileController extends YumController {
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index', 'admin', 'visits'),
+				'actions'=>array('admin', 'visits'),
 				'expression' => 'Yii::app()->user->isAdmin()'
 				),
 			array('allow',
-				'actions'=>array('view', 'update', 'edit'),
+				'actions'=>array('update', 'edit'),
 				'users' => array('@'),
 				),
+                        array('allow',
+                            'actions' => array('index', 'view'),
+                            'users' => array('*'),
+                            
+                        ),
 
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -92,9 +97,9 @@ class YumProfileController extends YumController {
 
 	public function actionView($id = null) {
 
-		if(!Yum::module('profile')->profilesViewableByGuests 
+		/*if(!Yum::module('profile')->profilesViewableByGuests 
 				&& Yii::app()->user->isGuest)
-			throw new CHttpException(403);
+			throw new CHttpException(403);*/
 
 		// If no profile id is provided, take myself
 		if(!$id)

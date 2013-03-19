@@ -25,3 +25,7 @@ body{
 .scenter{
     margin:0 auto;
 }
+.row{
+    margin-left: 0px !important;
+}
+

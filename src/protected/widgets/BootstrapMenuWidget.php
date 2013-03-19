@@ -15,12 +15,19 @@
         private function formTree($parent_id) { 
             if (isset($this->_items[$parent_id])) { 
                 foreach ($this->_items[$parent_id] as $value) {
-                    
-                    if ($parent_id == 0){
-                        $this->tmp[] = array('label' => $value['title'], 'url' => $value['href']);
+                    $url ='';
+                    if ($value['href'] == '/'){
+                        $url = Yii::app()->homeUrl;
                     }
                     else{
-                         $this->tmp[$parent_id]['items'][] = array('label' => $value['title'], 'url' => $value['href']);
+                        $url = Yii::app()->baseUrl.'/'.$value['href'];
+                    }
+                    
+                    if ($parent_id == 0){
+                        $this->tmp[] = array('label' => $value['title'], 'url' => $url);
+                    }
+                    else{
+                         $this->tmp[$parent_id]['items'][] = array('label' => $value['title'], 'url' => $url);
                     }
                     
                     $this->formTree($value->id); 

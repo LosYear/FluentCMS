@@ -135,32 +135,73 @@ class CabinetController extends Controller
             
             Yii::app()->getRequest()->sendFile(json_decode($task->advanced, true)["title"], file_get_contents($filename), NULL, false);
         }
-        // Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}*/
+        
+        /**
+         * User certificates
+         */
+        
+        public function actionCertificates(){
+            $criteria = new CDbCriteria;
+            $criteria->condition = '`user_id` = :user_id';
+            $criteria->params = array(':user_id' => Yii::app()->user->id);
+            
+          //  $results = new Results();
+            $results = new CActiveDataProvider('Certificate', array('criteria' => $criteria));
+            
+            $this->render('certificates',array('dataProvider' => $results, 'c' => $criteria));
+            
+        }
+        
+        /**
+         * Sends file to user
+         */
+        
+        public function actionGetCertificate($id){
+            $task = Certificate::model()->findByPk($id);
+            
+            $filename = Yii::getPathOfAlias('application.modules.rush.data').'/'.$task->file_name;
+            //die($filename);
+            
+            Yii::app()->getRequest()->sendFile($task->title, file_get_contents($filename), NULL, false);
+        }
+    
+        /**
+        * Specifies the access control rules.
+        * This method is used by the 'accessControl' filter.
+        * @return array access control rules
+        */
+           public function accessRules()
+           {
+                   return array(
+                           array('deny', // allow admin user to perform 'admin' and 'delete' actions
+                                   'actions'=>array('index', 'all', 'active', 'view', 'takepart', 'results', 'download',
+                                       'certificates', 'getcertificate'),
+                                   'users'=>array('admin'),
+                           ),
+                           array('deny', // allow admin user to perform 'admin' and 'delete' actions
+                                'actions'=>array('index', 'all', 'active', 'view', 'takepart', 'results', 'download',
+                                       'certificates', 'getcertificate'),
+                                'expression' => 'Yii::app()->user->hasRole("Moderator")',
+                           ),
+                           array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                                   'actions'=>array('index', 'all', 'active', 'view', 'takepart', 'results', 'download',
+                                       'certificates', 'getcertificate'),
+                                   'users' => array('@'),
+                           ),
+                           array('deny',  // deny all users
+                                   'users'=>array('*'),
+                           ),
+                   );
+           }
 
-	/*public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'update'=>array(
-                            'class'=>'application.modules.profile.controllers.YumProfileController',
-                            ),
-			/*'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}*/
-	
+           /**
+            * @return array action filters
+            */
+           public function filters()
+           {
+                   return array(
+                           'accessControl', // perform access control for CRUD operations
+                           'postOnly + delete', // we only allow deletion via POST request
+                   );
+           }
 }

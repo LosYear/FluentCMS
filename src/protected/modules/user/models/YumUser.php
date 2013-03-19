@@ -777,4 +777,25 @@ class YumUser extends YumActiveRecord
             
             return $result->username;
         }
+        
+        /**
+         * Returns array of all users for dropDown
+         */
+        
+        public static function dropDown(){
+            $result = array();
+            
+            $model = YumUser::model();
+            
+            $criteria = new CDbCriteria();
+            $criteria->order = '`username`';
+            
+            $all = $model->findAll($criteria);
+            
+            foreach ($all as $el) {
+                $result[$el->id] = $el->username;
+            }
+            
+            return $result;
+        }
 }

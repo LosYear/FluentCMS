@@ -1,9 +1,3 @@
-.content{
-    float: left;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 75%;
-}
 
 .breadcrumbs{
     margin-top: 50px;
@@ -21,8 +15,30 @@
     clear: left;
 }
 
+.edit-form{
+    margin-left: 40px !important;
+}
+
 #menu{
     float: right;
-    width: 16%;
     margin-right: 10px;
+}
+
+.container-fluid{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.column{
+    margin-left: 0px !important;
+}
+
+.row-fluid label{
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: top;
+    width: 9em;
+    float: left;
+    clear: left;
 }

@@ -9,6 +9,7 @@
 
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
+    'homeUrl' => 'http://new.cms',
     'name' => 'My Web Application',
     'sourceLanguage' => 'en',
     
@@ -127,8 +128,8 @@ return array(
                 'cabinet' => 'rush/cabinet',
                 'cabinet/profile' => 'profile/profile/update',
                 'cabinet/profile/avatar/<action:\w+>/' => 'avatar/avatar/<action>',
-                'cabinet/mailbox' => 'mailbox/message',
-                'cabinet/mailbox/<action:\w+>' => 'mailbox/message/<action>',
+                'mailbox' => 'mailbox/message',
+                'mailbox/<action:\w+>' => 'mailbox/message/<action>',
                 'profiles' => 'profile/profile/index',
                 'profile/<id:\d+>' => 'profile/profile/view',
               //  'cabinet/view/<id:\d+>' => 'rush/cabinet/view',

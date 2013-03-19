@@ -25,7 +25,7 @@ class MainController extends Controller
                     // User isn't logged into admin panel
                     $model = new YumUserLogin;
                     
-                    $this->render('login', array('model' => $model));
+                  //  $this->render('login', array('model' => $model));
                 }
                 else{
                     $this->layout='//layouts/main';
@@ -35,5 +35,12 @@ class MainController extends Controller
                     }
                 }
 	}       
+        
+        public function actionError(){
+            if (Yii::app()->errorHandler->error['code'] == 403){
+                    $this->render('denied');
+            }
+        }
+        
 
 }

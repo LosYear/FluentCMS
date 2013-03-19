@@ -147,4 +147,30 @@ class Tour extends CActiveRecord
             }
             return false;
         }
+        
+        /**
+         * Returns current tour category
+         */
+        
+        public static function getCategory($id){
+            $model = Tour::model();
+            $criteria = new CDbCriteria();
+            $criteria->condition = '`id` = :id';
+            $criteria->params = array(':id' => $id);
+            
+            return $model->find($criteria)->category_id;
+        }
+        
+        /**
+         * Returns Tour type
+         */
+        
+        public static function getType($id){
+            $model = Tour::model();
+            $criteria = new CDbCriteria();
+            $criteria->condition = '`id` = :id';
+            $criteria->params = array(':id' => $id);
+            
+            return $model->find($criteria)->type;
+        }
 }

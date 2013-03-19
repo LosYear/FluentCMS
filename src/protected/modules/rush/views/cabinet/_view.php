@@ -3,11 +3,10 @@
 /* @var $data Tour */
 
     $type = Tour::types()[$data->type];
-    $date = DateTime::createFromFormat("Y-m-d G:i:s", $data->from);
-    $from = $date->format("j") . " " . Yii::t('RushModule.date_parental',$date->format("F")) . " " . $date->format("Y") . " " . $date->format("G:i");
     
-    $date = DateTime::createFromFormat("Y-m-d G:i:s", $data->till);
-    $till = $date->format("j") . " " . Yii::t('RushModule.date_parental',$date->format("F")) . " " . $date->format("Y") . " " . $date->format("G:i");
+    $from = Yii::app()->dateFormatter->formatDateTime($data->from, 'long', 'short');
+
+    $till = Yii::app()->dateFormatter->formatDateTime($data->till, 'long', 'short');
 ?>
 
 <div class="element">

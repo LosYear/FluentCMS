@@ -22,57 +22,55 @@
    
    Yii::app()->clientScript->registerScriptFile($assetsUrl.'/localization/ru.js', CClientScript::POS_HEAD);
 ?>
-    <fieldset class="edit-form">
 
-                <?php echo $form->errorSummary($model); ?>
+            <?php echo $form->errorSummary($model); ?>
 
-            <div class="row">
+            <div class="row-fluid">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'name'); ?></div>
                     <div class="column span-12"><?php echo $form->textField($model, 'name', array('class'=>'span12')); ?></div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row-fluid">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'description'); ?></div>
                     <div class="column span-12"><?php echo $form->textArea($model, 'description', array('class'=>'span12')); ?></div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row-fluid">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'category_id'); ?></div>
-                    <div class="column span-12"><?php echo $form->dropDownList($model, 'category_id', Category::dropDown()); ?></div>
+                    <div class="column span-12"><?php echo $form->dropDownList($model, 'category_id', Category::dropDown(), array('class'=>'span5')); ?></div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row-fluid">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'type'); ?></div>
-                    <div class="column span-12"><?php echo $form->dropDownList($model, 'type', Tour::types()); ?></div>
+                    <div class="column span-12"><?php echo $form->dropDownList($model, 'type', Tour::types(),array('class'=>'span5')); ?></div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row-fluid">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'from'); ?></div>
                     <div class="column span-12"><?php echo $form->textField($model, 'from', array('id'=>'datetime', 'class'=>'span12')); ?></div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row-fluid">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'till'); ?></div>
                     <div class="column span-12"><?php echo $form->textField($model, 'till', array('id'=>'datetime_2','class'=>'span12')); ?></div>
                 </div>
             </div>
 
-                <div class="row"><div class="column span-1"><?php $this->widget('bootstrap.widgets.TbButton', 
+                <div class="row-fluid"><div class="column span-1"><?php $this->widget('bootstrap.widgets.TbButton', 
             array('type'=>'primary','buttonType'=>'submit', 'label'=>Yii::t('admin','Submit'))); ?></div></div>
 
         <?php $this->endWidget(); ?>
-    </fieldset>
 
 </div><!-- form -->
 <script lang="javascript">

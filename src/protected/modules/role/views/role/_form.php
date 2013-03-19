@@ -4,22 +4,21 @@
             'enableAjaxValidation'=>false,
     )); ?>
     <?php echo $form->errorSummary($model); ?>
-    <fieldset class="edit-form">
-        <div class="row">
+        <div class="row-fluid">
             <div>
                 <div class="column span-4"><?php echo $form->labelEx($model,'title'); ?></div>
-                <div class="column span-12"><?php echo $form->textField($model, 'title', array('class'=>'span12')); ?></div>
+                <div class="column span-12"><?php echo $form->textField($model, 'title', array('class'=>'span9')); ?></div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row-fluid">
             <div>
                 <div class="column span-4"><?php echo $form->labelEx($model,'description'); ?></div>
-                <div class="column span-12"><?php echo $form->textArea($model, 'description', array('rows' => '6', 'cols'=>'50' )); ?></div>
+                <div class="column span-12"><?php echo $form->textArea($model, 'description', array('rows' => '6', 'cols'=>'50', 'class'=>'span9' )); ?></div>
             </div>
         </div>	
 
-        <div class="row">
+        <div class="row-fluid">
             <div>
                 <div class="column span-4"><?php echo CHtml::label(Yum::t('This users have been assigned to this role'), ''); ?></div>
                 <div class="column span-4">
@@ -31,7 +30,8 @@
                                         'fields' => 'username',
                                         'htmlOptions' => array(
                                                 'checkAll' => Yum::t('Choose All'),
-                                                'template' => '<div style="float:left;margin-right:5px;">{input}</div>{label}'),
+                                                'template' => '<div style="float:left;margin-right:5px;">{input}</div>{label}',
+                                                'class'=>'span9'),
                                         'showAddButton' => false
                                         ));  
                 ?></div>
@@ -74,13 +74,12 @@
         <div style="clear: both;"> </div>
         <?php } ?> -->
 
-        <div class="row">
+        <div class="row-fluid">
             <div class="column span-1">
             <?php $this->widget('bootstrap.widgets.TbButton', 
             array('type'=>'primary','buttonType'=>'submit', 'label'=>Yii::t('admin','Save'))); ?>
             </div>
         </div>
-    </fieldset>
 
 <?php $this->endWidget(); ?>
 

@@ -1,5 +1,3 @@
-
-
 <?php 
 Yii::app()->clientScript->registerCssFile(
 		Yii::app()->getAssetManager()->publish(

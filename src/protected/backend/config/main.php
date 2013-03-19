@@ -51,7 +51,8 @@ return array(
         'user' => array(
             'debug' => false,
             'userTable' => 'user',
-            'translationTable' => 'translation'
+            'translationTable' => 'translation',
+            'loginLayout' => 'backend.views.main.login',
         ),
         'usergroup' => array(
             'usergroupTable' => 'user_group',
@@ -101,7 +102,7 @@ return array(
         
         'bootstrap' => array(
             'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
-          //  'responsiveCss' => true,
+            'responsiveCss' => true,
         ),
         // uncomment the following to enable URLs in path-format
         
@@ -131,7 +132,7 @@ return array(
         
         'errorHandler' => array(
             // use 'site/error' action to display errors
-            'errorAction' => 'site/error'
+            'errorAction' => 'main/error'
         ),
         'log' => array(
             'class' => 'CLogRouter',

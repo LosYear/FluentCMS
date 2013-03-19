@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Мар 17 2013 г., 23:16
+-- Время создания: Мар 19 2013 г., 23:27
 -- Версия сервера: 5.5.30-log
 -- Версия PHP: 5.4.12
 
@@ -142,6 +142,28 @@ CREATE TABLE IF NOT EXISTS `category` (
 INSERT INTO `category` (`id`, `name`) VALUES
 (2, 'Физ.тех направление'),
 (3, 'Гуманитарное направление');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `certificate`
+--
+
+CREATE TABLE IF NOT EXISTS `certificate` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `file_name` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Дамп данных таблицы `certificate`
+--
+
+INSERT INTO `certificate` (`id`, `title`, `user_id`, `file_name`) VALUES
+(4, 'here', 1, 'certificate_1_1688111052.png'),
+(5, 'Сертификат', 1, 'certificate_1_1033049408.png');
 
 -- --------------------------------------------------------
 
@@ -448,7 +470,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   `school` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `profile`
@@ -459,7 +481,8 @@ INSERT INTO `profile` (`id`, `user_id`, `timestamp`, `privacy`, `show_friends`, 
 (2, 2, '2012-08-13 08:08:13', 'protected', 1, 1, NULL, '', '', '', '', ''),
 (3, 3, '2012-08-20 19:49:12', 'protected', 1, 1, NULL, '', '', '', '', ''),
 (4, 4, '2012-08-20 19:50:05', 'protected', 1, 1, NULL, '', '', '', '', ''),
-(5, 6, '2013-02-03 18:04:54', 'protected', 1, 1, '', '', '', '', '', '');
+(5, 6, '2013-02-03 18:04:54', 'protected', 1, 1, '', '', '', '', '', ''),
+(6, 7, '0000-00-00 00:00:00', 'protected', 1, 1, '', '', '', '', '', 'moderator@mail.ru');
 
 -- --------------------------------------------------------
 
@@ -539,7 +562,7 @@ INSERT INTO `profile_visit` (`visitor_id`, `visited_id`, `timestamp_first_visit`
 (1, 3, 1362774633, 1363115571, 3),
 (1, 4, 1362909824, 1362909824, 1),
 (1, 5, 1362909829, 1362909829, 1),
-(2, 1, 1362422598, 1362422598, 1);
+(2, 1, 1362422598, 1363721121, 2);
 
 -- --------------------------------------------------------
 
@@ -554,7 +577,7 @@ CREATE TABLE IF NOT EXISTS `results` (
   `points` int(11) NOT NULL,
   `json` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `results`
@@ -564,7 +587,8 @@ INSERT INTO `results` (`id`, `user_id`, `tour_id`, `points`, `json`) VALUES
 (2, 2, 2, 2, ''),
 (3, 1, 2, -1, ''),
 (4, 1, 2, -1, ''),
-(5, 1, 3, -1, '{"file":"answer3_1.txt"}');
+(5, 1, 3, -1, '{"file":"answer3_1.txt"}'),
+(6, 1, 1, 2, '{"points":2,"requests":6,"current":7,"answers":{"1":{"answer":"undef","status":"-"},"2":{"answer":"undef","status":"-"},"3":{"answer":"undef","status":"-"},"4":{"answer":"1","status":"-"},"5":{"answer":"3","status":"+"},"6":{"answer":"1","status":"+"}}}');
 
 -- --------------------------------------------------------
 
@@ -580,7 +604,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   `price` double DEFAULT NULL COMMENT 'Price (when using membership module)',
   `duration` int(11) DEFAULT NULL COMMENT 'How long a membership is valid',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `role`
@@ -591,7 +615,8 @@ INSERT INTO `role` (`id`, `title`, `description`, `is_membership_possible`, `pri
 (2, 'Demo', 'Users having the demo role', 0, 0, 0),
 (3, 'Business', 'Example Business account', 0, 9.99, 7),
 (4, 'Premium', 'Example Premium account', 0, 19.99, 28),
-(5, 'TestRole', 'Here is test role for test proposes', 0, NULL, NULL);
+(5, 'TestRole', 'Here is test role for test proposes', 0, NULL, NULL),
+(6, 'Moderator', 'Модераторы. Проверяющие. Имеют доступ к личному кабинету участника', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -654,7 +679,7 @@ CREATE TABLE IF NOT EXISTS `tmp_results` (
 --
 
 INSERT INTO `tmp_results` (`id`, `user_id`, `tour_id`, `json`) VALUES
-(5, 1, 1, '{"points":0,"requests":2,"current":3,"answers":{"1":{"answer":"undef","status":"-"},"2":{"answer":"undef","status":"-"}}}');
+(5, 1, 1, '{"points":2,"requests":6,"current":7,"answers":{"1":{"answer":"undef","status":"-"},"2":{"answer":"undef","status":"-"},"3":{"answer":"undef","status":"-"},"4":{"answer":"1","status":"-"},"5":{"answer":"3","status":"+"},"6":{"answer":"1","status":"+"}}}');
 
 -- --------------------------------------------------------
 
@@ -832,19 +857,20 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   KEY `status` (`status`),
   KEY `superuser` (`superuser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `activationKey`, `createtime`, `lastvisit`, `lastaction`, `lastpasswordchange`, `superuser`, `status`, `avatar`, `notifyType`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1344845293, 1363269804, 1363547164, 0, 1, 1, 'data/avatar/1_cartoon-moose-9.png', 'Instant'),
-(2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', '', 1344845293, 1363542941, 1362422638, 0, 0, 1, NULL, 'Instant'),
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 1344845293, 1363713911, 1363720012, 0, 1, 1, 'data/avatar/1_cartoon-moose-9.png', 'Instant'),
+(2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', '', 1344845293, 1363721018, 1363721148, 0, 0, 1, NULL, 'Instant'),
 (3, 'SuperUser', 'a1866808738b5888e1546977e231f999', 'f7f7cbfb674cd0b45603c696ce5ea33b', 1345492151, 0, 0, 0, 0, 0, NULL, 'Instant'),
 (4, 'SUser1', '6803f360e320f378aa82365f8c79673d', '8de9c5d0212e8cb3288c9be3137ff170', 1345492205, 0, 0, 0, 0, 0, NULL, 'Instant'),
 (5, 'test', 'a1866808738b5888e1546977e231f999', 'cdd5481162a62b84487f8ab0692940dc', 1359905967, 0, 0, 1359905967, 0, 1, NULL, 'Instant'),
-(6, 'uTest', 'ff4cac7d4874299d83f8be280d1cbb77', '317c9adf1b5f66b0499c75f7a93f97c7', 1359914694, 0, 0, 1359914694, 0, 0, NULL, 'Instant');
+(6, 'uTest', 'ff4cac7d4874299d83f8be280d1cbb77', '317c9adf1b5f66b0499c75f7a93f97c7', 1359914694, 0, 0, 1359914694, 0, 0, NULL, 'Instant'),
+(7, 'moderator', '0408f3c997f309c03b08bf3a4bc7b730', 'ec9c6069948906bd30b6e2a9fa29dd5a', 1363719265, 1363719992, 0, 1363719265, 0, 1, NULL, 'Instant');
 
 -- --------------------------------------------------------
 
@@ -895,7 +921,8 @@ CREATE TABLE IF NOT EXISTS `user_role` (
 
 INSERT INTO `user_role` (`user_id`, `role_id`) VALUES
 (2, 3),
-(6, 5);
+(6, 5),
+(7, 6);
 
 -- --------------------------------------------------------
 

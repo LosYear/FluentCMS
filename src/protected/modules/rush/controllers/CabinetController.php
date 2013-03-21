@@ -133,7 +133,9 @@ class CabinetController extends Controller
             $filename = Yii::getPathOfAlias('application.modules.rush.data').'/'.$task->task;
             //die($filename);
             
-            Yii::app()->getRequest()->sendFile(json_decode($task->advanced, true)["title"], file_get_contents($filename), NULL, false);
+            $tmp = json_decode($task->advanced, true);
+            
+            Yii::app()->getRequest()->sendFile($tmp["title"], file_get_contents($filename), NULL, false);
         }
         
         /**

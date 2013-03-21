@@ -2,7 +2,8 @@
 /* @var $this TourController */
 /* @var $data Tour */
 
-    $type = Tour::types()[$data->type];
+    $tmp = Tour::types();
+    $type = $tmp[$data->type];
     
     $from = Yii::app()->dateFormatter->formatDateTime($data->from, 'long', 'short');
 
@@ -10,7 +11,7 @@
 ?>
 
 <div class="element">
-    <h3><?php echo Category::dropDown()[$data->category_id] ?><b> / </b>
+    <h3><?php $tmp = Category::dropDown(); echo $tmp[$data->category_id] ?><b> / </b>
         <a href="<?php echo Yii::app()->createUrl('rush/cabinet/view', array('id' => $data->id) )?>"><?php echo $data->name ?></a></h3>
     
 <?php $this->widget('bootstrap.widgets.TbDetailView', array(

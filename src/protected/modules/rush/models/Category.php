@@ -104,4 +104,16 @@ class Category extends CActiveRecord
             
             return $result;
         }
+        
+        /**
+         * Returns category name
+         */
+        
+        public static function getName($id){
+            $criteria = new CDbCriteria;
+            $criteria->condition = '`id` = :id';
+            $criteria->params = array(':id' => $id);
+            
+            return Category::model()->find($criteria)->name;
+        }
 }

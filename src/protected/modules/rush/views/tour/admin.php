@@ -37,8 +37,8 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),
 		'name',
-                array('name' => 'type', 'filter' => Tour::types(), 'value' => 'Tour::types()[$data->type]'),
-		array('name' => 'category_id', 'filter' => Category::dropDown(), 'value' => 'Category::dropDown()[$data->category_id]'),
+                array('name' => 'type', 'filter' => Tour::types(), 'value' => 'Tour::getType($data->id, true)'),
+		array('name' => 'category_id', 'filter' => Category::dropDown(), 'value' => 'Category::getName($data->category_id)'),
 		array('name' => 'from', 'filter' => false,),
 		array('name' => 'till', 'filter' => false,),
 		array(

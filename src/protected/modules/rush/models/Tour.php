@@ -165,12 +165,31 @@ class Tour extends CActiveRecord
          * Returns Tour type
          */
         
-        public static function getType($id){
+        public static function getType($id, $full = false){
             $model = Tour::model();
             $criteria = new CDbCriteria();
             $criteria->condition = '`id` = :id';
             $criteria->params = array(':id' => $id);
             
+            if($full){
+                $tmp = Tour::types();
+                return $tmp[$model->find($criteria)->type];
+            }
             return $model->find($criteria)->type;
+        }
+        
+        /**
+         * Returns tour's title
+         */
+        
+        public static function title($id){
+            $model = Tour::model();
+            $criteria = new CDbCriteria;
+            $criteria->condition = '`id` = :id';
+            $criteria->params = array(':id' => $id);
+            
+            $result = $model->find($criteria);
+            
+            return $result->name;
         }
 }

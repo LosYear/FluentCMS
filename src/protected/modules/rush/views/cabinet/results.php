@@ -33,7 +33,7 @@
                 'template'=>"{items}",
                 //'filter'=>$dataProvider->model,
                 'columns'=>array(
-                    array('name'=>'tour_id', 'value'=>'Tour::dropDown()[$data->tour_id]'),
+                    array('name'=>'tour_id', 'value'=>'Tour::title($data->tour_id)'),
                     array('name'=>'points', 'value'=>'($data->points == -1) ? Yii::t("RushModule.cabinet", "Not checked") : $data->points', 'htmlOptions'=>array('style'=>'width: 200px')),
                 ),
         )); ?>

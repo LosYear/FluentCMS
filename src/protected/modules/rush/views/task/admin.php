@@ -35,8 +35,8 @@ $('.search-form form').submit(function(){
         'template'=>"{items}",
 	'columns'=>array(
 		array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),
-		array('name' => 'tour_id', 'filter' => Tour::dropDown(), 'value' => 'Tour::dropDown()[$data->tour_id]'),
-		array('name' => 'type', 'filter' => Task::types(), 'value' => 'Task::types()[$data->type]'),
+		array('name' => 'tour_id', 'filter' => Tour::dropDown(), 'value' => 'Tour::title($data->tour_id)'),
+		array('name' => 'type', 'filter' => Task::types(), 'value' => 'Task::type($data->id)'),
 		'task',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

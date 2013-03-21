@@ -103,4 +103,21 @@ class Task extends CActiveRecord
                 'question' => Yii::t('RushModule.admin', 'Question'),
             );
         }
+        
+        /**
+         * Returns type of task
+         */
+        
+        public static function type($id){
+            $types = Task::types();
+            
+            $criteria = new CDbCriteria;
+            $criteria->condition = '`id` = :id';
+            $criteria->params = array(':id' => $id);
+            
+            $type = Task::model()->find($criteria)->type;
+            //echo($type);die;
+            
+            return $types[$type];
+        }
 }

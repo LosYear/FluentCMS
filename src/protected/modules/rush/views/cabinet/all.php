@@ -24,7 +24,9 @@
       <?php $this->renderPartial('sidebar', array('adv'=>$this->menu)); ?>
     </div>
     <div class="span9 well block">
-        <h1><?php echo Yii::t('RushModule.cabinet', 'All tours'); ?> </h1>
+        <div class="page-header">
+            <h1><?php echo Yii::t('RushModule.cabinet', 'Tours'); ?> <small><?php echo Yii::t('RushModule.cabinet', 'All'); ?></small></h1>
+        </div>
         <?php $this->widget('zii.widgets.CListView', array(
                 'dataProvider'=>$dataProvider,
                 'itemView'=>'_view',

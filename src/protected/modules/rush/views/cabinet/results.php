@@ -25,7 +25,9 @@
       <?php $this->renderPartial('sidebar', array('adv'=>$this->menu)); ?>
     </div>
     <div class="span9 well block">
-        <h1><?php echo Yii::t('RushModule.cabinet', 'Results'); ?> </h1>
+        <div class="page-header">
+            <h1><?php echo Yii::t('RushModule.cabinet', 'Results'); ?></h1>
+        </div>
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
                 'id'=>'results-grid',
                 'type'=>'striped condensed',

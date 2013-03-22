@@ -25,7 +25,9 @@
     </div>
     <div class="span9 well block">
 
-    <h3><?php echo Yii::t('RushModule.moderator', 'Certificates'); ?></h3>
+    <div class="page-header">
+        <h1><?php echo Yii::t('RushModule.moderator', 'Certificates'); ?></h1>
+    </div>
 
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
                 'id'=>'block-grid',

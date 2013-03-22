@@ -33,8 +33,9 @@
     </div>
     <div class="span9 well block">
         <div class="element">
-            <h3 class="center"><?php echo Category::dropDown()[$data->category_id] ?><b> / </b>
-                <?php echo $data->name ?></h3>
+            <div class="page-header">
+                <h1><?php echo $data->name; ?> <small><?php echo Category::getName($data->category_id); ?></small></h1>
+            </div>
 
         <?php $this->widget('bootstrap.widgets.TbDetailView', array(
             'data'=>$data,

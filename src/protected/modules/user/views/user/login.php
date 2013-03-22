@@ -20,10 +20,10 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'htmlOptions'=>array('class'=>'well'),
 )); ?>
  
-<div class="row"><?php echo $form->textFieldRow($model, 'username', array('class'=>'span3')); ?></div>
-<div class="row"><?php echo $form->passwordFieldRow($model, 'password', array('class'=>'span3')); ?></div>
-<div class="row rememberMe"><?php echo $form->checkboxRow($model, 'rememberMe'); ?></div>
-<div class="row submit"><?php $this->widget('bootstrap.widgets.TbButton', array('type'=>'primary', 'buttonType'=>'submit', 
+<div class="row-fluid"><?php echo $form->textFieldRow($model, 'username', array('class'=>'span3')); ?></div>
+<div class="row-fluid"><?php echo $form->passwordFieldRow($model, 'password', array('class'=>'span3')); ?></div>
+<div class="row-fluid rememberMe"><?php echo $form->checkboxRow($model, 'rememberMe'); ?></div>
+<div class="row-fluid submit"><?php $this->widget('bootstrap.widgets.TbButton', array('type'=>'primary', 'buttonType'=>'submit', 
                                                             'label'=>Yii::t('yum', 'Login'))); ?></div>
  
 <?php $this->endWidget(); ?>

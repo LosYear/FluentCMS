@@ -1,3 +1,6 @@
+        <div class="page-header">
+            <h1><?php echo Yum::t('Profile')?> <small><?php echo Yum::t(ucfirst($this->getAction()->getId())); ?></small></h1>
+        </div>
 <?php 
 $this->pageTitle = Yii::app()->name . ' - '.Yum::t( "Profile");
 $this->breadcrumbs=array(

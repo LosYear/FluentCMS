@@ -5,7 +5,7 @@
                 <?php $criteria = new CDbCriteria; $criteria->condition = 'id = :id'; $criteria->params = array('id' => $user->user_id);
                 $tmp = $model->find($criteria); echo $tmp->getAvatar();?>
                 <div class="caption">
-                    <h3><?php echo $user->name; ?></h3>
+                    <h3><a href="<?php echo Yii::app()->createUrl('profile/profile/view', array('id' => $user->user_id)); ?>"><?php echo $user->name; ?></a></h3>
                     <a class="geo"><?php echo $user->city.", ".$user->school; ?></a>
                 </div>
             </div>

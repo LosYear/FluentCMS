@@ -17,7 +17,9 @@
       <?php $this->renderPartial('sidebar', array('adv'=>array())); ?>
     </div>
     <div class="span9 well block">
-        <h3><?php echo Yii::t('RushModule.moderator', 'Updating points'); ?></h3>
+        <div class="page-header">
+            <h1><?php echo Yii::t('RushModule.moderator', 'Solve'); ?> <small><?php echo Yii::t('RushModule.moderator', 'Check'); ?></small></h1>
+        </div>
         <div class="form">
 
         <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(

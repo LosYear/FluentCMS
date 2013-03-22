@@ -4280,3 +4280,15 @@ in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/task/_form.php 
 in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (126)
 in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/task/_form.php (31)
 in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/task/create.php (17)
+2013/03/22 16:19:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+2013/03/22 16:19:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+2013/03/22 16:19:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (33)

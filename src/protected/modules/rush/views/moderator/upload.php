@@ -21,7 +21,9 @@
       <?php $this->renderPartial('sidebar', array('adv'=>$this->menu)); ?>
     </div>
     <div class="span9 well block">
-        <h3><?php echo Yii::t('RushModule.moderator', 'Upload certificate'); ?></h3>
+    <div class="page-header">
+        <h1><?php echo Yii::t('RushModule.moderator', 'Certificate'); ?> <small><?php echo Yii::t('RushModule.moderator', 'Upload');?></small></h1>
+    </div>
         <div class="form">
             <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                 'id'=>'certificate-form',

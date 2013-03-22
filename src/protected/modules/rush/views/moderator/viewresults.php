@@ -17,8 +17,9 @@
       <?php $this->renderPartial('sidebar', array('adv'=>array())); ?>
     </div>
     <div class="span9 well block">
-        <h3 class="center"><?php echo Category::dropDown()[Tour::getCategory($data->tour_id)] ?><b> / </b>
-        <?php echo Tour::dropDown()[$data->tour_id] ?></h3>
+        <div class="page-header">
+            <h1><?php echo Tour::title($data->tour_id); ?> <small><?php echo Category::getName(Tour::getCategory($data->tour_id)); ?></small></h1>
+        </div>
         <?php $this->widget('bootstrap.widgets.TbDetailView', array(
             'data'=>array('user'=>  YumUser::getUsernameById($data->user_id), 'points'=>$data->points,),
             'attributes'=>array(

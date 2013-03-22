@@ -4,6 +4,9 @@
       <?php $this->renderpartial('_menu'); ?>
     </div>
     <div class="span9 well block">
+        <div class="page-header">
+            <h1><?php echo Yii::t('MailboxModule.main', 'Mailbox')?> <small><?php echo Yii::t('MailboxModule.main', ucfirst($this->getAction()->getId())); ?></small></h1>
+        </div>
 <?php
 
 if($this->getAction()->getId()!='inbox') 

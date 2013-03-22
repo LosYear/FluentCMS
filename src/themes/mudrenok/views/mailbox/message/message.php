@@ -20,16 +20,15 @@ if(strlen($subject) > 100)
 
 ?>
 <div class="mailbox-message-list">
-
+        <div class="page-header">
+            <h1><?php echo Yii::t('MailboxModule.main', 'Mailbox')?> <small><?php echo $subject; ?></small></h1>
+        </div>
 
 <?php
     foreach(Yii::app()->user->getFlashes() as $key => $message) {
         echo '<div class="flash-' . $key . '">' . $message . "</div>\n";
     }
 ?>
-<div class="mailbox-message-subject  mailbox-ellipsis"><?php echo $subject; ?></div>
-
-<br />
 <?php
 $first_message=1;
 foreach($conv->messages as $msg): 

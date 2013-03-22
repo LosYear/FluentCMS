@@ -116,5 +116,6 @@
         'Upload avatar image' => 'Загрузить аватар',
         'Your changes have been saved' => 'Изменения сохранены',
         'Teacher' => 'Руководитель',
+        'Profile' => 'Профиль',
     ); 
 ?>

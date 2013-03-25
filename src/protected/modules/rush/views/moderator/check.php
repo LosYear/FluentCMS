@@ -1,3 +1,7 @@
+<?php 
+	$cs=Yii::app()->getClientScript();
+        $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
+?>
 <?php
 /* @var $this CabinetController */
 
@@ -30,7 +34,10 @@
                 <?php echo $form->errorSummary($model); ?>
                 <fieldset class="edit-form">
                     <?php echo $form->labelEx($model,'points'); ?>
-                    <?php echo $form->textField($model, 'points', array('class'=>'')); ?><br>
+                    <?php echo $form->textField($model, 'points', array('class'=>'',
+                            'data-title'=>Yii::t('RushModule.moderator', 'Points'), 
+                            'data-content'=>Yii::t('RushModule.popover', 'Enter the amount of points for this solve'),
+                            'rel'=>'popover')); ?><br>
 
                    <?php $this->widget('bootstrap.widgets.TbButton', 
                     array('type'=>'primary','buttonType'=>'submit', 'label'=>Yii::t('admin','Submit'))); ?>

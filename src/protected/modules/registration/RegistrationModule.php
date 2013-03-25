@@ -15,7 +15,7 @@ class RegistrationModule extends CWebModule {
 	public $activationFailureView = '/registration/activation_failure';
 
 	// Whether to confirm the activation of an user by email
-	public $enableActivationConfirmation = true; 
+	public $enableActivationConfirmation = false; 
 
 	public $registrationEmail='register@website.com';
 	public $recoveryEmail='restore@website.com';
@@ -30,7 +30,7 @@ class RegistrationModule extends CWebModule {
 	 * Whether to use captcha in registration process
 	 * @var boolean
 	 */
-	public $enableCaptcha = true;
+	public $enableCaptcha = false;
 
 	public $loginAfterSuccessfulActivation = false;
 

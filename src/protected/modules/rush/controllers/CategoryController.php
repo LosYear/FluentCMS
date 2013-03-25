@@ -62,8 +62,10 @@ class CategoryController extends Controller
 		if(isset($_POST['Category']))
 		{
 			$model->attributes=$_POST['Category'];
-			if($model->save())
+			if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Category "%s" created', array('%s' => $model->name)));
 				$this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('create',array(
@@ -86,8 +88,10 @@ class CategoryController extends Controller
 		if(isset($_POST['Category']))
 		{
 			$model->attributes=$_POST['Category'];
-			if($model->save())
+			if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Category "%s" updated', array('%s' => $model->name)));
 				$this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('update',array(

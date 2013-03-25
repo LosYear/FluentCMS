@@ -64,8 +64,10 @@ class NewsController extends Controller
                     $model->author = Yii::app()->user->id;
                     $model->created = new CDbExpression('NOW()');
                     
-                    if($model->save())
-                            $this->redirect(array('view','id'=>$model->id));
+                    if($model->save()){
+                            Yii::app()->user->setFlash('success', Yii::t('alerts', 'News "%s" created', array('%s' => $model->title)));
+                            $this->redirect(array('admin'));
+                    }
             }
 
             $this->render('create',array(
@@ -97,27 +99,29 @@ class NewsController extends Controller
             return $model;
     }
     
-    	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
+    /**
+     * Updates a particular model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id the ID of the model to be updated
+     */
+    public function actionUpdate($id)
+    {
+            $model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+            // Uncomment the following line if AJAX validation is needed
+            // $this->performAjaxValidation($model);
 
-		if(isset($_POST['News']))
-		{
-			$model->attributes=$_POST['News'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+            if(isset($_POST['News']))
+            {
+                    $model->attributes=$_POST['News'];
+                    if($model->save()){
+                            Yii::app()->user->setFlash('success', Yii::t('alerts', 'News "%s" updated', array('%s' => $model->title)));
+                            $this->redirect(array('admin'));
+                    }
+            }
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
+            $this->render('update',array(
+                    'model'=>$model,
+            ));
+    }
 }

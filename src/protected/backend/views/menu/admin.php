@@ -26,8 +26,16 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('admin', 'Manage menus'); ?></h1>
-
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Menu') ?> <small><?php echo Yii::t('admin', 'Manage') ?></small></h1>
+</div>
+<?php $this->widget('bootstrap.widgets.TbAlert', array(
+        'block'=>true, // display a larger alert block?
+        'fade'=>true, // use transitions?
+        'closeText'=>'&times;', // close link text - if set to false, no close link is displayed
+        'alerts'=>array( // configurations per alert type
+            'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
+        ))); ?>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'menu-grid',
         'type'=>'striped bordered condensed',
@@ -37,7 +45,7 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),
 		array('name'=>'title', 'header'=>Yii::t('admin', 'Title')),
-		array('name'=>'name', 'type'=>'html', 'header'=>Yii::t('admin', 'Name'), 'value'=>'"<b><a href=\"menuitem/$data->id.html\">$data->name</a></b>"'),
+		array('name'=>'name', 'type'=>'html', 'header'=>Yii::t('admin', 'Name'), 'value'=>'"<b><a href=\"".Yii::app()->createUrl(\'menuItem/admin\', array(\'id\' => $data->id))."\">$data->name</a></b>"'),
 		array('name'=>'description', 'header'=>Yii::t('admin', 'Description')),
 		array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<i class=\" icon-eye-open\"/>" : "<i class=\" icon-eye-close\"/>"'),
 		array(

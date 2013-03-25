@@ -6,7 +6,7 @@ $module = Yum::module();
 
 $this->pageTitle = Yii::t('yum', 'Login');
 if(isset($this->title))
-$this->title = Yii::t('yum', 'Login');
+//$this->title = Yii::t('yum', 'Login');
 $this->breadcrumbs=array(Yii::t('yum', 'Login'));
 
 Yum::renderFlash();

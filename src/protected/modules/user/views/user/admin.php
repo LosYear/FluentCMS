@@ -1,6 +1,7 @@
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Users') ?> <small><?php echo Yii::t('admin', 'Manage') ?></small></h1>
+</div>
 <?php
-
-$this->title = Yum::t('Manage users');
 
 $this->breadcrumbs = array(
 	Yum::t('Users') => array('admin'),
@@ -11,7 +12,13 @@ $this->menu=array(
 	array('label'=>Yii::t('yum', 'Create user'), 'url'=>array('create'), 'icon'=>'file black'),
 );
 
-echo Yum::renderFlash();
+$this->widget('bootstrap.widgets.TbAlert', array(
+        'block'=>true, // display a larger alert block?
+        'fade'=>true, // use transitions?
+        'closeText'=>'&times;', // close link text - if set to false, no close link is displayed
+        'alerts'=>array( // configurations per alert type
+            'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
+)));
 
 $this->widget('bootstrap.widgets.TbGridView', array(
 	'dataProvider'=>$model->search(),

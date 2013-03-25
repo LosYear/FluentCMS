@@ -489,7 +489,7 @@ class YumUser extends YumActiveRecord
 	}
 
 	// Registers a user 
-	public function register($username = null, $password = null, $profile = null)
+	public function register($username = null, $password = null, $profile = null, $status = 0)
 	{
 		if ($username !== null && $password !== null) {
 			// Password equality is checked in Registration Form
@@ -501,7 +501,7 @@ class YumUser extends YumActiveRecord
 		$this->superuser = 0;
 
 		// Users stay banned until they confirm their email address.
-		$this->status = YumUser::STATUS_INACTIVE;
+		$this->status = $status;
 
 		// If the avatar module and avatar->enableGravatar is activated, we assume
 		// the user wants to use his Gravatar automatically after registration
@@ -738,9 +738,9 @@ class YumUser extends YumActiveRecord
 		if (Yum::hasModule('avatar') && $this->profile) {
 			$options = array();
 			if ($thumb)
-				$options = array('style' => 'width: 40px; height:40px;');
+				$options = array('style' => 'width: 40px; height:40px;', 'class'=>'avatar');
 			else
-				$options = array('style' => 'width: ' . Yum::module('avatar')->avatarDisplayWidth . 'px;');
+				$options = array('style' => 'width: ' . Yum::module('avatar')->avatarDisplayWidth . 'px;', 'class'=>'avatar');
 
 			$return = '<div class="avatar">';
 

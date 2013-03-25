@@ -117,5 +117,6 @@
         'Your changes have been saved' => 'Изменения сохранены',
         'Teacher' => 'Руководитель',
         'Profile' => 'Профиль',
+        'Subject' => 'Раздел',
     ); 
 ?>

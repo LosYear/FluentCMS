@@ -1,6 +1,7 @@
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Users') ?> <small><?php echo Yii::t('admin', 'Statistics') ?></small></h1>
+</div>
 <?php
-$this->title = Yum::t('Statistics');
-
 $this->breadcrumbs = array(
     Yum::t('Users') => array('index'),
     Yum::t('Statistics'));

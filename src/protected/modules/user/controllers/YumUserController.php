@@ -220,6 +220,7 @@ class YumUserController extends YumController {
 					$profile->user_id = $model->id;
 					$profile->save(array('user_id'), false);
 				}
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'User "%s" created', array('%s' => $model->username)));
 				$this->redirect(array('admin'));
 			}
 		}
@@ -261,7 +262,7 @@ class YumUserController extends YumController {
 			if(!$passwordform->hasErrors() && $model->save()) {
 				if(isset($profile)) 
 					$profile->save();
-
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'User "%s" updated', array('%s' => $model->username)));
 				$this->redirect(array('admin'));
 			}
 		}

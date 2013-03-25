@@ -1,3 +1,7 @@
+<?php 
+	$cs=Yii::app()->getClientScript();
+        $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
+?>
 <?php
 /* @var $this CategoryController */
 /* @var $model Category */
@@ -15,7 +19,10 @@
         <div class="row-fluid">
             <div>
                 <div class="column span-4"><?php echo $form->labelEx($model,'name'); ?></div>
-                <div class="column span-12"><?php echo $form->textField($model, 'name', array('class'=>'span12')); ?></div>
+                <div class="column span-12"><?php echo $form->textField($model, 'name', array('class'=>'span9',
+                            'data-title'=>Yii::t('admin', 'Name'), 
+                            'data-content'=>Yii::t('RushModule.popover', 'Title of category. Shown to user'),
+                            'rel'=>'popover')); ?></div>
             </div>
         </div>
 

@@ -32,6 +32,7 @@ class TaskController extends Controller
 				'actions'=>array('admin','delete', 'create', 'update'),
 				'users'=>array('admin'),
 			),
+                        array('allow', 'actions' => array('type'), 'users' =>array('*')),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -85,6 +86,7 @@ class TaskController extends Controller
    
                                 $file->saveAs(Yii::getPathOfAlias('application.modules.rush.data').'/'.$file_name);
                                 
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Task created'));
 				$this->redirect(array('admin'));
                             }
                         }
@@ -94,6 +96,7 @@ class TaskController extends Controller
                             $model->task = $_POST['task-text'];
                             
                             if($model->save()){  
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Task created'));
                                 $this->redirect(array('admin'));
                             
                             }
@@ -142,6 +145,7 @@ class TaskController extends Controller
    
                                 $file->saveAs(Yii::getPathOfAlias('application.modules.rush.data').'/'.$file_name);
                                 
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Task updated'));
 				$this->redirect(array('admin'));
                             }
                         }
@@ -151,6 +155,7 @@ class TaskController extends Controller
                             $model->task = $_POST['task-text'];
                             
                             if($model->save()){  
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Task updated'));
                                 $this->redirect(array('admin'));
                             
                             }
@@ -204,8 +209,24 @@ class TaskController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        /**
+         * Ajax function. Returns tour type
+         */
+        
+        public function actionType(){
+            if (isset($_REQUEST['id'])){
+                $model = Tour::model();
+                $criteria = new CDbCriteria();
+                
+                $criteria->condition = '`id` = :id';
+                $criteria->params = array(':id' => $_REQUEST['id']);
+                
+                die($model->find($criteria)->type);
+            }
+        }
 
-	/**
+        /**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded

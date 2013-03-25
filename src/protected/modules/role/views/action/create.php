@@ -9,6 +9,8 @@ $this->menu=array(
 );
 ?>
 
-<h1> <?php echo Yum::t('Create Action'); ?></h1>
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Action') ?> <small><?php echo Yii::t('admin', 'Create') ?></small></h1>
+</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

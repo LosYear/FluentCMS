@@ -1,5 +1,7 @@
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Profile fields') ?> <small><?php echo Yii::t('admin', 'Create') ?></small></h1>
+</div>
 <?php
-$this->title = Yii::t("yum", 'Create profile field'); 
 $this->breadcrumbs=array(
 	Yii::t("yum", 'Profile fields')=>array('admin'),
 	Yii::t("yum", 'Create'));

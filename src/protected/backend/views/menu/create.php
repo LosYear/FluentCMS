@@ -3,8 +3,8 @@
 /* @var $model Menu */
 
 $this->breadcrumbs=array(
-	'Menus'=>array('index'),
-	'Create',
+	Yii::t('admin', 'Menu')=>array('admin'),
+	Yii::t('admin', 'Create'),
 );
 
 $this->menu=array(
@@ -12,6 +12,8 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('admin', 'Create menu'); ?></h1>
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Menu') ?> <small><?php echo Yii::t('admin', 'Create') ?></small></h1>
+</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

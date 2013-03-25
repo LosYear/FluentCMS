@@ -67,6 +67,7 @@ class YumPermissionController extends YumController
 					$model->principal_role = $_POST['YumPermission']['principal_id'];
 				}
 				if($model->save())
+                                        Yii::app()->user->setFlash('success', Yii::t('alerts', 'Permission granted'));
 					$this->redirect(array('admin'));
 				return;
 			}

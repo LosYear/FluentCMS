@@ -67,8 +67,10 @@ class BlocksController extends Controller
                         $model->author = Yii::app()->user->id;
                         $model->created = new CDbExpression('NOW()');
                         
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Block "%s" created', array('%s' => $model->title)));
+                                $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('create',array(
@@ -95,8 +97,10 @@ class BlocksController extends Controller
                         $model->updater = Yii::app()->user->id;
                         $model->updated = new CDbExpression('NOW()');
                         
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Block "%s" updated', array('%s' => $model->title)));
+                                $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('update',array(

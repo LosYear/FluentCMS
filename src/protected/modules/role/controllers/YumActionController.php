@@ -49,8 +49,10 @@ class YumActionController extends YumController {
 		if(isset($_POST['YumAction']))
 		{
 			$model->attributes=$_POST['YumAction'];
-			if($model->save())
-				$this->redirect(array('admin'));
+			if($model->save()){
+                            Yii::app()->user->setFlash('success', Yii::t('alerts', 'Action "%s" created', array('%s' => $model->title)));
+                            $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('create',array(
@@ -67,8 +69,10 @@ class YumActionController extends YumController {
 		if(isset($_POST['YumAction']))
 		{
 			$model->attributes=$_POST['YumAction'];
-			if($model->save())
+			if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Action "%s" updated', array('%s' => $model->title)));
 				$this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('update',array(

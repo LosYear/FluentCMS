@@ -12,6 +12,8 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo Yii::t('admin', 'Create menu item'); ?></h1>
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Menu items') ?> <small><?php echo Yii::t('admin', 'Create') ?></small></h1>
+</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

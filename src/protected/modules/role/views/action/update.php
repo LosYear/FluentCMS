@@ -11,6 +11,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Action <?php echo $model->id; ?></h1>
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Action') ?> <small><?php echo Yii::t('admin', 'Update') ?></small></h1>
+</div>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

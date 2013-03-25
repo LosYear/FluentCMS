@@ -63,8 +63,10 @@ class MenuController extends Controller
 		if(isset($_POST['Menu']))
 		{
 			$model->attributes=$_POST['Menu'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Menu "%s" create', array('%s' => $model->title)));
+                                $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('create',array(
@@ -87,8 +89,10 @@ class MenuController extends Controller
 		if(isset($_POST['Menu']))
 		{
 			$model->attributes=$_POST['Menu'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Menu "%s" updated', array('%s' => $model->title)));
+                                $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('update',array(

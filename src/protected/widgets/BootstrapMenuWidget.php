@@ -65,7 +65,22 @@
                 'class' => 'bootstrap.widgets.TbMenu',
                 'items' => $this->tmp,
                 ));
-            $this->items = $tmp1;
+            
+            $right = array(array(
+                'class' => 'bootstrap.widgets.TbMenu',
+                'htmlOptions'=>array('class'=>'pull-right'),
+                'items' => array(
+                    array('label' => 'Кабинет', 'url'=>Yii::app()->createUrl('rush/moderator'), 'visible'=>Yii::app()->user->hasRole("Moderator") || Yii::app()->user->isAdmin(), 'icon'=>'briefcase white'),
+                    array('label' => 'Кабинет', 'url'=>Yii::app()->createUrl('rush/cabinet'), 'visible'=>!Yii::app()->user->hasRole("Moderator") &&
+                        !Yii::app()->user->isGuest && !Yii::app()->user->isAdmin(), 'icon'=>'briefcase white'),
+                    array('label' => 'Панель управления', 'url'=>Yii::app()->homeUrl.'/backend.php', 'visible'=>Yii::app()->user->isAdmin(), 'icon'=>'wrench white'),
+                    array('label' => 'Сообщения', 'url'=>Yii::app()->createUrl('mailbox/message'), 'visible'=>!Yii::app()->user->isGuest, 'icon'=>'envelope white'),
+                    array('label' => 'Выход', 'url'=>Yii::app()->createUrl('user/logout'), 'visible'=>!Yii::app()->user->isGuest, 'icon'=>'off white'),
+                    array('label' => 'Вход', 'url'=>Yii::app()->createUrl('user/login'), 'visible'=>Yii::app()->user->isGuest),
+                    array('label' => 'Регистрация', 'url'=>Yii::app()->createUrl('registration/registration'), 'visible'=>Yii::app()->user->isGuest),
+                ),
+            ));
+            $this->items = array_merge($tmp1, $right);
             
             //print_r($this->items); die;
             

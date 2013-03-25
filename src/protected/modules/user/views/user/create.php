@@ -1,5 +1,7 @@
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'User') ?> <small><?php echo Yii::t('admin', 'Create') ?></small></h1>
+</div>
 <?php
-$this->title = Yum::t("Create user");
 
 $this->menu=array(
 	array('label'=>Yii::t('yum', 'Manage users'), 'url'=>array('admin'), 'icon'=>'list black',),

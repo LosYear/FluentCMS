@@ -22,6 +22,7 @@
     .thumbnail{
         text-align: center;
         background: #fff;
+        height: 350px;
     }
     
     #geo{

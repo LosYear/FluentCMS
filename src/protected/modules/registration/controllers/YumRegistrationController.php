@@ -76,13 +76,13 @@ class YumRegistrationController extends YumController {
 			$profile->validate();
 
 			if(!$form->hasErrors() && !$profile->hasErrors()) {
-				$user = new YumUser;
-				$user->register($form->username, $form->password, $profile->email);
+                            $user = new YumUser;
+				$user->register($form->username, $form->password, $profile->email, 1);
 				$profile->user_id = $user->id;
 				$profile->save();
 
-				$this->sendRegistrationEmail($user);
-				Yum::setFlash(Yum::t('Thank you for your registration. Please check your email.'));
+				//$this->sendRegistrationEmail($user);
+				//Yum::setFlash(Yum::t('Thank you for your registration. Please check your email.'));
 				$this->redirect(Yum::module()->loginUrl);
 			}
 		} 

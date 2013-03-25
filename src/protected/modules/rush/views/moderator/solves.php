@@ -35,7 +35,7 @@
                     array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),
                     //array('name' => 'category_id', 'header' => Yii::t('RushModule.moderator', 'Category')),
                     array('name' => 'tour_id', 'header' => Yii::t('RushModule.moderator', 'Tour'), 
-                        'value' => 'Tour::dropDown()[$data->tour_id]', 'filter' => Tour::dropDown()),
+                        'value' => 'Tour::title($data->tour_id)', 'filter' => Tour::dropDown()),
                     array('name' => 'user_id', 'header' => Yii::t('RushModule.moderator', 'User'), 
                         'value' => 'YumUser::getUsernameById($data->user_id)', 'filter' => YumUser::dropDown()),
                     array('name' => 'points', 'header' => Yii::t('RushModule.moderator', 'Points'), 'type' => 'html',

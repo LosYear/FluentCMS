@@ -51,7 +51,7 @@ class YumProfileController extends YumController {
 			if(!$user->hasErrors() && !$profile->hasErrors()) {
 
 				if($user->save() && $profile->save()) {
-					Yum::setFlash('Your changes have been saved');
+                                        Yii::app()->user->setFlash('success', Yii::t('alerts', 'Profile updated'));
 					$this->redirect(array('//profile/profile/view', 'id'=>$user->id));
 				}
                                // print_r($profile->attributes); die;

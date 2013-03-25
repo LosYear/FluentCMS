@@ -8,7 +8,7 @@
     $this->menu = array(
         array('label' => Yii::t('RushModule.cabinet', 'Olympiad')),
         array('label' => Yii::t('RushModule.cabinet', 'All tours'), 'url' => Yii::app()->createUrl('rush/cabinet/all'), 'icon' => 'road'),
-        array('label' => Yii::t('RushModule.cabinet', 'Active tours').'<span class="badge badge-info">8</span>', 'url' => Yii::app()->createUrl('rush/cabinet/active'), 'icon' => 'time'),
+        array('label' => Yii::t('RushModule.cabinet', 'Active tours'), 'url' => Yii::app()->createUrl('rush/cabinet/active'), 'icon' => 'time'),
         array('label' => Yii::t('RushModule.cabinet', 'Results'), 'url' => Yii::app()->createUrl('rush/cabinet/results'), 'icon' => 'tasks'),
     );
 

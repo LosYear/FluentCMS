@@ -70,8 +70,10 @@ class TourController extends Controller
                         $date = DateTime::createFromFormat("d.m.Y G:i", $model->till);
                         $model->till = $date->format("Y-m-d G:i:00");
                         
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Tour "%s" created', array('%s' => $model->name)));
+                                $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('create',array(
@@ -102,8 +104,10 @@ class TourController extends Controller
                         $date = DateTime::createFromFormat("d.m.Y G:i", $model->till);
                         $model->till = $date->format("Y-m-d G:i:00");
                         
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Tour "%s" updated', array('%s' => $model->name)));
+                                $this->redirect(array('admin'));
+                        }
 		}
                 
                 $date = DateTime::createFromFormat("Y-m-d G:i:s", $model->from);

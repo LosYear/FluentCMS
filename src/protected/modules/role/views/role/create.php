@@ -1,6 +1,7 @@
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Role') ?> <small><?php echo Yii::t('admin', 'Create') ?></small></h1>
+</div>
 <?php
-$this->title = Yum::t('Create role');
-
 $this->breadcrumbs=array(
 	Yum::t('Roles')=>array('admin'),
 	Yum::t('Create'));

@@ -1,3 +1,7 @@
+<?php 
+	$cs=Yii::app()->getClientScript();
+        $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
+?>
 <div class="form">
     <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
            // 'id'=>'block-form',
@@ -7,14 +11,20 @@
         <div class="row-fluid">
             <div>
                 <div class="column span-4"><?php echo $form->labelEx($model,'title'); ?></div>
-                <div class="column span-12"><?php echo $form->textField($model, 'title', array('class'=>'span9')); ?></div>
+                <div class="column span-12"><?php echo $form->textField($model, 'title', array('class'=>'span9',
+                            'data-title'=>Yii::t('admin', 'Title'), 
+                            'data-content'=>Yii::t('popover', 'Name of the role. Case sensetive'),
+                            'rel'=>'popover')); ?></div>
             </div>
         </div>
 
         <div class="row-fluid">
             <div>
                 <div class="column span-4"><?php echo $form->labelEx($model,'description'); ?></div>
-                <div class="column span-12"><?php echo $form->textArea($model, 'description', array('rows' => '6', 'cols'=>'50', 'class'=>'span9' )); ?></div>
+                <div class="column span-12"><?php echo $form->textArea($model, 'description', array('rows' => '6', 'cols'=>'50', 'class'=>'span9' ,
+                            'data-title'=>Yii::t('admin', 'Description'), 
+                            'data-content'=>Yii::t('popover', 'Description should content only plain text. Helps to administator'),
+                            'rel'=>'popover')); ?></div>
             </div>
         </div>	
 
@@ -31,7 +41,10 @@
                                         'htmlOptions' => array(
                                                 'checkAll' => Yum::t('Choose All'),
                                                 'template' => '<div style="float:left;margin-right:5px;">{input}</div>{label}',
-                                                'class'=>'span9'),
+                                                'class'=>'span9',
+                                                'data-title'=>Yii::t('admin', 'URL'), 
+                                                'data-content'=>Yii::t('popover', 'Custom URL for node. Node can be displayed at current URL.'),
+                                                'rel'=>'popover'),
                                         'showAddButton' => false
                                         ));  
                 ?></div>

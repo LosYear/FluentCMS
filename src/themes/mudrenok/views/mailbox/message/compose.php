@@ -1,3 +1,7 @@
+<?php 
+	$cs=Yii::app()->getClientScript();
+        $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
+?>
 <div class="container-fluid margin-10">
   <div class="row-fluid">
     <div class="span3 block">
@@ -33,7 +37,8 @@ $form=$this->beginWidget('CActiveForm', array(
 				<?php echo CHtml::activeLabelEx($conv,'to'); ?>
 			</div>
 			<div style="margin-left:80px">
-				<?php echo $form->textField($conv,'to',array('style'=>'width:100%;','id'=>'message-to','class'=>'mailbox-input', 'edit'=>$this->module->editToField? '1' : null)); ?>
+				<?php echo $form->textField($conv,'to',array('style'=>'width:100%;','id'=>'message-to','class'=>'mailbox-input', 'edit'=>$this->module->editToField? '1' : null,
+                                    )); ?>
 				<?php echo $form->error($conv,'to'); ?>
 
 
@@ -59,7 +64,7 @@ $form=$this->beginWidget('CActiveForm', array(
 			<div style="float:left">
 				<?php echo CHtml::activeLabelEx($conv,'subject',array('class'=>'mailbox-label')); ?>
 			</div>
-			<div class="mailbox-compose-inputwrap" style="margin-left:80px;">
+			<div class="mailbox-compose-inputwrap">
 				<?php echo $form->textField($conv,'subject',array('class'=>'mailbox-input','style'=>'width:100%;','placeholder'=>Yii::t('MailboxModule.main', $this->module->defaultSubject))); ?>
 				<?php echo $form->error($conv,'subject'); ?>
 			</div>

@@ -29,7 +29,7 @@ class MenuItemController extends Controller
 	{
 		return array(
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete', 'create', 'update'),
+				'actions'=>array('admin','delete', 'create', 'update', 'index', 'view'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -64,8 +64,10 @@ class MenuItemController extends Controller
 		if(isset($_POST['MenuItem']))
 		{
 			$model->attributes=$_POST['MenuItem'];
-			if($model->save())
-				$this->redirect(array('admin','id'=>$model->menu_id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Menu item created'));
+                                $this->redirect(array('admin', 'id'=>$model->menu_id));
+                        }
 		}
 
 		$this->render('create',array(
@@ -88,8 +90,10 @@ class MenuItemController extends Controller
 		if(isset($_POST['MenuItem']))
 		{
 			$model->attributes=$_POST['MenuItem'];
-			if($model->save())
-				$this->redirect(array('admin','id'=>$model->menu_id));
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Menu item updated'));
+                                $this->redirect(array('admin', 'id'=>$model->menu_id));
+                        }
 		}
 
 		$this->render('update',array(

@@ -10,7 +10,18 @@ $this->menu=array(
 );
 
 ?>
-<h1> <?php echo Yum::t('Manage Actions'); ?></h1>
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Actions') ?> <small><?php echo Yii::t('admin', 'Manage') ?></small></h1>
+</div>
+
+<?php $this->widget('bootstrap.widgets.TbAlert', array(
+        'block'=>true, // display a larger alert block?
+        'fade'=>true, // use transitions?
+        'closeText'=>'&times;', // close link text - if set to false, no close link is displayed
+        'alerts'=>array( // configurations per alert type
+            'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
+        ))); ?>
+
 
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'action-grid',

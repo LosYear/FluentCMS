@@ -1,3 +1,7 @@
+<?php 
+	$cs=Yii::app()->getClientScript();
+        $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
+?>
 <?php
 /* @var $this CabinetController */
 
@@ -34,13 +38,19 @@
             <fieldset class="edit-form">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'user_id'); ?>
-                    <?php echo $form->dropDownList($model, 'user_id', YumUser::dropDown()); ?></div>
+                    <?php echo $form->dropDownList($model, 'user_id', YumUser::dropDown(), array(
+                            'data-title'=>Yii::t('RushModule.moderator', 'User'), 
+                            'data-content'=>Yii::t('RushModule.popover', 'Select user certificate belongs to'),
+                            'rel'=>'popover')); ?></div>
                 </div>
                 
                 <div id="file-field-div" class="">
                     <div>
-                        <div class="column span-4"><?php echo $form->labelEx($model,'file_name'); ?>
-                        <?php echo $form->fileField($model, 'file_name'); ?></div>
+                        <div class="column"><?php echo $form->labelEx($model,'file_name'); ?>
+                        <?php echo $form->fileField($model, 'file_name', array(
+                            'data-title'=>Yii::t('RushModule.moderator', 'File'), 
+                            'data-content'=>Yii::t('RushModule.popover', 'File format can be doc(x) or pdf'),
+                            'rel'=>'popover')); ?></div>
                     </div>
                 </div>
                 <div class=""><div class="column span-1"><?php $this->widget('bootstrap.widgets.TbButton', 

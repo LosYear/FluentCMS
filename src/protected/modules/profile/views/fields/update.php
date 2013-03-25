@@ -1,5 +1,7 @@
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Profile field') ?> <small><?php echo Yii::t('admin', 'Update') ?></small></h1>
+</div>
 <?php
-$this->title = Yii::t("yum", 'Update profile field'). ' ' . $model->varname;
 $this->breadcrumbs=array(
 	Yii::t("yum", 'Profile fields')=>array('admin'),
 	$model->title=>array('view','id'=>$model->id),

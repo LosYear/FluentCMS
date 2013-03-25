@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('admin', 'Manage news'), 'url'=>array('admin'), 'icon'=>'list black',),
-	array('label'=>Yii::t('admin', 'Create news'), 'url'=>array('create'), 'icon'=>'file black'),
+	array('label'=>Yii::t('admin', 'Manage blocks'), 'url'=>array('admin'), 'icon'=>'list black',),
+	array('label'=>Yii::t('admin', 'Create block'), 'url'=>array('create'), 'icon'=>'file black'),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +26,17 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('admin', 'Manage blocks'); ?></h1>
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Blocks') ?> <small><?php echo Yii::t('admin', 'Manage') ?></small></h1>
+</div>
+
+<?php $this->widget('bootstrap.widgets.TbAlert', array(
+        'block'=>true, // display a larger alert block?
+        'fade'=>true, // use transitions?
+        'closeText'=>'&times;', // close link text - if set to false, no close link is displayed
+        'alerts'=>array( // configurations per alert type
+            'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'&times;'), // success, info, warning, error or danger
+        ))); ?>
 
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'block-grid',

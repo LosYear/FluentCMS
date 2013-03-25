@@ -1,5 +1,3 @@
-<h2> <?php echo Yii::t('main','Registration'); ?> </h2>
-
 <?php $this->breadcrumbs = array(Yii::t('main','Registration')); ?>
 
 <!--<div class="form">
@@ -56,20 +54,23 @@ echo $activeform->textField($profile,'email');
 </div><!-- form -->
 
 <div class="form">
+
 <?php   $_form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'verticalForm',
     'htmlOptions'=>array('class'=>'well'),
 )); ?>
+    <h2> <?php echo Yii::t('main','Registration'); ?> </h2>
+    <?php echo CHtml::errorSummary(array($form, $profile)); ?>
  
-<div class="row"><?php echo $_form->textFieldRow($form, 'username', array('class'=>'span3')); ?></div>
-<div class="row"><?php echo $_form->textFieldRow($profile, 'email', array('class'=>'span3')); ?></div>
+<div class="row-fluid"><?php echo $_form->textFieldRow($form, 'username', array('class'=>'span3')); ?></div>
+<div class="row-fluid"><?php echo $_form->textFieldRow($profile, 'email', array('class'=>'span3')); ?></div>
     
-<div class="row"><?php echo $_form->passwordFieldRow($form, 'password', array('class'=>'span3')); ?></div>
-<div class="row"><?php echo $_form->passwordFieldRow($form, 'verifyPassword', array('class'=>'span3')); ?></div>
+<div class="row-fluid"><?php echo $_form->passwordFieldRow($form, 'password', array('class'=>'span3')); ?></div>
+<div class="row-fluid"><?php echo $_form->passwordFieldRow($form, 'verifyPassword', array('class'=>'span3')); ?></div>
 
 <?php if(extension_loaded('gd') 
 			&& Yum::module('registration')->enableCaptcha): ?>
-<div class="row">
+<div class="row-fluid">
         <div>
         <?php $this->widget('CCaptcha'); ?>
         <?php echo $_form->textFieldRow($form,'verifyCode', array('class'=>'span3')); ?>
@@ -80,7 +81,7 @@ echo $activeform->textField($profile,'email');
 </div>
 <?php endif; ?>
 
-<div class="row"><?php $this->widget('bootstrap.widgets.TbButton', array('type'=>'primary','buttonType'=>'submit', 'label'=>Yum::t('Submit'))); ?></div>
+<div class="row-fluid"><?php $this->widget('bootstrap.widgets.TbButton', array('type'=>'primary','buttonType'=>'submit', 'label'=>Yum::t('Submit'))); ?></div>
  
 <?php $this->endWidget(); ?>
     

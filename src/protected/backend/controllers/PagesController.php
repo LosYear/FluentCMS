@@ -59,8 +59,10 @@ class PagesController extends Controller
                     $model->updated = new CDbExpression('NOW()');
                     $model->updater = Yii::app()->user->id;
                     
-                    if($model->save())
-                            $this->redirect(array('view','id'=>$model->id));
+                    if($model->save()){
+                            Yii::app()->user->setFlash('success', Yii::t('alerts', 'Page "%s" updated', array('%s' => $model->title)));
+                            $this->redirect(array('admin'));
+                    }
             }
 
             $this->render('update',array(
@@ -100,8 +102,10 @@ class PagesController extends Controller
                     $model->author = Yii::app()->user->id;
                     $model->created = new CDbExpression('NOW()');
                     
-                    if($model->save())
-                            $this->redirect(array('view','id'=>$model->id));
+                    if($model->save()){
+                        Yii::app()->user->setFlash('success', Yii::t('alerts', 'Page "%s" created', array('%s' => $model->title)));
+                        $this->redirect(array('admin'));
+                    }
             }
 
             $this->render('create',array(

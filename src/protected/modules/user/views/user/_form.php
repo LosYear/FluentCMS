@@ -1,3 +1,7 @@
+<?php 
+	$cs=Yii::app()->getClientScript();
+        $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
+?>
 <div class="form">
    <?php 
       $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
@@ -15,19 +19,28 @@
    <div class="row-fluid">
       <div>
          <label><?php echo $form->labelEx($model,'username'); ?></label>
-         <div class="column"><?php echo $form->textField($model, 'username', array('class'=>'span9')); ?></div>
+         <div class="column"><?php echo $form->textField($model, 'username', array('class'=>'span9',
+                            'data-title'=>Yii::t('admin', 'Username'), 
+                            'data-content'=>Yii::t('popover', 'Should contain only letters and "_"'),
+                            'rel'=>'popover')); ?></div>
       </div>
    </div>
    <div class="row-fluid">
       <div>
          <label><?php echo $form->labelEx($model,'superuser'); ?></label>
-         <div class="column"><?php echo $form->dropDownList($model, 'superuser',YumUser::itemAlias('AdminStatus'), array('class'=>'span4')); ?></div>
+         <div class="column"><?php echo $form->dropDownList($model, 'superuser',YumUser::itemAlias('AdminStatus'),array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Superuser'), 
+                            'data-content'=>Yii::t('popover', 'User administrator or not'),
+                            'rel'=>'popover')); ?></div>
       </div>
    </div>
    <div class="row-fluid">
       <div>
          <label><?php echo $form->labelEx($model,'status'); ?></label>
-         <div class="column"><?php echo $form->dropDownList($model,'status',YumUser::itemAlias('UserStatus'), array('class'=>'span4')); ?></div>
+         <div class="column"><?php echo $form->dropDownList($model,'status',YumUser::itemAlias('UserStatus'),array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Status'), 
+                            'data-content'=>Yii::t('popover', 'Status of user'),
+                            'rel'=>'popover')); ?></div>
       </div>
    </div>
    <!-- <?php if(Yum::hasModule('role')) { 

@@ -192,4 +192,15 @@ class Tour extends CActiveRecord
             
             return $result->name;
         }
+        
+        /**
+         * Returns count of active tours
+         */
+        
+        public static function activeCount(){
+            $criteria = new CDbCriteria;
+            $criteria->condition = '`from` <= NOW() AND `till` > NOW()';
+            
+            return Tour::model()->count($criteria);
+        }
 }

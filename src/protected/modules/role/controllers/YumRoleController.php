@@ -58,6 +58,7 @@ class YumRoleController extends YumController {
 									'{role}' =>  $model->title,
 									'{username}' => Yii::app()->user->data()->username)));
 				}
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Role "%s" created', array('%s' => $model->title)));
 				$this->redirect(array('admin'));
 			}
 		}

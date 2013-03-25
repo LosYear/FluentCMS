@@ -1,8 +1,10 @@
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'User') ?> <small><?php echo Yii::t('admin', 'Update') ?></small></h1>
+</div>
 <?php
 
 if(empty($tabularIdx))
 {
-	$this->title=Yum::t('Update user')." ".$model->id;
 
 	$this->breadcrumbs = array(
 			Yum::t('Users')=>array('index'),

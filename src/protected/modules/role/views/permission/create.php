@@ -1,4 +1,10 @@
-<?php $this->title = Yum::t('Grant permission'); ?>
+<?php 
+	$cs=Yii::app()->getClientScript();
+        $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
+?>
+<div class="page-header">
+  <h1><?php echo Yii::t('admin', 'Permission') ?> <small><?php echo Yii::t('admin', 'Grant') ?></small></h1>
+</div>
 <div class="form">
 	<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		'id'=>'permission-create-form',
@@ -20,7 +26,10 @@
 			)); */?>
 		<?php echo $form->dropDownList($model, 'type', array(
 			'role' => Yum::t('Role'),
-			                            'user' => Yum::t('User')), array('class'=>'span4')); ?>
+			                            'user' => Yum::t('User')), array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Type'), 
+                            'data-content'=>Yii::t('popover', 'Select owner of permissions. Group will grant permissions to whole group.'),
+                            'rel'=>'popover')); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 	<div id="assignment_user">
@@ -30,7 +39,10 @@
 				'model' => $model,
 				'relation' => 'principal',
 				'fields' => 'username',
-				         'htmlOptions' =>  array('class'=>'span4')
+				         'htmlOptions' =>  array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Username'), 
+                            'data-content'=>Yii::t('popover', 'Select username for granting permissions'),
+                            'rel'=>'popover')
 				));?>
 			<?php echo $form->error($model,'principal_id'); ?>
 			<!--<?php echo $form->labelEx($model,'subordinate_id'); ?>
@@ -47,7 +59,10 @@
 			<?php echo $form->dropDownList($model,'template', array(
 				'0' => Yum::t('No'),
 				'1' => Yum::t('Yes'),
-				), array('class'=>'span4')); ?>
+				), array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Auto grant'), 
+                            'data-content'=>Yii::t('popover', 'Grant permission to all new users'),
+                            'rel'=>'popover')); ?>
 			<?php echo $form->error($model,'template'); ?>
 		</div>
 	</div>
@@ -58,7 +73,10 @@
 				'model' => $model,
 				'relation' => 'principal_role',
 				'fields' => 'title',
-				         'htmlOptions' =>  array('class'=>'span4')
+				         'htmlOptions' =>  array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Role'), 
+                            'data-content'=>Yii::t('popover', 'Select role for granting permissions'),
+                            'rel'=>'popover')
 				));?>
 			<?php echo $form->error($model,'principal_id'); ?>
 			<?php echo $form->labelEx($model,'subordinate_id'); ?>
@@ -67,7 +85,10 @@
 				'allowEmpty' => true,
 				'relation' => 'subordinate_role',
 				'fields' => 'title',
-                                'htmlOptions' =>  array('class'=>'span4')
+                                'htmlOptions' =>  array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Title'), 
+                            'data-content'=>Yii::t('popover', 'Name of the role. Case sensetive'),
+                         /*   'rel'=>'popover'*/)
 				));?>
 			<?php echo $form->error($model,'subordinate_id'); ?>
 		</div>
@@ -78,13 +99,19 @@
 			'model' => $model,
 			'relation' => 'Action',
 			'fields' => 'title',
-			                                    'htmlOptions' =>  array('class'=>'span4')
+			                                    'htmlOptions' =>  array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Action'), 
+                            'data-content'=>Yii::t('popover', 'Select action, which user can do'),
+                            'rel'=>'popover')
 			));?>
 		<?php echo $form->error($model,'action'); ?>
 	</div>
 	<div class="row-fluid">
 		<?php echo $form->labelEx($model,'comment'); ?>
-		<?php echo $form->textArea($model,'comment', array('class'=>'span4')); ?>
+		<?php echo $form->textArea($model,'comment', array('class'=>'span4',
+                            'data-title'=>Yii::t('admin', 'Comment'), 
+                            'data-content'=>Yii::t('popover', 'Comment for granted permission. You can write some notes here'),
+                            'rel'=>'popover')); ?>
 		<?php echo $form->error($model,'comment'); ?>
 	</div>
 	<div class="row-fluid buttons">

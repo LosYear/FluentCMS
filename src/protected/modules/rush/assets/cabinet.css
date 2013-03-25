@@ -43,3 +43,8 @@ label.answer{
     float: left;
     clear: left;
 }
+
+.answer label{
+    float:none !important;
+    font-weight: normal;
+}

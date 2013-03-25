@@ -6426,3 +6426,138 @@ in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MenuController
 in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MenuController.php (139)
 in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MenuController.php (84)
 in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+2013/03/25 18:32:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/models/YumUser.php (58)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+2013/03/25 18:32:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (12)
+in /home/losyear/htdocs/new.cms/www/protected/modules/user/components/YumWebUser.php (153)
+in /home/losyear/htdocs/new.cms/www/protected/backend/controllers/MainController.php (33)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (154)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (154)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `category`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (19)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (94)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (49)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `category`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (19)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (94)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (49)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `category` `t` ORDER BY `name`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (99)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (49)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tour` `t`
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` LIMIT 10
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (176)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `category` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (117)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (176)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `category` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (117)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (24)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (173)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (91)
+2013/03/25 18:32:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (24)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (173)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (91)
+2013/03/25 18:32:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `t`.`id`=5 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (173)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `category`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (19)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (94)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/_form.php (55)
+2013/03/25 18:32:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `category`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (19)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (94)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/_form.php (55)
+2013/03/25 18:32:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `category` `t` ORDER BY `name`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (99)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/_form.php (55)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/update.php (21)
+2013/03/25 18:32:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (24)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (173)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (91)
+2013/03/25 18:32:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (24)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (173)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (91)
+2013/03/25 18:32:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `t`.`id`=5 LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (173)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (91)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:56 [trace] [system.db.CDbCommand] Executing SQL: UPDATE `tour` SET `id`=:yp0, `name`=:yp1, `description`=:yp2, `category_id`=:yp3, `type`=:yp4, `from`=:yp5, `till`=:yp6 WHERE `tour`.`id`=5
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (107)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (154)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (154)
+in /home/losyear/htdocs/new.cms/www/backend.php (12)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `category`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (19)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (94)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (49)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `category`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (19)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (94)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (49)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `category` `t` ORDER BY `name`
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (99)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (49)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `tour` `t`
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` LIMIT 10
+in /home/losyear/htdocs/new.cms/www/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (176)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `category` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (117)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Tour.php (176)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/03/25 18:32:57 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `category` `t` WHERE `id` = :id LIMIT 1
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (117)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
+in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)

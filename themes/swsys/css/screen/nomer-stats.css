@@ -1,0 +1,94 @@
+.nomer-stats {
+    margin-bottom: 52px;
+}
+.nomer-caption {
+    display: block;
+    margin-top: -52px;
+    margin-right: 26px;
+    float: left;
+    width: 110px;
+    height: 116px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    -webkit-box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.nomer-caption-spoiler {
+    padding-top: 18px;
+    font-size: 14px;
+    color: #aeaeae;
+}
+.wf-active .nomer-caption-spoiler {
+    font-family: 'Arial Narrow',Arial, sans-serif;
+}
+.nomer-caption-year {
+    font-weight: bold;
+    line-height: 59px;
+    font-size: 38px;
+    color: #ff8015;
+}
+.nomer-caption-month {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: -10px;
+    color: #ff8015;
+}
+.wf-active .nomer-caption-year,
+.wf-active .nomer-caption-month {
+    font-family: "PT Sans Caption",Arial, sans-serif;
+}
+.nomer-stats-item {
+    float: left;
+    width: 50px;
+    margin-right: 14px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    padding: 1px;
+    text-align: center;
+    -webkit-box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.1);
+}
+.wf-active .nomer-stats-item {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+.nomer-stats-item .value {
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    border: 1px solid #e3e3e3;
+    color: #ff8015;
+}
+.nomer-stats-item .property {
+    height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    color: #000;
+}
+
+
+.swsys-like {
+    position: relative;
+    float: right;
+    margin-right: -15px;
+    margin-bottom: 20px;
+    padding: 0 15px 0 0;
+    height: 32px;
+    line-height: 32px;
+    background: #6a6a6a;
+    vertical-align: top;
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.block_thumb {
+    float: right;
+    font-size: 11px;
+    line-height: 20px;
+    color: #6a6a6a;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 30px;
+}

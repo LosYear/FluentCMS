@@ -6713,3 +6713,1335 @@ in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
 in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
 in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
 in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:13:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:13:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:13:38 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (10)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (10)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `node` `t` WHERE type LIKE :ycp0
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE type LIKE :ycp0 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:13:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (63)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `node` `t` WHERE type LIKE :ycp0
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE type LIKE :ycp0 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (122)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (122)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:13 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `menu` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/menu/admin.php (57)
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (129)
+2013/04/16 21:14:13 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/menu/admin.php (57)
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (129)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `node` `t` WHERE type LIKE :ycp0
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE type LIKE :ycp0 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:47 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:14:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (58)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `node` `t` WHERE type LIKE :ycp0
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE type LIKE :ycp0 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:11 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (10)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (10)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `node` `t` WHERE type LIKE :ycp0
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE type LIKE :ycp0 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/pages/admin.php (67)
+in /home/htdocs/new.cms/protected/backend/controllers/PagesController.php (17)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (40)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `node` `t` WHERE type LIKE :ycp0
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE type LIKE :ycp0 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/news/admin.php (62)
+in /home/htdocs/new.cms/protected/backend/controllers/NewsController.php (47)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `block` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (66)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:18:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `block` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (66)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:18:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (66)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:18:37 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (66)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:18:37 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (66)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:18:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:19:39 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (54)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:24:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:11 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:25:30 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:27:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:27:51 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:29:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:12 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:30:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `task`
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (203)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:30:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:30:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tour`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (24)
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (121)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+2013/04/16 21:30:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` ORDER BY `name`
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (126)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (46)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:20 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `task` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tour` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Tour.php (191)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:30:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `task` `t` WHERE `id` = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
+in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
+in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)

@@ -37,7 +37,7 @@
                     array('name' => 'tour_id', 'header' => Yii::t('RushModule.moderator', 'Tour'), 
                         'value' => 'Tour::title($data->tour_id)', 'filter' => Tour::dropDown()),
                     array('name' => 'user_id', 'header' => Yii::t('RushModule.moderator', 'User'), 
-                        'value' => 'YumUser::getUsernameById($data->user_id)', 'filter' => YumUser::dropDown()),
+                         'value' => 'YumProfile::getName($data->user_id)', 'filter' => YumProfile::dropDown()),
                     array('name' => 'points', 'header' => Yii::t('RushModule.moderator', 'Points'), 'type' => 'html',
                         'value' => '$data->points==-1 ? "<i class=\"icon-question-sign\" />" : $data->points'),
                     array(

@@ -10,7 +10,7 @@
             return false;
     });
     $('.search-form form').submit(function(){
-            $.fn.yiiGridView.update('results-grid', {
+            $.fn.yiiGridView.update('block-grid', {
                     data: $(this).serialize()
             });
             return false;
@@ -37,7 +37,9 @@
                 'template'=>"{items}",
                 'columns'=>array(
                         array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),
-                        array('name'=>'user_id', 'header'=>Yii::t('RushModule.moderator', 'User'), 'value' => 'YumUser::getUsernameById($data->user_id)'),
+                         array('name'=>'title','header'=>Yii::t('admin', 'Title'),),
+                        array('name'=>'user_id', 'header'=>Yii::t('RushModule.moderator', 'User'),
+                             'value' => 'YumProfile::getName($data->user_id)', 'filter' => YumProfile::dropDown()),
                         array(
                             'class'=>'bootstrap.widgets.TbButtonColumn',
                             'htmlOptions'=>array('style'=>'width: 40px'),

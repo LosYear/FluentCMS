@@ -45,14 +45,18 @@ $('.search-form form').submit(function(){
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
     'type'=>'striped bordered condensed',
     'dataProvider'=>$model->search(),
-    'template'=>"{items}",
+    'template'=>"{items}\n{pager}",
     'filter'=>$model,
 	'columns'=>array(
-            array('name'=>'id', 'header'=>Yii::t('admin', '#')),
+            array('name'=>'id', 'header'=>Yii::t('admin', '#'), 
+                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
             array('name'=>'title', 'header'=>Yii::t('admin', 'Title')),
-            array('name'=>'url', 'header'=>Yii::t('admin', 'Url')),
-            array('name' => 'author', 'type'=>'html', 'header'=>Yii::t('admin', 'Author'), 'value'=>'YumUser::model()->findByPk($data->author)->username'),
-            array('name' => 'created', 'header' => Yii::t('admin', 'Created')),
+            array('name'=>'url', 'header'=>Yii::t('admin', 'Url'),
+                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
+            array('name' => 'author', 'type'=>'html', 'header'=>Yii::t('admin', 'Author'), 'value'=>'YumUser::model()->findByPk($data->author)->username',
+                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
+            array('name' => 'created', 'header' => Yii::t('admin', 'Created'),
+                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
             array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<i class=\" icon-eye-open\"/>" : "<i class=\" icon-eye-close\"/>"'),
             array(
                     'class'=>'bootstrap.widgets.TbButtonColumn',

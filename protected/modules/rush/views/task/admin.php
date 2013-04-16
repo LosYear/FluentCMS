@@ -40,12 +40,13 @@ $('.search-form form').submit(function(){
         'type'=>'striped bordered condensed',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-        'template'=>"{items}",
+        'template'=>"{items}\n{pager}",
 	'columns'=>array(
-		array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),
+		array('name'=>'id', 'header'=>Yii::t('admin', '#'),'htmlOptions' => array('class' => 'hidden-phone','style'=>'width: 30px'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
 		array('name' => 'tour_id', 'filter' => Tour::dropDown(), 'value' => 'Tour::title($data->tour_id)'),
 		array('name' => 'type', 'filter' => Task::types(), 'value' => 'Task::type($data->id)'),
-		'task',
+		array('name' => 'task', 'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone'),
+                    'value' => 'mb_substr(strip_tags($data->task), 0, 100, Yii::app()->charset)."..."'),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
                         'template' => '{update}{delete}'

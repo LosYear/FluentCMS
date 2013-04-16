@@ -99,5 +99,7 @@
     $('#datetime').datetimepicker({
         dateFormat : "dd.mm.yy"
     });
-    $('#datetime_2').datetimepicker();
+    $('#datetime_2').datetimepicker({
+        dateFormat : "dd.mm.yy"
+    });
 </script>

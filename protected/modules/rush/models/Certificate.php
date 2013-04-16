@@ -36,12 +36,12 @@ class Certificate extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('user_id, file_name', 'required'),
+            array('user_id, file_name, title', 'required'),
             array('file_name', 'file', 'types'=>'pdf, doc, docx, png'),
             array('user_id', 'numerical', 'integerOnly'=>true),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, user_id, file_name', 'safe', 'on'=>'search'),
+            array('id, user_id, file_name, title', 'safe', 'on'=>'search'),
         );
     }
 
@@ -65,6 +65,7 @@ class Certificate extends CActiveRecord
             'id' => 'ID',
             'user_id' => Yii::t('RushModule.moderator', 'User'),
             'file_name' => Yii::t('RushModule.moderator', 'Certificate'),
+            'title' => Yii::t('admin', 'Title'),
         );
     }
 
@@ -81,6 +82,7 @@ class Certificate extends CActiveRecord
 
         $criteria->compare('id',$this->id);
         $criteria->compare('user_id',$this->user_id);
+        $criteria->compare('title',$this->title);
         $criteria->compare('file_name',$this->file_name);
 
         return new CActiveDataProvider($this, array(

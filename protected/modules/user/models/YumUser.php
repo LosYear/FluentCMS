@@ -778,6 +778,7 @@ class YumUser extends YumActiveRecord
             return $result->username;
         }
         
+        
         /**
          * Returns array of all users for dropDown
          */

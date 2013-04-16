@@ -120,4 +120,19 @@ class Task extends CActiveRecord
             
             return $types[$type];
         }
+        
+        /**
+         * Returns title of file
+         */
+         
+         public static function getFileTitle($id){
+           
+            $criteria = new CDbCriteria;
+            $criteria->condition = '`id` = :id';
+            $criteria->params = array(':id' => $id);
+            
+            $tmp = json_decode(Task::model()->find($criteria)->advanced, true);
+            
+            return $tmp["title"];
+		 }
 }

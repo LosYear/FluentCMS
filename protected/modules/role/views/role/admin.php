@@ -25,6 +25,7 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'dataProvider'=>$dataProvider,
         'type'=>'striped bordered condensed',
+        'template'=>"{items}\n{pager}",
 	'columns'=>array(
 		array(
 			'name' => 'title',

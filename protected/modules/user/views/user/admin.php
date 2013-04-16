@@ -23,6 +23,7 @@ $this->widget('bootstrap.widgets.TbAlert', array(
 $this->widget('bootstrap.widgets.TbGridView', array(
 	'dataProvider'=>$model->search(),
         'type'=>'striped bordered condensed',
+        'template'=>"{items}\n{pager}",
 	'filter' => $model,
 		'columns'=>array(
 			array(
@@ -31,6 +32,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 				'type'=>'raw',
 				'value'=>'CHtml::link($data->id,
 				array("//user/user/update","id"=>$data->id))',
+                                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')
 				),
 			array(
 				'name'=>'username',
@@ -42,16 +44,19 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 				'name'=>'createtime',
 				'filter' => false,
 				'value'=>'date(UserModule::$dateFormat,$data->createtime)',
+                                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')
 			),
 			array(
 				'name'=>'lastvisit',
 				'filter' => false,
 				'value'=>'date(UserModule::$dateFormat,$data->lastvisit)',
+                                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')
 			),
 			array(
 				'name'=>'status',
 				'filter' => false,
 				'value'=>'YumUser::itemAlias("UserStatus",$data->status)',
+                                'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')
 			),
 			array(
 				'name'=>Yum::t('Roles'),

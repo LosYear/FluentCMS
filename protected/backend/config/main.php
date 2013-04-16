@@ -8,6 +8,7 @@ return array(
     'basePath' => $frontend,
     'name' => 'Admin',
     'homeUrl' => 'http://new.cms', // Main page url
+    'charset' => 'UTF-8',
     
     'id' => 'fluentCMS',
     

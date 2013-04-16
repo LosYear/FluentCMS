@@ -26,7 +26,7 @@
       <?php $this->renderPartial('sidebar', array('adv'=>$this->menu)); ?>
     </div>
     <div class="span9 well block">
-        <h3 class="center"><?php echo Category::dropDown()[$tour->category_id] ?><b> / </b>
+        <h3 class="center"><?php echo Category::getName($tour->category_id) ?><b> / </b>
                 <?php echo $tour->name ?></h3>
         <?php $this->widget('bootstrap.widgets.TbGridView', array(
                 'id'=>'results-grid',
@@ -35,7 +35,7 @@
                 'template'=>"{items}",
                 //'filter'=>$dataProvider->model,
                 'columns'=>array(
-                array('name'=>'task', 'value'=>'json_decode($data->advanced, true)["title"]'),
+                array('name'=>'task', 'value'=>'Task::getFileTitle($data->id)'),
                 array(
                         'class'=>'bootstrap.widgets.TbButtonColumn',
                         'htmlOptions'=>array('style'=>'width: 40px'),

@@ -18,7 +18,8 @@
 
    Yii::app()->clientScript->registerCssFile($assetsUrl.'/cabinet.css');
    
-    $type = Tour::types()[$data->type];
+    $tmp = Tour::types();
+    $type = $tmp[$data->type];
 
     $from = Yii::app()->dateFormatter->formatDateTime($data->from, 'long', 'short');
 
@@ -60,8 +61,12 @@
                 )); ?>
             <?php elseif (Results::model()->count($criteria) >= 1): 
                 $result = Results::model()->find($criteria);?>
-                <div class="alert alert-info center"><?php echo Yii::t('RushModule.cabinet', 'You have got taken part in this tour and you got')?> 
-                <span class="badge"><?php echo $result->points ?></span> <?php echo Yii::t('RushModule.cabinet', 'points')?></div>
+                    <?php if ($result->points >= 0):?>
+                    <div class="alert alert-info center"><?php echo Yii::t('RushModule.cabinet', 'You have got taken part in this tour and you got')?> 
+                    <span class="badge"><?php echo $result->points ?></span> <?php echo Yii::t('RushModule.cabinet', 'points')?></div>
+                    <?php  else:?>
+                    <div class="alert alert-info center"><?php echo Yii::t('RushModule.cabinet', 'Your solve is on checking')?></div>
+                    <?php endif; ?>
             <?php endif; ?>
         </div>
     </div>

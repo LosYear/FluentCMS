@@ -40,7 +40,7 @@ $('.search-form form').submit(function(){
 	'id'=>'category-grid',
         'type'=>'striped bordered condensed',
 	'dataProvider'=>$model->search(),
-        'template'=>"{items}",
+        'template'=>"{items}\n{pager}",
 	'filter'=>$model,
 	'columns'=>array(
 		array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),

@@ -64,11 +64,13 @@ class TourController extends Controller
 		{
 			$model->attributes=$_POST['Tour'];
                         
-                        $date = DateTime::createFromFormat("d.m.Y G:i", $model->from);
-                        $model->from = $date->format("Y-m-d G:i:00");
+                       list($day, $month, $year, $hour, $time) = sscanf($model->from, '%02d.%02d.%04d %02d:%02d');
+                       $dateTime = new DateTime("$year-$month-$day $hour:$time:00");
+                       $model->from = $dateTime->format("Y-m-d G:i:00");
                         
-                        $date = DateTime::createFromFormat("d.m.Y G:i", $model->till);
-                        $model->till = $date->format("Y-m-d G:i:00");
+                       list($day, $month, $year, $hour, $time) = sscanf($model->till, '%02d.%02d.%04d %02d:%02d');
+                       $dateTime = new DateTime("$year-$month-$day $hour:$time:00");
+                       $model->till = $dateTime->format("Y-m-d G:i:00");
                         
                         if($model->save()){
                                 Yii::app()->user->setFlash('success', Yii::t('alerts', 'Tour "%s" created', array('%s' => $model->name)));
@@ -98,11 +100,13 @@ class TourController extends Controller
                                         
 			$model->attributes=$_POST['Tour'];
                         
-                        $date = DateTime::createFromFormat("d.m.Y G:i", $model->from);
-                        $model->from = $date->format("Y-m-d G:i:00");
+                       list($day, $month, $year, $hour, $time) = sscanf($model->from, '%02d.%02d.%04d %02d:%02d');
+                       $dateTime = new DateTime("$year-$month-$day $hour:$time:00");
+                       $model->from = $dateTime->format("Y-m-d G:i:00");
                         
-                        $date = DateTime::createFromFormat("d.m.Y G:i", $model->till);
-                        $model->till = $date->format("Y-m-d G:i:00");
+                       list($day, $month, $year, $hour, $time) = sscanf($model->till, '%02d.%02d.%04d %02d:%02d');
+                       $dateTime = new DateTime("$year-$month-$day $hour:$time:00");
+                       $model->till = $dateTime->format("Y-m-d G:i:00");
                         
                         if($model->save()){
                                 Yii::app()->user->setFlash('success', Yii::t('alerts', 'Tour "%s" updated', array('%s' => $model->name)));
@@ -110,10 +114,10 @@ class TourController extends Controller
                         }
 		}
                 
-                $date = DateTime::createFromFormat("Y-m-d G:i:s", $model->from);
+                $date = new DateTime($model->from);
                 $model->from = $date->format("d.m.Y G:i");
 
-                $date = DateTime::createFromFormat("Y-m-d G:i:s", $model->till);
+                $date = new DateTime($model->till);
                 $model->till = $date->format("d.m.Y G:i");
                 
 		$this->render('update',array(
@@ -155,6 +159,8 @@ class TourController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Tour']))
 			$model->attributes=$_GET['Tour'];
+                
+                
 
 		$this->render('admin',array(
 			'model'=>$model,

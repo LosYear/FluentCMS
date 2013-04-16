@@ -256,5 +256,32 @@ class YumProfile extends YumActiveRecord
 		}
 		return self::$fields;
 	}
+        
+        /**
+         * Returns name of profile
+         */
+        
+        public static function getName($id){
+            $model = YumProfile::model();
+            return $model->find('`user_id` = :id', array(':id' => $id))->name;
+        }
+        
+        public static function dropDown(){
+            $result = array();
+            
+            $model = YumProfile::model();
+            
+            $criteria = new CDbCriteria();
+            $criteria->order = '`name`';
+            
+            $all = $model->findAll($criteria);
+            
+            foreach ($all as $el) {
+                if( $el->name != '' && $el->name != NULL && $el->name != ' ')
+                    $result[$el->user_id] = $el->name;
+            }
+            
+            return $result;
+        }
 
 }

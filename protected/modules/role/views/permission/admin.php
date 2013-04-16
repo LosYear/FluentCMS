@@ -26,6 +26,7 @@ $this->menu=array(
 			'dataProvider'=>$model->search(),
                         'type'=>'striped bordered condensed',   
 			'filter'=>$model,
+                        'template'=>"{items}\n{pager}",
 			'columns' => array(
 				array(
 					'name' => 'type',
@@ -41,7 +42,12 @@ $this->menu=array(
 					'value' => '$data->type == "user" ? $data->principal->username : @$data->principal_role->title'
 					), 
 				'Action.title',
-				'Action.comment',
+                                array(
+					'name' => 'comment',
+                                        'filter' => false,
+					'value' => '$data->type == "user" ? $data->principal->username : @$data->principal_role->title',
+                                        'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')
+                                ), 
 			array(
 					'class'=>'bootstrap.widgets.TbButtonColumn',
 					'template' => '{delete}',

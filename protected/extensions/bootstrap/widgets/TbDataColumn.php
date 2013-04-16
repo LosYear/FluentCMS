@@ -48,8 +48,12 @@ class TbDataColumn extends CDataColumn
 	 * Renders the filter cell.
 	 */
 	public function renderFilterCell()
-	{
-		echo '<td><div class="filter-container">';
+	{	
+		$class = '';
+		if (isset($this->filterHtmlOptions['class'])){
+			$class = $this->filterHtmlOptions['class'];
+		}
+		echo '<td class="'.$class.'"><div class="filter-container">';
 		$this->renderFilterCellContent();
 		echo '</div></td>';
 	}

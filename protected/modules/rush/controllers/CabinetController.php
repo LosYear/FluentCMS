@@ -77,7 +77,9 @@ class CabinetController extends Controller
                     $ext = $file->extensionName;
                             
                     if ($file->extensionName != 'txt' && $file->extensionName != 'doc'
-                            && $file->extensionName != 'docx'){
+                            && $file->extensionName != 'docx' && $file->extensionName != 'rtf'
+                            && $file->extensionName != 'zip' && $file->extensionName != '7z'
+                            && $file->extensionName != 'rar') {
                         $ext = '_';
                     }
                     
@@ -135,7 +137,9 @@ class CabinetController extends Controller
             
             $tmp = json_decode($task->advanced, true);
             
-            Yii::app()->getRequest()->sendFile($tmp["title"], file_get_contents($filename), NULL, false);
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            
+            Yii::app()->getRequest()->sendFile($tmp["title"].'.'.$ext, file_get_contents($filename), NULL, false);
         }
         
         /**
@@ -164,7 +168,9 @@ class CabinetController extends Controller
             $filename = Yii::getPathOfAlias('application.modules.rush.data').'/'.$task->file_name;
             //die($filename);
             
-            Yii::app()->getRequest()->sendFile($task->title, file_get_contents($filename), NULL, false);
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            
+            Yii::app()->getRequest()->sendFile($task->title.'.'.$ext, file_get_contents($filename), NULL, false);
         }
     
         /**

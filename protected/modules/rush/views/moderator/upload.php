@@ -38,8 +38,15 @@
             <fieldset class="edit-form">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'user_id'); ?>
-                    <?php echo $form->dropDownList($model, 'user_id', YumUser::dropDown(), array(
+                    <?php echo $form->dropDownList($model, 'user_id', YumProfile::dropDown(), array(
                             'data-title'=>Yii::t('RushModule.moderator', 'User'), 
+                            'data-content'=>Yii::t('RushModule.popover', 'Select user certificate belongs to'),
+                            'rel'=>'popover')); ?></div>
+                </div>
+                <div>
+                    <div class="column span-4"><?php echo $form->labelEx($model,'title'); ?>
+                    <?php echo $form->textField($model, 'title', array(
+                            'data-title'=>Yii::t('RushModule.moderator', 'Title'), 
                             'data-content'=>Yii::t('RushModule.popover', 'Select user certificate belongs to'),
                             'rel'=>'popover')); ?></div>
                 </div>

@@ -21,7 +21,7 @@
             <h1><?php echo Tour::title($data->tour_id); ?> <small><?php echo Category::getName(Tour::getCategory($data->tour_id)); ?></small></h1>
         </div>
         <?php $this->widget('bootstrap.widgets.TbDetailView', array(
-            'data'=>array('user'=>  YumUser::getUsernameById($data->user_id), 'points'=>$data->points,),
+            'data'=>array('user'=>  YumProfile::getName($data->user_id), 'points'=>$data->points,),
             'attributes'=>array(
                 array('name'=>'user', 'label'=> Yii::t('RushModule.moderator', 'Username')),
                 array('name'=>'points', 'label'=>Yii::t('RushModule.moderator', 'Points')),

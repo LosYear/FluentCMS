@@ -28,9 +28,11 @@ $this->menu=array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
         'type'=>'striped bordered condensed',  
+        'template'=>"{items}\n{pager}",
 	'columns'=>array(
 		'title',
-		'comment',
+		array('name' => 'comment',
+                    'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
 		'subject',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

@@ -24,7 +24,7 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'dataProvider'=>$dataProvider,
         'type'=>'striped bordered condensed',
-        'template'=>"{items}",
+        'template'=>"{items}\n{pager}",
 	'columns'=>array(
 		//'position',
 		'varname',
@@ -32,12 +32,13 @@ $this->menu=array(
 			'name'=>'title',
 			'value'=>'Yii::t("UserModule.user", $data->title)',
 		),
-		'field_type',
+		 array('name' => 'field_type', 'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
 		//'field_size',
 		//'field_size_min',
 		array(
 			'name'=>'required',
 			'value'=>'YumProfileField::itemAlias("required",$data->required)',
+                        'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone'),
 		),
 		//'match',
 		//'range',

@@ -93,7 +93,9 @@ class ModeratorController extends Controller
             $filename = Yii::getPathOfAlias('application.modules.rush.data').'/'.$tmp['file'];
             //die($filename);
             
-            Yii::app()->getRequest()->sendFile(YumUser::getUsernameById($solve->user_id).'_'.$solve->tour_id, file_get_contents($filename), NULL, false);
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            
+            Yii::app()->getRequest()->sendFile(YumUser::getUsernameById($solve->user_id).'_'.$solve->tour_id.'.'.$ext, file_get_contents($filename), NULL, false);
     }
     
     /**
@@ -143,7 +145,7 @@ class ModeratorController extends Controller
 
                     $file->saveAs(Yii::getPathOfAlias('application.modules.rush.data').'/'.$file_name);
 
-                    $this->redirect(array('admin'));
+                    $this->redirect(array('certificates'));
                 }
         }
 
@@ -159,8 +161,11 @@ class ModeratorController extends Controller
     public function actionCertificates(){
         $model=new Certificate('search');
         $model->unsetAttributes();  // clear any default values
-        if(isset($_GET['Certificate']))
+        if(isset($_GET['Certificate'])){
                 $model->attributes=$_GET['Certificate'];
+                //print_r($_GET['Certificate']); die;
+                
+        }
 
         $this->render('certificates',array(
                 'model'=>$model,

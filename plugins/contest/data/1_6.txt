@@ -1,3 +1,0 @@
-* git | gitHub | SmartGit
-* ѕути
-* —оздать ф-цию. onClick

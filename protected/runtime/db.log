@@ -9538,3 +9538,113 @@ in /home/losyear/htdocs/new.cms/www/index.php (13)
 2013/03/25 18:37:20 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `results` (`user_id`, `tour_id`, `points`, `json`) VALUES (:yp0, :yp1, :yp2, :yp3)
 in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TestController.php (169)
 in /home/losyear/htdocs/new.cms/www/index.php (13)
+2013/04/16 20:45:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `node`
+in /home/htdocs/new.cms/protected/controllers/NewsController.php (137)
+in /home/htdocs/new.cms/index.php (13)
+2013/04/16 20:45:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `node`
+in /home/htdocs/new.cms/protected/controllers/NewsController.php (137)
+in /home/htdocs/new.cms/index.php (13)
+2013/04/16 20:45:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `node` `t` WHERE (type LIKE :ycp0) AND (status LIKE :ycp1)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+in /home/htdocs/new.cms/protected/controllers/NewsController.php (140)
+in /home/htdocs/new.cms/index.php (13)
+2013/04/16 20:45:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `node` `t` WHERE (type LIKE :ycp0) AND (status LIKE :ycp1) LIMIT 10
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+in /home/htdocs/new.cms/protected/controllers/NewsController.php (140)
+in /home/htdocs/new.cms/index.php (13)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE id = :id LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (776)
+in /home/htdocs/new.cms/themes/mudrenok/views/news/_view.php (5)
+in /home/htdocs/new.cms/protected/views/news/index.php (20)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu`
+in /home/htdocs/new.cms/protected/models/Menu.php (22)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (39)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu`
+in /home/htdocs/new.cms/protected/models/Menu.php (22)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (39)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu_item`
+in /home/htdocs/new.cms/protected/models/MenuItem.php (30)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (40)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu_item`
+in /home/htdocs/new.cms/protected/models/MenuItem.php (30)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (40)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu` `t` WHERE name = :name LIMIT 1
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (42)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+in /home/htdocs/new.cms/protected/views/layouts/column1.php (6)
+2013/04/16 20:45:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu_item` `t` WHERE menu_id=:id ORDER BY `order`
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (51)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+in /home/htdocs/new.cms/protected/views/layouts/column1.php (6)
+2013/04/16 20:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu`
+in /home/htdocs/new.cms/protected/models/Menu.php (22)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (39)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu`
+in /home/htdocs/new.cms/protected/models/Menu.php (22)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (39)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu_item`
+in /home/htdocs/new.cms/protected/models/MenuItem.php (30)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (40)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu_item`
+in /home/htdocs/new.cms/protected/models/MenuItem.php (30)
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (40)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+2013/04/16 20:45:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu` `t` WHERE name = :name LIMIT 1
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (42)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+in /home/htdocs/new.cms/protected/views/layouts/column1.php (6)
+2013/04/16 20:45:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu_item` `t` WHERE menu_id=:id ORDER BY `order`
+in /home/htdocs/new.cms/protected/widgets/BootstrapMenuWidget.php (51)
+in /home/htdocs/new.cms/themes/mudrenok/views/layouts/main.php (51)
+in /home/htdocs/new.cms/protected/views/layouts/column1.php (6)

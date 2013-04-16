@@ -20,7 +20,14 @@
                         $url = Yii::app()->homeUrl;
                     }
                     else{
-                        $url = Yii::app()->baseUrl.'/'.$value['href'];
+                        if ($value['type'] == 'internal'){
+                            // Link is internal and it'll redirect us to another site's page
+                            $url = Yii::app()->baseUrl.'/'.$value['href'];
+                        }
+                        elseif ($value['type'] == 'external'){
+                            // Link is external. It'll redirect us to another site
+                            $url = $value['href'];
+                        }
                     }
                     
                     if ($parent_id == 0){

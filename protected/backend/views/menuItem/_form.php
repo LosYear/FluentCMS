@@ -31,7 +31,9 @@
 		<div>
 			<div class="column span-4"><?php echo $form->labelEx($model,'type'); ?></div>
 			<div class="column span-12"><?php echo $form->dropDownList($model,'type', array(
-				'internal' => Yii::t('admin', 'Internal link')), array('class'=>'span4',
+				'internal' => Yii::t('admin', 'Internal link'),
+                                'external' => Yii::t('admin', 'External link'),
+                            ), array('class'=>'span4',
                             'data-title'=>Yii::t('admin', 'Type'), 
                             'data-content'=>Yii::t('popover', 'Type of link. Select internal for creating links between site\'s pages'),
                             'rel'=>'popover')); ?></div>

@@ -9,7 +9,7 @@ Desktop.ini
 
 # Yii
 assets
-protected/runtime/
+protected/runtime
 
 # Netbeans
 nbproject/

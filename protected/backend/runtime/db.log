@@ -8045,3 +8045,64 @@ in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (2
 in /home/htdocs/new.cms/protected/modules/rush/models/Task.php (118)
 in /home/htdocs/new.cms/protected/modules/rush/views/task/admin.php (55)
 in /home/htdocs/new.cms/protected/modules/rush/controllers/TaskController.php (210)
+2013/04/16 21:34:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (122)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:34:01 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (122)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:34:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `menu` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/menu/admin.php (60)
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (129)
+2013/04/16 21:34:01 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/menu/admin.php (60)
+in /home/htdocs/new.cms/protected/backend/controllers/MenuController.php (129)
+2013/04/16 21:40:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (134)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:40:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (134)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:40:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `menu_item` `t` WHERE menu_id=:ycp1
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/extensions/RGridView/RGridViewWidget.php (117)
+in /home/htdocs/new.cms/protected/backend/views/menuItem/admin.php (72)
+2013/04/16 21:40:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu_item` `t` WHERE menu_id=:ycp1 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/extensions/RGridView/RGridViewWidget.php (117)
+in /home/htdocs/new.cms/protected/backend/views/menuItem/admin.php (72)
+2013/04/16 21:41:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (58)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:41:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (58)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:41:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu_item` `t` WHERE menu_id=:id ORDER BY `order`
+in /home/htdocs/new.cms/protected/models/MenuItem.php (149)
+in /home/htdocs/new.cms/protected/backend/views/menuItem/_form.php (15)
+in /home/htdocs/new.cms/protected/backend/views/menuItem/create.php (19)
+2013/04/16 21:41:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (58)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:41:20 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (58)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:41:20 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `menu_item` (`menu_id`, `parent_id`, `title`, `type`, `href`, `order`, `status`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6)
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (67)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:41:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (134)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:41:21 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `menu_item`
+in /home/htdocs/new.cms/protected/backend/controllers/MenuItemController.php (134)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:41:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `menu_item` `t` WHERE menu_id=:ycp1
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/extensions/RGridView/RGridViewWidget.php (117)
+in /home/htdocs/new.cms/protected/backend/views/menuItem/admin.php (72)
+2013/04/16 21:41:21 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `menu_item` `t` WHERE menu_id=:ycp1 LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/extensions/RGridView/RGridViewWidget.php (117)
+in /home/htdocs/new.cms/protected/backend/views/menuItem/admin.php (72)

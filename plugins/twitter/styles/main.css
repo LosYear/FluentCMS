@@ -1,0 +1,16 @@
+body{
+	background-attachment: fixed;
+	background-color: rgb(192, 222, 237);
+	background-image: url("../imgs/bg.png");
+	background-position: 0% 0px;
+	background-repeat: no-repeat;
+	margin-top : 0px;
+}
+
+#content{
+	margin-top : 20px;
+}
+
+#logo{
+	display : block;
+}

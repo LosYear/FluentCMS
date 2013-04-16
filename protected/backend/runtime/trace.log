@@ -6355,3 +6355,659 @@ in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourContr
 in /home/losyear/htdocs/new.cms/www/protected/modules/rush/models/Category.php (117)
 in /home/losyear/htdocs/new.cms/www/protected/modules/rush/views/tour/admin.php (57)
 in /home/losyear/htdocs/new.cms/www/protected/modules/rush/controllers/TourController.php (161)
+2013/04/16 20:55:59 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:55:59 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:55:59 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:55:59 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 20:55:59 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 20:55:59 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:55:59 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:00 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:00 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:00 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 20:56:00 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 20:56:00 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 20:56:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 20:56:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 20:56:00 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 20:56:00 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 20:56:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 20:56:00 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MenuDisplayController.php (19)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (27)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+2013/04/16 20:56:00 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (34)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:00 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (40)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+2013/04/16 20:56:07 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:07 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:07 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:07 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 20:56:07 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.web.filters.CFilterChain] Running filter BlocksController.filteraccessControl()
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (6)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (39)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.db.ar.CActiveRecord] Block.count()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:56:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `block` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:56:08 [trace] [system.db.ar.CActiveRecord] Block.findAll()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:56:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `block` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbButtonColumn.php (37)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2013/04/16 20:56:08 [trace] [system.CModule] Loading "format" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 20:56:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:56:08 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:56:08 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 20:56:08 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:56:08 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.web.filters.CFilterChain] Running filter BlocksController.filteraccessControl()
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:42 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:43 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (6)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:43 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (39)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:43 [trace] [system.db.ar.CActiveRecord] Block.count()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:59:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `block` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:59:43 [trace] [system.db.ar.CActiveRecord] Block.findAll()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:59:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `block` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:59:43 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbButtonColumn.php (37)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2013/04/16 20:59:43 [trace] [system.CModule] Loading "format" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:43 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 20:59:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:59:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 20:59:43 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 20:59:43 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 20:59:43 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.web.filters.CFilterChain] Running filter BlocksController.filteraccessControl()
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (6)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (39)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:44 [trace] [system.db.ar.CActiveRecord] Block.count()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:00:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `block` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:00:44 [trace] [system.db.ar.CActiveRecord] Block.findAll()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:00:44 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `block` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbButtonColumn.php (37)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2013/04/16 21:00:44 [trace] [system.CModule] Loading "format" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:45 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:00:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:00:45 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:00:45 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:00:45 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:00:45 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:23 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.web.filters.CFilterChain] Running filter BlocksController.filteraccessControl()
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `block`
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (141)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (6)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (39)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.db.ar.CActiveRecord] Block.count()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:01:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `block` `t`
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:01:24 [trace] [system.db.ar.CActiveRecord] Block.findAll()
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:01:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `block` `t` LIMIT 10
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbButtonColumn.php (37)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+2013/04/16 21:01:24 [trace] [system.CModule] Loading "format" application component
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:01:24 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+2013/04/16 21:01:24 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:24 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:24 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/backend/views/blocks/admin.php (61)
+in /home/htdocs/new.cms/protected/backend/controllers/BlocksController.php (148)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 21:01:28 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 21:01:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:01:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:01:28 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:28 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:01:28 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MenuDisplayController.php (19)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (27)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (34)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:28 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (40)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 21:01:32 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 21:01:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:01:32 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:01:32 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:32 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:01:32 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MenuDisplayController.php (19)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (27)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (34)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:32 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (40)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "log" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "bootstrap" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "clientScript" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "assetManager" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "request" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (328)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (103)
+in /home/htdocs/new.cms/protected/extensions/bootstrap/components/Bootstrap.php (84)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "urlManager" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "cache" application component
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "user" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "session" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (24)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.base.CModule] Loading "user" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (237)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "db" application component
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 21:01:40 [trace] [system.db.CDbConnection] Opening DB connection
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (244)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+2013/04/16 21:01:40 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:01:40 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `user`
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+2013/04/16 21:01:40 [trace] [system.base.CModule] Loading "role" module
+in /home/htdocs/new.cms/protected/modules/user/models/Yum.php (116)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (388)
+in /home/htdocs/new.cms/protected/modules/user/models/YumUser.php (58)
+2013/04/16 21:01:40 [trace] [system.db.ar.CActiveRecord] YumUser.findByPk()
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:01:40 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `user` `t` WHERE `t`.`id`='1' LIMIT 1
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (12)
+in /home/htdocs/new.cms/protected/modules/user/components/YumWebUser.php (153)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (33)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "messages" application component
+in /home/htdocs/new.cms/protected/backend/controllers/MenuDisplayController.php (19)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (27)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "widgetFactory" application component
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (34)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)
+in /home/htdocs/new.cms/backend.php (12)
+2013/04/16 21:01:40 [trace] [system.CModule] Loading "coreMessages" application component
+in /home/htdocs/new.cms/protected/extensions/bootstrap/widgets/TbBreadcrumbs.php (48)
+in /home/htdocs/new.cms/protected/backend/views/layouts/main.php (40)
+in /home/htdocs/new.cms/protected/backend/controllers/MainController.php (34)

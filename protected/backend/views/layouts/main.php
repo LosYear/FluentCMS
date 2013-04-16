@@ -20,7 +20,7 @@
 					        'style' => '.container{width:1000px}',
 					    ),*/
 					    'brand' => CHtml::encode(Yii::app()->name),
-					    'brandUrl' => Yii::app()->homeUrl,
+					    'brandUrl' => Yii::app()->homeUrl.'/backend.php',
 					    'items' => array(
 					        array(
 					            'class' => 'bootstrap.widgets.TbMenu',

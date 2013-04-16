@@ -17,8 +17,8 @@ class MenuDisplayController extends Controller
         // Home button
         $result[] = array(
             'label' => Yii::t('admin', 'Home'),
-            'url' => 'backend.php',
-            'icon' => 'th-large white',
+            'url' => Yii::app()->homeUrl,
+            'icon' => 'home white',
         );
         
         // Content drop-down        

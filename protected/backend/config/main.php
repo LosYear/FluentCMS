@@ -7,6 +7,7 @@ define('BACKEND', TRUE);
 return array(
     'basePath' => $frontend,
     'name' => 'Admin',
+    'homeUrl' => 'http://new.cms', // Main page url
     
     'id' => 'fluentCMS',
     

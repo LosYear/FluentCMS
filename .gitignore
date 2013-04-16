@@ -13,3 +13,6 @@ protected/runtime/
 
 # Netbeans
 nbproject/
+
+#Commit file
+commit.txt

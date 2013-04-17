@@ -21,7 +21,6 @@
     Yii::app()->clientScript->registerScriptFile($assetsUrl.'/task_create.js', CClientScript::POS_HEAD);
     
     $cs=Yii::app()->getClientScript();
-    $cs->registerScriptFile(Yii::app()->baseUrl.'/js/ckeditor/ckeditor.js');
     
     $adv = json_decode($model->advanced, true);
     
@@ -43,7 +42,12 @@
         <div id="task-text-div" class="row-fluid">
             <div>
                 <div class="column span-4"><?php echo $form->labelEx($model,'task'); ?></div>
-                <div class="column span-12"><?php echo CHtml::textArea('task-text', $model->task, array('class'=>'ckeditor span12')); ?></div>
+                <div class="column span-12">
+                    <?php $this->widget('ext.editMe.widgets.ExtEditMe', array(
+                        // 'model'=>$model,
+                        'name'=>'task-text',
+                    )); ?>
+                </div>
             </div>
         </div>
         

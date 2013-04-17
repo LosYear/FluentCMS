@@ -1,6 +1,5 @@
 <?php 
 	$cs=Yii::app()->getClientScript();
-	$cs->registerScriptFile(Yii::app()->baseUrl.'/js/ckeditor/ckeditor.js');
         $cs->registerScriptFile(Yii::app()->baseUrl.'/js/form.js');
 ?>
 <div class="form">
@@ -30,7 +29,12 @@
 	<div class="row-fluid">
 		<div>
 			<div class="column span-4"><?php echo $form->labelEx($model,'content'); ?></div>
-			<div class="column span-12"><?php echo $form->textArea($model, 'content', array('class' => 'ckeditor span-12' )); ?></div>
+                        <div class="column span-12">
+                            <?php $this->widget('ext.editMe.widgets.ExtEditMe', array(
+                                'model'=>$model,
+                                'attribute'=>'content',
+                            )); ?>
+                        </div>
 		</div>
 	</div>
 	<div class="row-fluid">

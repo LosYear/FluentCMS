@@ -1,12 +1,13 @@
 <?php
 
-class PageController extends Controller
+class MenuController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column1';
+	public $layout='admin';
+        public $defaultAction = 'admin';
 
 	/**
 	 * @return array action filters
@@ -27,16 +28,8 @@ class PageController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete', 'create', 'update'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -46,47 +39,23 @@ class PageController extends Controller
 	}
 
 	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-            // Getting data from app cache
-            $model = Yii::app()->cache->get("page_".$id);
-            
-            if ($model === false){
-                // If there is no data in cache put it there
-                $model = $this->loadModel($id);
-                Yii::app()->cache->set("page_".$id, $model, Yii::app()->params['cacheDuration']);
-            }
-            
-            // Checking page status. If itsn't published throw 404
-            if ($model->status == 1) {
-		$this->render('view',array(
-			'model'=>$model,
-		));
-            }
-            else{
-                throw new CHttpException(404,'The requested page does not exist.');
-            }
-	}
-
-	/**
 	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 * If creation is successful, the browser will be redirected to the 'admin' page.
 	 */
 	public function actionCreate()
 	{
-		$model=new Page;
+		$model=new Menu;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Page']))
+		if(isset($_POST['Menu']))
 		{
-			$model->attributes=$_POST['Page'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->attributes=$_POST['Menu'];
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Menu "%s" create', array('%s' => $model->title)));
+                                $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('create',array(
@@ -96,7 +65,7 @@ class PageController extends Controller
 
 	/**
 	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * If update is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
 	public function actionUpdate($id)
@@ -106,11 +75,13 @@ class PageController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Page']))
+		if(isset($_POST['Menu']))
 		{
-			$model->attributes=$_POST['Page'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->attributes=$_POST['Menu'];
+                        if($model->save()){
+                                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Menu "%s" updated', array('%s' => $model->title)));
+                                $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('update',array(
@@ -133,25 +104,14 @@ class PageController extends Controller
 	}
 
 	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Page');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
 	{
-		$model=new Page('search');
+		$model=new Menu('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Page']))
-			$model->attributes=$_GET['Page'];
+		if(isset($_GET['Menu']))
+			$model->attributes=$_GET['Menu'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -165,7 +125,7 @@ class PageController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Page::model()->findByPk($id);
+		$model=Menu::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -177,7 +137,7 @@ class PageController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='page-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='menu-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

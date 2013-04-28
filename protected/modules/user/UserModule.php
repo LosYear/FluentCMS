@@ -5,6 +5,7 @@ Yii::setPathOfAlias('YumAssets' , dirname(__FILE__) . '/assets/');
 
 Yii::import('YumModule.models.*');
 Yii::import('YumModule.controllers.YumController');
+Yii::import('application.modules.admin.controllers.*');
 
 class UserModule extends CWebModule {
 	public $version = '0.8-rc7';
@@ -15,7 +16,7 @@ class UserModule extends CWebModule {
 	public $baseLayout = '//layouts/main';
         public $layout = 'application.modules.user.views.layouts.yum';
 	public $loginLayout = 'application.modules.user.views.layouts.yum';
-	public $adminLayout = 'application.modules.user.views.layouts.yum';
+	public $adminLayout = 'application.modules.admin.views.layouts.admin';
 
 	// configuration related control vars
 	public $enableLogging = true;

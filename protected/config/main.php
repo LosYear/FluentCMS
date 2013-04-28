@@ -36,14 +36,12 @@ return array(
         // uncomment the following to enable the Gii tool
         
         'author',
+        'admin',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123456',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
-            'ipFilters' => array(
-                '127.0.0.1',
-                '::1'
-            ),
+            'ipFilters' => false,
             'generatorPaths' => array(
                 'bootstrap.gii'
             )
@@ -108,7 +106,7 @@ return array(
             ),
         ),
         'cache' => array(
-            'class' => 'system.caching.CDummyCache'
+            'class' => 'system.caching.CXCache'
         ),
         
         'bootstrap' => array(
@@ -182,9 +180,9 @@ return array(
                     'categories' => 'system.db.CDbCommand',
                     'logFile' => 'db.log',
                   ), 
-               /* array(
+                array(
                     'class' => 'CWebLogRoute'
-                )*/
+                )
             )
         )
     ),
@@ -193,6 +191,7 @@ return array(
     // using Yii::app()->params['paramName']
     'params' => array(
         // this is used in contact page
-        'adminEmail' => 'webmaster@example.com'
+        'adminEmail' => 'webmaster@example.com',
+        'cacheDuration' => 3600,
     )
 );

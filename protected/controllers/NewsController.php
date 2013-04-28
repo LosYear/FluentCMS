@@ -58,9 +58,19 @@ class NewsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+           // Taking data from cache
+            $data = Yii::app()->cache->get("news_".$id);
+            
+            if($data === false){
+                // If this data isn't cached put it there
+                
+                $data = $this->loadModel($id);
+                Yii::app()->cache->set("news_".$id, $this->loadModel($id), Yii::app()->params['cacheDuration']);
+            }
+            
+            $this->render('view',array(
+                    'model'=>$data,
+            ));
 	}
 
 	/**
@@ -101,8 +111,12 @@ class NewsController extends Controller
 		if(isset($_POST['News']))
 		{
 			$model->attributes=$_POST['News'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){               
+                                // Flushing cache
+                                Yii::app()->cache->delete("news_".$model->id);
+                                
+				$this->redirect(array('view','id'=>$model->id));                         
+                        }
 		}
 
 		$this->render('update',array(
@@ -132,7 +146,7 @@ class NewsController extends Controller
                 $criteria->compare('type','news',true);
                 $criteria->compare('status', 1,true);
                 
-		$dataProvider=new CActiveDataProvider('News', array(
+		$dataProvider=new CActiveDataProvider(News::model()->cache(Yii::app()->params['cacheDuration']), array(
 			'criteria'=>$criteria,
 		));
 		$this->render('index',array(

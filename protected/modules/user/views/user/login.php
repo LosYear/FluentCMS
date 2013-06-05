@@ -13,11 +13,11 @@ Yum::renderFlash();
 ?>
 
 
-<div class="form">
+<div class="form login-form">
 <?php /** @var BootActiveForm $form */
 $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'verticalForm',
-    'htmlOptions'=>array('class'=>'well'),
+    //'htmlOptions'=>array('class'=>'well'),
 )); ?>
  
 <div class="row-fluid"><?php echo $form->textFieldRow($model, 'username', array('class'=>'span3')); ?></div>
@@ -53,4 +53,3 @@ $form = new CForm(array(
 				),
 			), $model);
 ?>
-

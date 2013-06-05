@@ -96,4 +96,17 @@ class Issue extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	/**
+	 * Counts amount of articles in current issue
+	 * @return int the amount of articles
+	 */
+	public function articlesCount(){
+		$criteria = new CDbCriteria();
+		$criteria->condition = '`issue_id` = :id';
+		$criteria->params = array(':id' => $this->id);
+
+		return $this->count($criteria);
+	}
+
 }

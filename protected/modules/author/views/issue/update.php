@@ -9,13 +9,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Issue', 'url'=>array('index')),
-	array('label'=>'Create Issue', 'url'=>array('create')),
-	array('label'=>'View Issue', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Issue', 'url'=>array('admin')),
+	array('label'=>Yii::t('author','Create issue'), 'url'=>array('create'),'icon'=>'file black'),
+	array('label'=>Yii::t('author', 'Manage issues'), 'url'=>array('admin'), 'icon' =>'list black'),
 );
 ?>
 
-<h1>Update Issue <?php echo $model->id; ?></h1>
+<h1><?php echo Yii::t('author', 'Update issue');?> <?php echo $model->number."/".$model->year; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

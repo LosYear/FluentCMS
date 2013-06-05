@@ -16,7 +16,7 @@ return array(
     'id' => 'fluentCMS',
     
     'language' => 'ru',
-    'theme' => 'mudrenok',
+    'theme' => 'swsys',
     
     // preloading 'log' component
     'preload' => array(
@@ -79,7 +79,7 @@ return array(
             'getSuggestMethod' => 'getSuggest',
         ),
       //  'message',*/
-        'rush',
+      //  'rush',
         'mailbox' => array(
             'userClass' => 'YumUser',
             'juiThemes' => 'none',
@@ -106,7 +106,7 @@ return array(
             ),
         ),
         'cache' => array(
-            'class' => 'system.caching.CXCache'
+            'class' => 'system.caching.CDummyCache'
         ),
         
         'bootstrap' => array(
@@ -121,8 +121,15 @@ return array(
             'showScriptName' => false,
             'urlSuffix' => '.html',
             'rules' => array(
-             //   '/' => 'author/issue/index',
-                '/' => 'news/index',
+                '/' => 'author/issue/index',
+                
+                /* Admin rules */
+                'admin/<module:\w+>/<controller:\w+>' => '<module>/<controller>/admin',
+                'admin/<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
+                'admin/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                
+                /* Other Rules */
+               // '/' => 'news/index',
                 'cabinet' => 'rush/cabinet',
                 'moderator' => 'rush/moderator',
                 'cabinet/profile' => 'profile/profile/update',

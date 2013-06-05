@@ -3,35 +3,25 @@
 /* @var $model Article */
 
 $this->breadcrumbs=array(
-	'Articles'=>array('index'),
-	'Manage',
+	Yii::t('AuthorModule.admin', 'Articles')=>array('admin'),
+	Yii::t('AuthorModule.admin', 'Manage'),
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('authorModule.main', 'Create article'), 'url'=>array('create'), 'icon' => 'file black',),
+	array('label'=>Yii::t('author', 'Create article'), 'url'=>array('create'), 'icon' => 'file black',),
 );
-$this->renderPartial('application.modules.author.views.sidebar');
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('article-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
-<div id="main"><div class="well">
+
+<div class="page-header">
+  <h1><?php echo Yii::t('AuthorModule.admin', 'Articles') ?> <small><?php echo Yii::t('AuthorModule.admin', 'Manage') ?></small></h1>
+</div>
+
+<div id="main">
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'article-grid',
         'type'=>'striped bordered condensed',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-      //  'htmlOptions' => array('class' => 'well'),
         'template'=>"{items}",
 	'columns'=>array(
             array('name'=>'title', 'header'=>Yii::t('admin', 'Title')),
@@ -43,10 +33,10 @@ $('.search-form form').submit(function(){
                 'header'=>Yii::t('admin', 'Status'), 
                 'value'=>'($data->status == 1) ?  "<i class=\" icon-eye-open\"/>" : "<i class=\" icon-eye-close\"/>"',
                 'filter' => array(
-                    '0' => Yii::t('authorModule.main', 'Draft'),
-                    '1' => Yii::t('authorModule.main', 'Published'),
-                    '2' => Yii::t('authorModule.main', 'Pending'),
-                    '3' => Yii::t('authorModule.main', 'Awaiting correction')),
+                    '0' => Yii::t('author', 'Draft'),
+                    '1' => Yii::t('author', 'Published'),
+                    '2' => Yii::t('author', 'Pending'),
+                    '3' => Yii::t('author', 'Awaiting correction')),
 
             ),
             array(
@@ -55,5 +45,4 @@ $('.search-form form').submit(function(){
                     'template'=>'{update}{delete}',
 		),
 	)
-)); ?></div></div>
-<?php $this->renderPartial('application.modules.author.views.sidebar2', array('menu'=>$this->menu)); ?>
+)); ?></div>

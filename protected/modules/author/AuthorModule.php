@@ -12,6 +12,7 @@ class AuthorModule extends CWebModule
 			'author.models.*',
                         'author.controllers.*',
 			'author.components.*',
+                        'application.modules.admin.controllers.*',
 		));
                 
                 Yii::app()->clientScript->registerCssFile(

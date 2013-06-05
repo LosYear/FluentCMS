@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Issue', 'url'=>array('index')),
-	array('label'=>'Manage Issue', 'url'=>array('admin')),
+	array('label'=>Yii::t('author', 'Manage issues'), 'url'=>array('admin'), 'icon' =>'list black'),
 );
 ?>
 
-<h1>Create Issue</h1>
+<h1><?php echo Yii::t('author', 'Create issue'); ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

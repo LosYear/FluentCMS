@@ -41,7 +41,7 @@ class Profile extends CActiveRecord
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('user_id, name, email, academic', 'safe', 'on'=>'search'),
+			array('user_id, name, email, academic, id', 'safe', 'on'=>'search'),
 		);
 	}
 

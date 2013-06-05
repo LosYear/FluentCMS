@@ -71,7 +71,7 @@
 <div class="ym-wrapper">
     <div class="ym-wbox">
         <header class="header ym-clearfix">
-            <h1>Электронный научный журнал: Программные продукты, системы и алгоритмы</h1>
+            <a href="<?php echo Yii::app()->homeUrl; ?>"><h1>Электронный научный журнал: Программные продукты, системы и алгоритмы</h1></a>
 
             <form class="ym-searchform">
                 <input class="ym-searchfield" type="search"/>

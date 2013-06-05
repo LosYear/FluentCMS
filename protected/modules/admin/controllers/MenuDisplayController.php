@@ -42,12 +42,12 @@ class MenuDisplayController extends Controller
         
         // !- PLUGIN -! //
             
-     /*   $result[] = array(
+        $result[] = array(
           'label' => Yii::t('author', 'Journal'),
           'icon' => 'briefcase white',
           'items' => MenuDisplayController::getJournalItems(),
             
-        );*/
+        );
         
         $result[] = array(
           'label' => Yii::t('rush', 'Olympiad'),
@@ -131,14 +131,13 @@ class MenuDisplayController extends Controller
         $result[] = array(
             'label' => Yii::t('author', 'Issues'),
             'icon' => 'edit',
-            'url' => Yii::app()->createUrl('issue'),
+            'url' => Yii::app()->createUrl('author/issue/admin'),
         );
-        $count = 5;
-        
+
         $result[] = array(
             'label' => Yii::t('author', 'Articles')/*."<span class=\"badge badge-info\">$count</span>"*/,
             'icon' => 'inbox black',
-            'url' => Yii::app()->createUrl('article'),
+            'url' => Yii::app()->createUrl('author/article/admin'),
         );
         
         return $result;

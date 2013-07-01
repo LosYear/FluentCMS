@@ -1,7 +1,8 @@
 <?php
     return array(
-        'Dashboard' => 'Домой',
+        'Dashboard' => 'Главная',
         'Edit profile' => 'Изменить профиль',
+	    'Profile' => 'Профиль',
         'Name' => 'ФИО',
         'Email' => 'Почта',
         'Academic grade' => 'Ученая степень',

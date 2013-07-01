@@ -73,20 +73,22 @@
         <header class="header ym-clearfix">
             <a href="<?php echo Yii::app()->homeUrl; ?>"><h1>Электронный научный журнал: Программные продукты, системы и алгоритмы</h1></a>
 
-            <form class="ym-searchform">
-                <input class="ym-searchfield" type="search"/>
+            <form class="ym-searchform" method="post" action="<?php echo Yii::app()->createAbsoluteUrl('author/article/search'); ?>">
+                <input class="ym-searchfield" name="query" type="search"/>
                 <button type="submit" class="searchbutton"></button>
             </form>
 
             <div class="block_add-article">
                 <div class="icon icon_add-article"></div>
-                <a href="" class="link text_add-article">Добавить статью</a><br>
+                <a href="<?php echo Yii::app()->createUrl('author/article/create');?>" class="link text_add-article">Добавить статью</a><br>
                 <?php if (Yii::app()->user->isGuest): ?>
-                    <div class="btn">Вход</div>
-                    <div class="btn">Регистрация</div>
+                    <a href="<?php echo Yii::app()->createUrl('user/login'); ?>" class="btn">Вход</a>
+                    <a href="<?php echo Yii::app()->createUrl('user/registration'); ?>" class="btn">Регистрация</a>
                 <?php elseif(Yii::app()->user->isAdmin()):  ?>
-                    <a href="<?php echo Yii::app()->baseUrl.'backend.php'; ?>">Админка</a>
-                <?php endif; ?>
+                    <a href="<?php echo Yii::app()->baseUrl.'admin/default'; ?>">Админка</a>
+                <?php elseif(!Yii::app()->user->isGuest): ?>
+	                <a href="<?php echo Yii::app()->createUrl('author/article'); ?>" class="btn">Личный Кабинет</a>
+	            <?php endif; ?>
             </div>
         </header>
         <nav id="nav" class="ym-clearfix">
@@ -103,18 +105,11 @@
                 </ul>-->
                 
                 <?php $this->widget('application.widgets.MenuWidget', array(
-                        'items'=>array(
-                            // Important: you need to specify url as 'controller/action',
-                            // not just as 'controller' even if default acion is used.
-                            array('label' => 'Новости', 'url' => '#', 'active'=> true),
-                            array('label' => 'Проекты и анонсы', 'url' => '#'),
-                            array('label' => 'Авторам', 'url' => '#'),
-                            array('label' => 'Редакция', 'url' => '#'),
-                            array('label' => 'Обратная связь', 'url' => '#'),
-                        ),
+                        'items'=>array(),
                         'activeCssClass' => 'active',
                         'activateItems' => true,
                         'name' => 'Name',
+	                    'htmlOptions' => array('class' => 'vert-nav'),
                 ));?>
                 <div class="placeholder_after-mainmenu"><a href="http://feeds.feedburner.com/cps/swsys-web" class="icon icon_rss">rss</a></div>
             </div>
@@ -159,6 +154,20 @@
         g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g, s)
     }(document, 'script'));
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		$('.vert-nav li').hover(
+			function() {
+				$('ul', this).slideDown(110);
+			},
+			function() {
+				$('ul', this).slideUp(110);
+			}
+		);
+
+	});
 </script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 )); ?>
 
 	<?php echo $form->errorSummary($model); ?>
-        <fieldset class="edit-form well">
+        <fieldset class="edit-form">
             <div class="row">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'name'); ?></div>

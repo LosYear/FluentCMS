@@ -23,7 +23,7 @@ class Article extends CActiveRecord
 	 * @return Article the static model class
 	 */
         
-        public $type = 'article';
+    public $type = 'author/article';
         
     
 	public static function model($className=__CLASS__)
@@ -64,6 +64,7 @@ class Article extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'advanced' => array(self::HAS_ONE, 'ArticleAdv', 'node_id'),
 		);
 	}
 
@@ -101,7 +102,9 @@ class Article extends CActiveRecord
 		$criteria->compare('type','article',true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('content',$this->content,true);
-		$criteria->compare('author',Yii::app()->user->id);
+		if(!Yii::app()->user->isAdmin()){
+			$criteria->compare('author',Yii::app()->user->id);
+		}
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('updated',$this->updated,true);
 		$criteria->compare('updater',$this->updater);

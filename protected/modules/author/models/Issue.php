@@ -56,6 +56,7 @@ class Issue extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'articles' => array(self::HAS_MANY, 'ArticleAdv', 'issue_id'),
 		);
 	}
 

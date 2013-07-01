@@ -29,7 +29,8 @@ return array(
         'application.models.*',
         'application.components.*',
         'application.modules.user.models.*',
-        'application.controllers.*'
+        'application.controllers.*',
+	    'ext.YiiMailer.YiiMailer',
     ),
     
     'modules' => array(
@@ -37,6 +38,7 @@ return array(
         
         'author',
         'admin',
+	    'feedback',
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '123456',
@@ -122,12 +124,15 @@ return array(
             'urlSuffix' => '.html',
             'rules' => array(
                 '/' => 'author/issue/index',
-                
+
+	            'search' => 'author/article/search',
+	            'feedback' => 'feedback/default/contact',
+
                 /* Admin rules */
-                'admin/<module:\w+>/<controller:\w+>' => '<module>/<controller>/admin',
+               /* 'admin/<module:\w+>/<controller:\w+>' => '<module>/<controller>/admin',
                 'admin/<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
                 'admin/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-                
+                */
                 /* Other Rules */
                // '/' => 'news/index',
                 'cabinet' => 'rush/cabinet',
@@ -167,10 +172,10 @@ return array(
             'tablePrefix' => ''
         ),
         
-        'errorHandler' => array(
+       /* 'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error'
-        ),
+        ),*/
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
@@ -180,16 +185,16 @@ return array(
                     'logFile' => 'trace.log'
                 ),*/
                 // uncomment the following to show log messages on web pages
-                
+
                     array(
                     'class'=>'CFileLogRoute',
                     'levels'=>'trace,log, error',
                     'categories' => 'system.db.CDbCommand',
                     'logFile' => 'db.log',
-                  ), 
-                array(
+                  ),
+               /* array(
                     'class' => 'CWebLogRoute'
-                )
+                )*/
             )
         )
     ),

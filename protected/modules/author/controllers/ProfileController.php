@@ -27,18 +27,18 @@ class ProfileController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
+		/*	array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
-			),
+			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'edit'),
+				'actions'=>array(/*'update', */'edit'),
 				'users'=>array('@'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+			/*array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
-			),
+			),*/
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -85,9 +85,24 @@ class ProfileController extends Controller
 	 * @param integer $id the ID of the model to be updated
 	 */
 	public function actionEdit()
-	{ 
-            $id = Yii::app()->user->id;
-		$model=$this->loadModel($id);
+	{
+		if(Yii::app()->user->isAdmin()){
+			// Setting admin layout
+			$this->layout = 'application.modules.admin.views.layouts.admin';
+		}
+		else{
+			$this->layout = '/layouts/cabinet';
+		}
+
+        $id = Yii::app()->user->id;
+		$criteria = new CDbCriteria();
+		$criteria->condition = '`user_id` = :id';
+		$criteria->params = array(':id' => $id);
+		$model=Profile::model()->find($criteria);
+
+		if($model === null){
+			$model = new Profile;
+		}
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -95,8 +110,9 @@ class ProfileController extends Controller
 		if(isset($_POST['Profile']))
 		{
 			$model->attributes=$_POST['Profile'];
+			$model->user_id = Yii::app()->user->id;
 			if($model->save())
-				$this->redirect(array('default/index'));
+				$this->redirect(array('article/admin'));
 		}
 
 		$this->render('update',array(
@@ -151,7 +167,10 @@ class ProfileController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Profile::model()->findByPk($id);
+		$criteria = new CDbCriteria();
+		$criteria->condition = '`user_id` = :id';
+		$criteria->params = array(':id' => $id);
+		$model=Profile::model()->find($criteria);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

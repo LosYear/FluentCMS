@@ -29,15 +29,15 @@
 		{
 			return array(
 				array('allow', // allow all users to perform 'index' and 'view' actions
-					'actions' => array('index', 'view'),
+					'actions' => array('index', 'view', 'search'),
 					'users' => array('*'),
 				),
 				array('allow', // allow authenticated user to perform 'create' and 'update' actions
-					'actions' => array('create', 'update'),
+					'actions' => array('create', 'update', 'admin'),
 					'users' => array('@'),
 				),
 				array('allow', // allow admin user to perform 'admin' and 'delete' actions
-					'actions' => array('admin', 'delete'),
+					'actions' => array('delete'),
 					'users' => array('admin'),
 				),
 				array('deny', // deny all users
@@ -73,8 +73,12 @@
 				$info['name'] = $author->name;
 				$authors[] = $info;
 			}
+
+			// Loading aditional information
+			$advModel = ArticleAdv::model()->findByPk($id);
 			$this->render('view', array(
 				'model' => $this->loadModel($id),
+				'advModel' => $advModel,
 				'authors' => $authors,
 			));
 		}
@@ -118,8 +122,13 @@
 		 */
 		public function actionCreate()
 		{
-			// Setting admin layout
-			$this->layout = 'application.modules.admin.views.layouts.admin';
+			if(Yii::app()->user->isAdmin()){
+				// Setting admin layout
+				$this->layout = 'application.modules.admin.views.layouts.admin';
+			}
+			else{
+				$this->layout = '/layouts/cabinet';
+			}
 
 			$model = new Article;
 			$advModel = new ArticleAdv;
@@ -134,6 +143,11 @@
 
 				$advModel->attributes = $_POST['ArticleAdv'];
 				$advModel->node_id = 0;
+				if(!Yii::app()->user->isAdmin()){
+					$model->status = 2;
+					$model->url = '_';
+					$advModel->issue_id = -1;
+				}
 
 				if ($model->validate() && $advModel->validate()) {
 					$model->save();
@@ -150,7 +164,7 @@
 						}
 					}
 
-					$this->redirect(array('author/article/admin'));
+					$this->redirect(array('article/admin'));
 				}
 			}
 
@@ -167,8 +181,13 @@
 		 */
 		public function actionUpdate($id)
 		{
-			// Setting admin layout
-			$this->layout = 'application.modules.admin.views.layouts.admin';
+			if(Yii::app()->user->isAdmin()){
+				// Setting admin layout
+				$this->layout = 'application.modules.admin.views.layouts.admin';
+			}
+			else{
+				$this->layout = '/layouts/cabinet';
+			}
 
 			$model = $this->loadModel($id);
 			$advModel = ArticleAdv::model()->find('node_id = :id', array(':id' => $id));
@@ -239,7 +258,7 @@
 						}
 					}
 
-					$this->redirect(array('default/index'));
+					$this->redirect(array('article/admin'));
 				}
 			}
 
@@ -279,8 +298,13 @@
 		 */
 		public function actionAdmin()
 		{
-			// Setting admin layout
-			$this->layout = 'application.modules.admin.views.layouts.admin';
+			if(Yii::app()->user->isAdmin()){
+				// Setting admin layout
+				$this->layout = 'application.modules.admin.views.layouts.admin';
+			}
+			else{
+				$this->layout = '/layouts/cabinet';
+			}
 
 			$model = new Article('search');
 			$model->unsetAttributes(); // clear any default values
@@ -290,6 +314,29 @@
 			$this->render('admin', array(
 				'model' => $model,
 			));
+		}
+
+		/**
+		 * Search action. Searches article by title or content
+		 */
+		public function actionSearch()
+		{
+			$result = array();
+			if (isset($_POST['query'])) {
+				$criteria = new CDbCriteria();
+
+				$criteria->condition = "`type` = 'author/article' AND (`title` LIKE :query OR `content` LIKE :query2)";
+				$criteria->params = array(
+					':query' => '%'.addcslashes($_POST['query'], '%_').'%',
+					':query2' => '%'.addcslashes($_POST['query'], '%_').'%',
+				);
+				$criteria->order = '`created` DESC';
+
+				$model = Article::model();
+				$model->type = '';
+				$result = $model->with('advanced')->findAll($criteria);
+			}
+			$this->render('search', array('results' => $result));
 		}
 
 		/**

@@ -46,9 +46,9 @@
 
 					<div class="block_toc">
 
-						<?php foreach ($new_issue['topics'] as $el): ?>
+						<?php foreach ($new_issue['content'] as $el): ?>
 							<dl>
-								<dt><span style="left:<?php echo $el['node_id'] ?>%"></span><?php echo $el['node_id'] ?>
+								<dt><span style="left:40%"></span><?php echo $el['id'] ?>
 								</dt>
 								<dd><?php echo $el['title'] ?></dd>
 							</dl>
@@ -90,7 +90,7 @@
 			</div>
 			<div class="block_aside block_contacts">
 				<div class="inner" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<b>Как связаться с <a href="">редакцией</a></b>
+					<b>Как связаться с <a href="<?php echo Yii::app()->homeUrl.'/contacts.html' ?>">редакцией</a></b>
 
 					<ul>
 						<li><b>Телефон:</b> <span itemprop="telephone">(4822) 39-42-77</span></li>

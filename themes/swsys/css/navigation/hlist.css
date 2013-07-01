@@ -205,3 +205,61 @@
 		background: rgba(255,255,255,.2);
 	}
 }
+
+/* Cброс стилей списка браузера: */
+.vert-nav, .vert-nav ul {
+	list-style:none;
+	margin:0 0 0 -1px; /* Чтобы в IE8 не косило. */
+	padding:0;
+}
+
+/* Делаем LI инлайновым: */
+.vert-nav li {
+	float:left;
+	position:relative;
+	display:block;
+	margin:0 1px;
+	z-index:999;
+
+}
+
+/* Подменю, скрываемое по умолчанию: */
+.vert-nav ul {
+	position:absolute;
+	display:none;
+	background: #6a6a6a;;
+	left:0;
+	width:auto;
+	text-align: center;
+	text-decoration: none;
+}
+
+.vert-nav ul li a:focus,
+.vert-nav ul li a:hover,
+.vert-nav ul li a:active  {
+	background: transparent;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	text-decoration: none;
+}
+
+.vert-nav ul li a{
+	text-decoration: none;
+	/*border-bottom: 1px solid white;*/
+	white-space: nowrap;
+}
+
+.vert-nav ul li{
+	margin-right: 0;
+	width:100%;
+	border-bottom: 1px solid white;
+	text-align: left;
+}
+
+.vert-nav ul li:focus,
+.vert-nav ul li:hover,
+.vert-nav ul li:active  {
+	color: #fff;
+	background:#666;
+}

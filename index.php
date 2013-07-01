@@ -26,6 +26,3 @@ $current_time = $current_time[1] + $current_time[0];
 
 // Вычисляем время выполнения скрипта
 $result_time = ($current_time - $start_time);
-
-echo("<center><b>Time: ".$result_time." sec<br/>");
-die("Memory: ". (memory_get_peak_usage()/1024)/1024 ." MBytes</b></center>");

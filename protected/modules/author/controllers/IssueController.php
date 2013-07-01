@@ -65,19 +65,21 @@
 			// Setting admin layout
 			$this->layout = 'application.modules.admin.views.layouts.admin';
 
-			$model = new Issue;
+			$model=new Issue;
 
 			// Uncomment the following line if AJAX validation is needed
 			// $this->performAjaxValidation($model);
 
-			if (isset($_POST['Issue'])) {
-				$model->attributes = $_POST['Issue'];
-				if ($model->save())
-					$this->redirect(array('view', 'id' => $model->id));
+			if(isset($_POST['Issue']))
+			{
+				$model->attributes=$_POST['Issue'];
+				$model->created = new CDbExpression('NOW()');
+				if($model->save())
+					$this->redirect(array('admin'));
 			}
 
-			$this->render('create', array(
-				'model' => $model,
+			$this->render('create',array(
+				'model'=>$model,
 			));
 		}
 
@@ -99,7 +101,7 @@
 			if (isset($_POST['Issue'])) {
 				$model->attributes = $_POST['Issue'];
 				if ($model->save())
-					$this->redirect(array('view', 'id' => $model->id));
+					$this->redirect(array('admin'));
 			}
 
 			$this->render('update', array(
@@ -141,15 +143,13 @@
 			$model = ArticleAdv::model();
 			$criteria = new CDbCriteria;
 			$criteria->condition = 'issue_id=:id';
+			$criteria->with = array('article' => array('select' => false, 'condition' => 'article.status = 1'));
 			$criteria->params = array(':id' => $res->id);
 			$new_issue['articles'] = $model->count($criteria);
 
 			$issue_id = $res->id;
 
 			$model = ArticleAdv::model();
-			$criteria = new CDbCriteria;
-			$criteria->condition = 'issue_id=:id';
-			$criteria->params = array(':id' => $res->id);
 			$articles = $model->findAll($criteria);
 
 			$new_issue['content'] = array();
@@ -204,22 +204,32 @@
 			/**
 			 * TODO: Replace sql to active record
 			 */
-			$sql = "SELECT DISTINCT i.* FROM issue AS i INNER JOIN article AS a ON i.id=a.issue_id WHERE `year` > DATE('{$res->year}')";
-			$issue = Yii::app()->db->createCommand($sql)->queryRow();
+			$criteria = new CDbCriteria;
+			$criteria->order = 'year ASC';
+			$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
+			$criteria->condition = '`year` > DATE(:year)';
+			$criteria->params = array(':year' => $res->year);
 
-			if (is_array($issue)) {
-				$new_issue['next_issue'] = $issue['id'];
-			} else {
+			$issue = Issue::model()->find($criteria);
+
+			if ($issue === null) {
 				$new_issue['next_issue'] = -1;
+			} else {
+				$new_issue['next_issue'] = $issue['id'];
 			}
 
-			$sql = "SELECT DISTINCT i.* FROM issue AS i INNER JOIN article AS a ON i.id=a.issue_id WHERE `year` < DATE('{$res->year}')";
-			$issue = Yii::app()->db->createCommand($sql)->queryRow();
+			$criteria = new CDbCriteria;
+			$criteria->order = 'year DESC';
+			$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
+			$criteria->condition = '`year` < DATE(:year)';
+			$criteria->params = array(':year' => $res->year);
 
-			if (is_array($issue)) {
-				$new_issue['previous_issue'] = $issue['id'];
-			} else {
+			$issue = Issue::model()->find($criteria);
+
+			if ($issue === null) {
 				$new_issue['previous_issue'] = -1;
+			} else {
+				$new_issue['previous_issue'] = $issue['id'];
 			}
 
 			// Archive
@@ -243,23 +253,6 @@
 				}
 			}
 
-			// Themes
-			/*$criteria = new CDbCriteria;
-			$criteria->join = "LEFT JOIN `node` ON `node`.`id` = `t`.`node_id` AND `t`.`issue_id` = :id";
-		  //  $criteria->condition = '';
-			$criteria->params = array(":id" => $id);
-			$criteria->limit = 5;
-			$criteria->select = "*";
-			$criteria->order = '`node`.`created` DESC';
-
-			$model = ArticleAdv::model();
-			$result = $model->findAll($criteria);
-			$new_issue['topics'] = $result;*/
-			$sql = "SELECT * FROM `article`, `node` WHERE `article`.`node_id` = `node`.`id` AND `article`.`issue_id` = $id
-ORDER BY `node`.`created` DESC";
-			$result = Yii::app()->db->createCommand($sql)->queryAll();
-			$new_issue['topics'] = $result;
-
 			return $new_issue;
 		}
 
@@ -273,7 +266,8 @@ ORDER BY `node`.`created` DESC";
 			if ($id == '') {
 				$model = Issue::model();
 				$criteria = new CDbCriteria;
-				$criteria->order = '`created` DESC';
+				$criteria->order = 'year DESC';
+				$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
 				$res = $model->find($criteria);
 				$id = $res->id;
 			}
@@ -304,6 +298,7 @@ ORDER BY `node`.`created` DESC";
 				'model' => $model,
 			));
 		}
+
 
 		/**
 		 * Returns the data model based on the primary key given in the GET variable.

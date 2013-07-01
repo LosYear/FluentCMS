@@ -2,8 +2,18 @@
 /* @var $this IssueController */
 /* @var $model Issue */
 /* @var $form CActiveForm */
-?>
 
+$assetsUrl = Yii::app()->assetManager->publish(Yii::getPathOfAlias('application.modules.author.assets'));
+
+Yii::app()->clientScript->registerCssFile($assetsUrl.'/jquery-ui/jquery-ui-1.10.0.custom.css');
+
+Yii::app()->clientScript->registerScriptFile($assetsUrl.'/jquery-ui/jquery-ui-1.10.1.custom.min.js', CClientScript::POS_HEAD);
+
+Yii::app()->clientScript->registerCssFile($assetsUrl.'/jquery-ui-timepicker-addon.css');
+
+Yii::app()->clientScript->registerScriptFile($assetsUrl.'/jquery-ui-timepicker-addon.js', CClientScript::POS_HEAD);
+
+Yii::app()->clientScript->registerScriptFile($assetsUrl.'/localization/ru.js', CClientScript::POS_HEAD); ?>
 <div class="form">
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
@@ -23,7 +33,7 @@
             <div class="row">
                 <div>
                     <div class="column span-4"><?php echo $form->labelEx($model,'year'); ?></div>
-                    <div class="column span-12"><?php echo $form->textField($model, 'year', array('class'=>'span12')); ?></div>
+                    <div class="column span-12"><?php echo $form->textField($model, 'year', array('class'=>'span12 picker')); ?></div>
                 </div>
             </div>
             
@@ -48,5 +58,11 @@
         </fieldset>
 
 <?php $this->endWidget(); ?>
+
+	<script lang="javascript">
+		$('.picker').datepicker({
+			dateFormat : "yy-mm-dd"
+		});
+	</script>
 
 </div><!-- form -->

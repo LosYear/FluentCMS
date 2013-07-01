@@ -1,34 +1,44 @@
 <article class="main ym-clearfix">
 	<div class="article">
 		<aside class="article-aside">
-			<div class="article-aside-content">
-				<div class="rs-carousel">
-					<ul class="faces_authors">
-						<?php foreach ($authors as $one) { ?>
-							<li class="face">
-								<img src="http://placehold.it/84x122" alt="">
-								<a href="" class="link"><?php echo $one['name'] ?></a>
-							</li>
-						<?php } ?>
-					</ul>
+			<div>
+				<div class="article-aside-content">
+					<div class="rs-carousel">
+						<ul class="faces_authors">
+							<?php foreach ($authors as $one) { ?>
+								<li class="face">
+									<img src="http://placehold.it/84x122" alt="">
+									<a href="" class="link"><?php echo $one['name'] ?></a>
+								</li>
+							<?php } ?>
+						</ul>
+					</div>
+				</div>
+				<div class="title_article-aside first">Авторы
+					<div class="expand hidden">[ + ]</div>
+					<div class="tail-corner-top-right"></div>
 				</div>
 			</div>
-			<div class="title_article-aside first">Авторы
-				<div class="expand hidden">[ + ]</div>
-				<div class="tail-corner-top-right"></div>
+
+			<div>
+				<div class="title_article-aside">Аннотация
+					<div class="expand">[ + ]</div>
+				</div>
+				<div class="article-aside-content" style="display: none;"><?php echo $advModel->annotation_rus; ?></div>
 			</div>
-			<div class="title_article-aside">Аннотация
-				<div class="expand">[ + ]</div>
-			</div>
-			<div class="title_article-aside">Ключевые слова
-				<div class="expand">[ + ]</div>
+
+			<div>
+				<div class="title_article-aside">Ключевые слова
+					<div class="expand">[ + ]</div>
+				</div>
+				<div class="article-aside-content" style="display: none;"><?php echo $advModel->tags_rus; ?></div>
 			</div>
 		</aside>
 
 		<ul class="breadcrumbs">
-			<li><a href="#">Главная страница</a> <span class="divider">»</span></li>
-			<li><a href="#">Статьи</a> <span class="divider">»</span></li>
-			<li class="active">Новые технологии</li>
+			<li><a href="<?php echo Yii::app()->homeUrl; ?>">Главная страница</a> <span class="divider">»</span></li>
+			<li><a href="<?php echo Yii::app()->createUrl("author/issue", array('id' => $advModel->issue_id)) ?>">Статьи</a> <span class="divider">»</span></li>
+			<li class="active"><?php echo $model->title; ?></li>
 		</ul>
 
 		<h1 class="title title_article"><?php echo $model->title; ?></h1>
@@ -40,7 +50,7 @@
 	<div class="swsys-like"><span class="icon icon_like"></span> Статья нравится
 		<div class="tail-corner-top-right"></div>
 	</div>
-	<div class="user-comment">
+	<!--<div class="user-comment">
 		<h3 class="title title_add-comment">Добавить комментарий
 			<div class="icon icon_comment-arrowdown"></div>
 		</h3>
@@ -93,5 +103,17 @@
 						→ </a></li>
 			</ul>
 		</div>
-	</div>
+	</div>-->
 </article>
+
+<script lang="javascript">
+	$('.expand').click(function () {
+		el = $(this).parent().parent().children('.article-aside-content');
+		if(el.is(':visible')){
+			el.hide(1000);
+		}
+		else{
+			el.show(1000);
+		}
+	});
+</script>

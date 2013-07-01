@@ -14,7 +14,7 @@ class SiteRule extends CBaseUrlRule
     
     public function parseUrl($manager, $request, $pathInfo, $rawPathInfo)
     {
-        if (preg_match('%^(\w+)?$%', $pathInfo, $matches)) {
+        if (preg_match('%^([\-\w]+)?$%', $pathInfo, $matches)) {
             $row = Yii::app()->db->createCommand(array(
                 'select' => array(
                     'id',

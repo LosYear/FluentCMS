@@ -195,6 +195,7 @@
 					'annotation' => $element->annotation_rus,
 					'href' => $result['url'],
 					'authors' => $authors,
+					'popularity' => ArticleAdv::model()->findByPk($result['id'])->getPopularity(),
 				);
 			}
 

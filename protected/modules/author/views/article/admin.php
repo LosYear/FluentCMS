@@ -22,7 +22,7 @@ $this->menu=array(
         'type'=>'striped bordered condensed',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-        'template'=>"{items}",
+        'template'=>"{items}{pager}",
 	'columns'=>array(
             array('name'=>'title', 'header'=>Yii::t('admin', 'Title')),
             array('name'=>'url', 'header'=>Yii::t('admin', 'Url')),

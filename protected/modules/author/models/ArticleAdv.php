@@ -42,10 +42,10 @@ class ArticleAdv extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('node_id, title_eng, issue_id, tags_rus, tags_eng, aditional_authors, annotation_rus, annotation_eng', 'required'),
-			array('node_id, issue_id', 'numerical', 'integerOnly'=>true),
+			array('node_id, issue_id, views, likes', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('node_id, title_eng, issue_id, tags_rus, tags_eng, aditional_authors, annotation_rus, annotation_eng', 'safe', 'on'=>'search'),
+			array('node_id, title_eng, issue_id, tags_rus, tags_eng, aditional_authors, annotation_rus, annotation_eng, likes, views', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,5 +102,30 @@ class ArticleAdv extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	/**
+	 * Returns popularity of current article. Max 100 points
+	 * @return int Popularity
+	 */
+
+	public function getPopularity(){
+		$criteria = new CDbCriteria();
+		$criteria->select  = 'MAX(`views`) AS views';
+
+		$max = ArticleAdv::model()->find($criteria);
+		$max = $max['views'];
+
+		$views_points = (int)(($this->views/$max)*30);
+
+		$criteria = new CDbCriteria();
+		$criteria->select  = 'MAX(`likes`) AS likes';
+
+		$max = ArticleAdv::model()->find($criteria);
+		$max = $max['likes'];
+
+		$likes_points = (int)(($this->likes/$max)*70);
+
+		return $likes_points+$views_points;
 	}
 }

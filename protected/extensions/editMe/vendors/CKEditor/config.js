@@ -8,4 +8,6 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	 config.extraPlugins = 'more';
+	 config.extraPlugins += (config.extraPlugins.length == 0 ? '' : ',') + 'fmath_formula';
 };
+пуеер

@@ -1,5 +1,7 @@
 <script lang="javascript">
 	url = "<?php echo Yii::app()->createUrl('author/ajax/AutorsAutoComplete'); ?>";
+	tags_rus = "<?php echo Yii::app()->createUrl('author/ajax/TagsRusAutocomplete'); ?>";
+	tags_eng = "<?php echo Yii::app()->createUrl('author/ajax/TagsEngAutocomplete'); ?>";
 </script>
 <?php
 	/* @var $this ArticleController */
@@ -7,7 +9,7 @@
 	/* @var $form CActiveForm */
 
 	$assetsUrl = Yii::app()->assetManager->publish(Yii::getPathOfAlias('application.modules.author.assets'));
-	Yii::app()->clientScript->registerScriptFile($assetsUrl . '/authors_field.js', CClientScript::POS_END);
+	Yii::app()->clientScript->registerScriptFile($assetsUrl . '/autocomplete_fields.js', CClientScript::POS_END);
 	Yii::app()->clientScript->registerCssFile($assetsUrl . '/admin.css');
 
 	$form = $this->beginWidget('CActiveForm', array(
@@ -77,17 +79,37 @@
 
 	<div class="row-fluid">
 		<div>
-			<div class="column span-6"><?php echo $form->labelEx($advModel, 'tags_rus'); ?></div>
-			<div
-				class="column span-12"><?php echo $form->textField($advModel, 'tags_rus', array('class' => 'span9')); ?></div>
+			<div class="span6 pull-left">
+				<div class="column span-6"><?php echo $form->labelEx($advModel, 'tags_rus'); ?></div>
+				<div class="column span-12 input-append"><?php echo $form->textField($advModel, 'tags_rus',
+						array('data-provider' => 'typeahead', 'class' => 'span11', 'id' => 'tags_rus')); ?>
+					<button class="btn" type="button" id="addTagRusButton"><i class=" icon-plus-sign"></i></button>
+				</div>
+				<?php echo $form->hiddenField($advModel, 'tags_rus',
+					array('id' => 'tags_rus_hidden')); ?>
+			</div>
+			<div class="span6 pull-right">
+				<ul id="tags_rus">
+				</ul>
+			</div>
 		</div>
 	</div>
 
 	<div class="row-fluid">
 		<div>
-			<div class="column span-6"><?php echo $form->labelEx($advModel, 'tags_eng'); ?></div>
-			<div
-				class="column span-12"><?php echo $form->textField($advModel, 'tags_eng', array('class' => 'span9')); ?></div>
+			<div class="span6 pull-left">
+				<div class="column span-6"><?php echo $form->labelEx($advModel, 'tags_eng'); ?></div>
+				<div class="column span-12 input-append"><?php echo $form->textField($advModel, 'tags_eng',
+						array('data-provider' => 'typeahead', 'class' => 'span11', 'id' => 'tags_eng')); ?>
+					<button class="btn" type="button" id="addTagEngButton"><i class=" icon-plus-sign"></i></button>
+				</div>
+				<?php echo $form->hiddenField($advModel, 'tags_eng',
+					array('id' => 'tags_eng_hidden')); ?>
+			</div>
+			<div class="span6 pull-right">
+				<ul id="tags_eng">
+				</ul>
+			</div>
 		</div>
 	</div>
 

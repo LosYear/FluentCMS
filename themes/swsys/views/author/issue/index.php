@@ -48,9 +48,9 @@
 
 						<?php foreach ($new_issue['content'] as $el): ?>
 							<dl>
-								<dt><span style="left:40%"></span><?php echo $el['id'] ?>
+								<dt><span style="left:<?php $per = 100-$el['popularity']; if($per>75): $per = 75; endif; echo $per; ?>%"></span><?php echo $el['popularity'] ?>
 								</dt>
-								<dd><?php echo $el['title'] ?></dd>
+								<dd class="pop"><div class="pop-inner"><?php echo $el['title'] ?></div></dd>
 							</dl>
 						<?php endforeach; ?>
 					</div>

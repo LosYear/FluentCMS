@@ -74,13 +74,61 @@
 				$authors[] = $info;
 			}
 
+			$criteria = new CDbCriteria();
+			$criteria->condition = '`node_id` = :id';
+			$criteria->params = array(':id' => $id);
+
+			$tags = ArticleTags::model()->findAll($criteria);
+
+			$tags_rus = array();
+
+			foreach ($tags as $tag){
+				//echo $tag->info->tag." ";
+				if($tag->info->lang == 'ru'){
+					$tags_rus[] = $tag;
+				}
+			}
+
 			// Loading aditional information
 			$advModel = ArticleAdv::model()->findByPk($id);
+
+			// Incrementing views
+			$advModel->views++;
+			$advModel->save();
+
 			$this->render('view', array(
 				'model' => $this->loadModel($id),
 				'advModel' => $advModel,
 				'authors' => $authors,
+				'tags_rus' => $tags_rus,
 			));
+		}
+
+		/**
+		 * Creates relation between tag and article
+		 * @param mixed $tag
+		 * @param int $id
+		 * @param string $lang
+		 */
+
+		private function addTag($tag, $id, $lang)
+		{
+			if (!is_int($tag)) {
+				// Add tag into database then create relation
+
+				$model = new Tag();
+				$model->tag = $tag;
+				$model->lang = $lang;
+
+				$model->save();
+				$tag = $model->id;
+			}
+
+			// Creating relation between article and tag
+			$model = new ArticleTags();
+			$model->node_id = $id;
+			$model->tag_id = $tag;
+			$model->save();
 		}
 
 		/**
@@ -122,11 +170,10 @@
 		 */
 		public function actionCreate()
 		{
-			if(Yii::app()->user->isAdmin()){
+			if (Yii::app()->user->isAdmin()) {
 				// Setting admin layout
 				$this->layout = 'application.modules.admin.views.layouts.admin';
-			}
-			else{
+			} else {
 				$this->layout = '/layouts/cabinet';
 			}
 
@@ -143,7 +190,9 @@
 
 				$advModel->attributes = $_POST['ArticleAdv'];
 				$advModel->node_id = 0;
-				if(!Yii::app()->user->isAdmin()){
+				$advModel->views = 0;
+				$advModel->likes = 0;
+				if (!Yii::app()->user->isAdmin()) {
 					$model->status = 2;
 					$model->url = '_';
 					$advModel->issue_id = -1;
@@ -164,6 +213,24 @@
 						}
 					}
 
+					// Inserting russian tags
+					$tags = json_decode($advModel->tags_rus, true);
+
+					foreach ($tags as $key => $value) {
+						if ($value == 1) {
+							$this->addTag($key, $model->id, "ru");
+						}
+					}
+
+					// Inserting english tags
+					$tags = json_decode($advModel->tags_eng, true);
+
+					foreach ($tags as $key => $value) {
+						if ($value == 1) {
+							$this->addTag($key, $model->id, "eng");
+						}
+					}
+
 					$this->redirect(array('article/admin'));
 				}
 			}
@@ -181,11 +248,10 @@
 		 */
 		public function actionUpdate($id)
 		{
-			if(Yii::app()->user->isAdmin()){
+			if (Yii::app()->user->isAdmin()) {
 				// Setting admin layout
 				$this->layout = 'application.modules.admin.views.layouts.admin';
-			}
-			else{
+			} else {
 				$this->layout = '/layouts/cabinet';
 			}
 
@@ -215,6 +281,34 @@
 			}
 
 			$advModel->aditional_authors = json_encode($relations);
+
+			// Getting information about tags
+			$criteria = new CDbCriteria();
+			$criteria->condition = '`node_id` = :id';
+			$criteria->params = array(':id' => $id);
+
+			$tags = ArticleTags::model()->findAll($criteria);
+
+			$rus = array();
+			$eng = array();
+
+			foreach ($tags as $tag) {
+				$criteria = new CDbCriteria();
+				$criteria->condition = '`id` = :id';
+				$criteria->params = array(':id' => $tag->tag_id);
+
+				$info = Tag::model()->find($criteria);
+
+				if($info->lang == 'ru'){
+					$rus[$tag->tag_id] = $info->tag;
+				}
+				else{
+					$eng[$tag->tag_id] = $info->tag;
+				}
+			}
+
+			$advModel->tags_rus = json_encode($rus);
+			$advModel->tags_eng = json_encode($eng);
 
 			if (isset($_POST['Article'])) {
 				$model->attributes = $_POST['Article'];
@@ -258,6 +352,56 @@
 						}
 					}
 
+					// Save information about russian tags
+					$tags = json_decode($advModel->tags_rus, true);
+
+					foreach ($tags as $id => $value) {
+						if ($value == 0) {
+							if (is_int($id)) {
+								// Tag exists
+								// Maybe there is a relation between tag and article
+
+								$criteria = new CDbCriteria();
+								$criteria->condition = '`node_id` = :id AND `tag_id` = :tag';
+								$criteria->params = array(':id' => $model->id, ':tag' => $id);
+
+								if (ArticleTags::model()->count($criteria) > 0) {
+									// There is a relation and we must remove it
+									ArticleTags::model()->find($criteria)->delete();
+								}
+							}
+
+						} elseif ($value == 1) {
+							$this->addTag($id, $model->id, "ru");
+						}
+
+					}
+
+					// Saving information about english tags
+					$tags = json_decode($advModel->tags_eng, true);
+
+					foreach ($tags as $id => $value) {
+						if ($value == 0) {
+							if (is_int($id)) {
+								// Tag exists
+								// Maybe there is a relation between tag and article
+
+								$criteria = new CDbCriteria();
+								$criteria->condition = '`node_id` = :id AND `tag_id` = :tag';
+								$criteria->params = array(':id' => $model->id, ':tag' => $id);
+
+								if (ArticleTags::model()->count($criteria) > 0) {
+									// There is a relation and we must remove it
+									ArticleTags::model()->find($criteria)->delete();
+								}
+							}
+
+						} elseif ($value == 1) {
+							$this->addTag($id, $model->id, "eng");
+						}
+
+					}
+
 					$this->redirect(array('article/admin'));
 				}
 			}
@@ -275,7 +419,22 @@
 		 */
 		public function actionDelete($id)
 		{
+			// Deleting node
 			$this->loadModel($id)->delete();
+
+			// Removing additional information
+			$criteria = new CDbCriteria();
+			$criteria->condition = '`node_id` = :id';
+			$criteria->params = array(':id' => $id);
+
+			ArticleAdv::model()->find($criteria)->delete();
+
+			// Removing tags
+			ArticleTags::model()->deleteAll($criteria);
+
+			// Removing authors
+			ArticleAuthors::model()->deleteAll($criteria);
+
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if (!isset($_GET['ajax']))
@@ -298,11 +457,10 @@
 		 */
 		public function actionAdmin()
 		{
-			if(Yii::app()->user->isAdmin()){
+			if (Yii::app()->user->isAdmin()) {
 				// Setting admin layout
 				$this->layout = 'application.modules.admin.views.layouts.admin';
-			}
-			else{
+			} else {
 				$this->layout = '/layouts/cabinet';
 			}
 
@@ -327,8 +485,8 @@
 
 				$criteria->condition = "`type` = 'author/article' AND (`title` LIKE :query OR `content` LIKE :query2)";
 				$criteria->params = array(
-					':query' => '%'.addcslashes($_POST['query'], '%_').'%',
-					':query2' => '%'.addcslashes($_POST['query'], '%_').'%',
+					':query' => '%' . addcslashes($_POST['query'], '%_') . '%',
+					':query2' => '%' . addcslashes($_POST['query'], '%_') . '%',
 				);
 				$criteria->order = '`created` DESC';
 

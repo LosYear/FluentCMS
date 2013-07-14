@@ -31,7 +31,11 @@
 				<div class="title_article-aside">Ключевые слова
 					<div class="expand">[ + ]</div>
 				</div>
-				<div class="article-aside-content" style="display: none;"><?php echo $advModel->tags_rus; ?></div>
+				<div class="article-aside-content" style="display: none;">
+					<?php foreach ($tags_rus as $tag): ?>
+						<a href="#"><?php echo $tag->info->tag ?></a>,&nbsp;
+					<?php endforeach; ?>
+				</div>
 			</div>
 		</aside>
 
@@ -107,6 +111,8 @@
 </article>
 
 <script lang="javascript">
+	article_id = <?php echo $model->id; ?>;
+	like_url = "<?php echo Yii::app()->createUrl('author/ajax/like'); ?>";
 	$('.expand').click(function () {
 		el = $(this).parent().parent().children('.article-aside-content');
 		if(el.is(':visible')){
@@ -114,6 +120,19 @@
 		}
 		else{
 			el.show(1000);
+		}
+	});
+	can_like = true;
+	$('.swsys-like').click(function(){
+		if (can_like){
+			$.ajax({
+				url: like_url,
+				data: {"article" : article_id},
+				type: "POST"
+			}).done(function(data){
+					alert(data);
+				});
+			can_like = false;
 		}
 	});
 </script>

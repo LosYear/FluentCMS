@@ -31,7 +31,7 @@ $('.search-form form').submit(function(){
 	'id'=>'issue-grid',
 	'dataProvider'=>$model->search(),
         'type'=>'striped bordered condensed',
-        'template'=>"{items}",
+        'template'=>"{items}{pager}",
 	'filter'=>$model,
 	'columns'=>array(
 		array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),),

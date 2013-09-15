@@ -1,29 +1,36 @@
 <?php
-/* @var $this ProfileController */
-/* @var $model Profile */
+	/* @var $this ProfileController */
+	/* @var $model Profile */
 
-$this->breadcrumbs=array(
-	'Profiles'=>array('index'),
-	$model->name,
-);
+	$this->breadcrumbs = array(
+		'Profiles' => array('index'),
+		$model->name,
+	);
 
-$this->menu=array(
-	array('label'=>'List Profile', 'url'=>array('index')),
-	array('label'=>'Create Profile', 'url'=>array('create')),
-	array('label'=>'Update Profile', 'url'=>array('update', 'id'=>$model->user_id)),
-	array('label'=>'Delete Profile', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->user_id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Profile', 'url'=>array('admin')),
-);
+	$this->menu = array(
+		array('label' => 'List Profile', 'url' => array('index')),
+		array('label' => 'Create Profile', 'url' => array('create')),
+		array('label' => 'Update Profile', 'url' => array('update', 'id' => $model->user_id)),
+		array('label' => 'Delete Profile', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->user_id), 'confirm' => 'Are you sure you want to delete this item?')),
+		array('label' => 'Manage Profile', 'url' => array('admin')),
+	);
+	$this->pageTitle = $model->name . ' | ' . Yii::app()->name;
 ?>
+<div style="margin:40px" class="author-profile">
+	<div class="page-header">
+		<h1><?php echo $model->name ?>
+			<small>&nbsp;<?php if ($model->academic != -1) echo $model->academic ?></small>
+		</h1>
+	</div>
 
-<h1>View Profile #<?php echo $model->user_id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'user_id',
-		'name',
-		'email',
-		'academic',
-	),
-)); ?>
+	<h2><?php echo Yii::t('AuthorModule.main', 'Publications'); ?></h2>
+	<table class="table table-stripped">
+		<?php foreach ($publications as $el): ?>
+			<tr>
+				<td>
+					<a href="<?php echo Yii::app()->createUrl($el->article->article->url); ?>"><?php echo $el->article->article->title ?> </a>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+</div>

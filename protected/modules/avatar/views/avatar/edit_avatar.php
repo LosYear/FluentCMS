@@ -10,7 +10,7 @@ if($model->avatar) {
 	echo '<h2>';
 	echo Yum::t('Your Avatar image');
 	echo '</h2>';
-	echo $model->getAvatar();
+	echo '<div class="pull-right">'.$model->getAvatar().'</div>';
 }
 else
 	echo Yum::t('You do not have set an avatar image yet');
@@ -30,7 +30,7 @@ if(Yum::module('avatar')->avatarMaxWidth != 0)
 	echo '</div>';
 
 	?>
-        <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('avatar/avatar/enableGravatar')?>"><?php echo Yii::t('yum', 'Enable Gravatar'); ?></a>
+        <!--<a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('avatar/avatar/enableGravatar')?>"><?php echo Yii::t('yum', 'Enable Gravatar'); ?></a>-->
         <a class="btn btn-primary" href="<?php echo Yii::app()->createUrl('avatar/avatar/removeAvatar')?>"><?php echo Yii::t('yum', 'Remove avatar'); ?></a> <?php
                   
 	$this->widget('bootstrap.widgets.TbButton', 

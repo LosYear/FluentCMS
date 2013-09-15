@@ -299,23 +299,25 @@ class MailboxModule extends CWebModule
 	*/
 	public function autoComplete($term)
 	{
+		Yii::app()->getModule('author');
+
 		$criteria = new CDbCriteria;
 
-		$criteria->compare($this->usernameColumn, $term, true, 'OR');
-		$criteria->compare($this->userIdColumn, $term, true, 'OR');
-		//$criteria->compare('email', $term, true, 'OR');
+		$criteria->compare('name', $term, true, 'OR');
+		$criteria->compare('email', $term, true, 'OR');
+		$criteria->addCondition('`user_id` != -1');
+
 		$criteria->mergeWith(array('limit'=>25));
-		$users = call_user_func(array($this->userClass, 'model'))
-			->findAll($criteria);
+
+		$users = Profile::model()->findAll($criteria);
 		//$users = User::model()->keyword($term)->limit(100)->findAll();
 		$json = '[';
 		foreach($users as $user)
 		{
-			if($user->{$this->userIdColumn}==$this->newsUserId)
-				continue;
-			
-			$json .= '{"label":"'.$user->{$this->usernameColumn}.'",'
-				.'"value":"'.$user->{$this->usernameColumn}.'"},';
+			$usr = YumUser::model()->findByPk($user->user_id);
+
+			$json .= '{"label":"'.$user->name.'",'
+				.'"value":"'.$usr->username.'"},';
 		}
 		$json = rtrim($json,',') . ']';
 		die($json);
@@ -560,5 +562,36 @@ EOD;
 		{
 			$conv->recycle();
 		}
+	}
+
+	public function getAdmins(){
+		$result = array();
+
+		$criteria = new CDbCriteria;
+
+		$criteria->condition = '`superuser` = 1';
+		$users = call_user_func(array($this->userClass, 'model'))
+			->findAll($criteria);
+
+		Yii::app()->getModule('author');
+
+
+		foreach($users as $user){
+			$criteria = new CDBCriteria;
+
+			$criteria->condition = '`user_id` = :id';
+			$criteria->params = array(':id' => $user->id);
+
+			$profile = Profile::model()->find($criteria);
+
+			if ($profile === null){
+				$result[$user->username] = $user->username;
+			}
+			else{
+				$result[$user->username] = $profile->name;
+			}
+		}
+
+		return $result;
 	}
 }

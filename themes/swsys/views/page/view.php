@@ -1,3 +1,4 @@
+<?php $this->pageTitle = $model->title . ' | ' . Yii::app()->name; ?>
 <article class="main ym-clearfix">
 	<div class="article">
 <h1 class="title title_article"><?php echo $model->title; ?></h1>

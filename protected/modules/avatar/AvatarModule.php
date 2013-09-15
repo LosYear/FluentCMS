@@ -12,10 +12,10 @@ class AvatarModule extends CWebModule {
 	// Set avatarMaxWidth to a value other than 0 to enable image size check
 	public $avatarMaxWidth = 0;
 
-	public $avatarThumbnailWidth = 50; // For display in user browse, friend list
+	public $avatarThumbnailWidth = 84; // For display in user browse, friend list
 	public $avatarDisplayWidth = 200;
 
-	public $enableGravatar = true;
+	public $enableGravatar = false;
 
 	public $controllerMap=array(
 		'avatar'=>array('class'=>'AvatarModule.controllers.YumAvatarController'),

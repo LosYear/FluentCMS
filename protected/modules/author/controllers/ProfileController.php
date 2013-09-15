@@ -27,10 +27,10 @@ class ProfileController extends Controller
 	public function accessRules()
 	{
 		return array(
-		/*	array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('view'),
 				'users'=>array('*'),
-			),*/
+			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array(/*'update', */'edit'),
 				'users'=>array('@'),
@@ -49,12 +49,25 @@ class ProfileController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	/*public function actionView($id)
+	public function actionView($id)
 	{
+		$criteria = new CDbCriteria();
+		$criteria->condition = '`id` = :id';
+		$criteria->params = array(':id' => $id);
+		$model = Profile::model()->find($criteria);
+
+		// Recent articles
+		$criteria = new CDbCriteria();
+		$criteria->condition = '`author_id` = :id';
+		$criteria->params = array(':id' => $id);
+
+		$publications = ArticleAuthors::model()->findAll($criteria);
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'publications' => $publications
 		));
-	}*/
+	}
 
 	/**
 	 * Creates a new model.
@@ -100,8 +113,17 @@ class ProfileController extends Controller
 		$criteria->params = array(':id' => $id);
 		$model=Profile::model()->find($criteria);
 
-		if($model === null){
+		$new = false;
+
+		if($model === null && !isset($_POST['profile_id'])){
 			$model = new Profile;
+			$new = true;
+		}
+		else if($model === null && isset($_POST['profile_id'])){
+			$criteria = new CDbCriteria();
+			$criteria->condition = '`id` = :id';
+			$criteria->params = array(':id' => $_POST['profile_id']);
+			$model=Profile::model()->find($criteria);
 		}
 
 		// Uncomment the following line if AJAX validation is needed
@@ -117,6 +139,7 @@ class ProfileController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'new' => $new,
 		));
 	}
 

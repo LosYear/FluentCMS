@@ -1,4 +1,6 @@
+<?php $this->pageTitle = $query . ' | ' . Yii::app()->name; ?>
 <div style="margin-left:40px">
+	<h1 class="title title_article"><?= Yii::t('AuthorModule.main','Results for').' '.$query; ?></h1>
 	<?php foreach ($results as $element): ?>
 		<div class="article-tizer-item">
 			<h3 class="title title_article-tizer"><a

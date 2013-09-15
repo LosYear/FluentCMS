@@ -1,3 +1,4 @@
+<?php Yii::app()->getModule('author'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,9 +43,27 @@
 							),
 							array(
 								'label' => Yii::t('AuthorModule.main', 'Profile'),
-								'url' =>  Yii::app()->createUrl('author/profile/edit'),
+								'url' => Yii::app()->createUrl('author/profile/edit'),
 								'icon' => 'user white',
+								'items' => array(
+									array(
+										'label' => Yii::t('AuthorModule.main', 'Info'),
+										'url' => Yii::app()->createUrl('author/profile/edit'),
+										'icon' => 'info-sign'
+									),
+									array(
+										'label' => Yii::t('AuthorModule.main', 'Photo'),
+										'url' => Yii::app()->createUrl('avatar/avatar/editAvatar'),
+										'icon' => 'picture'
+									),
+								),
 							),
+							array(
+								'label' => Yii::t('main', 'Messages'),
+								'icon' => 'envelope white',
+								'url' => Yii::app()->createUrl('mailbox/message'),
+
+							)
 
 						),
 					),

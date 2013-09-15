@@ -7,14 +7,15 @@ Yii::import('application.modules.user.controllers.YumController');
 
 class YumAvatarController extends YumController {
 	public function actionRemoveAvatar() {
+		$this->layout = 'application.modules.author.views.layouts.cabinet';
 		$model = YumUser::model()->findByPk(Yii::app()->user->id);
 		$model->avatar = '';
 		$model->save();
-		$this->redirect(array(
-					'//profile/profile/view', 'id' => $model->id));	
+		$this->redirect('editAvatar');
 	}
 
 	public function actionEnableGravatar() {
+		$this->layout = 'application.modules.author.views.layouts.cabinet';
 		$model = YumUser::model()->findByPk(Yii::app()->user->id);
 		$model->avatar = 'gravatar';
 		$model->save();
@@ -31,6 +32,7 @@ class YumAvatarController extends YumController {
 	}
 
 	public function actionEditAvatar() {
+		$this->layout = 'application.modules.author.views.layouts.cabinet';
 		$model = YumUser::model()->findByPk(Yii::app()->user->id);
 
 		if(isset($_POST['YumUser'])) {
@@ -53,7 +55,7 @@ class YumAvatarController extends YumController {
 						Yum::log(Yum::t('User {username} uploaded avatar image {filename}', array(
 										'{username}' => $model->username,
 										'{filename}' => $model->avatar)));
-						$this->redirect(array('//profile/profile/view'));	
+						$this->redirect('editAvatar');
 					}
 				}
 			}

@@ -28,6 +28,7 @@
         'Error sending message!' => 'Ошибка при отправке сообщения',
         'Message sent!' => 'Сообщение отправлено',
         'Error sending message!' => 'Ошибка при отправке сообщения',
+	    'New message' => 'Новое сообщение',
     );  
     
 ?>

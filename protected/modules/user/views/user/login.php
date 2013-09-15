@@ -19,7 +19,6 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'verticalForm',
     //'htmlOptions'=>array('class'=>'well'),
 )); ?>
- 
 <div class="row-fluid"><?php echo $form->textFieldRow($model, 'username', array('class'=>'span3')); ?></div>
 <div class="row-fluid"><?php echo $form->passwordFieldRow($model, 'password', array('class'=>'span3')); ?></div>
 <div class="row-fluid rememberMe"><?php echo $form->checkboxRow($model, 'rememberMe'); ?></div>

@@ -318,3 +318,25 @@ textarea {
 .pop-inner{
 	width:1000px;
 }
+
+.author-profile h2{
+	color: orange;
+	font-size: 21px;
+}
+
+.author-profile h1{
+	color: orange;
+	font-size: 30px;
+}
+
+aside.article-aside div.article-aside-content{
+	font-size: 12px;
+}
+
+.login-form label.error, span.error{
+	background: none;
+}
+
+.login-form textarea.error{
+	background: white;
+}

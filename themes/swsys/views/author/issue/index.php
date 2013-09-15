@@ -118,7 +118,7 @@
 							<div class="article-tizer-authors">
 								<?php foreach ($element['authors'] as $author) { ?>
 									<span class="icon icon_person"></span>
-									<a class="link" href=""><?php echo $author['name'] ?></a>
+									<a class="link" href="<?php echo Yii::app()->createUrl('author/profile/view', array('id'=>$author['id'])); ?>"><?php echo $author['name'] ?></a>
 								<?php } ?>
 							</div>
 							<div class="article-tizer-content">

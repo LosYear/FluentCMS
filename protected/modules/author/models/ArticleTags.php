@@ -53,6 +53,7 @@ class ArticleTags extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'info' => array(self::BELONGS_TO, 'Tag', 'tag_id'),
+			'article' => array(self::BELONGS_TO, 'Article', 'node_id'),
 		);
 	}
 

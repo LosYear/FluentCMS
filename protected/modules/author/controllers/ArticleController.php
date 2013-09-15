@@ -29,11 +29,11 @@
 		{
 			return array(
 				array('allow', // allow all users to perform 'index' and 'view' actions
-					'actions' => array('index', 'view', 'search'),
+					'actions' => array('create','index', 'view', 'search', 'tagged', 'favorite'),
 					'users' => array('*'),
 				),
 				array('allow', // allow authenticated user to perform 'create' and 'update' actions
-					'actions' => array('create', 'update', 'admin'),
+					'actions' => array('update', 'admin'),
 					'users' => array('@'),
 				),
 				array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -71,6 +71,7 @@
 				$author = Profile::model()->find($criteria);
 
 				$info['name'] = $author->name;
+				$info['user_id'] = $author->user_id;
 				$authors[] = $info;
 			}
 
@@ -82,9 +83,9 @@
 
 			$tags_rus = array();
 
-			foreach ($tags as $tag){
+			foreach ($tags as $tag) {
 				//echo $tag->info->tag." ";
-				if($tag->info->lang == 'ru'){
+				if ($tag->info->lang == 'ru') {
 					$tags_rus[] = $tag;
 				}
 			}
@@ -96,11 +97,28 @@
 			$advModel->views++;
 			$advModel->save();
 
+			$liked = false;
+
+			if (Yii::app()->user->isGuest) {
+				$fav = Yii::app()->session['favorite'];
+				if (isset($fav[$id]) && $fav[$id]) {
+					$liked = true;
+				}
+			} else {
+				$criteria = new CDbCriteria();
+				$criteria->condition = '`node_id` = :article AND `user_id` = :user';
+				$criteria->params = array(':article' => $id, ':user' => Yii::app()->user->id);
+
+				if (ArticleVote::model()->count($criteria) > 0) {
+					$liked = true;
+				}
+			}
 			$this->render('view', array(
-				'model' => $this->loadModel($id),
+				'model' => $model,
 				'advModel' => $advModel,
 				'authors' => $authors,
 				'tags_rus' => $tags_rus,
+				'liked' => $liked,
 			));
 		}
 
@@ -173,7 +191,12 @@
 			if (Yii::app()->user->isAdmin()) {
 				// Setting admin layout
 				$this->layout = 'application.modules.admin.views.layouts.admin';
-			} else {
+			} else if (Yii::app()->user->isGuest){
+				Yii::app()->user->setReturnUrl(Yii::app()->createUrl('author/article/create'));
+				Yii::app()->user->setFlash('warning', Yii::t('AuthorModule.main', 'To create article you need to be registered user. Please login or register'));
+				$this->redirect('/user/auth');
+			}
+			else {
 				$this->layout = '/layouts/cabinet';
 			}
 
@@ -299,10 +322,9 @@
 
 				$info = Tag::model()->find($criteria);
 
-				if($info->lang == 'ru'){
+				if ($info->lang == 'ru') {
 					$rus[$tag->tag_id] = $info->tag;
-				}
-				else{
+				} else {
 					$eng[$tag->tag_id] = $info->tag;
 				}
 			}
@@ -494,7 +516,28 @@
 				$model->type = '';
 				$result = $model->with('advanced')->findAll($criteria);
 			}
-			$this->render('search', array('results' => $result));
+			$this->render('search', array('results' => $result, 'query' => $_POST['query']));
+		}
+
+		/**
+		 * Searches all articles by tag id
+		 */
+		public function actionTagged($tag)
+		{
+			$result = array();
+
+			$criteria = new CDbCriteria();
+			$criteria->condition = '`tag_id` = :id';
+			$criteria->params = array(':id' => $tag);
+
+			$all = ArticleTags::model()->findAll($criteria);
+
+			foreach ($all as $el) {
+				$result[] = $el->article;
+			}
+
+			$this->render('search', array('results' => $result, 'query' => Tag::model()->findByPk($tag)->tag));
+
 		}
 
 		/**
@@ -520,5 +563,37 @@
 				echo CActiveForm::validate($model);
 				Yii::app()->end();
 			}
+		}
+
+		/**
+		 * Shows liked articles
+		 */
+		public function actionFavorite()
+		{
+			$result = array();
+			if (!Yii::app()->user->isGuest) {
+				// User isn't guest. Requesting data from DB
+				$criteria = new CDbCriteria();
+				$criteria->condition = '`user_id` = :id';
+				$criteria->params = array(':id' => Yii::app()->user->id);
+
+				$model = ArticleVote::model();
+				$ids = $model->findAll($criteria);
+
+				foreach ($ids as $el) {
+					$result[] = $el->article->article;
+				}
+			} else {
+				$criteria = new CDbCriteria();
+				$criteria->condition = '`id` = :id';
+				if (isset(Yii::app()->session['favorite'])) {
+					foreach (Yii::app()->session['favorite'] as $key => $value) {
+						$criteria->params = array(':id' => $key);
+						$result[] = Article::model()->find($criteria);
+					}
+				}
+			}
+
+			$this->render('favorite', array('articles' => $result));
 		}
 	}

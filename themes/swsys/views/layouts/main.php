@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title><?php echo isset($this->pageTitle) ? $this->pageTitle : Yii::app()->name; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -57,7 +57,11 @@
             s.parentNode.insertBefore(wf, s);
         })();
         $(document).ready(function () {
-            $('.rs-carousel').carousel();
+            $('.rs-carousel').carousel({itemsPerPage:'1', nextPrevLinks:false});
+	        if($(':rs-carousel').carousel('getNoOfItems') <= 3){
+		        $('.rs-carousel-action-prev').hide();
+		        $('.rs-carousel-action-next').hide();
+	        }
         });
     </script>
 </head>
@@ -81,14 +85,15 @@
             <div class="block_add-article">
                 <div class="icon icon_add-article"></div>
                 <a href="<?php echo Yii::app()->createUrl('author/article/create');?>" class="link text_add-article">Добавить статью</a><br>
-                <?php if (Yii::app()->user->isGuest): ?>
-                    <a href="<?php echo Yii::app()->createUrl('user/login'); ?>" class="btn">Вход</a>
-                    <a href="<?php echo Yii::app()->createUrl('user/registration'); ?>" class="btn">Регистрация</a>
+	            <a href="<?= Yii::app()->createUrl('author/article/favorite') ?>" class="btn"><i class="icon-heart"></i></a>
+	            <?php if (Yii::app()->user->isGuest): ?>
+	                <a href="<?php echo Yii::app()->createUrl('user/login'); ?>" class="btn">Вход</a>
+	                <a href="<?php echo Yii::app()->createUrl('user/registration'); ?>" class="btn">Регистрация</a>
                 <?php elseif(Yii::app()->user->isAdmin()):  ?>
-                    <a href="<?php echo Yii::app()->baseUrl.'admin/default'; ?>">Админка</a>
+	                <a href="<?php echo Yii::app()->baseUrl.'admin/default'; ?>">Админка</a>
                 <?php elseif(!Yii::app()->user->isGuest): ?>
 	                <a href="<?php echo Yii::app()->createUrl('author/article'); ?>" class="btn">Личный Кабинет</a>
-	            <?php endif; ?>
+                <?php endif; ?>
             </div>
         </header>
         <nav id="nav" class="ym-clearfix">
@@ -117,7 +122,7 @@
         <?php echo $content ?>
         <div class="ym-clearfix"></div>
         <footer class="footer ym-clearfix">
-            <div class="copyright">Создание сайта: <a href="http://cps.tver.ru" class="link">ЗАО НИИ ЦПС</a></div>
+            <div class="copyright">Создание сайта: <a href="http://cps.tver.ru" target="_blank" class="link">ЗАО НИИ ЦПС</a></div>
             <div class="footer-content">
                 <p>Журнал зарегистрирован в комитете РФ по печати
                     Свидетельство о регистрации средства массовой информации № 013831 от 26.11.1995 г.

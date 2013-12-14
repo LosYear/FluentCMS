@@ -3,9 +3,18 @@
 	/* @var $model Profile */
 	/* @var $form CActiveForm */
 ?>
-
+	<script lang="javascript">
+		ajax_url = "<?php echo Yii::app()->createUrl('author/ajax/profile'); ?>";
+	</script>
 	<div class="form">
-		<?php $form = $this->beginWidget('CActiveForm', array(
+		<?php
+			$assetsUrl = Yii::app()->assetManager->publish(Yii::getPathOfAlias('application.modules.author.assets'));
+			Yii::app()->clientScript->registerScriptFile($assetsUrl . '/typeahead.min.js', CClientScript::POS_END);
+			if($new){
+				Yii::app()->clientScript->registerScriptFile($assetsUrl . '/profile_autocomplete.js', CClientScript::POS_END);
+			}
+
+			$form = $this->beginWidget('CActiveForm', array(
 			'id' => 'profile-form',
 			'enableAjaxValidation' => false,
 			'htmlOptions' => array('class' => 'form-horizontal')
@@ -55,7 +64,7 @@
 
 	</div><!-- form -->
 
-<?php if ($new): ?>
+<?php if (true == false): ?>
 	<script lang="javascript">
 		var labels = [];
 		var mapped = {};

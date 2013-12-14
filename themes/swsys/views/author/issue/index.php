@@ -6,43 +6,44 @@
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); */
+$this->pageTitle = Yii::app()->name;
 ?>
 <div id="main" class="main">
 	<div class="ym-column linearize-level-1">
 		<aside class="ym-col1">
 			<div class="block_aside block_nomer-info">
 				<div class="inner">
-					<h2 class="title title_nomer-info">Текущий выпуск:</h2>
+					<h2 class="title title_nomer-info"><?= Yii::t('journal', 'Current issue') ?>:</h2>
 
 					<div class="nomer-stats ym-clearfix">
 						<div class="nomer-caption">
-							<div class="nomer-caption-spoiler">cвежий номер</div>
+							<div class="nomer-caption-spoiler"><?= Yii::t('journal', 'last issue') ?></div>
 							<div class="nomer-caption-year"><?php echo $new_issue['year'] ?></div>
 							<div class="nomer-caption-month"><?php echo $new_issue['month'] ?></div>
 						</div>
 
 						<div class="nomer-stats-item">
 							<div class="value"><?php echo $new_issue['articles'] ?></div>
-							<div class="property">СТАТЕЙ</div>
+							<div class="property"><?= strtoupper(Yii::t('journal', 'articles')) ?></div>
 						</div>
 
 
 						<div class="nomer-stats-item">
 							<div class="value"><?php echo $new_issue['authors_amount'] ?></div>
-							<div class="property">АВТОРОВ</div>
+							<div class="property"><?= strtoupper(Yii::t('journal', 'authors')) ?></div>
 						</div>
 
 
 						<div class="nomer-stats-item">
 							<div class="value">X</div>
-							<div class="property">ИНТЕРЕС</div>
+							<div class="property"><?= strtoupper(Yii::t('journal', 'interest')) ?></div>
 						</div>
 
 
 					</div>
 
 
-					<h2 class="title title_nomer-info">Темы номера:</h2>
+					<h2 class="title title_nomer-info"><?= Yii::t('journal', 'Topics') ?>:</h2>
 
 					<div class="block_toc">
 
@@ -50,16 +51,31 @@
 							<dl>
 								<dt><span style="left:<?php $per = 100-$el['popularity']; if($per>75): $per = 75; endif; echo $per; ?>%"></span><?php echo $el['popularity'] ?>
 								</dt>
-								<dd class="pop"><div class="pop-inner"><?php echo $el['title'] ?></div></dd>
+								<dd class="pop"><div class="pop-inner" rel="tooltip" data-original-title="<?= $el['title'] ?>" data-placement="top"><?php echo $el['title'] ?></div></dd>
 							</dl>
 						<?php endforeach; ?>
+						<script lang="javascript">
+							jQuery('[rel="tooltip"]').tooltip();
+							/*$("[data-placement=top]").hover(function(){
+								$('.*/
+						</script>
+						<style>
+						.tooltip.top .tooltip-arrow{
+							left: 6%;
+							bottom:1px;
+						}
+						.tooltip{
+							font-size: 13px;
+							left: 355px !important;
+						}
+						</style>
 					</div>
 				</div>
 			</div>
 
 
 			<div class="block_aside block_archive">
-				<h2 class="title_block_aside">Архив
+				<h2 class="title_block_aside"><?= Yii::t('journal', 'Archive') ?>
 					<div class="tail-corner-left-down"></div>
 				</h2>
 				<div class="inner">
@@ -75,7 +91,7 @@
 											<div class="archive-items">
 												<?php foreach ($month as $number => $el): ?>
 													<a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $el->id,)); ?>"
-													   class="link">№<?php echo $number ?></a>
+													   class="link">№<?php echo $number ?> (<?php $date = DateTime::createFromFormat("Y-m-d", $el->year); echo Yii::app()->dateFormatter->format("d MMMM" ,strtotime($date->format("d F Y")));  ?>)</a>
 												<?php endforeach; ?>
 											</div>
 										</div>
@@ -90,16 +106,16 @@
 			</div>
 			<div class="block_aside block_contacts">
 				<div class="inner" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<b>Как связаться с <a href="<?php echo Yii::app()->homeUrl.'/contacts.html' ?>">редакцией</a></b>
+					<b><?= Yii::t('journal', 'How to contact with') ?> <a href="<?php echo Yii::app()->homeUrl.MultilangHelper::addLangToUrl('contacts.html') ?>"><?= Yii::t('journal', 'editors') ?></a></b>
 
 					<ul>
-						<li><b>Телефон:</b> <span itemprop="telephone">(4822) 39-42-77</span></li>
-						<li><b>Факс:</b> <span>(4822) 39-40-00</span></li>
-						<li><b>Адрес:</b>
+						<li><b><?= Yii::t('journal', 'Phone') ?>:</b> <span itemprop="telephone">(4822) 39-91-49</span></li>
+						<li><b><?= Yii::t('journal', 'Fax') ?>:</b> <span>(4822) 39-91-00</span></li>
+						<li><b><?= Yii::t('journal', 'Address') ?>:</b>
 							<span itemprop="postalCode">170024</span>,
 							<span itemprop="addressLocality">г. Тверь</span>,
 							<span itemprop="streetAddress">проспект 50 лет Октября, 3 А</span></li>
-						<li><b>Электронная почта:</b>
+						<li><b><?= Yii::t('journal', 'Email') ?>:</b>
 							<a itemprop="email" href="mailto:red@cps.tver.ru">red@cps.tver.ru</a>,
 							<a itemprop="email" href="mailto:info@cps.tver.ru">info@cps.tver.ru</a></li>
 					</ul>
@@ -107,6 +123,24 @@
 			</div>
 		</aside>
 		<div class="ym-col3">
+			<div style="padding: 25px;"></div>
+			<div class="cross-articles-nav">
+				<div class="cross-articles-nav-prev">
+					<?php if ($new_issue['previous_issue'] != -1): ?>
+						<strong>←</strong>
+						<a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['previous_issue'],)); ?>"><?= strtoupper(Yii::t('journal', 'Previous issue'))?></a>
+					<?php endif; ?>
+				</div>
+				<div class="cross-articles-nav-active">
+					<strong><?= Yii::t('journal', 'Issue')?> № <?php echo $new_issue['number']; ?></strong>
+					<small><?php $date = DateTime::createFromFormat("d.m.Y", $new_issue['date']); echo Yii::app()->dateFormatter->formatDateTime(strtotime($date->format("d F Y")), 'long', null);  ?></small>
+				</div>
+				<div class="cross-articles-nav-next">
+					<?php if ($new_issue['next_issue'] != -1): ?>
+						<a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['next_issue'],)); ?>"><?= strtoupper(Yii::t('journal', 'Next issue'))?></a> <strong>→</strong>
+					<?php endif; ?>
+				</div>
+			</div>
 			<div class="ym-cbox">
 				<div class="article-inner">
 					<?php foreach ($new_issue['content'] as $element) { ?>
@@ -133,18 +167,16 @@
 				<div class="cross-articles-nav-prev">
 					<?php if ($new_issue['previous_issue'] != -1): ?>
 						<strong>←</strong>
-						<a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['previous_issue'],)); ?>">ПРЕДЫДУЩИЙ
-							ВЫПУСК</a>
+						<a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['previous_issue'],)); ?>"><?= strtoupper(Yii::t('journal', 'Previous issue'))?></a>
 					<?php endif; ?>
 				</div>
 				<div class="cross-articles-nav-active">
-					<strong>Выпуск № <?php echo $new_issue['number']; ?></strong>
-					<small><?php echo $new_issue['date']; ?></small>
+					<strong><?= Yii::t('journal', 'Issue')?> № <?php echo $new_issue['number']; ?></strong>
+					<small><?php $date = DateTime::createFromFormat("d.m.Y", $new_issue['date']); echo Yii::app()->dateFormatter->formatDateTime(strtotime($date->format("d F Y")), 'long', null);  ?></small>
 				</div>
 				<div class="cross-articles-nav-next">
 					<?php if ($new_issue['next_issue'] != -1): ?>
-						<a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['next_issue'],)); ?>">СЛЕДУЮЩИЙ
-							ВЫПУСК</a> <strong>→</strong>
+						<a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['next_issue'],)); ?>"><?= strtoupper(Yii::t('journal', 'Next issue'))?></a> <strong>→</strong>
 					<?php endif; ?>
 				</div>
 			</div>

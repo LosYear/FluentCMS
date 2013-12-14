@@ -40,10 +40,10 @@ $('.search-form form').submit(function(){
 
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'block-grid',
-        'type'=>'striped bordered condensed',
+    'type'=>'striped bordered condensed',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-        'template'=>"{items}\n{pager}",
+    'template'=>"{items}\n{pager}",
 	'columns'=>array(
 		array('name'=>'id', 'header'=>Yii::t('admin', '#'), 'htmlOptions'=>array('style'=>'width: 30px'),
                     'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
@@ -56,7 +56,7 @@ $('.search-form form').submit(function(){
                     'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
 		array('name' => 'created', 'header' => Yii::t('admin', 'Created'),
                     'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
-                array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<i class=\" icon-eye-open\"/>" : "<i class=\" icon-eye-close\"/>"'),
+                array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<span class=\"glyphicon  glyphicon-eye-open\"/>" : "<span class=\"glyphicon glyphicon-eye-close\"/>"'),
 		array(
                     'class'=>'bootstrap.widgets.TbButtonColumn',
                     'htmlOptions'=>array('style'=>'width: 40px'),

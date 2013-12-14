@@ -5,8 +5,8 @@
 
 <div class="comment-item">
 	<div class="comment-date"><?php echo $formatter->formatDateTime($data->created, 'long', 'short'); ?>
-		<?php if (Yii::app()->user->isAdmin()) : ?><span class="comment-remove" onclick="delete_comment(<?= $data->id ?>)"><i
-				class="icon-remove"></i></span><?php endif; ?></div>
+		<?php if (Yii::app()->user->isAdmin()) : ?><span class="comment-remove" onclick="delete_comment(<?= $data->id ?>)"><span
+				class="glyphicon glyphicon-remove"></span></span><?php endif; ?></div>
 	<div class="comment-content"><?php echo $data->comment; ?>
 	</div>
 	<div class="comment-author">

@@ -66,4 +66,8 @@
 		font-style:italic;
 	}
 	*/
+	
+	div.block_add-article{
+		display: none;
+	}
 }

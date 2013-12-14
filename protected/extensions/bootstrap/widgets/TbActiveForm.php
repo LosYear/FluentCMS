@@ -354,7 +354,7 @@ class TbActiveForm extends CActiveForm
 	public function errorSummary($models, $header = null, $footer = null, $htmlOptions = array())
 	{
 		if (!isset($htmlOptions['class']))
-			$htmlOptions['class'] = 'alert alert-block alert-error'; // Bootstrap error class as default
+			$htmlOptions['class'] = 'alert alert-danger'; // Bootstrap error class as default
 
 		return parent::errorSummary($models, $header, $footer, $htmlOptions);
 	}

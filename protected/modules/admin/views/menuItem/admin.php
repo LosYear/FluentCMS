@@ -3,7 +3,7 @@
 /* @var $model MenuItem */
 
 $this->breadcrumbs=array(
-	Yii::t('admin','Menu items')=>array('admin'),
+	Yii::t('admin','Menu items')=>'#',
 	Yii::t('admin', 'Manage'),
 );
 
@@ -48,7 +48,7 @@ $('.search-form form').submit(function(){
         'orderUrl'=>array('order'),
         'successOrderMessage'=>'Success',
         'buttonLabel'=>'Order',
-        'template' => '{order}{items}\n{pager}',
+        'template' => '{order}{items}{pager}',
         'options'=>array(
             'cursor' => 'crosshair',
         ),
@@ -62,7 +62,7 @@ $('.search-form form').submit(function(){
                     'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
                 array('name' => 'type',
                     'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
-		array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<i class=\" icon-eye-open\"/>" : "<i class=\" icon-eye-close\"/>"'),
+		array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<span class=\"glyphicon  glyphicon-eye-open\"/>" : "<span class=\"glyphicon glyphicon-eye-close\"/>"'),
 		array(
                     'class'=>'bootstrap.widgets.TbButtonColumn',
                     'htmlOptions'=>array('style'=>'width: 40px'),

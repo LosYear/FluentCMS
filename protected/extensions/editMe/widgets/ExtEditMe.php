@@ -278,7 +278,7 @@ class ExtEditMe extends CInputWidget {
 		// Generate "forcePasteAsPlainText" config value
 		$ckeConfig['forcePasteAsPlainText'] = (isset($toolbarItems['Paste']) || isset($toolbarItems['PasteFromWord'])) ? false : true;
 		// Generate "extraPlugins" config value
-		$extraPluginsItems = array();
+		$extraPluginsItems = array('center_image');
 		if ((empty($toolbar) || isset($toolbarItems['DocProps'])) && $this -> fullPage) {
 			$extraPluginsItems[] = 'docprops';
 		}

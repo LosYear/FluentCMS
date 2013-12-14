@@ -63,7 +63,6 @@ class TbMenu extends TbBaseMenu
             $scrollspy = is_string($this->scrollspy) ? array('target'=>$this->scrollspy) : $this->scrollspy;
             $this->widget('bootstrap.widgets.TbScrollSpy', $scrollspy);
         }
-
         if (!empty($classes))
         {
             $classes = implode(' ', $classes);

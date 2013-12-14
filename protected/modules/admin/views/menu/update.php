@@ -4,14 +4,13 @@
 
 $this->breadcrumbs=array(
 	Yii::t('admin','Menu')=>array('admin'),
-	$model->title=>array('view','id'=>$model->id),
+	$model->title=>'#',
 	Yii::t('admin','Update'),
 );
 
 $this->menu=array(
 	array('label'=>Yii::t('admin', 'Manage menus'), 'url'=>array('admin'), 'icon'=>'list black',),
 	array('label'=>Yii::t('admin', 'Create menu'), 'url'=>array('create'), 'icon'=>'file black'),
-	array('label'=>Yii::t('admin', 'View menu'), 'icon'=> 'eye-open','url'=>array('view', 'id'=>$model->id)),
 );
 ?>
 

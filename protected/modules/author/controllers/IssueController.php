@@ -31,13 +31,9 @@
 					'actions' => array('index', 'view'),
 					'users' => array('*'),
 				),
-				array('allow', // allow authenticated user to perform 'create' and 'update' actions
-					'actions' => array('create', 'update'),
-					'users' => array('@'),
-				),
 				array('allow', // allow admin user to perform 'admin' and 'delete' actions
-					'actions' => array('admin', 'delete'),
-					'users' => array('admin'),
+					'actions' => array('admin', 'delete', 'create', 'update'),
+					'expression' => '$user->isAdmin()',
 				),
 				array('deny', // deny all users
 					'users' => array('*'),
@@ -65,21 +61,21 @@
 			// Setting admin layout
 			$this->layout = 'application.modules.admin.views.layouts.admin';
 
-			$model=new Issue;
+			$model = new Issue;
 
 			// Uncomment the following line if AJAX validation is needed
 			// $this->performAjaxValidation($model);
 
-			if(isset($_POST['Issue']))
-			{
-				$model->attributes=$_POST['Issue'];
+			if (isset($_POST['Issue'])) {
+				$model->attributes = $_POST['Issue'];
 				$model->created = new CDbExpression('NOW()');
-				if($model->save())
+				if ($model->save()){
 					$this->redirect(array('admin'));
+				}
 			}
 
-			$this->render('create',array(
-				'model'=>$model,
+			$this->render('create', array(
+				'model' => $model,
 			));
 		}
 
@@ -100,8 +96,10 @@
 
 			if (isset($_POST['Issue'])) {
 				$model->attributes = $_POST['Issue'];
-				if ($model->save())
+				if ($model->save()){
+					Yii::app()->cache->delete("issue_".$model->id);
 					$this->redirect(array('admin'));
+				}
 			}
 
 			$this->render('update', array(
@@ -126,112 +124,19 @@
 		private function getDataForTemplate($id)
 		{
 			$new_issue = array();
-			$model = Issue::model();
-			$criteria = new CDbCriteria;
-			$criteria->condition = 'id=:id';
-			$criteria->params = array(':id' => $id);
-			$res = $model->find($criteria);
+			$issue = Issue::model()->findByPk($id);
 
-
-			$date = DateTime::createFromFormat("Y-m-d", $res->year);
+			$date = DateTime::createFromFormat("Y-m-d", $issue->year);
 
 			$new_issue['year'] = $date->format("Y");
 			$new_issue['month'] = Yii::t('date', $date->format("F"));
-			$new_issue['number'] = $res->number;
+			$new_issue['number'] = $issue->number;
 			$new_issue['date'] = $date->format("d.m.Y");
 
-			$model = ArticleAdv::model();
-			$criteria = new CDbCriteria;
-			$criteria->condition = 'issue_id=:id';
-			$criteria->with = array('article' => array('select' => false, 'condition' => 'article.status = 1'));
-			$criteria->params = array(':id' => $res->id);
-			$new_issue['articles'] = $model->count($criteria);
+			$new_issue['content'] = $issue->getArticles();
+			$new_issue['articles'] = count($new_issue['content']);
 
-			$issue_id = $res->id;
-
-			$model = ArticleAdv::model();
-			$articles = $model->findAll($criteria);
-
-			$new_issue['content'] = array();
-			$authors_amount = array();
-
-			foreach ($articles as $element) {
-				$model = Article::model();
-
-				$criteria = new CDbCriteria;
-				$criteria->condition = 'id = :id';
-				$criteria->params = array(':id' => $element['node_id']);
-				$result = $model->find($criteria);
-
-				// Getting information about authors
-				$authors = array();
-
-				$criteria = new CDbCriteria();
-				$criteria->condition = '`node_id` = :id';
-				$criteria->params = array(':id' => $result->id);
-
-				$all = ArticleAuthors::model()->findAll($criteria);
-
-				foreach ($all as $one) {
-					$info = array();
-					$info['id'] = $one->author_id;
-
-					$criteria = new  CDbCriteria();
-					$criteria->condition = '`id` = :id';
-					$criteria->params = array(':id' => $one->author_id);
-
-					$author = Profile::model()->find($criteria);
-
-					$info['name'] = $author->name;
-
-					$authors[] = $info;
-
-					$authors_amount[$one->author_id] = 1;
-				}
-
-				$new_issue['content'][] = array(
-					'id' => $result['id'],
-					'title' => $result['title'],
-					'annotation' => $element->annotation_rus,
-					'href' => $result['url'],
-					'authors' => $authors,
-					'popularity' => ArticleAdv::model()->findByPk($result['id'])->getPopularity(),
-				);
-			}
-
-			$new_issue['authors_amount'] = count($authors_amount);
-
-			$model = Issue::model();
-			/**
-			 * TODO: Replace sql to active record
-			 */
-			$criteria = new CDbCriteria;
-			$criteria->order = 'year ASC';
-			$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
-			$criteria->condition = '`year` > DATE(:year)';
-			$criteria->params = array(':year' => $res->year);
-
-			$issue = Issue::model()->find($criteria);
-
-			if ($issue === null) {
-				$new_issue['next_issue'] = -1;
-			} else {
-				$new_issue['next_issue'] = $issue['id'];
-			}
-
-			$criteria = new CDbCriteria;
-			$criteria->order = 'year DESC';
-			$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
-			$criteria->condition = '`year` < DATE(:year)';
-			$criteria->params = array(':year' => $res->year);
-
-			$issue = Issue::model()->find($criteria);
-
-			if ($issue === null) {
-				$new_issue['previous_issue'] = -1;
-			} else {
-				$new_issue['previous_issue'] = $issue['id'];
-			}
+			$new_issue['authors_amount'] = $issue->getAuthorsCount();
 
 			// Archive
 			$criteria = new CDbCriteria;
@@ -263,18 +168,74 @@
 		public function actionIndex($id = '')
 		{
 			$dataProvider = new CActiveDataProvider('Issue');
-
+			
+			$res = '';
 			if ($id == '') {
 				$model = Issue::model();
 				$criteria = new CDbCriteria;
+				$criteria->condition = '`isOpened` = 1';
 				$criteria->order = 'year DESC';
 				$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
 				$res = $model->find($criteria);
 				$id = $res->id;
 			}
+			else{
+				$criteria = new CDbCriteria;
+				$criteria->condition = '`id` = :id';
+				$criteria->params = array(':id'=>$id);
+				
+				$res = Issue::model()->find($criteria);
+			}
 
-			$new_issue = $this->getDataForTemplate($id);
+			// Getting data about issue from cache
+			$new_issue = Yii::app()->cache->get("issue_" . $id);
 
+			if ($new_issue === false) {
+				// If there is no data in cache put it there
+				$new_issue = $this->getDataForTemplate($id);
+				Yii::app()->cache->set("issue_" . $id, $new_issue, Yii::app()->params['cacheDuration']);
+			}
+			else{
+				// Recounting popularity
+				$content = array();
+				foreach($new_issue['content'] as $article){
+					$article['popularity'] = ArticleAdv::model()->findByPk($article['id'])->getPopularity();
+					$content[] = $article;
+				}
+				$new_issue['content'] = $content;
+			}
+			
+						$model = Issue::model();
+			/**
+			 * TODO: Replace sql to active record
+			 */
+			$criteria = new CDbCriteria;
+			$criteria->order = 'year ASC';
+			$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
+			$criteria->condition = '`year` > DATE(:year) AND `isOpened` = 1';
+			$criteria->params = array(':year' => $res->year);
+
+			$issue = Issue::model()->find($criteria);
+
+			if ($issue === null) {
+				$new_issue['next_issue'] = -1;
+			} else {
+				$new_issue['next_issue'] = $issue['id'];
+			}
+
+			$criteria = new CDbCriteria;
+			$criteria->order = 'year DESC';
+			$criteria->with = array('articles.article' => array('select' => false, 'condition' => 'article.status = 1'));
+			$criteria->condition = '`year` < DATE(:year) AND `isOpened` = 1';
+			$criteria->params = array(':year' => $res->year);
+
+			$issue = Issue::model()->find($criteria);
+
+			if ($issue === null) {
+				$new_issue['previous_issue'] = -1;
+			} else {
+				$new_issue['previous_issue'] = $issue['id'];
+			}
 
 			$this->render('index', array(
 				'dataProvider' => $dataProvider,

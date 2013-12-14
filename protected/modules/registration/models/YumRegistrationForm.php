@@ -39,7 +39,7 @@ class YumRegistrationForm extends YumUser {
 				'message' => Yum::t("Retype password is incorrect."));
 		if(Yum::module('registration')->enableCaptcha)
 			$rules[] = array('verifyCode', 'captcha',
-					'allowEmpty'=>CCaptcha::checkRequirements()); 
+					'allowEmpty'=>false); 
 
 		return $rules;
 	}

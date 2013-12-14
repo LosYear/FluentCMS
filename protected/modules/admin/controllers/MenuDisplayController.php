@@ -27,19 +27,24 @@
 				'label' => Yii::t('admin', 'Content'),
 				'icon' => 'book white',
 				'items' => MenuDisplayController::getContentItems(),
+				'visible' => !Yii::app()->user->hasRole('editor')
 			);
 
 			// Structure drop-down
 			$result[] = array(
 				'label' => Yii::t('admin', 'Structure'),
 				'icon' => 'folder-open white',
-				'items' => MenuDisplayController::getStructureItems(),);
+				'items' => MenuDisplayController::getStructureItems(),
+				'visible' => !Yii::app()->user->hasRole('editor')
+			);
 
 			// Users drop-down
 			$result[] = array(
 				'label' => Yii::t('admin', 'Users'),
 				'icon' => 'user white',
-				'items' => MenuDisplayController::getUsersItems(),);
+				'items' => MenuDisplayController::getUsersItems(),
+				'visible' => !Yii::app()->user->hasRole('editor')
+			);
 
 			// !- PLUGIN -! //
 
@@ -117,7 +122,7 @@
 			$result[] = array(
 				'label' => Yii::t('admin', 'Logout'),
 				'icon' => 'off white',
-				'url' => '#',
+				'url' => Yii::app()->createUrl('user/user/logout'),
 			);
 
 			return $result;
@@ -150,6 +155,12 @@
 				'label' => Yii::t('author', 'Articles') /*."<span class=\"badge badge-info\">$count</span>"*/,
 				'icon' => 'inbox black',
 				'url' => Yii::app()->createUrl('author/article/admin'),
+			);
+			
+			$result[] = array(
+				'label' => Yii::t('author', 'Authors') /*."<span class=\"badge badge-info\">$count</span>"*/,
+				'icon' => 'user black',
+				'url' => Yii::app()->createUrl('author/profile/admin'),
 			);
 
 			return $result;
@@ -193,7 +204,7 @@
 				'url' => Yii::app()->createUrl('role/action/admin'),
 			);
 
-			$result[] = array(
+			/*$result[] = array(
 				'label' => Yii::t('admin', 'PROFILES'),
 			);
 
@@ -207,7 +218,7 @@
 				'label' => Yii::t('admin', 'Profile fields'),
 				'url' => Yii::app()->createUrl('profile/fields/admin'),
 				'icon' => 'align-justify',
-			);
+			);*/
 
 			return $result;
 		}

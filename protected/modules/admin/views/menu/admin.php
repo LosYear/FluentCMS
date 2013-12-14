@@ -50,7 +50,7 @@ $('.search-form form').submit(function(){
 		array('name'=>'name', 'type'=>'html', 'header'=>Yii::t('admin', 'Name'), 'value'=>'"<b><a href=\"".Yii::app()->createUrl(\'admin/menuItem/admin\', array(\'id\' => $data->id))."\">$data->name</a></b>"'),
 		array('name'=>'description', 'header'=>Yii::t('admin', 'Description'),
                     'htmlOptions' => array('class' => 'hidden-phone'), 'headerHtmlOptions'=>array('class' => 'hidden-phone'), 'filterHtmlOptions' => array('class' => 'hidden-phone')),
-		array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<i class=\" icon-eye-open\"/>" : "<i class=\" icon-eye-close\"/>"'),
+		array('name'=>'status', 'type'=>'html','header'=>Yii::t('admin', 'Status'), 'value'=>'($data->status == 1) ?  "<span class=\"glyphicon  glyphicon-eye-open\"/>" : "<span class=\"glyphicon glyphicon-eye-close\"/>"'),
 		array(
                     'class'=>'bootstrap.widgets.TbButtonColumn',
                     'htmlOptions'=>array('style'=>'width: 40px'),

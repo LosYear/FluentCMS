@@ -1,0 +1,25 @@
+<?php
+    return array(
+        'Current issue' => 'Текущий выпуск',
+	    'last issue' => 'свежий номер',
+	    'articles' => 'статей',
+	    'authors' => 'авторов',
+	    'interest' => 'интерес',
+	    'Topics' => 'Темы номера',
+	    'Archive' => 'Архив',
+	    'How to contact with' => 'Как связаться с',
+	    'editors' => 'редакцией',
+	    'Phone' => 'Телефон',
+	    'Fax' => 'Факс',
+	    'Address' => 'Адрес',
+	    'Email' => 'Электронная почта',
+	    'Previous issue' => 'Предыдущий выпуск',
+	    'Next issue' => 'Следующий выпуск',
+	    'Issue' => 'Выпуск',
+	    'Create article' => 'Добавить статью',
+	    'Sign in' => 'Вход',
+	    'Sign up' => 'Регистрация',
+	    'Cabinet' => 'Личный кабинет',
+	    'Backend' => 'Админка',
+    );
+?>

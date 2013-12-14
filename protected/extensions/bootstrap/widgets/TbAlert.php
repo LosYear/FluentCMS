@@ -17,7 +17,7 @@ class TbAlert extends CWidget
 	const TYPE_SUCCESS = 'success';
 	const TYPE_INFO = 'info';
 	const TYPE_WARNING = 'warning';
-	const TYPE_ERROR = 'error';
+	const TYPE_ERROR = 'danger';
 	const TYPE_DANGER = 'danger'; // same as error
 
 	/**

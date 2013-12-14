@@ -5,7 +5,7 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
-
+$swsys = true;
 
 	return array(
 		'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
@@ -20,6 +20,7 @@
 
 		// preloading 'log' component
 		'preload' => array(
+			'UnderConstruction',
 			'log',
 			'bootstrap'
 		),
@@ -73,6 +74,9 @@
 			),
 			'registration' => array(
 				'registrationView' => 'application.views.registration.regestration',
+				'enableCaptcha' => true,
+				'loginAfterSuccessfulActivation' => true,
+				'enableActivationConfirmation' => true,
 			),
 			'avatar',
 			/*'message' => array(
@@ -92,6 +96,13 @@
 
 		// application components
 		'components' => array(
+			'UnderConstruction' => array(
+				'class' => 'application.components.UnderConstruction',
+				'locked' => true,
+				'type' => 'until',
+				'until' => '2013-10-01 09:00:00', //mm/dd/y hh:mm
+				'view' => 'webroot.themes.school.coming_soon'
+			),
 			'session' => array(
 				'autoStart' => true,
 				'cookieMode' => 'allow',
@@ -113,29 +124,28 @@
 
 			'bootstrap' => array(
 				'class' => 'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
-				'responsiveCss' => true,
+				'responsiveCss' => false,
+				'coreCss' => true,
+				'enableJS' => true,
 			),
 			// uncomment the following to enable URLs in path-format
 
+			'request' => array(
+				'class'=>'LanguageHttpRequest',
+			),
 
 			'urlManager' => array(
+				'class'=>'LanguageUrlManager',
 				'urlFormat' => 'path',
 				'showScriptName' => false,
 				'urlSuffix' => '.html',
 				'rules' => array(
 					'/' => 'author/issue/index',
 
+					'issue_<id:\d+>' => 'author/issue',
 					'search' => 'author/article/search',
 					'feedback' => 'feedback/default/contact',
 					'author/<id:\d+>' => 'author/profile/view',
-
-					/* Admin rules */
-					/* 'admin/<module:\w+>/<controller:\w+>' => '<module>/<controller>/admin',
-						'admin/<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<module>/<controller>/<action>',
-						'admin/<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
-						*/
-					/* Other Rules */
-					// '/' => 'news/index',
 					'cabinet' => 'rush/cabinet',
 					'moderator' => 'rush/moderator',
 					'cabinet/profile' => 'profile/profile/update',
@@ -145,10 +155,6 @@
 					'profiles' => 'profile/profile/index',
 					'profile/<id:\d+>' => 'profile/profile/view',
 					//  'cabinet/view/<id:\d+>' => 'rush/cabinet/view',
-					'cabinet/<action:\w+>/<id:\d+>' => 'rush/cabinet/<action>',
-					'cabinet/<action:\w+>' => 'rush/cabinet/<action>',
-					'moderator/<action:\w+>/<id:\d+>' => 'rush/moderator/<action>',
-					'moderator/<action:\w+>' => 'rush/moderator/<action>',
 					'gii' => 'gii',
 					'user/login' => 'user/user/login',
 					'user/logout' => 'user/user/logout',
@@ -212,5 +218,7 @@
 			// this is used in contact page
 			'adminEmail' => 'webmaster@example.com',
 			'cacheDuration' => 3600,
+			'swsys' => 0,
+			'defaultTranslationLanguage' => 'ru',
 		)
 	);

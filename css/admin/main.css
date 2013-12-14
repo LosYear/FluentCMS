@@ -1,44 +1,64 @@
-
-.breadcrumbs{
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
+.zero-padding {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
-.edit-form label{
-    margin-bottom: 0.8em;
-    font-weight: bold;
-    font-size: 16px;
-    vertical-align: top;
-    width: 9em;
-    float: left;
-    clear: left;
+.main-container {
+	padding-right: 8px
 }
 
-.edit-form{
-    margin-left: 40px !important;
+.page-header {
+	margin-top: 0px;
 }
 
-#menu{
-    float: right;
-    margin-right: 10px;
+.page-header h1 {
+	margin-top: 0px;
 }
 
-.container-fluid{
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+.content-container {
+	margin-top: 0px;
+	padding-right: 15px;
 }
 
-.column{
-    margin-left: 0px !important;
+.breadcrumbs {
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
-.row-fluid label{
-    margin-bottom: 0.8em;
-    font-weight: bold;
-    font-size: 16px;
-    vertical-align: top;
-    width: 9em;
-    float: left;
-    clear: left;
+.edit-form label {
+	margin-bottom: 0.8em;
+	font-weight: bold;
+	font-size: 16px;
+	vertical-align: top;
+	width: 9em;
+	float: left;
+	clear: left;
+}
+
+.edit-form {
+	margin-left: 40px !important;
+}
+
+#menu {
+	float: right;
+	margin-right: 10px;
+}
+
+.container-fluid {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+.column {
+	margin-left: 0px !important;
+}
+
+.row-fluid label {
+	margin-bottom: 0.8em;
+	font-weight: bold;
+	font-size: 16px;
+	vertical-align: top;
+	width: 9em;
+	float: left;
+	clear: left;
 }

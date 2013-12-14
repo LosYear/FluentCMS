@@ -62,7 +62,7 @@ class TbBreadcrumbs extends CBreadcrumbs
 				$links[] = $this->renderItem($this->encodeLabel ? CHtml::encode($url) : $url, true);
 		}
 
-		echo CHtml::tag('ul', $this->htmlOptions, implode('', $links));
+		echo CHtml::tag('ol', $this->htmlOptions, implode('', $links));
 	}
 
 	/**
@@ -73,11 +73,10 @@ class TbBreadcrumbs extends CBreadcrumbs
 	 */
 	protected function renderItem($content, $active = false)
 	{
-		$separator = !$active ? '<span class="divider">'.$this->separator.'</span>' : '';
 		
 		ob_start();
 		echo CHtml::openTag('li', $active ? array('class'=>'active') : array());
-		echo $content.$separator;
+		echo $content;
 		echo '</li>';
 		return ob_get_clean();
 	}

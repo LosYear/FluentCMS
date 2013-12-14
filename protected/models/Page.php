@@ -15,7 +15,7 @@
  * @property string $url
  * @property string $status
  */
-class Page extends CActiveRecord
+class Page extends Node
 {
         public $type = 'page';
 
@@ -105,6 +105,7 @@ class Page extends CActiveRecord
 		$criteria->compare('updater',$this->updater);
 		$criteria->compare('url',$this->url,true);
 		$criteria->compare('status',$this->status,true);
+		$criteria->compare('root_id',-1,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

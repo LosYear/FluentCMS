@@ -6,7 +6,7 @@
  * @package Yum.core
  *
  */
-abstract class YumController extends CController {
+abstract class YumController extends Controller {
 	public $breadcrumbs = array();
 	public $menu = array();
 	public $title ='';

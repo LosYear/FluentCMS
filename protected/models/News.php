@@ -15,7 +15,7 @@
  * @property string $url
  * @property string $status
  */
-class News extends CActiveRecord
+class News extends Node
 {
         public $type = 'news';
 	/**
@@ -104,6 +104,7 @@ class News extends CActiveRecord
 		$criteria->compare('updater',$this->updater);
 		$criteria->compare('url',$this->url,true);
 		$criteria->compare('status',$this->status,true);
+		$criteria->compare('root_id','-1',true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

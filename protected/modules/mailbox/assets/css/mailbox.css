@@ -50,7 +50,7 @@ tr.mailbox-item > td > div{
 	padding:12px 8px 12px 8px;
 	display: block;
 	width:auto;
-	height: 1em;
+	/*height: 1em;*/
 }
 .mailbox-subject{
 	min-width: 100px;

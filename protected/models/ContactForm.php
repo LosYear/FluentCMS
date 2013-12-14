@@ -37,9 +37,9 @@ class ContactForm extends CFormModel
 	{
 		return array(
 			'verifyCode'=>'Verification Code',
-			'name' => 'Имя',
-			'subject' => 'Тема',
-			'body' => 'Текст',
+			'name' => Yii::t('main', 'Name'),
+			'subject' => Yii::t('main', 'Subject'),
+			'body' => Yii::t('main', 'Body'),
 			'email' => 'Email',
 		);
 	}

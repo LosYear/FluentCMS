@@ -29,21 +29,80 @@
 		{
 			return array(
 				array('allow', // allow all users to perform 'index' and 'view' actions
-					'actions' => array('create','index', 'view', 'search', 'tagged', 'favorite'),
+					'actions' => array('index', 'view', 'search', 'tagged', 'favorite', 'downloadPDF', 'print', 'rss'),
 					'users' => array('*'),
 				),
 				array('allow', // allow authenticated user to perform 'create' and 'update' actions
-					'actions' => array('update', 'admin'),
+					'actions' => array('create', 'update', 'admin'),
 					'users' => array('@'),
 				),
 				array('allow', // allow admin user to perform 'admin' and 'delete' actions
 					'actions' => array('delete'),
-					'users' => array('admin'),
+					'expression' => '$user->isAdmin()',
 				),
 				array('deny', // deny all users
 					'users' => array('*'),
 				),
 			);
+		}
+
+
+		private function loadData($id)
+		{
+			// Getting information from cache
+			$article = Yii::app()->cache->get("article_" . $id);
+
+			if ($article === false) {
+				// If there is no data in cache put it there
+
+				$model = $this->loadModel($id);
+				$modelTranslated = $model->getTranslation(Language::getCurrentID());
+
+				// Getting information about authors
+				$authors = $modelTranslated->getAuthors();
+
+				// Getting tags
+				$tags_array = $modelTranslated->getTags();
+
+				// Loading aditional information
+				$advModel = $modelTranslated->advanced;
+
+				// Incrementing views
+				$modelTranslated->incrementViews();
+
+
+				$liked = $model->isLiked();
+
+				$article['model'] = $modelTranslated ;
+				$article['advModel'] = $modelTranslated->advanced;
+				$article['authors'] = $authors;
+				$article['tags_rus'] = $tags_array;
+
+				Yii::app()->cache->set("article_" . $id, $article, Yii::app()->params['cacheDuration']);
+			}
+
+			$liked = $model->isLiked();
+
+			$article['liked'] = $liked;
+
+			return $article;
+		}
+
+
+		public function actionPrint($id)
+		{
+			$article = $this->loadData($id);
+
+			$this->layout = '//layouts/print';
+
+			$this->render('print', array(
+				'model' => $article['model'],
+				'advModel' => $article['advModel'],
+				'authors' => $article['authors'],
+				'tags_rus' => $article['tags_rus'],
+				'liked' => $article['liked'],
+				'issue_info' => Issue::model()->findByPk($article['advModel']->issue_id),
+			));
 		}
 
 		/**
@@ -52,73 +111,15 @@
 		 */
 		public function actionView($id)
 		{
-			// Getting information about authors
-			$authors = array();
+			$article = $this->loadData($id);
 
-			$criteria = new CDbCriteria();
-			$criteria->condition = '`node_id` = :id';
-			$criteria->params = array(':id' => $id);
-
-			$relations = ArticleAuthors::model()->findAll($criteria);
-
-			foreach ($relations as $one) {
-				$criteria = new CDbCriteria();
-				$criteria->condition = '`id` = :id';
-				$criteria->params = array(':id' => $one->author_id);
-
-				$info['id'] = $one->author_id;
-
-				$author = Profile::model()->find($criteria);
-
-				$info['name'] = $author->name;
-				$info['user_id'] = $author->user_id;
-				$authors[] = $info;
-			}
-
-			$criteria = new CDbCriteria();
-			$criteria->condition = '`node_id` = :id';
-			$criteria->params = array(':id' => $id);
-
-			$tags = ArticleTags::model()->findAll($criteria);
-
-			$tags_rus = array();
-
-			foreach ($tags as $tag) {
-				//echo $tag->info->tag." ";
-				if ($tag->info->lang == 'ru') {
-					$tags_rus[] = $tag;
-				}
-			}
-
-			// Loading aditional information
-			$advModel = ArticleAdv::model()->findByPk($id);
-
-			// Incrementing views
-			$advModel->views++;
-			$advModel->save();
-
-			$liked = false;
-
-			if (Yii::app()->user->isGuest) {
-				$fav = Yii::app()->session['favorite'];
-				if (isset($fav[$id]) && $fav[$id]) {
-					$liked = true;
-				}
-			} else {
-				$criteria = new CDbCriteria();
-				$criteria->condition = '`node_id` = :article AND `user_id` = :user';
-				$criteria->params = array(':article' => $id, ':user' => Yii::app()->user->id);
-
-				if (ArticleVote::model()->count($criteria) > 0) {
-					$liked = true;
-				}
-			}
 			$this->render('view', array(
-				'model' => $model,
-				'advModel' => $advModel,
-				'authors' => $authors,
-				'tags_rus' => $tags_rus,
-				'liked' => $liked,
+				'model' => $article['model'],
+				'advModel' => $article['advModel'],
+				'authors' => $article['authors'],
+				'tags_rus' => $article['tags_rus'],
+				'liked' => $article['liked'],
+				'issue_info' => Issue::model()->findByPk($article['advModel']->issue_id),
 			));
 		}
 
@@ -171,6 +172,8 @@
 				$profile->email = '-1';
 				$profile->academic = '-1';
 				$profile->name = $id;
+				$profile->job = '-1';
+				$profile->branch = '-1';
 
 				$profile->save() or die ("PROFILE 1");
 
@@ -186,17 +189,16 @@
 		 * Creates a new model.
 		 * If creation is successful, the browser will be redirected to the 'view' page.
 		 */
-		public function actionCreate()
+		public function actionCreate($root_id = -1, $lang = null)
 		{
 			if (Yii::app()->user->isAdmin()) {
 				// Setting admin layout
 				$this->layout = 'application.modules.admin.views.layouts.admin';
-			} else if (Yii::app()->user->isGuest){
+			} else if (Yii::app()->user->isGuest) {
 				Yii::app()->user->setReturnUrl(Yii::app()->createUrl('author/article/create'));
 				Yii::app()->user->setFlash('warning', Yii::t('AuthorModule.main', 'To create article you need to be registered user. Please login or register'));
 				$this->redirect('/user/auth');
-			}
-			else {
+			} else {
 				$this->layout = '/layouts/cabinet';
 			}
 
@@ -215,16 +217,32 @@
 				$advModel->node_id = 0;
 				$advModel->views = 0;
 				$advModel->likes = 0;
+
+				$model->root_id = $root_id;
+				$model->lang_id = $lang;
+
+				if ($lang == null) {
+					$model->lang_id = Language::defaultID();
+				}
+
 				if (!Yii::app()->user->isAdmin()) {
 					$model->status = 2;
 					$model->url = '_';
 					$advModel->issue_id = -1;
+					$advModel->is_author = 1;
 				}
 
+
 				if ($model->validate() && $advModel->validate()) {
+					$advModel->pdf = CUploadedFile::getInstance($advModel, 'pdf');
+
 					$model->save();
 					$advModel->node_id = $model->id;
+
 					$advModel->save();
+					if ($advModel->pdf != null) {
+						$advModel->pdf->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.pdf') . '/' . $model->url . '.pdf');
+					}
 
 					// Inserting authors
 					$authors = json_decode($advModel->aditional_authors, true);
@@ -236,31 +254,45 @@
 						}
 					}
 
-					// Inserting russian tags
-					$tags = json_decode($advModel->tags_rus, true);
+					// Inserting tags
+					$tags = json_decode($advModel->tags, true);
 
 					foreach ($tags as $key => $value) {
 						if ($value == 1) {
-							$this->addTag($key, $model->id, "ru");
+							$this->addTag($key, $model->id, $model->lang_id);
 						}
 					}
-
-					// Inserting english tags
-					$tags = json_decode($advModel->tags_eng, true);
-
-					foreach ($tags as $key => $value) {
-						if ($value == 1) {
-							$this->addTag($key, $model->id, "eng");
-						}
-					}
+					Yii::app()->cache->delete("issue_" . $advModel->issue_id);
 
 					$this->redirect(array('article/admin'));
 				}
 			}
 
+			$source = null;
+			$t = false;
+			if ($root_id != -1) {
+				$source = Article::model()->findByPk($root_id);
+				$advSource = ArticleAdv::model()->findByPk($root_id);
+				$model->url = $source->url;
+				$advModel->issue_id = $advSource->issue_id;
+				$model->status = $source->status;
+				$advModel->is_author = $advSource->is_author;
+
+				$t = true;
+			}
+			$lang_info = null;
+			if ($lang != null) {
+				$lang_info = Language::model()->findByPk($lang);
+			} else {
+				$lang_info = Language::model()->findByPk(Language::defaultID());
+			}
+
 			$this->render('create', array(
 				'model' => $model,
 				'advModel' => $advModel,
+				'source' => $source,
+				'lang' => $lang_info,
+				'translation' => $t,
 			));
 		}
 
@@ -312,8 +344,7 @@
 
 			$tags = ArticleTags::model()->findAll($criteria);
 
-			$rus = array();
-			$eng = array();
+			$tags_array = array();
 
 			foreach ($tags as $tag) {
 				$criteria = new CDbCriteria();
@@ -322,29 +353,41 @@
 
 				$info = Tag::model()->find($criteria);
 
-				if ($info->lang == 'ru') {
-					$rus[$tag->tag_id] = $info->tag;
-				} else {
-					$eng[$tag->tag_id] = $info->tag;
+				if ($info->lang == $model->lang_id) {
+					$tags_array[$tag->tag_id] = $info->tag;
 				}
 			}
 
-			$advModel->tags_rus = json_encode($rus);
-			$advModel->tags_eng = json_encode($eng);
+			$advModel->tags = json_encode($tags_array);
 
 			if (isset($_POST['Article'])) {
 				$model->attributes = $_POST['Article'];
 				$model->updated = new CDbExpression('NOW()');
 				$model->updater = Yii::app()->user->id;
 
+				$tmp_file = $advModel->pdf;
+
 				$advModel->attributes = $_POST['ArticleAdv'];
 				$advModel->node_id = 0;
-				//die($advModel->aditional_authors);
+
+				$advModel->pdf = CUploadedFile::getInstance($advModel, 'pdf');
+
+				$up = true;
+				if ($advModel->pdf == null) {
+					$advModel->pdf = $tmp_file;
+					$up = false;
+
+				}
 
 				if ($model->validate() && $advModel->validate()) {
+
 					$model->save();
 					$advModel->node_id = $model->id;
 					$advModel->save();
+
+					if ($up) {
+						$advModel->pdf->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.pdf') . '/' . $model->url . '.pdf');
+					}
 
 					// Save information about aditional authors
 					$authors = json_decode($advModel->aditional_authors, true);
@@ -375,7 +418,7 @@
 					}
 
 					// Save information about russian tags
-					$tags = json_decode($advModel->tags_rus, true);
+					$tags = json_decode($advModel->tags, true);
 
 					foreach ($tags as $id => $value) {
 						if ($value == 0) {
@@ -394,43 +437,24 @@
 							}
 
 						} elseif ($value == 1) {
-							$this->addTag($id, $model->id, "ru");
+							$this->addTag($id, $model->id, $model->lang_id);
 						}
 
 					}
-
-					// Saving information about english tags
-					$tags = json_decode($advModel->tags_eng, true);
-
-					foreach ($tags as $id => $value) {
-						if ($value == 0) {
-							if (is_int($id)) {
-								// Tag exists
-								// Maybe there is a relation between tag and article
-
-								$criteria = new CDbCriteria();
-								$criteria->condition = '`node_id` = :id AND `tag_id` = :tag';
-								$criteria->params = array(':id' => $model->id, ':tag' => $id);
-
-								if (ArticleTags::model()->count($criteria) > 0) {
-									// There is a relation and we must remove it
-									ArticleTags::model()->find($criteria)->delete();
-								}
-							}
-
-						} elseif ($value == 1) {
-							$this->addTag($id, $model->id, "eng");
-						}
-
-					}
-
+					Yii::app()->cache->delete("issue_" . $advModel->issue_id);
+					Yii::app()->cache->delete("article_" . $model->id);
 					$this->redirect(array('article/admin'));
 				}
 			}
+			$source = $model->getTranslation(Language::defaultID());
+			$t = $model->id != $source->id;
 
 			$this->render('update', array(
 				'model' => $model,
-				'advModel' => $advModel
+				'advModel' => $advModel,
+				'source' => $source,
+				'lang' => Language::model()->findByPk($model->lang_id),
+				'translation' => $t
 			));
 		}
 
@@ -449,13 +473,19 @@
 			$criteria->condition = '`node_id` = :id';
 			$criteria->params = array(':id' => $id);
 
-			ArticleAdv::model()->find($criteria)->delete();
+			$adv = ArticleAdv::model()->find($criteria);
+			$issue_id = $adv->issue_id;
+			$adv->delete();
 
 			// Removing tags
 			ArticleTags::model()->deleteAll($criteria);
 
 			// Removing authors
 			ArticleAuthors::model()->deleteAll($criteria);
+
+			// Removing cache
+			Yii::app()->cache->delete("issue_" . $issue_id);
+			Yii::app()->cache->delete("article_" . $id);
 
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
@@ -482,6 +512,7 @@
 			if (Yii::app()->user->isAdmin()) {
 				// Setting admin layout
 				$this->layout = 'application.modules.admin.views.layouts.admin';
+
 			} else {
 				$this->layout = '/layouts/cabinet';
 			}
@@ -502,21 +533,30 @@
 		public function actionSearch()
 		{
 			$result = array();
-			if (isset($_POST['query'])) {
+			if (isset($_REQUEST['query'])) {
 				$criteria = new CDbCriteria();
 
 				$criteria->condition = "`type` = 'author/article' AND (`title` LIKE :query OR `content` LIKE :query2)";
 				$criteria->params = array(
-					':query' => '%' . addcslashes($_POST['query'], '%_') . '%',
-					':query2' => '%' . addcslashes($_POST['query'], '%_') . '%',
+					':query' => '%' . addcslashes($_REQUEST['query'], '%_') . '%',
+					':query2' => '%' . addcslashes($_REQUEST['query'], '%_') . '%',
 				);
 				$criteria->order = '`created` DESC';
 
 				$model = Article::model();
 				$model->type = '';
-				$result = $model->with('advanced')->findAll($criteria);
+				$articles = $model->with('advanced')->findAll($criteria);
+
+				// Loading translations, if any
+				$result = array();
+				foreach($articles as $el){
+					$result[] = $el->getTranslation(Language::getCurrentID());
+				}
 			}
-			$this->render('search', array('results' => $result, 'query' => $_POST['query']));
+
+			$dataProvider = new CArrayDataProvider($result);
+
+			$this->render('search', array('dataProvider' => $dataProvider, 'query' => $_REQUEST['query']));
 		}
 
 		/**
@@ -533,7 +573,7 @@
 			$all = ArticleTags::model()->findAll($criteria);
 
 			foreach ($all as $el) {
-				$result[] = $el->article;
+				$result[] = $el->article->getTranslation(Language::getCurrentID());
 			}
 
 			$this->render('search', array('results' => $result, 'query' => Tag::model()->findByPk($tag)->tag));
@@ -581,7 +621,7 @@
 				$ids = $model->findAll($criteria);
 
 				foreach ($ids as $el) {
-					$result[] = $el->article->article;
+					$result[] = $el->article->article->getTranslation(Language::getCurrentID());
 				}
 			} else {
 				$criteria = new CDbCriteria();
@@ -589,11 +629,36 @@
 				if (isset(Yii::app()->session['favorite'])) {
 					foreach (Yii::app()->session['favorite'] as $key => $value) {
 						$criteria->params = array(':id' => $key);
-						$result[] = Article::model()->find($criteria);
+						$result[] = Article::model()->find($criteria)->getTranslation(Language::getCurrentID());
 					}
 				}
 			}
 
-			$this->render('favorite', array('articles' => $result));
+			$dataProvider = new CArrayDataProvider($result);
+
+			$this->render('favorite', array('dataProvider' => $dataProvider));
+		}
+
+		public function actionDownloadPDF($id)
+		{
+			$model = ArticleAdv::model()->findByPk($id);
+
+			if ($model->pdf != null) {
+				$m = Article::model()->findByPk($id);
+
+				Yii::app()->getRequest()->sendFile($m->title . '.pdf', file_get_contents(Yii::getPathOfAlias('webroot.resources.uploads.pdf') . '/' . $m->url . '.pdf'));
+			}
+		}
+		
+		public function actionRSS(){
+			$this->layout = '//layouts/rss';
+			$criteria = new CDbCriteria();
+			$criteria->limit = 30;
+			$criteria->with = array('article' => array('select' => false, 'condition' => 'article.status = 1', 'order' => 'created DESC'));
+			
+			$result = ArticleAdv::model()->findAll($criteria);
+			
+			//$this->render('rss', array('items' => $result));
+			$this->renderPartial('rss', array('items'=>$result));			
 		}
 	}

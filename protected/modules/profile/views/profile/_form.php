@@ -7,19 +7,20 @@
       
       if($profile)
       foreach($profile->loadProfileFields() as $field) {
-      	echo CHtml::openTag('div',array('class'=>'row-fluid'));
+      	echo CHtml::openTag('div',array('class'=>'form-group'));
       
       	if($field->hint)
       		echo CHtml::tag('div',array('class'=>'hint'),$field->hint,true);
       
-      	echo CHtml::activeLabelEx($profile, $field->varname);
+      	echo CHtml::activeLabelEx($profile, $field->varname, array('class' => 'col-lg-2 control-label'));
+        echo CHtml::openTag('div',array('class'=>'col-lg-8'));
       	if ($field->field_type=='BOOLEAN') {
       		echo CHtml::activeCheckBox($profile, $field->varname);
       	} else
       		if ($field->field_type=="TEXT") {
       		echo CHtml::activeTextArea($profile,
       				$field->varname,
-      				array('class'=>'span5', 'rows'=>6, 'cols'=>50));
+      				array('class'=>'form-control', 'rows'=>6, 'cols'=>50));
       	} 
       	else if($field->field_type == "DROPDOWNLIST") {
       		echo CHtml::activeDropDownList($profile,
@@ -31,11 +32,12 @@
       	} else {
       		echo CHtml::activeTextField($profile,
       				$field->varname,
-      				array('class'=>'span9','size'=>(($field->field_size_min)?$field->field_size_min:25),'maxlength'=>(($field->field_size)?$field->field_size:255)));
+      				array('class'=>'form-control','size'=>(($field->field_size_min)?$field->field_size_min:25),'maxlength'=>(($field->field_size)?$field->field_size:255)));
       	}
       	echo CHtml::error($profile,$field->varname); 
       
       	echo CHtml::closeTag('div');
+	    echo CHtml::closeTag('div');
       }
       ?>
 </div>

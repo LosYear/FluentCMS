@@ -299,7 +299,7 @@
 			$user = YumUser::model()->findByPk($id);
 
 			if (Yii::app()->user->isAdmin()) {
-				//This is necesary for handling human stupidity.
+				//This is necessary for handling human stupidity.
 				if ($user && ($user->id == Yii::app()->user->id)) {
 					Yum::setFlash('You can not delete your own admin account');
 					$this->redirect(array('//user/user/admin'));

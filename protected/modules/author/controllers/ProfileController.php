@@ -32,13 +32,13 @@ class ProfileController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array(/*'update', */'edit'),
+				'actions'=>array('update', 'edit'),
 				'users'=>array('@'),
 			),
-			/*array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),*/
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin'/*,'delete'*/),
+				'expression' => '$user->isAdmin()',
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -62,9 +62,20 @@ class ProfileController extends Controller
 		$criteria->params = array(':id' => $id);
 
 		$publications = ArticleAuthors::model()->findAll($criteria);
+		
+		$main_publications = array();
+		if($model->user_id != -1){
+			$criteria = new CDbCriteria();
+			$criteria->condition = 'author = :id';
+			$criteria->with = array('advanced' => array('select' => false,'condition' => 'advanced.is_author = 1'));
+			$criteria->params = array(':id' => $model->user_id);
+			
+			$main_publications = Article::model()->findAll($criteria);
+		}
 
 		$this->render('view',array(
 			'model'=>$model,
+			'main_publications' => $main_publications,
 			'publications' => $publications
 		));
 	}
@@ -142,15 +153,52 @@ class ProfileController extends Controller
 			'new' => $new,
 		));
 	}
+	
+	public function actionUpdate($id)
+	{
+		if(Yii::app()->user->isAdmin()){
+			// Setting admin layout
+			$this->layout = 'application.modules.admin.views.layouts.admin';
+		}
+
+        $id = Yii::app()->user->id;
+		$criteria = new CDbCriteria();
+		$criteria->condition = '`user_id` = :id';
+		$criteria->params = array(':id' => $id);
+		$model=Profile::model()->find($criteria);
+
+		$new = false;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Profile']))
+		{
+			$model->attributes=$_POST['Profile'];
+			$model->user_id = Yii::app()->user->id;
+			if($model->save())
+				$this->redirect(array('profile/admin'));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+			'new' => $new,
+		));
+	}
 
 	/**
 	 * Deletes a particular model.
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	/*public function actionDelete($id)
+	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model = $this->loadModel($id);
+		
+		if($model->user_id != -1){
+			YumUser::model()->findByPk($model->user_id)->delete();
+		}
+		$model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -171,8 +219,13 @@ class ProfileController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	/*public function actionAdmin()
+	public function actionAdmin()
 	{
+		if (Yii::app()->user->isAdmin()) {
+			// Setting admin layout
+			$this->layout = 'application.modules.admin.views.layouts.admin';
+
+		}
 		$model=new Profile('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Profile']))
@@ -181,7 +234,7 @@ class ProfileController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
-	}*/
+	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

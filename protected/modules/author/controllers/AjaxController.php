@@ -4,10 +4,10 @@
 	{
 		public function actionAutorsAutoComplete()
 		{
-			if (isset($_POST['query'])) {
+			if (isset($_REQUEST['query'])) {
 				$author = Profile::model();
 
-				$match = addcslashes($_POST['query'], '%_');
+				$match = addcslashes($_REQUEST['query'], '%_');
 
 				$criteria = new CDbCriteria();
 				$criteria->condition = "name LIKE :name";
@@ -32,7 +32,7 @@
 			die('');
 		}
 
-		private function tagsAutocomplete($query, $lang)
+		private function findTag($query, $lang)
 		{
 			$model = Tag::model();
 
@@ -55,48 +55,40 @@
 			return $all;
 		}
 
-		public function actionTagsRusAutocomplete()
+		public function actionTagsAutocomplete()
 		{
-			if (isset($_POST['query'])) {
-				die(json_encode(array('tags' => $this->tagsAutocomplete($_POST['query'], 'ru'))));
-			}
-			die('');
-		}
-
-		public function actionTagsEngAutocomplete()
-		{
-			if (isset($_POST['query'])) {
-				die(json_encode(array('tags' => $this->tagsAutocomplete($_POST['query'], 'eng'))));
+			if (isset($_REQUEST['query'])) {
+				die(json_encode(array('tags' => $this->findTag($_POST['query'], $_POST['lang']))));
 			}
 			die('');
 		}
 
 		public function actionLike()
 		{
-			if (isset($_POST['article'])) {
-
+			if (isset($_REQUEST['article'])) {
+				$article_id = Article::model()->findByPk($_REQUEST['article'])->getTranslation(Language::defaultID())->id;
 				if (Yii::app()->user->isGuest){
 					// User is guest. Session is used
 					$voted = Yii::app()->session['favorite'];
-					if(isset($voted[$_POST['article']])){
-						unset($voted[$_POST['article']]);
+					if(isset($voted[$article_id])){
+						unset($voted[$article_id]);
 						Yii::app()->session['favorite'] = $voted;
 
-						$model = ArticleAdv::model()->findByPk($_POST['article']);
+						$model = ArticleAdv::model()->findByPk($article_id);
 						$model->likes--;
 						$model->save();
 
 						die(json_encode(array('msg' => Yii::t('AuthorModule.main', 'Article is unliked'), 'text' => Yii::t('AuthorModule.main', 'Like'))));
 					}
 
-					$voted[$_POST['article']] = true;
+					$voted[$article_id] = true;
 					Yii::app()->session['favorite'] = $voted;
 				}
 				else{
 					// Checking on ability of voting
 					$criteria = new CDbCriteria();
 					$criteria->condition = '`node_id` = :article AND `user_id` = :user';
-					$criteria->params = array(':article' => $_POST['article'], ':user' => Yii::app()->user->id);
+					$criteria->params = array(':article' => $article_id, ':user' => Yii::app()->user->id);
 
 					if (ArticleVote::model()->count($criteria) > 0){
 						$vote = ArticleVote::model()->find($criteria);
@@ -108,7 +100,7 @@
 						die(json_encode(array('msg' => Yii::t('AuthorModule.main', 'Article is unliked'), 'text' => Yii::t('AuthorModule.main', 'Like'))));
 					}
 
-					$model = ArticleVote();
+					$model = new ArticleVote;
 					$model->user_id = Yii::app()->user->id;
 					$model->node_id = $_POST['article'];
 					$model->save();
@@ -121,11 +113,14 @@
 
 				die(json_encode(array('msg' => Yii::t('AuthorModule.main', 'You voted'), 'text' => Yii::t('AuthorModule.main', 'Unlike'))));
 			}
+			else{
+				echo "Not enought data";
+			}
 		}
 
 		public function actionAddComment()
 		{
-			if (isset($_POST['comment'])) {
+			if (isset($_REQUEST['comment'])) {
 				$model = new Comment;
 				$model->node_id = $_POST['id'];
 				$model->author_id = Yii::app()->user->id;

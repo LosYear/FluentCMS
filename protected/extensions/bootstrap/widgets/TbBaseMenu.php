@@ -108,10 +108,10 @@ abstract class TbBaseMenu extends CMenu
             if (strpos($item['icon'], 'icon') === false)
             {
                 $pieces = explode(' ', $item['icon']);
-                $item['icon'] = 'icon-'.implode(' icon-', $pieces);
+                $item['icon'] = 'glyphicon-'.implode(' icon-', $pieces);
             }
 
-            $item['label'] = '<i class="'.$item['icon'].'"></i> '.$item['label'];
+            $item['label'] = '<span class="glyphicon '.$item['icon'].'"></span> '.$item['label'];
         }
 
         if (isset($item['items']) && !empty($item['items']))
@@ -124,7 +124,7 @@ abstract class TbBaseMenu extends CMenu
                 $item['linkOptions']['class'] = 'dropdown-toggle';
 
             $item['linkOptions']['data-toggle'] = 'dropdown';
-            $item['label'] .= ' <span class="caret"></span>';
+            $item['label'] .= ' <b class="caret"></b>';
         }
 
         if (isset($item['url']))
@@ -156,7 +156,7 @@ abstract class TbBaseMenu extends CMenu
                 if (!isset($item['url']) && $this->isVertical())
                 {
                     $item['header'] = true;
-                    $classes[] = 'nav-header';
+                    $classes[] = 'dropdown-header';
                 }
 
                 if (isset($item['items']))

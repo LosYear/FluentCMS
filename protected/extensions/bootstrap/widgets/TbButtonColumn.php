@@ -69,9 +69,9 @@ class TbButtonColumn extends CButtonColumn
 		if (isset($button['icon']))
 		{
 			if (strpos($button['icon'], 'icon') === false)
-                $button['icon'] = 'icon-'.implode(' icon-', explode(' ', $button['icon']));
+                $button['icon'] = 'glyphicon-'.implode(' icon-', explode(' ', $button['icon']));
 
-			echo CHtml::link('<i class="'.$button['icon'].'"></i>', $url, $options);
+			echo CHtml::link('<span class="glyphicon '.$button['icon'].'"></span>', $url, $options);
 		}
 		else if (isset($button['imageUrl']) && is_string($button['imageUrl']))
 			echo CHtml::link(CHtml::image($button['imageUrl'], $label), $url, $options);

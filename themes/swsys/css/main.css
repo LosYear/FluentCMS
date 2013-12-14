@@ -308,7 +308,9 @@ textarea {
 }
 
 .article-content img{
-	padding: 10px 10px 10px 10px;
+	/*
+    padding: 10px 10px 10px 10px;
+    */
 }
 
 .pop{
@@ -339,4 +341,30 @@ aside.article-aside div.article-aside-content{
 
 .login-form textarea.error{
 	background: white;
+}
+
+.article-content p{
+	text-indent: 20px;
+}
+
+div.article ul.breadcrumbs li.active{
+	display: inline;
+
+}
+
+.vert-nav a{
+	cursor: pointer;
+}
+
+.page .breadcrumbs{
+	padding-left:0px;
+	margin-bottom: 0px;
+}
+
+div.cross-articles-nav-prev, div.cross-articles-nav-next, div.cross-articles-nav-active{
+	-moz-box-sizing: content-box;
+}
+
+div.url{
+	margin-top: 10px;
 }

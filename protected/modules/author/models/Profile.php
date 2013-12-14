@@ -37,11 +37,11 @@ class Profile extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, name, email, academic', 'required'),
+			array('user_id, name, email, academic, job, branch', 'required'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('user_id, name, email, academic, id', 'safe', 'on'=>'search'),
+			array('user_id, name, email, academic, id, job, branch', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +66,8 @@ class Profile extends CActiveRecord
 			'name' => Yii::t('authorModule.main', 'Name'),
 			'email' => Yii::t('authorModule.main', 'Email'),
 			'academic' => Yii::t('authorModule.main', 'Academic grade'),
+			'job' => Yii::t('authorModule.main', 'Job'),
+			'branch' => Yii::t('authorModule.main', 'Branch'),
 		);
 	}
 

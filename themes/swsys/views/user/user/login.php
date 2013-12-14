@@ -25,16 +25,36 @@
 	<?php /** @var BootActiveForm $form */
 		$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 			'id' => 'verticalForm',
-			//'htmlOptions'=>array('class'=>'well'),
+			'htmlOptions'=>array('class'=>'form-horizontal'),
 		)); ?>
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row-fluid"><?php echo $form->textFieldRow($model, 'username', array('class' => 'span3')); ?></div>
-	<div class="row-fluid"><?php echo $form->passwordFieldRow($model, 'password', array('class' => 'span3')); ?></div>
-	<div class="row-fluid rememberMe"><?php echo $form->checkboxRow($model, 'rememberMe'); ?></div>
+	<div class="form-group">
+		<?= $form->label($model, 'username', array('class' => 'col-lg-2 control-label')) ?>
+		<div class="col-lg-4">
+			<?= $form->textField($model, 'username', array('class' => 'form-control')) ?>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<?= $form->label($model, 'password', array('class' => 'col-lg-2 control-label')) ?>
+		<div class="col-lg-4">
+			<?= $form->passwordField($model, 'password', array('class' => 'form-control')) ?>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<?= $form->label($model, 'rememberMe', array('class' => 'col-lg-2 control-label')) ?>
+		<div class="col-lg-4">
+			<?= $form->checkBox($model, 'rememberMe', array('class' => '')) ?>
+		</div>
+	</div>
 	<div
-		class="row-fluid submit"><?php $this->widget('bootstrap.widgets.TbButton', array('type' => 'primary', 'buttonType' => 'submit',
-			'label' => Yii::t('yum', 'Login'))); ?></div>
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-2">
+			<button type="submit" class="btn btn-default" id="btnSubmit"><?= Yii::t('yum', 'Login') ?></button>
+		</div>
+	</div>
 
 	<?php $this->endWidget(); ?>
 </div>

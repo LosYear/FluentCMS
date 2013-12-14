@@ -1,87 +1,48 @@
-<?php $this->breadcrumbs = array(Yii::t('main','Registration')); ?>
-
-<!--<div class="form">
-<?php $activeform = $this->beginWidget('CActiveForm', array(
-			'id'=>'registration-form',
-			'enableAjaxValidation'=>true,
-			'enableClientValidation'=>true,
-			'focus'=>array($form,'username'),
-			));
-?>
-
-<?php echo Yum::requiredFieldNote(); ?>
-<?php echo CHtml::errorSummary(array($form, $profile)); ?>
-
-<div class="row"> <?php
-echo $activeform->labelEx($form,'username');
-echo $activeform->textField($form,'username');
-?> </div>
-
-<div class="row"> <?php
-echo $activeform->labelEx($profile,'email');
-echo $activeform->textField($profile,'email');
-?> </div>  
-
-<div class="row">
-<?php echo $activeform->labelEx($form,'password'); ?>
-<?php echo $activeform->passwordField($form,'password'); ?>
-</div>
-
-<div class="row">
-<?php echo $activeform->labelEx($form,'verifyPassword'); ?>
-<?php echo $activeform->passwordField($form,'verifyPassword'); ?>
-</div>
--
-<?php if(extension_loaded('gd') 
-			&& Yum::module('registration')->enableCaptcha): ?>
-	<div class="row">
-		<?php echo CHtml::activeLabelEx($form,'verifyCode'); ?>
-		<div>
-		<?php $this->widget('CCaptcha'); ?>
-		<?php echo CHtml::activeTextField($form,'verifyCode'); ?>
+<div class="form login-form">
+<?php   $_form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+	'id'=>'verticalForm',
+	'htmlOptions' => array('class'=>'form-horizontal')
+)); ?>
+	<h1 class="title title_article"><?php echo Yii::t('main','Registration'); ?></h1><br/>
+	<?php echo $_form->errorSummary(array($form, $profile)); ?>
+	<div class="form-group">
+		<?= $_form->label($form, 'username', array('class'=>'col-lg-2 control-label')) ?>
+		<div class="col-lg-8">
+			<?= $_form->textField($form, 'username', array('class'=>'form-control')) ?>
 		</div>
-		<p class="hint">
-		<?php echo Yum::t('Please enter the letters as they are shown in the image above.'); ?>
-		<br/><?php echo Yum::t('Letters are not case-sensitive.'); ?></p>
+	</div>
+	<div class="form-group">
+		<?= $_form->label($profile, 'email', array('class'=>'col-lg-2 control-label')) ?>
+		<div class="col-lg-8">
+			<?= $_form->textField($profile, 'email', array('class'=>'form-control')) ?>
+		</div>
+	</div>
+	<div class="form-group">
+		<?= $_form->label($form, 'password', array('class'=>'col-lg-2 control-label')) ?>
+		<div class="col-lg-8">
+			<?= $_form->passwordField($form, 'password', array('class'=>'form-control')) ?>
+		</div>
+	</div>
+	<div class="form-group">
+		<?= $_form->label($form, 'verifyPassword', array('class'=>'col-lg-2 control-label')) ?>
+		<div class="col-lg-8">
+			<?= $_form->passwordField($form, 'verifyPassword', array('class'=>'form-control')) ?>
+		</div>
+	</div>
+	<?php if(extension_loaded('gd') 
+			&& Yum::module('registration')->enableCaptcha): ?>
+	<div class="form-group">
+		<?= $_form->label($form, 'verifyCode', array('class'=>'col-lg-2 control-label')) ?>
+		<div class="col-lg-8">
+			<div class="col-lg-5" style="padding-left:0; padding-right:0"><?php echo $_form->textField($form,'verifyCode', array('class'=>'form-control')); ?></div>
+			<div class="col-lg-5"><?php $this->widget('CCaptcha'); ?></div><br/>
+		</div>
 	</div>
 	<?php endif; ?>
-	
-	<div class="row submit">
-		<?php echo CHtml::submitButton(Yum::t('Registration')); ?>
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-10">
+			<button type="submit" class="btn btn-default"><?= Yii::t('main','Registration') ?></button>
+		</div>
 	</div>
-
 <?php $this->endWidget(); ?>
-</div><!-- form -->
-
-<div class="form login-form">
-
-<?php   $_form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-    'id'=>'verticalForm',
-)); ?>
-    <h1 class="title title_article"> <?php echo Yii::t('main','Registration'); ?> </h1><br/>
-    <?php echo $_form->errorSummary(array($form, $profile)); ?>
- 
-<div class="row-fluid"><?php echo $_form->textFieldRow($form, 'username', array('class'=>'span3')); ?></div>
-<div class="row-fluid"><?php echo $_form->textFieldRow($profile, 'email', array('class'=>'span3')); ?></div>
-    
-<div class="row-fluid"><?php echo $_form->passwordFieldRow($form, 'password', array('class'=>'span3')); ?></div>
-<div class="row-fluid"><?php echo $_form->passwordFieldRow($form, 'verifyPassword', array('class'=>'span3')); ?></div>
-
-<?php if(extension_loaded('gd') 
-			&& Yum::module('registration')->enableCaptcha): ?>
-<div class="row-fluid">
-        <div>
-        <?php $this->widget('CCaptcha'); ?>
-        <?php echo $_form->textFieldRow($form,'verifyCode', array('class'=>'span3')); ?>
-        </div>
-        <p class="hint">
-        <?php echo Yum::t('Please enter the letters as they are shown in the image above.'); ?>
-        <br/><?php echo Yum::t('Letters are not case-sensitive.'); ?></p>
-</div>
-<?php endif; ?>
-
-<div class="row-fluid"><?php $this->widget('bootstrap.widgets.TbButton', array('type'=>'primary','buttonType'=>'submit', 'label'=>Yum::t('Submit'))); ?></div>
- 
-<?php $this->endWidget(); ?>
-    
-</div>
+	</div>

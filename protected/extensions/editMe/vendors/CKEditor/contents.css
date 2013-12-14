@@ -101,3 +101,7 @@ pre
 .marker {
     background-color: Yellow;
 }
+
+.cke_editable p{
+	text-indent: 20px;
+}

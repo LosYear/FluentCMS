@@ -99,5 +99,11 @@
         'Value' => 'Значение',
         'Create param' => 'Создать параметр',
         'Manage settings' => 'Управление настройками',
+	    'Send' => 'Отправить',
+
+	    'Languages' => 'Языки',
+	    'Manage languages' => 'Управление языками',
+	    'Create language' => 'Создать язык',
+	    'Language' => 'Язык',
     );
 ?>

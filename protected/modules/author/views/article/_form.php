@@ -113,6 +113,7 @@
 		</div>
 	</div>
 
+	<?php if(!$t): ?>
 	<div class="row-fluid">
 		<div>
 			<div class="span6 pull-left">
@@ -130,6 +131,7 @@
 			</div>
 		</div>
 	</div>
+	<?php endif; ?>
 	<?php if (Yii::app()->user->isAdmin()){ ?>
 		<div class="row-fluid">
 			<div>

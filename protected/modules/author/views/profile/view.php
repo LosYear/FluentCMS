@@ -25,6 +25,13 @@
 
 	<h2><?php echo Yii::t('AuthorModule.main', 'Publications'); ?></h2>
 	<table class="table table-stripped">
+		<?php foreach ($main_publications as $el): ?>
+			<tr>
+				<td>
+					<a href="<?php echo Yii::app()->createUrl($el->url); ?>"><?php echo $el->title ?> </a>
+				</td>
+			</tr>
+		<?php endforeach; ?>
 		<?php foreach ($publications as $el): ?>
 			<tr>
 				<td>

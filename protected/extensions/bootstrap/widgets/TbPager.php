@@ -60,8 +60,11 @@ class TbPager extends CLinkPager
             if (isset($this->htmlOptions['class']))
                 $this->htmlOptions['class'] = ' '.$classes;
             else
-                $this->htmlOptions['class'] = $classes;
+                $this->htmlOptions['class'] = ' '.$classes;
         }
+		else{
+			$this->htmlOptions['class'] = 'pagination';
+		}
 
 		parent::init();
 	}

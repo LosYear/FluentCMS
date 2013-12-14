@@ -126,8 +126,22 @@
 				'authors'
 			);
 			$author->together = true;
-			$author->condition = 'author = :id OR authors.author_id = :id';
-			$author->params = array(':id' => Yii::app()->user->id);
+			$author->condition = 'author = :user_id OR authors.author_id = :id';
+			
+			$profileCriteria = new CDbCriteria();
+			$profileCriteria->condition = '`user_id` = :id';
+			$profileCriteria->params = array(':id' => Yii::app()->user->id);
+			
+			$id = Profile::model()->find($profileCriteria);
+			
+			if($id === null){
+				$id = -1;
+			}
+			else{
+				$id = $id->id;
+			}
+			
+			$author->params = array(':id' => $id, ':user_id' => Yii::app()->user->id);
 
 			$author->mergeWith($criteria, 'AND');
 

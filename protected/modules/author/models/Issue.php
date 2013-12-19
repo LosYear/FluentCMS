@@ -132,6 +132,11 @@
 				$translatedArticle = $article->getTranslation(Language::getCurrentID());
 				$translatedArticleAdvanced = $translatedArticle->advanced;
 
+
+				$img = $element->image;
+				if($img != null){
+					$img = $article->id . "." . pathinfo($element->image, PATHINFO_EXTENSION);
+				}
 				$result[] = array(
 					'id' => $translatedArticle->id,
 					'title' => $translatedArticle->title,
@@ -139,6 +144,7 @@
 					'href' => $translatedArticle->url,
 					'authors' => $translatedArticle->getAuthors(),
 					'popularity' => $element->getPopularity(),
+					'image' => $img,
 				);
 			}
 			return $result;

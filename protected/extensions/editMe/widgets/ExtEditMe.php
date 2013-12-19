@@ -285,6 +285,7 @@ class ExtEditMe extends CInputWidget {
 		if ($this -> resizeMode == 'auto') {
 			$extraPluginsItems[] = 'autogrow';
 		}
+		$extraPluginsItems[] = 'wpmore';
 		$ckeConfig['extraPlugins'] = implode(',', $extraPluginsItems);
 		// Generate "removeDialogTabs" config value
 		$ckeConfig['removeDialogTabs'] = ($this -> advancedTabs === false) ? 'imagebutton:advanced;creatediv:advanced;editdiv:advanced;link:advanced;image:advanced;table:advanced;tableProperties:advanced;flash:advanced;iframe:advanced;' : '';

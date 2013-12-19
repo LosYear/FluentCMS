@@ -1,18 +1,20 @@
 <?php
 $this->breadcrumbs=array(
-	'Settings'=>array('index'),
-	$model->key=>array('view','id'=>$model->key),
-	'Update',
+	Yii::t('admin','Settings') => array('admin'),
+	$model->key=> '#',
+	Yii::t('admin', 'Update'),
 );
 
-$this->menu=array(
-	array('label'=>'List Setting','url'=>array('index')),
-	array('label'=>'Create Setting','url'=>array('create')),
-	array('label'=>'View Setting','url'=>array('view','id'=>$model->key)),
-	array('label'=>'Manage Setting','url'=>array('admin')),
-);
+	$this->menu = array(
+		array('label' => Yii::t('admin', 'Manage settings'), 'url' => array('admin'), 'icon' => 'list black',),
+		array('label' => Yii::t('admin', 'Create param'), 'url' => array('create'), 'icon' => 'file black'),
+	);
 ?>
 
-<h1>Update Setting <?php echo $model->key; ?></h1>
+<div class="page-header">
+	<h1><?php echo Yii::t('admin', 'Settings') ?>
+		<small><?= $model->key ?></small>
+	</h1>
+</div>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>

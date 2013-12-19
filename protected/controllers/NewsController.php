@@ -24,7 +24,7 @@
 		 */
 		public static function getPreview($content)
 		{
-			return substr($content, strpos($content, '<hr class="more" />'));
+			return substr($content, strpos($content, '<!--more-->'));
 		}
 
 		/**
@@ -145,6 +145,7 @@
 			$criteria = new CDbCriteria;
 			$criteria->compare('type', 'news', true);
 			$criteria->compare('status', 1, true);
+			$criteria->order = '`created` DESC';
 
 			$dataProvider = new CActiveDataProvider(News::model()->cache(Yii::app()->params['cacheDuration']), array(
 				'criteria' => $criteria,

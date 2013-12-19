@@ -68,7 +68,7 @@ class SettingsController extends Controller
 		{
 			$model->attributes=$_POST['Setting'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->key));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -92,7 +92,7 @@ class SettingsController extends Controller
 		{
 			$model->attributes=$_POST['Setting'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->key));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

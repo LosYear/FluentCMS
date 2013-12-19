@@ -110,4 +110,8 @@ class News extends Node
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function getPreview(){
+		return substr($this->content,0, strpos($this->content, '<!--more-->'));
+	}
 }

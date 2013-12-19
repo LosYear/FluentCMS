@@ -1,10 +1,10 @@
-<?php
+﻿<?php
     return array(
         'Current issue' => 'Текущий выпуск',
-	    'last issue' => 'свежий номер',
-	    'articles' => 'статей',
-	    'authors' => 'авторов',
-	    'interest' => 'интерес',
+	    'last issue' => 'свежий выпуск',
+	    'ARTICLES' => 'СТАТЕЙ',
+	    'AUTHORS' => 'АВТОРОВ',
+	    'INTEREST' => 'ИНТЕРЕС',
 	    'Topics' => 'Темы номера',
 	    'Archive' => 'Архив',
 	    'How to contact with' => 'Как связаться с',
@@ -13,13 +13,14 @@
 	    'Fax' => 'Факс',
 	    'Address' => 'Адрес',
 	    'Email' => 'Электронная почта',
-	    'Previous issue' => 'Предыдущий выпуск',
-	    'Next issue' => 'Следующий выпуск',
+	    'PREVIOUS ISSUE' => 'ПРЕДЫДУЩИЙ ВЫПУСК',
+	    'NEXT ISSUE' => 'СЛЕДУЮЩИЙ ВЫПУСК',
 	    'Issue' => 'Выпуск',
 	    'Create article' => 'Добавить статью',
 	    'Sign in' => 'Вход',
 	    'Sign up' => 'Регистрация',
 	    'Cabinet' => 'Личный кабинет',
 	    'Backend' => 'Админка',
+		'Announcements' => 'Объявления',
     );
 ?>

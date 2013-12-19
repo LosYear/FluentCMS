@@ -237,9 +237,23 @@
 				$new_issue['previous_issue'] = $issue['id'];
 			}
 
+			$criteria = new CDbCriteria();
+			$criteria->condition = '`type` = "news"';
+			$criteria->order = '`created` DESC';
+			$last_news = News::model()->find($criteria);
+			$news = array();
+
+			if($last_news != null){
+				$last_news = $last_news->getTranslation(Language::getCurrentID());
+				$date = DateTime::createFromFormat("Y-m-d G:i:s", $last_news->created)->format("d.m.Y");
+				$news = array('id' => $last_news->id, 'content' => $last_news->getPreview(),
+					'title' => $last_news->title, 'date' => $date, 'href' => $last_news->url);
+			}
+
 			$this->render('index', array(
 				'dataProvider' => $dataProvider,
 				'new_issue' => $new_issue,
+				'last_news' => $news,
 			));
 		}
 

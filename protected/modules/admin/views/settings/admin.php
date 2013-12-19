@@ -37,6 +37,7 @@ $('.search-form form').submit(function(){
 		'value',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+			'template' => '{update}',
 		),
 	),
 )); ?>

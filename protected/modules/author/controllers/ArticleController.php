@@ -235,6 +235,7 @@
 
 				if ($model->validate() && $advModel->validate()) {
 					$advModel->pdf = CUploadedFile::getInstance($advModel, 'pdf');
+					$advModel->image = CUploadedFile::getInstance($advModel, 'image');
 
 					$model->save();
 					$advModel->node_id = $model->id;
@@ -242,6 +243,9 @@
 					$advModel->save();
 					if ($advModel->pdf != null) {
 						$advModel->pdf->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.pdf') . '/' . $model->url . '.pdf');
+					}
+					if ($advModel->image != null) {
+						$advModel->image->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.article_images') . '/' . $model->id . '.'.$advModel->image->extensionName);
 					}
 
 					// Inserting authors
@@ -366,6 +370,7 @@
 				$model->updater = Yii::app()->user->id;
 
 				$tmp_file = $advModel->pdf;
+				$tmp_file2 = $advModel->image;
 
 				$advModel->attributes = $_POST['ArticleAdv'];
 				$advModel->node_id = 0;
@@ -379,6 +384,15 @@
 
 				}
 
+				$advModel->image = CUploadedFile::getInstance($advModel, 'image');
+
+				$up1 = true;
+				if ($advModel->image == null) {
+					$advModel->image = $tmp_file2;
+					$up1 = false;
+
+				}
+
 				if ($model->validate() && $advModel->validate()) {
 
 					$model->save();
@@ -387,6 +401,10 @@
 
 					if ($up) {
 						$advModel->pdf->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.pdf') . '/' . $model->url . '.pdf');
+					}
+
+					if ($up1) {
+						$advModel->image->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.article_images') . '/' . $model->id . '.'.$advModel->image->extensionName);
 					}
 
 					// Save information about aditional authors

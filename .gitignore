@@ -8,8 +8,8 @@ Desktop.ini
 .DS_Store
 
 # Yii
-assets
 protected/runtime
+./assets/
 
 # Netbeans
 nbproject/

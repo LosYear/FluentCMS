@@ -1,15 +1,18 @@
 <?php
-$this->breadcrumbs=array(
-	'Settings'=>array('index'),
-	'Create',
-);
+	$this->breadcrumbs = array(
+		Yii::t('admin','Settings') => array('admin'),
+		Yii::t('admin', 'Create'),
+	);
 
-$this->menu=array(
-	array('label'=>'List Setting','url'=>array('index')),
-	array('label'=>'Manage Setting','url'=>array('admin')),
-);
+	$this->menu=array(
+		array('label'=>Yii::t('admin','Manage settings'), 'url'=>array('admin'), 'icon'=>'list black'),
+	);
 ?>
 
-<h1>Create Setting</h1>
+<div class="page-header">
+	<h1><?php echo Yii::t('admin', 'Settings') ?>
+		<small><?php echo Yii::t('admin', 'Create') ?></small>
+	</h1>
+</div>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model' => $model)); ?>

@@ -1,22 +1,33 @@
-<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
-	'id'=>'setting-form',
-	'enableAjaxValidation'=>false,
-)); ?>
-
-	<p class="help-block">Fields with <span class="required">*</span> are required.</p>
+<div class="form">
+	<?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+		'id' => 'setting-form',
+		'enableAjaxValidation' => false,
+		'htmlOptions' => array('class' => 'form-horizontal')
+	)); ?>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<?php echo $form->textFieldRow($model,'key',array('class'=>'span5','maxlength'=>255)); ?>
-
-	<?php echo $form->textAreaRow($model,'value',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
-
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType'=>'submit',
-			'type'=>'primary',
-			'label'=>$model->isNewRecord ? 'Create' : 'Save',
-		)); ?>
+	<div class="form-group">
+		<?= $form->label($model, 'key', array('class' => 'col-lg-2 control-label')) ?>
+		<div class="col-lg-8">
+			<?=
+				$form->textField($model, 'key', array('class' => 'form-control')) ?>
+		</div>
 	</div>
 
-<?php $this->endWidget(); ?>
+	<div class="form-group">
+		<?= $form->label($model, 'value', array('class' => 'col-lg-2 control-label')) ?>
+		<div class="col-lg-8">
+			<?=
+				$form->textField($model, 'value', array('class' => 'form-control')) ?>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-2">
+			<button type="submit" class="btn btn-default"><?= Yii::t('admin', 'Submit') ?></button>
+		</div>
+	</div>
+
+	<?php $this->endWidget(); ?>
+</div>

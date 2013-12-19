@@ -69,6 +69,13 @@
 
 			);
 
+			$result[] = array(
+				'label' => Yii::t('admin', 'Settings'),
+				'icon' => 'cog white',
+				'url' =>  Yii::app()->createUrl('admin/settings/admin'),
+
+			);
+
 			return $result;
 		}
 

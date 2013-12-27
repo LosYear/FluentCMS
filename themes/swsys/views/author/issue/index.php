@@ -35,7 +35,7 @@
 
 
 				<div class="nomer-stats-item">
-					<div class="value">X</div>
+					<div class="value"><?= $new_issue['popularity'] ?></div>
 					<div class="property"><?= Yii::t('journal', 'INTEREST') ?></div>
 				</div>
 

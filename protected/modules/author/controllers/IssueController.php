@@ -135,6 +135,7 @@
 
 			$new_issue['content'] = $issue->getArticles();
 			$new_issue['articles'] = count($new_issue['content']);
+            $new_issue['popularity'] = $issue->getPopularity();
 
 			$new_issue['authors_amount'] = $issue->getAuthorsCount();
 

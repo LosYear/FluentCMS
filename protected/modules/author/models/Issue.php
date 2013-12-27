@@ -175,4 +175,47 @@
 			return count($authors_amount);
 		}
 
+
+        /**
+         * Return number of views of the most popular issue
+         * @return int max
+         */
+        private function getMaxViews(){
+            $criteria = new CDbCriteria();
+            $criteria->select = 'SUM(`views`) AS `views`';
+            $criteria->group = '`issue_id`';
+            $criteria->order = '`views` DESC';
+
+            return ArticleAdv::model()->find($criteria)->views;
+        }
+
+        /**
+         * Returns numbers of views for current issue
+         * @return int views
+         */
+        public function getViews(){
+            $criteria = new CDbCriteria();
+            $criteria->select = 'SUM(`views`) AS `views`';
+            $criteria->condition = '`issue_id` = :id';
+            $criteria->params = array(':id' => $this->id);
+
+            return ArticleAdv::model()->find($criteria)->views;
+        }
+
+        /**
+         * Returns popularity of current issue
+         */
+        public function getPopularity(){
+            $max = $this->getMaxViews();
+            $current = $this->getViews();
+
+            $popularity = round(($current / $max) * 100);
+
+            if($popularity < 0){
+                $popularity = 1;
+            }
+
+            return $popularity;
+        }
+
 	}

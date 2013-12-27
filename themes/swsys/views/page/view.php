@@ -3,7 +3,7 @@
 <div class="article page">
 <ul class="breadcrumbs">
 	<li>
-		<a href="http://new.cms">Главная страница</a>
+		<a href="<?= Yii::app()->homeUrl ?>">Главная страница</a>
 		<span class="divider">»</span>
 	</li>
 	<?php

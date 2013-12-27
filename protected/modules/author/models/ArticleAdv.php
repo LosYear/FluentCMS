@@ -44,7 +44,7 @@
 				array('node_id, issue_id, tags, aditional_authors, annotation, is_author', 'required'),
 				array('node_id, issue_id, views, likes, is_author', 'numerical', 'integerOnly' => true),
 				array('pdf', 'file', 'types' => 'pdf', 'allowEmpty' => true),
-				array('image', 'EPhotoValidator', 'mimeType' => array('image/jpeg', 'image/gif', 'image/png'),
+				array('image', 'YPhotoValidator', 'mimeType' => array('image/jpeg', 'image/gif', 'image/png'),
 					'maxWidth' => 515,'minWidth' => 500, 'minHeight' => 170,'allowEmpty' => true),
 				// The following rule is used by search().
 				// Please remove those attributes that should not be searched.

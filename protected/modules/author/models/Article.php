@@ -306,4 +306,19 @@
 
 			return false;
 		}
+
+        protected function beforeDelete(){
+            // Deleting all translations
+            $criteria = new CDbCriteria();
+            $criteria->condition = '`root_id` = :id';
+            $criteria->params = array(':id' => $this->id);
+
+            $translations = Article::model()->findAll($criteria);
+            foreach($translations as $one){
+                $one->advanced->delete();
+                $one->delete();
+            }
+
+            return parent::beforeDelete();
+        }
 	}

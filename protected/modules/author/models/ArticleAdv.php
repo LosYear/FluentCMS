@@ -181,4 +181,20 @@
 
 			parent::afterSave();
 		}
+
+        protected function beforeDelete(){
+            $this->article->delete();
+
+            // Removing tags
+            ArticleTags::model()->deleteAll('`node_id` = :id', array(':id' => $this->node_id));
+
+            // Removing votes
+            ArticleVote::model()->deleteAll('`node_id` = :id', array(':id' => $this->node_id));
+
+            // Removing authors
+            ArticleAuthors::model()->deleteAll('`node_id` = :id', array(':id' => $this->node_id));
+
+            return parent::beforeDelete();
+
+        }
 	}

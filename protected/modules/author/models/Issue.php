@@ -218,4 +218,18 @@
             return $popularity;
         }
 
+        protected function beforeDelete(){
+            $criteria = new CDbCriteria();
+            $criteria->condition = '`issue_id` = :id';
+            $criteria->params = array(':id' => $this->id);
+
+            $articles = ArticleAdv::model()->findAll($criteria);
+
+            foreach($articles as $article){
+                $article->delete();
+            }
+
+            return parent::beforeDelete();
+        }
+
 	}

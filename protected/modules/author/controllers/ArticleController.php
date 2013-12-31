@@ -574,13 +574,6 @@ class ArticleController extends Controller
 
         $adv = ArticleAdv::model()->find($criteria);
         $issue_id = $adv->issue_id;
-        $adv->delete();
-
-        // Removing tags
-        ArticleTags::model()->deleteAll($criteria);
-
-        // Removing authors
-        ArticleAuthors::model()->deleteAll($criteria);
 
         // Removing cache
         Yii::app()->cache->delete("issue_" . $issue_id);

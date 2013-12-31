@@ -3,8 +3,8 @@
 /* @var $model Issue */
 
 $this->breadcrumbs=array(
-	'Issues'=>array('index'),
-	'Manage',
+    Yii::t('author', 'Issues')=>array('admin'),
+    Yii::t('admin', 'Manage'),
 );
 
 $this->menu=array(
@@ -25,7 +25,11 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1><?php echo Yii::t('author', 'Manage issues'); ?></h1>
+<div class="page-header">
+    <h1><?php echo Yii::t('author', 'Issues') ?>
+        <small><?php echo Yii::t('AuthorModule.admin', 'Manage') ?></small>
+    </h1>
+</div>
 
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'issue-grid',

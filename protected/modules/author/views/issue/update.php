@@ -3,9 +3,9 @@
 	/* @var $model Issue */
 
 	$this->breadcrumbs = array(
-		'Issues' => array('index'),
-		$model->id => array('view', 'id' => $model->id),
-		'Update',
+        Yii::t('AuthorModule.admin', 'Issue') => array('admin'),
+		$model->number . "/" . $model->year => '#',
+		Yii::t('admin', 'Update'),
 	);
 
 	$this->menu = array(

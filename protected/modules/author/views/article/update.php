@@ -4,9 +4,9 @@
 /* @var $model Article */
 
 $this->breadcrumbs=array(
-	'Articles'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
+    Yii::t('AuthorModule.admin', 'Articles')=>array('admin'),
+	$model->title=>'#',
+    Yii::t('admin', 'Update'),
 );
 $this->menu=array(
             array('label'=>Yii::t('author','Create article'), 'url'=>array('create'), 'icon'=>'file black'),
@@ -34,7 +34,7 @@ $this->menu=array(
 		</ul>
 	</div>
 	<h1><?php echo Yii::t('AuthorModule.admin', 'Article') ?>
-		<small><?php echo Yii::t('AuthorModule.admin', 'Update') ?></small>
+		<small><?php echo Yii::t('admin', 'Update') ?></small>
 	</h1>
 </div>
 

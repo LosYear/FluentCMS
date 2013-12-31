@@ -106,6 +106,12 @@
 				'url' => Yii::app()->createUrl('admin/blocks'),
 			);
 
+            $result[] = array(
+                'label' => Yii::t('admin', 'Banners'),
+                'icon' => 'th black',
+                'url' => Yii::app()->createUrl('banner/banner'),
+            );
+
 			return $result;
 		}
 

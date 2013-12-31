@@ -105,7 +105,6 @@
 				<?php elseif (!Yii::app()->user->isGuest): ?>
 					<a href="<?php echo Yii::app()->createUrl('author/article'); ?>" class="btn"><?= Yii::t('journal', 'Cabinet'); ?></a>
 				<?php endif; ?>
-				<?php /* $this->widget('application.widgets.LanguageSwitcherWidget'); */?>
 			</div>
 		</header>
 		<nav id="nav" class="ym-clearfix">

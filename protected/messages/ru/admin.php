@@ -107,5 +107,6 @@
 	    'Language' => 'Язык',
         'Export to social networks' => 'Экспорт в соц. сети',
         'VK' => 'ВКонтакте',
+        'Banners' => 'Баннеры',
     );
 ?>

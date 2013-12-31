@@ -30,6 +30,7 @@ $swsys = true;
 			'application.models.*',
 			'application.components.*',
 			'application.modules.user.models.*',
+            'application.modules.banner.models.*',
 			'application.controllers.*',
 			'ext.YiiMailer.YiiMailer',
 		),
@@ -40,6 +41,7 @@ $swsys = true;
 			'author',
 			'admin',
 			'feedback',
+            'banner',
 			'gii' => array(
 				'class' => 'system.gii.GiiModule',
 				'password' => '123456',

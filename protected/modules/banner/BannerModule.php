@@ -1,6 +1,6 @@
 <?php
 
-class AuthorModule extends CWebModule
+class BannerModule extends CWebModule
 {
     public function init()
     {
@@ -9,17 +9,11 @@ class AuthorModule extends CWebModule
 
         // import the module-level models and components
         $this->setImport(array(
-            'author.models.*',
-            'author.controllers.*',
-            'author.components.*',
-            'application.modules.admin.controllers.*',
-        ));
+            'banner.models.*',
+            'banner.components.*',
+            'application.modules.admin.controllers.*'
 
-        Yii::app()->clientScript->registerCssFile(
-            Yii::app()->assetManager->publish(
-                Yii::getPathOfAlias('author.assets') . '/main.css'
-            )
-        );
+        ));
     }
 
     public function beforeControllerAction($controller, $action)

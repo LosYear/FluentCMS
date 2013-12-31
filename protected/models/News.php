@@ -17,7 +17,10 @@
  */
 class News extends Node
 {
-        public $type = 'news';
+    public $type = 'news';
+    public $exportTwitter;
+    public $exportFacebook;
+    public $exportVK;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -80,6 +83,9 @@ class News extends Node
 			'updater' => Yii::t('admin','Updater'),
 			'url' => Yii::t('admin','Url'),
 			'status' => Yii::t('admin','Status'),
+            'exportFacebook' => 'Facebook',
+            'exportTwitter' => 'Twitter',
+            'exportVK' => Yii::t('admin','VK'),
 		);
 	}
 

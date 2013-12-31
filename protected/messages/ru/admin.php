@@ -105,5 +105,7 @@
 	    'Manage languages' => 'Управление языками',
 	    'Create language' => 'Создать язык',
 	    'Language' => 'Язык',
+        'Export to social networks' => 'Экспорт в соц. сети',
+        'VK' => 'ВКонтакте',
     );
 ?>

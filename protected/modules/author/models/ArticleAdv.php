@@ -20,6 +20,11 @@
 		 * @param string $className active record class name.
 		 * @return ArticleAdv the static model class
 		 */
+
+        public $exportTwitter;
+        public $exportFacebook;
+        public $exportVK;
+
 		public static function model($className = __CLASS__)
 		{
 			return parent::model($className);
@@ -77,6 +82,11 @@
 				'aditional_authors' => Yii::t('author', 'Additional Authors'),
 				'annotation' => Yii::t('author', 'Annotation'),
 				'is_author' => Yii::t('author', 'Is article written by you?'),
+                'exportVK' => Yii::t('AuthorModule.admin', 'VK'),
+                'exportTwitter' => Yii::t('AuthorModule.admin', 'Twitter'),
+                'exportFacebook' => Yii::t('AuthorModule.admin', 'Facebook'),
+                'image' => Yii::t('AuthorModule.admin', 'Image'),
+                'pdf' => 'PDF',
 			);
 		}
 

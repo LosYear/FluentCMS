@@ -15,7 +15,13 @@ $this->menu=array(
 <div class="page-header">
   <h1><?php echo Yii::t('AuthorModule.admin', 'Academics') ?> <small><?php echo Yii::t('AuthorModule.admin', 'Manage') ?></small></h1>
 </div>
-
+<?php $this->widget('bootstrap.widgets.TbAlert', array(
+    'block' => true,
+    'fade' => true,
+    'closeText' => '&times;',
+    'alerts' => array(
+        'success' => array('block' => true, 'fade' => true, 'closeText' => '&times;'),
+    ))); ?>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'academic-grid',
 	'type'=>'striped bordered condensed',

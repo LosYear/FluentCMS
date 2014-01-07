@@ -57,8 +57,10 @@ class AcademicController extends Controller
 		if(isset($_POST['Academic']))
 		{
 			$model->attributes=$_POST['Academic'];
-			if($model->save())
-				$this->redirect(array('admin'));
+			if($model->save()){
+                Yii::app()->user->setFlash('success', Yii::t('AuthorModule.admin', 'Academic "%s" has been created', array('%s' => $model->name)));
+                $this->redirect(array('admin'));
+            }
 		}
 
 		$this->render('create',array(
@@ -87,8 +89,10 @@ class AcademicController extends Controller
 		if(isset($_POST['Academic']))
 		{
 			$model->attributes=$_POST['Academic'];
-			if($model->save())
+			if($model->save()){
+                Yii::app()->user->setFlash('success', Yii::t('AuthorModule.admin', 'Academic "%s" has been updated', array('%s' => $model->name)));
 				$this->redirect(array('admin'));
+            }
 		}
 
 		$this->render('update',array(

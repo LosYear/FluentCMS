@@ -48,8 +48,10 @@ class SettingsController extends Controller
 		if(isset($_POST['Setting']))
 		{
 			$model->attributes=$_POST['Setting'];
-			if($model->save())
+			if($model->save()){
+                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Option "%s" has been created', array('%s' => $model->key)));
 				$this->redirect(array('admin'));
+            }
 		}
 
 		$this->render('create',array(
@@ -72,8 +74,10 @@ class SettingsController extends Controller
 		if(isset($_POST['Setting']))
 		{
 			$model->attributes=$_POST['Setting'];
-			if($model->save())
+			if($model->save()){
+                Yii::app()->user->setFlash('success', Yii::t('alerts', 'Option "%s" has been updated', array('%s' => $model->key)));
 				$this->redirect(array('admin'));
+            }
 		}
 
 		$this->render('update',array(

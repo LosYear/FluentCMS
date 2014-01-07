@@ -43,6 +43,7 @@ $('.search-form form').submit(function(){
 	'filter'=>$model,
         'type'=>'striped bordered condensed',
         'template'=>"{items}",
+        'pager' => array('class' => 'bootstrap.widgets.TbPager'),
         'dataProvider'=>$model->search(),
         'rowCssId'=>'$data->id',
         'orderUrl'=>array('order'),

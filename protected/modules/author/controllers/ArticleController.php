@@ -302,6 +302,8 @@ class ArticleController extends Controller
 
                 Yii::app()->cache->delete("issue_" . $advModel->issue_id);
 
+                Yii::app()->user->setFlash('success', Yii::t('AuthorModule.admin', 'Article "%s" has been created', array('%s' => $model->title)));
+
                 $this->redirect(array('article/admin'));
             }
         }
@@ -513,7 +515,7 @@ class ArticleController extends Controller
                         $imagePath = Yii::getPathOfAlias('webroot.resources.uploads.article_images') . '/' . $model->id . '.' . $extension;
                     }
 
-                    if ($_POST['ArticleAdv']['exportTwitter'] == '1') {
+                    if (isset($_POST['ArticleAdv']['exportTwitter']) && $_POST['ArticleAdv']['exportTwitter'] == '1') {
                         // Publishing to twitter
                         $str = substr($model->title, 0, 110) . "... " . $link;
                         $twAPI = new TwitterApi();
@@ -521,7 +523,7 @@ class ArticleController extends Controller
                             ->setPostfields(array('status' => $str))
                             ->performRequest();
                     }
-                    if ($_POST['ArticleAdv']['exportVK'] == '1') {
+                    if (isset($_POST['ArticleAdv']['exportVK']) && $_POST['ArticleAdv']['exportVK'] == '1') {
                         // Publishing to vk
                         if ($advModel->image != null) {
                             VkApi::post(strip_tags($advModel->annotation), $link, $imagePath);
@@ -529,7 +531,7 @@ class ArticleController extends Controller
                             VkApi::post(strip_tags($advModel->annotation), $link);
                         }
                     }
-                    if ($_POST['ArticleAdv']['exportFacebook'] == '1') {
+                    if (isset($_POST['ArticleAdv']['exportFacebook']) && $_POST['ArticleAdv']['exportFacebook'] == '1') {
                         // Publishing to facebook
                         if ($advModel->image != null) {
                             $imageUrl = Yii::app()->homeUrl . '/resources/uploads/article_images/' . $model->id . '.' . $extension;
@@ -542,6 +544,8 @@ class ArticleController extends Controller
 
                 Yii::app()->cache->delete("issue_" . $advModel->issue_id);
                 Yii::app()->cache->delete("article_" . $model->id);
+
+                Yii::app()->user->setFlash('success', Yii::t('AuthorModule.admin', 'Article "%s" has been updated', array('%s' => $model->title)));
                 $this->redirect(array('article/admin'));
             }
         }

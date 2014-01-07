@@ -116,7 +116,7 @@ class RGridViewWidget extends TbGridView
 		Yii::app()->clientScript->registerScript(__CLASS__, '$( "#'.$this->getId().'" ).sortable('.CJavaScript::encode($options).');');
 		parent::init();
 		
-		$this->pager = null;
+		//$this->pager = null;
 	}
 
 	/**

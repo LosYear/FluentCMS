@@ -30,6 +30,13 @@ foreach ($tmp as $item) {
 }
 
 ?>
+<?php $this->widget('bootstrap.widgets.TbAlert', array(
+    'block' => true,
+    'fade' => true,
+    'closeText' => '&times;',
+    'alerts' => array(
+        'success' => array('block' => true, 'fade' => true, 'closeText' => '&times;'),
+    ))); ?>
 <div id="main">
     <?php $this->widget('bootstrap.widgets.TbGridView', array(
         'id' => 'article-grid',

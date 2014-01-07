@@ -39,6 +39,9 @@
         
         'Task created' => 'Задание создано',
         'Task updated' => 'Задание изменено',
+
+        'Option "%s" has been updated' => 'Параметр "%s" изменен',
+        'Option "%s" has been created' => 'Параметр "%s" создан',
         
     );
 ?>

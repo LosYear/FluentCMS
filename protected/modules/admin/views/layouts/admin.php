@@ -42,7 +42,7 @@
 		<div class="col-md-10 col-lg-10 col-sm-10 zero-padding content-container">
 			<?php echo $content; ?>
 		</div>
-		<?php if (isset($this->menu)): ?>
+		<?php if (isset($this->menu) && !empty($this->menu)): ?>
 			<div class="col-md-2 col-lg-2 col-sm-2 zero-padding panel panel-default">
 				<?php $this->widget('bootstrap.widgets.TbMenu', array(
 					'type' => 'list',

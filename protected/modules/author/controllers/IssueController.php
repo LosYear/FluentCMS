@@ -70,6 +70,8 @@
 				$model->attributes = $_POST['Issue'];
 				$model->created = new CDbExpression('NOW()');
 				if ($model->save()){
+                    Yii::app()->user->setFlash('success', Yii::t('AuthorModule.admin', 'Issue has been created'));
+
 					$this->redirect(array('admin'));
 				}
 			}
@@ -98,6 +100,8 @@
 				$model->attributes = $_POST['Issue'];
 				if ($model->save()){
 					Yii::app()->cache->delete("issue_".$model->id);
+
+                    Yii::app()->user->setFlash('success', Yii::t('AuthorModule.admin', 'Issue has been updated'));
 					$this->redirect(array('admin'));
 				}
 			}

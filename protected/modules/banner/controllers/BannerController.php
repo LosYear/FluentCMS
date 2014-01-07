@@ -63,7 +63,9 @@ class BannerController extends Controller
 
 			if($model->save()){
                 $model->file->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.banners') . '/' . $model->name . '.' . $model->file->extensionName);
-				$this->redirect(array('admin'));
+
+                Yii::app()->user->setFlash('success', Yii::t('BannerModule.admin', 'Banner "%s" created', array('%s' => $model->title)));
+                $this->redirect(array('admin'));
             }
 		}
 
@@ -102,6 +104,7 @@ class BannerController extends Controller
                    $model->file->saveAs(Yii::getPathOfAlias('webroot.resources.uploads.banners') . '/' . $model->name . '.' . $model->file->extensionName);
                 }
 
+                Yii::app()->user->setFlash('success', Yii::t('BannerModule.admin', 'Banner "%s" updated', array('%s' => $model->title)));
 				$this->redirect(array('admin'));
             }
 		}

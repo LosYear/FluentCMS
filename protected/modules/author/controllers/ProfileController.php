@@ -176,8 +176,11 @@ class ProfileController extends Controller
 		{
 			$model->attributes=$_POST['Profile'];
 			$model->user_id = Yii::app()->user->id;
-			if($model->save())
+			if($model->save()){
+                Yii::app()->user->setFlash('success', Yii::t('AuthorModule.admin', 'Information about "%s" has been updated', array('%s' => $model->name)));
+
 				$this->redirect(array('profile/admin'));
+            }
 		}
 
 		$this->render('update',array(

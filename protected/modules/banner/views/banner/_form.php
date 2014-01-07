@@ -32,7 +32,7 @@
     <div class="form-group">
         <?= $form->label($model, 'type', array('class' => 'col-lg-2 control-label')) ?>
         <div class="col-lg-2">
-            <?= $form->dropDownList($model, 'type', array('image' => Yii::t('BannerModule.admin', 'Image')), array('class' => 'form-control')) ?>
+            <?= $form->dropDownList($model, 'type', array('image' => Yii::t('BannerModule.admin', 'Image'), 'swf' => 'Flash'), array('class' => 'form-control')) ?>
         </div>
     </div>
 

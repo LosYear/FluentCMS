@@ -11,6 +11,9 @@
                 if($model->type == 'image'){
                     $this->render('image', array('model'=>$model));
                 }
+                elseif($model->type == 'swf'){
+                    $this->render('flash', array('model'=>$model));
+                }
             }
         }
     }

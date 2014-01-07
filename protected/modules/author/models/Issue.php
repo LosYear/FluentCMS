@@ -209,11 +209,11 @@
             $max = $this->getMaxViews();
             $current = $this->getViews();
 
-            $popularity = round(($current / $max) * 100);
+            $popularity = round(($current / $max) * 100, 1);
 
-            if($popularity < 0){
+            /*if($popularity < 0){
                 $popularity = 1;
-            }
+            }*/
 
             return $popularity;
         }

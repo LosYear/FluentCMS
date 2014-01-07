@@ -62,3 +62,7 @@
 	float: left;
 	clear: left;
 }
+
+.popover{
+	min-width: 250px;
+}

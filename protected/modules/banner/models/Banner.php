@@ -33,8 +33,8 @@ class Banner extends CActiveRecord
 		return array(
 			array('name, title, type, href, new_window, views, clicks, status', 'required'),
 			array('id, new_window, views, clicks, status', 'numerical', 'integerOnly'=>true),
-            array('file', 'file', 'on' => 'insert', 'allowEmpty'=>false, 'types' => 'jpeg, jpg, gif, png, bmp'),
-            array('file', 'file','on'=>'update', 'allowEmpty' => true, 'types'=> 'jpeg, jpg, gif, png, bmp'),
+            array('file', 'file', 'on' => 'insert', 'allowEmpty'=>false, 'types' => 'jpeg, jpg, gif, png, bmp, swf'),
+            array('file', 'file','on'=>'update', 'allowEmpty' => true, 'types'=> 'jpeg, jpg, gif, png, bmp, swf'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, title, type, href, new_window, views, clicks, status', 'safe', 'on'=>'search'),

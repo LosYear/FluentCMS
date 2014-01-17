@@ -27,7 +27,7 @@
 	<p>Место работы: <strong><?= $model->job;?></strong></p>
 	<?php endif;?>
 	<?php if($model->branch != -1):?>
-	<p>Направление: <strong><?= Branch::model()->findByPk($model->branch)->name?></strong></p>
+	<p>Ученая степень: <strong><?= Branch::model()->findByPk($model->branch)->name?></strong></p>
 	<?php endif;?>
 	
 	<h2><?php echo Yii::t('AuthorModule.main', 'Publications'); ?></h2>

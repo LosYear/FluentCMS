@@ -63,15 +63,15 @@
 								'icon' => 'envelope white',
 								'url' => Yii::app()->createUrl('mailbox/message'),
 
-							)
+							),
+                            array(
+                                'label' => Yii::t('admin', 'Logout'),
+                                'icon' => 'off white',
+                                'url' => Yii::app()->createUrl('user/user/logout'),
+                            )
 
 						),
 					),
-					/* array(
-							'class' => 'bootstrap.widgets.TbMenu',
-							'htmlOptions' => array('class' => 'pull-right'),
-							'items' => MenuDisplayController::getRightItems(),
-						),*/
 				)));?>
 	</div>
 	<div class="breadcrumbs">

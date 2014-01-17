@@ -47,10 +47,10 @@ class Branch extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'required'),
+			array('name, abbr', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name', 'safe', 'on'=>'search'),
+			array('id, name, abbr', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,7 +72,8 @@ class Branch extends CActiveRecord
 	{
 		return array(
 			'id' => '#',
-			'name' => Yii::t('AuthorModule.admin', 'Name')
+			'name' => Yii::t('AuthorModule.admin', 'Name'),
+            'abbr' => Yii::t('AuthorModule.admin', 'Abbreviation')
 		);
 	}
 

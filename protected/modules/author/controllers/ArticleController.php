@@ -670,9 +670,12 @@ class ArticleController extends Controller
 
         foreach ($all as $el) {
             $result[] = $el->article->getTranslation(Language::getCurrentID());
+			
         }
+		
+		$dataProvider = new CArrayDataProvider($result);
 
-        $this->render('search', array('results' => $result, 'query' => Tag::model()->findByPk($tag)->tag));
+        $this->render('search', array('dataProvider' => $dataProvider, 'query' => Tag::model()->findByPk($tag)->tag));
 
     }
 

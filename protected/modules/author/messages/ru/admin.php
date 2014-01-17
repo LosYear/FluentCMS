@@ -5,11 +5,11 @@
         'Manage' => 'Управление',
         'Create' => 'Создать',
 	    'Issue' => 'Выпуск',
-		'Academics' => 'Академические звания',
+		'Academics' => 'Ученые звания',
 		'Abbreviation' => 'Аббревиатура',
 		'Name' => 'Название',
-		'Academic' => 'Академическое звание',
-		'Branches' => 'Направления',
+		'Academic' => 'Ученое звание',
+		'Branches' => 'Ученые степени',
 		'Advanced' => 'Дополнительно',
 		'Authors' => 'Авторы',
 		'Not registered' => 'Не зарегистрирован',
@@ -29,7 +29,7 @@
         'Academic "%s" has been created' => 'Создано звание "%s"',
         'Academic "%s" has been updated' => 'Звание "%s" отредактировано',
 
-        'Branch "%s" has been created' => 'Создано направление "%s"',
-        'Branch "%s" has been updated' => 'Направление "%s" отредактировано',
+        'Branch "%s" has been created' => 'Создана ученая степень "%s"',
+        'Branch "%s" has been updated' => 'Ученая степень "%s" отредактирована',
 
     );

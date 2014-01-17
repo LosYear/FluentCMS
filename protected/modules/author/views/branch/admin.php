@@ -29,6 +29,7 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
 		'name',
+        'abbr',
 		array(
                     'class'=>'bootstrap.widgets.TbButtonColumn',
                     'htmlOptions'=>array('style'=>'width: 40px'),

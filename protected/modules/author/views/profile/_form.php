@@ -42,6 +42,9 @@
                     <div class="column span-12"><?php echo $form->textField($model, 'email', array('class'=>'email span6')); ?></div>
                 </div>
             </div>
+
+            <div class="row"><div class="column span-1"><?php $this->widget('bootstrap.widgets.TbButton',
+                        array('type'=>'success', 'label'=>Yii::t('admin','Avatar'))); ?></div></div>
             
 
             <div class="row"><div class="column span-1"><?php $this->widget('bootstrap.widgets.TbButton', 

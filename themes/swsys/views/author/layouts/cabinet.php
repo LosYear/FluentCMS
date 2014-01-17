@@ -29,6 +29,7 @@
 					<li><a href="<?= Yii::app()->homeUrl ?>">Сайт</a></li>
 					<li><a href="<?= Yii::app()->createUrl('author/article') ?>">Статьи</a></li>
 					<li><a href="<?= Yii::app()->createUrl('author/profile/edit') ?>">Профиль</a></li>
+                    <li><a href="<?= Yii::app()->createUrl('user/user/logout') ?>">Выход</a></li>
 				</ul>
 			</div>
 		</nav>

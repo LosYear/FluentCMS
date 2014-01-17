@@ -125,6 +125,6 @@
 	    'The image "{file}" width should be at most "{width}px".' => 'Изображение должно быть не больше {width}px в ширину',
 	    'The image "{file}" height should be at least "{height}px".' => 'Изображение должно быть как минимум {height}px в высоту',
 	    'The image "{file}" height should be at most "{height}px".' => 'Изображение должно быть не больше {width}px в высоту',
-	    'The file "{file}" is not an image.' => 'Загруженный файл не является изображением',
+	    'The file "{file}" is not an image.' => 'Загруженный файл "{file}" не является изображением',
     ); 
 ?>

@@ -11,6 +11,7 @@
  */
 class Profile extends CActiveRecord
 {
+    public $image;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -39,9 +40,12 @@ class Profile extends CActiveRecord
 		return array(
 			array('user_id, name, email, academic, job, branch', 'required'),
 			array('user_id', 'numerical', 'integerOnly'=>true),
+            array('image', 'YPhotoValidator', 'allowEmpty' => true, 'mimeType' => array('image/jpeg', 'image/png', 'image/gif'),
+                'minHeight' => 122, 'maxHeight' => 1220, 'minWidth' => 84, 'maxWidth' => 840
+            ),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('user_id, name, email, academic, id, job, branch', 'safe', 'on'=>'search'),
+			array('user_id, name, email, academic, id, job, branch, avatar', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,9 +69,10 @@ class Profile extends CActiveRecord
 			'user_id' => Yii::t('authorModule.main', 'User'),
 			'name' => Yii::t('authorModule.main', 'Name'),
 			'email' => Yii::t('authorModule.main', 'Email'),
-			'academic' => Yii::t('authorModule.main', 'Academic grade'),
+			'academic' => Yii::t('authorModule.main', 'Academic rank'),
 			'job' => Yii::t('authorModule.main', 'Job'),
-			'branch' => Yii::t('authorModule.main', 'Branch'),
+			'branch' => Yii::t('authorModule.main', 'Academic grade'),
+            'image' => Yii::t('authorModule.main', 'Avatar'),
 		);
 	}
 

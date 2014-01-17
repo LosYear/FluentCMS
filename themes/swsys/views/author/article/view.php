@@ -19,14 +19,12 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
                             <?php foreach ($authors as $one) { ?>
                                 <li class="face">
                                     <?php $img = "/themes/swsys/img/user.png";
-                                    if ($one['user_id'] != -1) {
-                                        $usr = YumUser::model()->findByPk($one['user_id']);
+                                        $usr = Profile::model()->findByPk($one['id']);
                                         if ($usr->avatar != NULL) {
-                                            $img = $usr->avatar;
+                                            $img = "resources/uploads/avatars/".$usr->avatar;
                                         }
-                                    }
                                     ?>
-                                    <img src="<?= $img ?>" alt="">
+                                    <img src="<?= $img ?>" alt="" width="84px" height="122px">
                                     <a href="<?php echo Yii::app()->createUrl('author/profile/view', array('id' => $one['id'])); ?>"><?php echo $one['name'] ?></a>
                                 </li>
                             <?php } ?>

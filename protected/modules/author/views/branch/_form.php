@@ -21,6 +21,13 @@
 		</div>
 	</div>
 
+    <div class="form-group">
+        <?= $form->label($model, 'abbr', array('class' => 'col-lg-2 control-label')) ?>
+        <div class="col-lg-8">
+            <?= $form->textField($model, 'abbr', array('class' => 'form-control')) ?>
+        </div>
+    </div>
+
 	<div class="form-group">
 		<div class="col-lg-offset-2 col-lg-2">
 			<button type="submit" class="btn btn-default"><?= Yii::t('admin', 'Submit') ?></button>

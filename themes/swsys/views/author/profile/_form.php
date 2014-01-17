@@ -17,7 +17,7 @@
 			$form = $this->beginWidget('CActiveForm', array(
 			'id' => 'profile-form',
 			'enableAjaxValidation' => false,
-			'htmlOptions' => array('class' => 'form-horizontal')
+			'htmlOptions' => array('class' => 'form-horizontal', 'enctype' => 'multipart/form-data')
 		)); ?>
 		<?php echo $form->errorSummary($model); ?>
 		<div class="form-group">
@@ -54,6 +54,12 @@
 			</div>
 		</div>
 
+        <div class="form-group">
+            <?= $form->label($model, 'image', array('class' => 'col-lg-2 control-label')) ?>
+            <div class="col-lg-8">
+                <?= $form->fileField($model, 'image', array('class' => 'image form-control')) ?>
+            </div>
+        </div>
 
 		<div class="form-group">
 			<div class="col-lg-offset-2 col-lg-2">

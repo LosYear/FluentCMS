@@ -13,7 +13,6 @@ echo '</div>';
 } else {
 echo '<h2>'.Yum::t('Password recovery').'</h2>';
 ?>
-
 <div class="form">
 <?php echo CHtml::beginForm(); ?>
 

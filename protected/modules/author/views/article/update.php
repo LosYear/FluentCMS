@@ -23,12 +23,12 @@ $this->menu=array(
 			?>
 			<?php foreach ($tr as $l): ?>
 				<li <?php if($model->lang_id == $l->id):?> class="active" <?php endif; ?>>
-					<a href="<?= Yii::app()->createUrl('author/article/update', array('id' => $model->getTranslation($l->id)->id)) ?>"><?= strtoupper($l->name) ?></a>
+					<a href="<?= Yii::app()->createUrl('author/article/update', array('id' => $model->getTranslation($l->id)->id)) ?>"><?= strtoupper($l->title) ?></a>
 				</li>
 			<?php endforeach; ?>
 			<?php foreach ($un as $l): ?>
 				<li>
-					<a href="<?= Yii::app()->createUrl('author/article/create', array('lang' => $l->id, 'root_id' => $source->id)) ?>"><?= strtoupper($l->name) ?></a>
+					<a href="<?= Yii::app()->createUrl('author/article/create', array('lang' => $l->id, 'root_id' => $source->id)) ?>"><?= strtoupper($l->title) ?></a>
 				</li>
 			<?php endforeach; ?>
 		</ul>

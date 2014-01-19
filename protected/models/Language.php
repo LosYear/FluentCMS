@@ -36,10 +36,10 @@ class Language extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, flag', 'required'),
+			array('name, flag, title', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, flag', 'safe', 'on'=>'search'),
+			array('id, name, flag, title', 'safe', 'on'=>'search'),
 		);
 	}
 

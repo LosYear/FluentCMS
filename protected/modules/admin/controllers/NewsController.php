@@ -75,7 +75,7 @@ class NewsController extends Controller
                 // Posting to social networks
                 if (Yii::app()->user->isAdmin() && $model->status == 1) {
                     $link = Yii::app()->homeUrl . '/' . $model->url . '.html';
-                    if ($_POST['News']['exportTwitter'] == '1') {
+                    if (isset($_POST['News']['exportTwitter']) && $_POST['News']['exportTwitter'] == '1') {
                         // Publishing to twitter
                         $str = substr($model->title, 0, 110) . "... " . $link;
                         $twAPI = new TwitterApi();
@@ -83,11 +83,11 @@ class NewsController extends Controller
                             ->setPostfields(array('status' => $str))
                             ->performRequest();
                     }
-                    if ($_POST['News']['exportVK'] == '1') {
+                    if (isset($_POST['News']['exportVK']) && $_POST['News']['exportVK'] == '1') {
                         // Publishing to vk
                         VkApi::post(strip_tags($model->getPreview()), $link);
                     }
-                    if ($_POST['News']['exportFacebook'] == '1') {
+                    if (isset($_POST['News']['exportFacebook']) && $_POST['News']['exportFacebook'] == '1') {
                         // Publishing to facebook
                         FacebookApi::postLink($link, $model->title, strip_tags($model->getPreview()));
                     }

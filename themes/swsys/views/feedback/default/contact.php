@@ -14,7 +14,7 @@
 		</div>
 
 	<?php else: ?>
-
+        <?= Yii::t('journal', 'All fields are required') ?><br/><br/>
 		<div class="form">
 			<?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 				'id' => 'block-form',

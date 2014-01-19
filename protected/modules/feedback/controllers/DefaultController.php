@@ -37,7 +37,9 @@ class DefaultController extends Controller
 				$mail->From = $model->email;
 				$mail->FromName = $model->name;
 				$mail->Subject = $model->subject;
-				$mail->AddAddress('red@school-discovery.ru');
+				$mail->AddAddress('flexo.o@yandex.ru');
+                $mail->AddAddress('red@cps.tver.ru');
+                $mail->AddAddress('info@cps.tver.ru');
 				//send
 				if ($mail->Send()) {
 					$mail->ClearAddresses();

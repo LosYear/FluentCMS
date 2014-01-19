@@ -617,11 +617,7 @@ class YumUser extends YumActiveRecord
 	 */
 	public function generateActivationKey($activate = false)
 	{
-		if($activate) {
-			$this->activationKey = $activate;
-			$this->save(false, array('activationKey'));
-		} else
-			$this->activationKey = YumUser::encrypt(microtime() . $this->password);
+        $this->activationKey = YumUser::encrypt(microtime() . $this->password);
 
 		return $this->activationKey;
 	}

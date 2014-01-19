@@ -30,31 +30,45 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="form-group">
-		<?= $form->label($model, 'username', array('class' => 'col-lg-2 control-label')) ?>
+		<?= $form->label($model, 'username', array('class' => 'col-lg-3 control-label')) ?>
 		<div class="col-lg-4">
 			<?= $form->textField($model, 'username', array('class' => 'form-control')) ?>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<?= $form->label($model, 'password', array('class' => 'col-lg-2 control-label')) ?>
+		<?= $form->label($model, 'password', array('class' => 'col-lg-3 control-label')) ?>
 		<div class="col-lg-4">
 			<?= $form->passwordField($model, 'password', array('class' => 'form-control')) ?>
 		</div>
 	</div>
 
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <?= $form->checkBox($model, 'rememberMe') ?>&nbsp;<?= Yii::t('yum', 'Remember me next time') ?>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+            <a href="<?= Yii::app()->createUrl('registration/registration/recovery') ?>"><?= Yii::t('yum', 'Forgot password?') ?></a>
+        </div>
+    </div>
+
 	<div class="form-group">
-		<?= $form->label($model, 'rememberMe', array('class' => 'col-lg-2 control-label')) ?>
-		<div class="col-lg-4">
-			<?= $form->checkBox($model, 'rememberMe', array('class' => '')) ?>
-		</div>
-	</div>
-	<div
-	<div class="form-group">
-		<div class="col-lg-offset-2 col-lg-2">
+		<div class="col-lg-offset-3 col-lg-2">
 			<button type="submit" class="btn btn-default" id="btnSubmit"><?= Yii::t('yum', 'Login') ?></button>
 		</div>
 	</div>
+    <style>
+        * {
+            box-sizing: border-box !important;
+        }
+    </style>
 
 	<?php $this->endWidget(); ?>
 </div>

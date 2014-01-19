@@ -5,7 +5,7 @@
 	<div id="date"><i class="glyphicon glyphicon-calendar"></i> <?php $formatter = new CDateFormatter(Yii::app()->locale); echo $formatter->formatDateTime($data->created, 'medium', null) ?></div>
 
 	<div class="article-tizer-content">
-		<?php echo $data->getPreview(); ?>
+		<?php echo $data->getPreview(); ?><a href="<?= Yii::app()->createUrl($data['url']); ?>">[Читать полностью]</a></div>
 	</div>
 	<hr class="hr">
 </div>

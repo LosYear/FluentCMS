@@ -18,7 +18,7 @@
 ?>
 <div style="margin:40px" class="author-profile">
 	<div class="page-header">
-		<h1><?php echo $model->name ?>
+		<h1 style="color:black"><?php echo $model->name ?>
 			<small>&nbsp;<?php if ($model->academic != -1) echo Academic::model()->findByPk($model->academic)->name ?>&nbsp;
 			</small>
 		</h1>
@@ -30,7 +30,7 @@
 	<p>Ученая степень: <strong><?= Branch::model()->findByPk($model->branch)->name?></strong></p>
 	<?php endif;?>
 	
-	<h2><?php echo Yii::t('AuthorModule.main', 'Publications'); ?></h2>
+	<h2 style="color:rgb(160, 156, 150)"><?php echo Yii::t('AuthorModule.main', 'Publications'); ?></h2>
 	<table class="table table-stripped">
 		<?php foreach ($main_publications as $el): ?>
 			<tr>

@@ -22,9 +22,9 @@ class RegistrationModule extends CWebModule {
 
 	public $registrationView = '/registration/registration';
 	public $changePasswordView = 
-		'application.modules.user.views.user.changepassword';
+		'//user/user/changepassword';
 	public $recoverPasswordView = 
-		'application.modules.registration.views.registration.recovery';
+		'/registration/recovery';
 
 	/**
 	 * Whether to use captcha in registration process

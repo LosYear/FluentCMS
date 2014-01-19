@@ -126,5 +126,14 @@
 	    'The image "{file}" height should be at least "{height}px".' => 'Изображение должно быть как минимум {height}px в высоту',
 	    'The image "{file}" height should be at most "{height}px".' => 'Изображение должно быть не больше {width}px в высоту',
 	    'The file "{file}" is not an image.' => 'Загруженный файл "{file}" не является изображением',
+        'Forgot password?' => 'Забыли пароль?',
+        'Password recovery' => 'Восстановление пароля',
+        'Username or email' => 'Имя пользователя или email',
+        'Restore' => 'Восстановить',
+        'Instructions have been sent to you. Please check your email.' => 'Проверьте свой email, чтобы восстановить пароль',
+        'Change password' => 'Изменить пароль',
+        'Save' => 'Сохранить',
+        'Retyped password is incorrect' => 'Введенные пароли не совпадают',
+        'Your new password has been saved.' => 'Новый пароль сохранен'
     ); 
 ?>

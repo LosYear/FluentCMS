@@ -4,6 +4,7 @@
 	'htmlOptions' => array('class'=>'form-horizontal')
 )); ?>
 	<h1 class="title title_article"><?php echo Yii::t('main','Registration'); ?></h1><br/>
+    <?= Yii::t('journal', 'All fields are required') ?><br/><br/>
 	<?php echo $_form->errorSummary(array($form, $profile)); ?>
 	<div class="form-group">
 		<?= $_form->label($form, 'username', array('class'=>'col-lg-2 control-label')) ?>
@@ -35,7 +36,7 @@
 		<?= $_form->label($form, 'verifyCode', array('class'=>'col-lg-2 control-label')) ?>
 		<div class="col-lg-8">
 			<div class="col-lg-5" style="padding-left:0; padding-right:0"><?php echo $_form->textField($form,'verifyCode', array('class'=>'form-control')); ?></div>
-			<div class="col-lg-5"><?php $this->widget('CCaptcha'); ?></div><br/>
+			<div class="col-lg-5"><?php $this->widget('CCaptcha', array('buttonOptions' => array('class' => 'captcha-refresh'))); ?></div><br/>
 		</div>
 	</div>
 	<?php endif; ?>

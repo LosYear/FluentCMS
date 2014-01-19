@@ -1,6 +1,7 @@
 <?php
 $assetsUrl = Yii::app()->assetManager->publish(Yii::getPathOfAlias('application.modules.author.assets'));
 Yii::app()->clientScript->registerScriptFile($assetsUrl . '/comments.js', CClientScript::POS_END);
+Yii::app()->clientScript->registerScriptFile($assetsUrl . '/jpaginate.js', CClientScript::POS_END);
 $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
 ?>
 <script lang="javascript">
@@ -9,6 +10,8 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
     get_comments = "<?php echo Yii::app()->createUrl('author/ajax/getcomments'); ?>";
     comments_count = "<?php echo Comment::model()->count(); ?>";
 </script>
+<script type="text/javascript" src="//yandex.st/share/share.js"
+        charset="utf-8"></script>
 <article class="main ym-clearfix">
     <div class="article">
         <aside class="article-aside">
@@ -75,7 +78,7 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
                         </a>
                     <?php endif; ?>
 
-                    <a target="_blank"
+                    <a target="_blank" class="pad"
                        href="<?= Yii::app()->createUrl('author/article/print', array('id' => $advModel->node_id)) ?>"><span
                             class="glyphicon glyphicon-print"></span>&nbsp;<?= Yii::t('AuthorModule.main', 'Printable version') ?>
                     </a>
@@ -85,15 +88,6 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
                         <input type="text" class="form-control input-sm" readonly
                                value="<?= Yii::app()->homeUrl . MultilangHelper::addLangToUrl($model->url . '.html') ?>"
                                onclick="this.select()"/>
-                    </div>
-                    <script type="text/javascript" src="//yandex.st/share/share.js"
-                            charset="utf-8"></script>
-                    <div class="share">
-                        <label><?= Yii::t('AuthorModule.main', 'Share') ?></label>
-
-                        <div class="yashare-auto-init" data-yashareL10n="ru"
-                             data-yashareQuickServices="vkontakte,facebook,twitter,gplus"
-                             data-yashareTheme="counter"></div>
                     </div>
                 </div>
             </div>
@@ -110,10 +104,17 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
 
         <h1 class="title title_article"><?php echo $model->title; ?></h1>
 
+        <div class="share-top"><div class="yashare-auto-init" data-yashareL10n="ru"
+                                            data-yashareQuickServices="vkontakte,facebook,twitter,gplus"
+                                            data-yashareTheme="counter"></div></div>
+
         <div class="article-content">
             <?php echo $model->content; ?>
         </div>
     </div>
+    <div class="share-bottom"><div class="yashare-auto-init" data-yashareL10n="ru"
+                                        data-yashareQuickServices="vkontakte,facebook,twitter,gplus"
+                                        data-yashareTheme="counter"></div></div>
     <div class="swsys-like"><span class="icon icon_like"></span><span
             id="like_text"><?php if (!$liked) : ?><?= Yii::t('AuthorModule.main', 'Like') ?> <?php else: ?> <?= Yii::t('AuthorModule.main', 'Unlike') ?> <?php endif; ?></span>
 
@@ -140,7 +141,11 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
     <?php endif; ?>
     <div class="comments">
         <h3 class="title title_comments"><?= Yii::t('AuthorModule.main', 'Comments') ?></h3>
-
+        <?php if (Yii::app()->user->isGuest): ?>
+            <div class="login-alert">
+                <?= Yii::t('journal', 'To write a comment please') ?>&nbsp;<a href="<?= Yii::app()->createUrl('user/user/login') ?>"><?= Yii::t('journal', 'login') ?></a>&nbsp;<?= Yii::t('journal', 'or') ?>&nbsp;<a href="<?= Yii::app()->createUrl('user/registration') ?>"><?= Yii::t('journal', 'register') ?></a>
+            </div>
+        <?php endif; ?>
         <div class="comments-list">
             <?php
             $criteria = new CDbCriteria();
@@ -155,7 +160,7 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
                 'template' => '{items}{pager}',
                 'pager' =>
                     array('class' => 'bootstrap.widgets.TbPager'),
-                'pagerCssClass' => 'pagination pagination_comments ym-clearfix',
+                'pagerCssClass' => 'pagination ym-clearfix',
                 'emptyText' => Yii::t('AuthorModule.main', 'There are no comments')
             )); ?>
         </div>
@@ -186,7 +191,7 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
 
     });
     $(document).ready(function () {
-        $(".article-content").jPaginate({items: 10, next: "<?= Yii::t('AuthorModule.main', 'Next') ?>", previous: "<?= Yii::t('AuthorModule.main', 'Previous') ?>", position: "both", cookies: false});
+        $(".article-content").jPaginate({items: 20, next: "<?= Yii::t('AuthorModule.main', 'Next') ?>", previous: "<?= Yii::t('AuthorModule.main', 'Previous') ?>", position: "both", cookies: false});
         $(".goto").click(function () {
             $(window).scrollTop(0)
         });

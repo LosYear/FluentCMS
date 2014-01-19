@@ -22,12 +22,12 @@
 					?>
 					<?php foreach ($tr as $l): ?>
 						<li <?php if ($lang->id == $l->id): ?> class="active" <?php endif; ?>>
-							<a href="<?= Yii::app()->createUrl('admin/news/update', array('id' => $source->getTranslation($l->id)->id)) ?>"><?= strtoupper($l->name) ?></a>
+							<a href="<?= Yii::app()->createUrl('admin/news/update', array('id' => $source->getTranslation($l->id)->id)) ?>"><?= strtoupper($l->title) ?></a>
 						</li>
 					<?php endforeach; ?>
 					<?php foreach ($un as $l): ?>
 						<li <?php if ($lang->id == $l->id): ?> class="active" <?php endif; ?>>
-							<a href="<?= Yii::app()->createUrl('admin/news/create', array('lang' => $l->id, 'root_id' => $source->id)) ?>"><?= strtoupper($l->name) ?></a>
+							<a href="<?= Yii::app()->createUrl('admin/news/create', array('lang' => $l->id, 'root_id' => $source->id)) ?>"><?= strtoupper($l->title) ?></a>
 						</li>
 					<?php endforeach; ?>
 				</ul>

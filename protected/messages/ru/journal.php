@@ -22,5 +22,11 @@
 	    'Cabinet' => 'Личный кабинет',
 	    'Backend' => 'Админка',
 		'Announcements' => 'Объявления',
+        'Search string length must be greater than 5 symbols' => 'Поисковый запрос должен быть больше 5 символов',
+        'All fields are required' => 'Обратите внимание, что все поля обязательны для заполнения',
+        'To write a comment please' => 'Для того, чтобы оставить комментарий, пожалуйста',
+        'login' => 'войдите',
+        'or' => 'или',
+        'register' => 'зарегистрируйтесь'
     );
 ?>

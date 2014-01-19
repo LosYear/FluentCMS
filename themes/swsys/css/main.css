@@ -313,14 +313,6 @@ textarea {
     */
 }
 
-.pop{
-	overflow: hidden;
-}
-
-.pop-inner{
-	width:1000px;
-}
-
 .author-profile h2{
 	color: orange;
 	font-size: 21px;
@@ -461,4 +453,44 @@ div.url{
 
 a.pad{
 	margin-left:15px;
+}
+
+.pop{
+    overflow: hidden;
+}
+
+.pop-inner{
+    white-space: nowrap;
+}
+
+div.article-content img{
+    padding: 15px 15px 15px 15px !important;
+}
+
+div.article-aside-content p{
+    margin-top: 0;
+}
+
+.pagination > .active > a{
+    background-color: #fca100 !important;
+    border-color: #fca100 !important;
+}
+
+.share-bottom{
+    float:left;
+    margin-left: 40px;
+}
+
+.share-top{
+    margin-top: 20px;
+}
+
+.login-alert{
+    margin-left: 24px;
+    margin-top: 15px;
+}
+
+a.captcha-refresh{
+    white-space: nowrap;
+    display: block;
 }

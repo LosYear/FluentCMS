@@ -180,7 +180,7 @@ class YumRegistrationController extends YumController {
 							$user->password = YumUser::encrypt($passwordform->password);
 							$user->activationKey = YumUser::encrypt(microtime() . $passwordform->password);
 							$user->save();
-							Yum::setFlash('Your new password has been saved.');
+							Yum::setFlash(Yum::t('Your new password has been saved.'));
 							$this->redirect(Yum::module()->loginUrl);
 						}
 					}
@@ -202,11 +202,11 @@ class YumRegistrationController extends YumController {
 				$form->attributes = $_POST['YumPasswordRecoveryForm'];
 
 				if ($form->validate()) {
-					Yum::setFlash(
-							'Instructions have been sent to you. Please check your email.');
+					Yum::setFlash(Yum::t(
+							'Instructions have been sent to you. Please check your email.'));
 
 					if($form->user instanceof YumUser) {
-						$form->user->generateActivationKey();
+						//$form->user->generateActivationKey();
 						$recovery_url = $this->createAbsoluteUrl(
 								Yum::module('registration')->recoveryUrl[0], array(
 									'key' => $form->user->activationKey,

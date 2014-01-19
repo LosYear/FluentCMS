@@ -105,7 +105,8 @@
                     <a href="<?php echo Yii::app()->createUrl('user/registration'); ?>"
                        class="btn"><?= Yii::t('journal', 'Sign up'); ?></a>
                 <?php elseif (Yii::app()->user->isAdmin()): ?>
-                    <a href="<?php echo Yii::app()->baseUrl . 'admin/default'; ?>" class="btn"><?= Yii::t('journal', 'Backend'); ?></a>
+                    <a href="<?php echo Yii::app()->baseUrl . 'admin/default'; ?>"
+                       class="btn"><?= Yii::t('journal', 'Backend'); ?></a>
                 <?php
                 elseif (!Yii::app()->user->isGuest): ?>
                     <a href="<?php echo Yii::app()->createUrl('author/article'); ?>"
@@ -135,8 +136,7 @@
                 <div class="placeholder_after-mainmenu"><a href="http://swsys-web.ru/author/article/rss"
                                                            class="icon icon_rss">rss</a></div>
             </div>
-        </nav>
-        <?php echo $content ?>
+        </nav><?php echo $content ?>
         <div class="ym-clearfix"></div>
         <footer class="footer ym-clearfix">
             <div class="copyright">Создание сайта: <a href="http://cps.tver.ru" target="_blank" class="link">ЗАО НИИ
@@ -199,6 +199,15 @@
                 $('ul', this).slideUp(110);
             }
         );
+
+        $('.ym-searchform').submit(function () {
+            if ($('.ym-searchfield').val().length < 5) {
+                alert('<?= Yii::t('journal', 'Search string length must be greater than 5 symbols')?>');
+                return false;
+            } else {
+                return true;
+            }
+        });
 
     });
 </script>

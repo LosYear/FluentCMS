@@ -132,8 +132,8 @@ class YumUserIdentity extends CUserIdentity {
 			$this->credentialsConfirmed($user);
 		else if(YumUser::encrypt($this->password)!==$user->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else if($user->status == YumUser::STATUS_INACTIVE)
-			$this->errorCode=self::ERROR_STATUS_INACTIVE;
+		/*else if($user->status == YumUser::STATUS_INACTIVE)
+			$this->errorCode=self::ERROR_STATUS_INACTIVE;*/
 		else if($user->status == YumUser::STATUS_BANNED)
 			$this->errorCode=self::ERROR_STATUS_BANNED;
 		else if($user->status == YumUser::STATUS_REMOVED)

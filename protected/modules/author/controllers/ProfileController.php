@@ -39,10 +39,93 @@ class ProfileController extends Controller
                 'actions' => array('admin' /*,'delete'*/),
                 'expression' => '$user->isAdmin()',
             ),
+            array('allow',
+                'actions' => array('activate', 'resend'),
+                'expression' => '$user->getStatus() == 0',
+            ),
             array('deny', // deny all users
                 'users' => array('*'),
             ),
         );
+    }
+
+    public function beforeAction(){
+        $action = $this->action->id;
+        $action_bool = ($action == 'update' || $action == 'edit');
+        if($action_bool && Yii::app()->user->status == 0){
+            $this->redirect('activate');
+        }
+
+        return true;
+    }
+
+
+    public function actionActivate(){
+        $this->layout = '/layouts/cabinet';
+
+        $id = Yii::app()->user->id;
+        $criteria = new CDbCriteria();
+        $criteria->condition = '`user_id` = :id';
+        $criteria->params = array(':id' => $id);
+        $model = Profile::model()->find($criteria);
+
+        $new = false;
+
+        if ($model === null && !isset($_POST['profile_id'])) {
+            $model = new Profile;
+            $model->email = YumUser::model()->findByPk($id)->profile->email;
+            $new = true;
+        } else if ($model === null && isset($_POST['profile_id'])) {
+            $criteria = new CDbCriteria();
+            $criteria->condition = '`id` = :id';
+            $criteria->params = array(':id' => $_POST['profile_id']);
+            $model = Profile::model()->find($criteria);
+        }
+
+        foreach ($model->attributes as $key => $value) {
+            if ($value == '-1') {
+                $model->$key = "";
+            }
+        }
+
+        if (isset($_POST['Profile'])) {
+            $model->attributes = $_POST['Profile'];
+
+            foreach ($model->attributes as $key => $value) {
+                if ($value == '') {
+                    $model->$key = -1;
+                }
+            }
+
+            $model->user_id = Yii::app()->user->id;
+
+            if ($model->save()) {
+                $user = YumUser::model()->findByPk($id)->profile;
+                $user->email = $model->email;
+                $user->save();
+
+                $this->redirect(array('profile/resend'));
+            }
+        }
+
+        $this->render('activate', array(
+            'model' => $model,
+            'new' => $new,
+        ));
+
+    }
+
+    public function actionResend(){
+        $user = YumUser::model()->findByPk(Yii::app()->user->id);
+        Yii::app()->user->setFlash('success', Yii::t('journal', 'Activation email has been send to %s', array('%s' => $user->profile->email)));
+
+        Yii::import('application.modules.registration.controllers.*');
+
+        $c = Yii::app()->createController('registration/registration/registration');
+        $c = $c[0];
+        $c->sendRegistrationEmail($user);
+
+        $this->redirect('activate');
     }
 
     public function actionUploadAvatar($id = null)

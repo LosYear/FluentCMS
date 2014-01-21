@@ -152,5 +152,9 @@ public function getRoles() {
 		else 
 			return Yii::app()->user->data()->superuser;
 	}
+
+    public function getStatus(){
+        return Yii::app()->user->data()->status;
+    }
 }
 ?>

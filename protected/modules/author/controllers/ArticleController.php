@@ -34,7 +34,7 @@ class ArticleController extends Controller
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions' => array('create', 'update', 'admin'),
-                'users' => array('@'),
+                'expression' => '!$user->isGuest',
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
                 'actions' => array('delete'),
@@ -44,6 +44,16 @@ class ArticleController extends Controller
                 'users' => array('*'),
             ),
         );
+    }
+
+    public function beforeAction(){
+        $action = $this->action->id;
+        $action_bool = ($action == 'create' || $action == 'update' || $action == 'admin');
+        if($action_bool && Yii::app()->user->status == 0){
+            $this->redirect('profile/activate');
+        }
+
+        return true;
     }
 
 

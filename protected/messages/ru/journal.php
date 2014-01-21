@@ -27,6 +27,10 @@
         'To write a comment please' => 'Для того, чтобы оставить комментарий, пожалуйста',
         'login' => 'войдите',
         'or' => 'или',
-        'register' => 'зарегистрируйтесь'
+        'register' => 'зарегистрируйтесь',
+        'You need to confirm your email before doing anything' => 'Вам нужно подтвердить Email, чтобы использовать систему',
+        'Change email' => 'Изменить email',
+        'Send confirmation' => 'Отправить подтверждение заново',
+        'Activation email has been send to %s' => 'Письмо было отправлено по адресу %s'
     );
 ?>

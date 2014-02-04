@@ -639,13 +639,15 @@ class ArticleController extends Controller
     public function actionSearch()
     {
         $result = array();
+        $authors = array();
         if (isset($_REQUEST['query'])) {
             $criteria = new CDbCriteria();
 
-            $criteria->condition = "`type` = 'author/article' AND (`title` LIKE :query OR `content` LIKE :query2)";
+            $criteria->condition = "`type` = 'author/article' AND (`title` LIKE :query OR `content` LIKE :query2 OR `annotation` LIKE :query3)";
             $criteria->params = array(
                 ':query' => '%' . addcslashes($_REQUEST['query'], '%_') . '%',
                 ':query2' => '%' . addcslashes($_REQUEST['query'], '%_') . '%',
+                ':query3' => '%' . addcslashes($_REQUEST['query'], '%_') . '%',
             );
             $criteria->order = '`created` DESC';
 
@@ -658,11 +660,21 @@ class ArticleController extends Controller
             foreach ($articles as $el) {
                 $result[] = $el->getTranslation(Language::getCurrentID());
             }
+
+            // Searching for authors
+            $criteria = new CDbCriteria();
+
+            $criteria->condition = "`name` LIKE :query";
+            $criteria->params = array(
+                ':query' => '%' . addcslashes($_REQUEST['query'], '%_') . '%',
+            );
+
+            $authors = Profile::model()->findAll($criteria);
         }
 
         $dataProvider = new CArrayDataProvider($result);
 
-        $this->render('search', array('dataProvider' => $dataProvider, 'query' => $_REQUEST['query']));
+        $this->render('search', array('dataProvider' => $dataProvider, 'query' => $_REQUEST['query'], 'authors' => $authors));
     }
 
     /**

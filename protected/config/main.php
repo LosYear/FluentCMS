@@ -145,6 +145,7 @@ $swsys = true;
 					'/' => 'author/issue/index',
 
 					'issue_<id:\d+>' => 'author/issue',
+                    'issue_no_template_<id:\d+>' => 'author/issue/list',
 					'search' => 'author/article/search',
 					'feedback' => 'feedback/default/contact',
 					'author/<id:\d+>' => 'author/profile/view',

@@ -321,4 +321,8 @@
 
             return parent::beforeDelete();
         }
+
+        public function getIssue(){
+            return Issue::model()->findByPk($this->advanced->issue_id);
+        }
 	}

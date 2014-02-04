@@ -139,7 +139,8 @@ $this->pageTitle = Yii::app()->name;
             <h2><a href="<?= Yii::app()->createUrl($last_news['href']); ?>"><?= $last_news['title'] ?></a></h2>
 
             <div class="date">[<?= $last_news['date'] ?>]</div>
-            <div class="text"><?= $last_news['content'] ?><a href="<?= Yii::app()->createUrl($last_news['href']); ?>">[Читать полностью]</a></div>
+            <div class="text"><?= $last_news['content'] ?><a href="<?= Yii::app()->createUrl($last_news['href']); ?>">[Читать
+                    полностью]</a></div>
             <a href="<?= Yii::app()->createUrl('news/index'); ?>">Все объявления...</a>
         </div>
     <?php endif; ?>
@@ -151,13 +152,15 @@ $this->pageTitle = Yii::app()->name;
             <?php endif; ?>
         </div>
         <div class="cross-articles-nav-active">
-            <strong><?= Yii::t('journal', 'Issue') ?> № <?php echo $new_issue['number']; ?></strong>
+            <a style="color:black"
+               href="<?php echo Yii::app()->createUrl('author/issue/list', array('id' => $new_issue['id'],)); ?>"><strong><?= Yii::t('journal', 'Issue') ?>
+                    № <?php echo $new_issue['number']; ?></strong></a>
             <small><?php $date = DateTime::createFromFormat("d.m.Y", $new_issue['date']);
                 echo Yii::app()->dateFormatter->formatDateTime(strtotime($date->format("d F Y")), 'long', null); ?></small>
         </div>
         <div class="cross-articles-nav-next">
             <?php if ($new_issue['next_issue'] != -1): ?>
-                <a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['next_issue'],)); ?>"><?= Yii::t('journal', 'NEXT ISSUE') ?></a>
+                <a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['next_issue'], 'template' => false)); ?>"><?= Yii::t('journal', 'NEXT ISSUE') ?></a>
                 <strong>→</strong>
             <?php endif; ?>
         </div>
@@ -211,13 +214,15 @@ $this->pageTitle = Yii::app()->name;
             <?php endif; ?>
         </div>
         <div class="cross-articles-nav-active">
-            <strong><?= Yii::t('journal', 'Issue') ?> № <?php echo $new_issue['number']; ?></strong>
+            <a style="color:black"
+               href="<?php echo Yii::app()->createUrl('author/issue/list', array('id' => $new_issue['id'],)); ?>"><strong><?= Yii::t('journal', 'Issue') ?>
+                    № <?php echo $new_issue['number']; ?></strong></a>
             <small><?php $date = DateTime::createFromFormat("d.m.Y", $new_issue['date']);
                 echo Yii::app()->dateFormatter->formatDateTime(strtotime($date->format("d F Y")), 'long', null); ?></small>
         </div>
         <div class="cross-articles-nav-next">
             <?php if ($new_issue['next_issue'] != -1): ?>
-                <a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['next_issue'],)); ?>"><?= Yii::t('journal', 'NEXT ISSUE') ?></a>
+                <a href="<?php echo Yii::app()->createUrl('author/issue', array('id' => $new_issue['next_issue'], 'template' => false)); ?>"><?= Yii::t('journal', 'NEXT ISSUE') ?></a>
                 <strong>→</strong>
             <?php endif; ?>
         </div>

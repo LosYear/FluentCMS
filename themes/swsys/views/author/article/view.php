@@ -85,7 +85,7 @@ $this->pageTitle = $model->title . ' | ' . Yii::app()->name;
 
                     <div class="url">
                         <label><?= Yii::t('AuthorModule.main', 'Link to this article') ?></label>
-                        <input type="text" class="form-control input-sm" readonly
+                        <input type="text" class="form-control input-sm" readonly style="cursor:pointer"
                                value="<?= Yii::app()->homeUrl . MultilangHelper::addLangToUrl($model->url . '.html') ?>"
                                onclick="this.select()"/>
                     </div>

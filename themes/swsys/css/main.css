@@ -494,3 +494,7 @@ a.captcha-refresh{
     white-space: nowrap;
     display: block;
 }
+
+.ym-searchform .ym-searchfield:focus{
+    border: solid #fca100 1px;
+}

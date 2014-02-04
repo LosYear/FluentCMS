@@ -31,6 +31,7 @@
         'You need to confirm your email before doing anything' => 'Вам нужно подтвердить Email, чтобы использовать систему',
         'Change email' => 'Изменить email',
         'Send confirmation' => 'Отправить подтверждение заново',
-        'Activation email has been send to %s' => 'Письмо было отправлено по адресу %s'
+        'Activation email has been send to %s' => 'Письмо было отправлено по адресу %s',
+        'There are no articles for this request' => 'Статей по Вашему запросу не найдено'
     );
 ?>

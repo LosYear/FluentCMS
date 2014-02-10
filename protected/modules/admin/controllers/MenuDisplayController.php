@@ -176,6 +176,12 @@
 				'url' => Yii::app()->createUrl('author/profile/admin'),
 			);
 
+            $result[] = array(
+                'label' => Yii::t('author', 'Subscription') /*."<span class=\"badge badge-info\">$count</span>"*/,
+                'icon' => 'envelope black',
+                'url' => Yii::app()->createUrl('author/subscription/send'),
+            );
+
 			return $result;
 		}
 

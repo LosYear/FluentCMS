@@ -73,6 +73,7 @@ class Profile extends CActiveRecord
 			'job' => Yii::t('authorModule.main', 'Job'),
 			'branch' => Yii::t('authorModule.main', 'Academic grade'),
             'image' => Yii::t('authorModule.main', 'Avatar'),
+            'subscription' => Yii::t('authorModule.main', 'Subscription')
 		);
 	}
 

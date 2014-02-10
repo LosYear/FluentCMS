@@ -32,4 +32,15 @@
         'Branch "%s" has been created' => 'Создана ученая степень "%s"',
         'Branch "%s" has been updated' => 'Ученая степень "%s" отредактирована',
 
+        'Subscription' => 'Рассылка',
+        'New' => 'Новая',
+        'Server' => 'Сервер',
+        'Port' => 'Порт',
+        'Login' => 'Имя пользователя',
+        'Password' => 'Пароль',
+        'Text' => 'Сообщение',
+        'Subject' => 'Тема',
+        'Sender' => 'Отправитель',
+        'All mails are sent' => 'Все письма отправлены',
+
     );

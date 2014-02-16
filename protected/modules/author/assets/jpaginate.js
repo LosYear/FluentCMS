@@ -17,6 +17,7 @@ nav_items = when minimize is set to true you can specify how many items to show
 cookies = if you want to use cookies to remember which page the user is on, true by default
 
 */
+var global_array = "";
 (function($){
     $.fn.jPaginate = function(options) {
         var defaults = {
@@ -52,6 +53,12 @@ cookies = if you want to use cookies to remember which page the user is on, true
                 numP += show_per_page;
                 nexP += show_per_page;
             }
+			
+			if(array_of_elements[number_of_pages].first()[0] == $('h3')[0]){
+				$.merge(array_of_elements[number_of_pages-1], array_of_elements[number_of_pages]);
+				array_of_elements.splice(number_of_pages, 1);
+				number_of_pages--;
+			}
             
             // display first page and set first cookie
 			if (options.cookies == true) {
@@ -75,6 +82,11 @@ cookies = if you want to use cookies to remember which page the user is on, true
             
             // create the navigation for the pagination 
             function createPagination(curr) {
+				if (number_of_pages < 2)
+				{
+					return;
+				}
+				
                 var start, items = "", end, nav = "";
                 start = "<ul class='"+options.pagination_class+"'>";
                 var previous = "<li><a class='goto_previous' href='#'>"+options.previous+"</a></li>";

@@ -48,7 +48,7 @@
             
             
             $criteria=new CDbCriteria;
-            $criteria->condition='menu_id=:id AND root_id = -1';
+            $criteria->condition='menu_id=:id AND root_id = -1 AND status=1';
             $criteria->params=array(':id'=>$id);
             $criteria->order = '`order`';
             $elements=$menu_item->findAll($criteria);

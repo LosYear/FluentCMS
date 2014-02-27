@@ -138,11 +138,15 @@ echo $form->errorSummary($advModel);
     $model->status = 2;
 } ?>
 
-<div class="form-group">
+<div class="form-group" id="pdf-group">
     <?= $form->label($advModel, 'pdf', array('class' => 'col-lg-2 control-label')) ?>
-    <div class="col-lg-4">
+    <div class="col-lg-4" id="pdf-field">
         <?= $form->fileField($advModel, 'pdf', array('class' => 'form-control')) ?>
     </div>
+
+    <?php if($advModel->pdf != null): ?>
+        <a href="#" id="delete_pdf"><span class="glyphicon glyphicon-trash"></span></a>
+    <?php endif; ?>
 </div>
 
 <div class="form-group">
@@ -181,4 +185,11 @@ echo $form->errorSummary($advModel);
 <script lang="javascript">
     jQuery('select[readonly] option:not(:selected)').attr('disabled', true);
     $('#Article_status').change(function(){if($('#Article_status').val() == 1){$('#social-export').show()}else{$('#social-export').hide()} })
+
+    $('#delete_pdf').click(function(){
+            $('#pdf-group').hide();
+            alert('<?= Yii::t('AuthorModule.main', 'PDF file was deleted');?>');
+            $('#pdf-field').append('<input name="Article[no_pdf]" value="1" type="hidden" />');
+            $('#delete_pdf').hide();
+    });
 </script>

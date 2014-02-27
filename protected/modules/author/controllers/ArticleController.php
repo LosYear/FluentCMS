@@ -245,6 +245,7 @@ class ArticleController extends Controller
 
             if ($model->validate() && $advModel->validate()) {
                 $advModel->pdf = CUploadedFile::getInstance($advModel, 'pdf');
+
                 $advModel->image = CUploadedFile::getInstance($advModel, 'image');
 
                 $model->save();
@@ -424,7 +425,10 @@ class ArticleController extends Controller
             $advModel->pdf = CUploadedFile::getInstance($advModel, 'pdf');
 
             $up = true;
-            if ($advModel->pdf == null) {
+            if(isset($_POST['Article']['no_pdf']) && $_POST['Article']['no_pdf'] == '1' ){
+                $up = false;
+                $advModel->pdf = null;
+            } elseif ($advModel->pdf == null) {
                 $advModel->pdf = $tmp_file;
                 $up = false;
 

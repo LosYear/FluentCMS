@@ -29,7 +29,7 @@ class VkApi
             // Uploading photo
             $uploadCurl = curl_init();
             $params = array(
-                'photo' => '@'.$img,
+                'file1' => '@'.$img,
             );
             curl_setopt($uploadCurl, CURLOPT_URL, $url);
             curl_setopt($uploadCurl, CURLOPT_RETURNTRANSFER, true);
